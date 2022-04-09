@@ -1,0 +1,29 @@
+//*********************************************************************************************//
+//*                                                                                           *//
+//* File:          checkproc.h                                                                *//
+//* Author:        Wolfgang Keuch                                                             *//
+//* Creation date: 2019-01-29;                                                                *//
+//* Last change:   2021-04-28; 	                                                              *//
+//* Description:   Überwachung, ob ein Prozess auf anderem Rechner noch lebt                  *//
+//*                                                                                           *//
+//* Copyright (C) 2019 by Wolfgang Keuch                                                      *//
+//*                                                                                           *//
+//*********************************************************************************************//
+
+#ifndef _CHECKPROC_H
+#define _CHECKPROC_H  1
+
+// Überwachung, ob ein Prozess auf anderem Rechner noch lebt
+// -----------------------------------------------------------
+//bool checkConnection();
+//int  checkproc (char* Rechner, char* Prozess);
+
+
+//bool feedWatchdog(char* Name);
+//bool match(const char *topic, const char *key, int n);   	// Stringvergleich
+//bool matchn(const char *topic, int key, int n);   				// Stringvergleich
+
+#endif //_CHECKPROC_H
+
+//*********************************************************************************************//
+

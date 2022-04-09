@@ -1,0 +1,4 @@
+
+SqlMotion Vers. 4.3.45/Apr  7 2022 - User 118, Group 127
+------ savePID()->'/home/pi/motion/aux/SqlMotion.pid'
+------ killPID()->'/home/pi/motion/aux/SqlMotion.pid'

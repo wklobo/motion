@@ -1,0 +1,248 @@
+//*********************************************************************************************//
+//*                                                                                           *//
+//* File:          checkproc.c                                                                *//
+//* Author:        Wolfgang Keuch                                                             *//
+//* Creation date: 2019-01-29;                                                                *//
+//* Last change:   2021-04-28;                                                                *//
+//* Description:   ‹berwachung, ob ein Prozess auf anderem Rechner noch lebt                  *//
+//*                Dazu wird die Prozess-ID des entfernten Prozesses in das                   *//
+//*                Export-Verzeichnis des entfernten Rechners geschrieben und von             *//
+//*                dieser Seite wieder ausgelesen.                                            *//
+//*                Voraussetzung: NFS ist gemounted !                                         *//
+//*                                                                                           *//
+//*   2019-07-26:                                                                             *//
+//*   nach Schwierigkeiten mit NFS und NFS-Neuinstallation auf neues Verzeichnis umgestellt   *//
+//*                                                                                           *//
+//* Copyright (C) 2019 by Wolfgang Keuch                                                      *//
+//*                                                                                           *//
+//*********************************************************************************************//
+
+#define __CHECKPROC_DEBUG__  false
+
+#include <time.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <mysql.h>
+#include <string.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <syslog.h>
+#include <stdbool.h>
+#include <sys/stat.h>
+
+#include "./datetime.h"
+#include "./checkproc.h"
+
+#define EXPORTDIR  "/home/public"             /* Export-Verzeichnis im entfernten Rechner  */
+#define IMPORTDIR  "/home/extern/Solar"       /* dieses Verzeichnis im lokalen Rechner     */
+#define TESTFILE   "von Solar"                /* Test-Datei im entfernten Rechner          */
+
+#define REFRESH       180                     /*  [sec] - Auffrischung Watchdog-Datei      */
+ 
+#define BUFLEN       250
+
+//***************************************************************************//
+/*
+ * Define debug function.
+ * ---------------------
+ */
+#if __CHECKPROC_DEBUG__
+#define DEBUG(...)  printf(__VA_ARGS__)
+#else
+#define DEBUG(...)
+#endif
+
+//***************************************************************************//
+
+
+//*********************************************************************************************//
+
+// besteht die Verbindung zum anderen Rechner noch?
+// ------------------------------------------------
+bool checkConnection()
+{
+   DEBUG("%s-%s:%s#%d\n",__NOW__,__FILE__,__FUNCTION__,__LINE__);
+  char Testfile[BUFLEN];
+  sprintf(Testfile, "%s/%s", IMPORTDIR, TESTFILE);
+  struct stat sb;
+  int result = stat(Testfile, &sb);
+   DEBUG("\n%s-%s:%s#%d - Testfile=>%s<, result='%d', st_mode='%d'\n",__NOW__,__FILE__,__FUNCTION__,__LINE__, Testfile, result, sb.st_mode);
+  return !((result != 0) || (sb.st_mode & S_IFDIR));
+}
+//*********************************************************************************************//
+
+// ‹berwachung, ob ein Prozess auf anderem Rechner noch lebt
+// -----------------------------------------------------------
+// R¸ckgabe: Prozess-ID oder -1
+int checkproc (char* Rechner, char* Prozess)
+{
+  int pid = -1;
+  int sys = -1;
+  char abfrage[BUFLEN];
+  char maske[] = "ssh pi@%s 'sudo pidof %s > %s/pid_%s'";
+
+  // Befehl f¸r entfernten Rechner erzeugen
+  sprintf(abfrage, maske, Rechner, Prozess, EXPORTDIR, Prozess);
+   DEBUG("\n%s-%s:%s#%d - abfrage=>%s<\n",__NOW__,__FILE__,__FUNCTION__,__LINE__, abfrage);
+  sys = system(abfrage);
+  if (sys == 0)
+  { // die Abfrage selbst war erfolgreich,
+    // es soll jetzt eine Datei mit der PID im lokalen Rechner liegen
+    char filename[BUFLEN];
+    FILE *fp;
+
+    sprintf(filename, "%s/pid_%s", IMPORTDIR, Prozess);   // lokaler Dateipfad
+    fp = fopen(filename, "r");
+     DEBUG("%s-%s:%s#%d - %p=fopen(%s, \"r\")\n",__NOW__,__FILE__,__FUNCTION__,__LINE__, fp, filename);
+
+    if(fp != NULL)
+    {
+      // Prozess-ID zeichenweise lesen
+      int temp;
+      pid = 0;
+      while((temp = fgetc(fp)) != EOF)
+      {
+        if (temp >= '0')
+          pid = 10*pid + (temp & 0x0f);
+      }
+      fclose(fp);
+      remove(filename);
+    }
+  }
+   DEBUG("%s-%s:%s#%d - pid=%d\n",__NOW__,__FILE__,__FUNCTION__,__LINE__, pid);
+  return pid;
+}
+//*********************************************************************************************//
+
+// Watchdog-Datei aufrufen
+// -----------------------
+// Wenn dies Funktion nicht regelm‰ﬂig aufgerufen wird, schl‰gt der watchdog zu!
+bool feedWatchdog(char* Name)
+{
+  time_t now;
+  FILE* fWatchDog;                                        // Zeiger auf Datenstrom der Datei
+  char filename[BUFLEN];
+  char filedata[BUFLEN];
+  sprintf(filename,"/tmp/%s.%s", Name, "wdg");            // der generierte Dateiname
+  now = time(0);                                          // Sekunden seit 1.1.70
+  sprintf(filedata, "%s\n", ctime(&now));                 // Datum/Uhrzeit als Inhalt
+  static time_t nextRefresh = 0;
+
+  if (nextRefresh < time(NULL))
+  {
+#ifdef _DEBUG_
+     DEBUG("%s-%s:%s#%d - %s <= '%s'",__NOW__,__FILE__,__FUNCTION__,__LINE__, filename, filedata);
+#endif
+
+    fWatchDog = fopen(filename, "w+b");
+    if (fWatchDog)
+    {
+      fwrite(&filedata, strlen(filedata), 1, fWatchDog);
+      fclose(fWatchDog);
+      fWatchDog = NULL;
+    }
+    else
+      return false;
+    nextRefresh = time(NULL) + REFRESH;                   // n‰chster Durchlauf
+  }
+
+  return true;
+}
+////*********************************************************************************************//
+//
+//// Vergleich, ob die n.ten Glieder der Strings ¸bereinstimmen
+//// -----------------------------------------------------------
+//// Stringformat: 'xxx/yyy/zzz'
+//bool match(const char *topic, const char *key, int n)
+//{
+//  bool retval=false;
+//  char delim[] = "/";
+//  char* ptr1;
+//  char* ptr2;
+//  char val1[BUFLEN] = {'\0'};
+//  char val2[BUFLEN] = {'\0'};
+//   DEBUG("%s-%s:%s()#%d: -- topic='%s', key='%s'\n",
+//                    __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, key);
+//  strcpy(val1, topic);                // umkopieren, da String zerstˆrt wird
+//  strcpy(val2, key);
+//  
+//  // 1. Wert
+//  // -------
+//  int ix=0;
+//  ptr1 = strtok(val1, delim);         // das erste Glied
+//  while (ix < n)
+//  {
+//    ix++;
+//    ptr1 = strtok(NULL, delim);       // das n‰chste Glied
+//    if (ptr1 == NULL) break;          // Stringende erreicht
+//  }
+//  
+//  // 2. Wert
+//  // -------
+//  if (ptr1 != NULL) 
+//  {
+//    ix=0;
+//    ptr2 = strtok(val2, delim);       // das erste Glied
+//    while (ix < n)
+//    {
+//      ix++;
+//      ptr2 = strtok(NULL, delim);     // das n‰chste Glied
+//      if (ptr2 == NULL) break;        // Stringende erreicht
+//    }
+//    if (ptr2 != NULL) 
+//      retval = (0 == strcmp(ptr1, ptr2));
+//  }
+//  
+//  if (retval)
+//     DEBUG("%s-%s:%s()#%d: -- OK: %s('%s')==%s('%s')\n",
+//                     __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, ptr1, key, ptr2);
+//  else
+//     DEBUG("%s-%s:%s()#%d: -- -xx-: %s('%s')==%s('%s')\n",
+//                     __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, ptr1, key, ptr2);
+//  return retval;
+//}
+////*********************************************************************************************//
+//
+//// Vergleich, ob das n.te Glied des Strings den Schl¸ssel enth‰lt
+//// --------------------------------------------------------------
+//// Stringformat: 'xxx/yyy/zzz'
+//bool matchn(const char *topic, int key, int n)
+//{
+//   DEBUG("%s-%s:%s()#%d: -- %s('%s', %d, %d) \n",
+//                    __NOW__,__FILE__,__FUNCTION__,__LINE__,__FUNCTION__, topic, key, n);
+//  bool retval=false;
+//  const char delim[] = "/";
+//  char* ptr1;
+//  char val1[BUFLEN] = {'\0'};
+//  char val2[BUFLEN] = {'\0'};
+//  strcpy(val1, topic);                // umkopieren, da String zerstˆrt wird
+//  sprintf(val2, "%d", key);           // Schl¸ssel als String
+//  
+//  // 1. Wert
+//  // -------
+//  int ix=0;
+//  ptr1 = strtok(val1, delim);         // das erste Glied
+//  while (ix < n)
+//  {
+//    ix++;
+//    ptr1 = strtok(NULL, delim);       // das n‰chste Glied
+//    if (ptr1 == NULL) break;          // Stringende erreicht
+//  }
+//  
+//  // 2. Wert
+//  // -------
+//  if (ptr1 != NULL) 
+//  {
+//    retval = (0 == strcmp(ptr1, val2));
+//  }
+//  
+//  if (retval)
+//     DEBUG("%s-%s:%s()#%d: -- OK: %s('%s')==%d('%s')\n",
+//                     __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, ptr1, key, val2);
+//  else
+//     DEBUG("%s-%s:%s()#%d: -- -xx-: %s('%s')==%d('%s')\n",
+//                     __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, ptr1, key, val2);
+//  return retval;
+//}
+////***********************************************************************************************
+
