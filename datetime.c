@@ -4,7 +4,7 @@
 //* Author:        Alexander Müller                                                                         *//
 //*                aus 'http://www.a-m-i.de/tips/datetime/datetime.php'                                     *//
 //* Creation date: 2018-11-01;                                                                              *//
-//* Last change:   2021-09-10 - 13:49:15: neuer Ansatz                                                      *//
+//* Last change:   2022-04-10 - 12:38:11                                                                    *//
 //* Description:   In diesem Artikel habe ich eine Sammlung verschiedener Funktionen zusammengestellt,      *//
 //*                mit denen man alle möglichen Arten von Kalender- und Zeitberechnungen durchführen kann.  *//
 //*                Es ist eine Sammlung einzelner Routinen. Es findet relativ wenig Fehlerbehandlung von    *//
@@ -90,11 +90,13 @@ char* heute(char* buf)
 {
   time_t tnow;
   struct tm *tmnow;
+	memset(buf, '\0', TIMLEN);
 
   time(&tnow);
   tmnow = localtime(&tnow);
-  sprintf(buf, "%02d.%02d.%02d",
-      tmnow->tm_mday, tmnow->tm_mon + 1, tmnow->tm_year + 1900);
+  sprintf(buf, "%02d.%02d.%02d%c",
+      tmnow->tm_mday, tmnow->tm_mon + 1, tmnow->tm_year + 1900, '\0');
+//	printf(buf);
   return buf;
 }
 
@@ -107,11 +109,13 @@ char* jetzt(char* buf)
 {
   time_t tnow;
   struct tm *tmnow;
+	memset(buf, '\0', TIMLEN);
 
   time(&tnow);
   tmnow = localtime(&tnow);
   sprintf(buf, "%02d:%02d:%02d%c",
       tmnow->tm_hour, tmnow->tm_min, tmnow->tm_sec, '\0');
+//	printf(buf);
   return buf;
 }
 //**********************************************************************************//

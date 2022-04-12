@@ -4,7 +4,7 @@
 //* Author:        Alexander Müller                                                                         *//
 //*                aus 'http://www.a-m-i.de/tips/datetime/datetime.php'                                     *//
 //* Creation date: 2018-11-01;                                                                              *//
-//* Last change:   2021-09-10 - 13:49:15: neuer Ansatz                                                      *//
+//* Last change:   2022-04-10 - 13:18:34                                                                    *//
 //* Description:   In diesem Artikel habe ich eine Sammlung verschiedener Funktionen zusammengestellt,      *//
 //*                mit denen man alle möglichen Arten von Kalender- und Zeitberechnungen durchführen kann.  *//
 //*                Es ist eine Sammlung einzelner Routinen. Es findet relativ wenig Fehlerbehandlung von    *//
@@ -54,6 +54,7 @@ char* heute(char* buf);                                                         
 char* jetzt(char* buf);                                                           // Uhrzeit als String
 #define TIMLEN     20
 EXTERN char Uhrzeitbuffer[TIMLEN];
+//EXTERN char Kalenderbuffer[TIMLEN];
 #define __NOW__   jetzt(Uhrzeitbuffer)
 #define __HEUTE__ heute(Uhrzeitbuffer)
 

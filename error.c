@@ -3,13 +3,13 @@
 //* File:          error.c                                                                    *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2018-07-14;                                                                *//
-//* Last change:   2022-04-09 - 09:44:52                                                      *//
+//* Last change:   2022-04-11 - 17:15:36                                                      *//
 //* Description:   Nistkastenprogramm: Standard-Fehlerausgänge                                *//
 //*                                                                                           *//
 //* Copyright (C) 2018-21 by Wolfgang Keuch                                                   *//
-//*                                                                                           *// 
-//*      2022-03-22; 'sendmail' für Inbetriebnahme abgeschaltet                               *// 
-//*                                                                                           *// 
+//*                                                                                           *//
+//*      2022-03-22; 'sendmail' für Inbetriebnahme abgeschaltet                               *//
+//*                                                                                           *//
 //*********************************************************************************************//
 
 #include <stdio.h>
@@ -21,6 +21,9 @@
 #include <unistd.h>
 #include <stdbool.h>
 
+#include <fcntl.h>           /* Definition of AT_* constants */
+#include <sys/stat.h>
+
 #include "./error.h"
 #include "./datetime.h"
 #include "../sendmail/sendMail.h"
@@ -28,10 +31,59 @@
 EXTERN bool DBError_Flag;
 EXTERN int  DBError_Count;
 
+char Uhrzeitbuffer[TIMLEN];
+
 #undef      MIT_DISPLAY
 
 //#define _DEBUG
 
+//*********************************************************************************************//
+
+// Meldung in Fehlerliste eintragen
+// ---------------------------------
+void Fehlerliste(char* Message)
+{
+  #define  FEHLER_LISTE "/home/pi/motion/aux/errors"
+  #define   LZA  "\n ---------- %s ---------------------------- \n"
+  #define   LZE  "\n ---------- %s - %s --------------- \n"
+  char buf[256] = {'\0'};
+  char lza[256] = {'\0'};
+  char lze[256] = {'\0'};
+  
+ 	//mode_t mode = S_IRWXU|S_IRWXG;  
+  //mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH;  
+  mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH;  
+  int fd_list = open(FEHLER_LISTE, O_CREAT | O_APPEND | O_RDWR, mode);
+  if(fd_list == -1) 
+  { // --- Debug-Ausgaben ---------------------------------------------------
+    perror("open FEHLER_LISTE");
+  } // ----------------------------------------------------------------------
+  else
+  {	// Attribute setzen
+    // -----------------
+    if(fchmod(fd_list, mode) == -1) 
+    { // --- Debug-Ausgaben ---------------------------------------------------
+    	perror("fchmod FEHLER_LISTE");
+    } // ----------------------------------------------------------------------
+		else
+		{	// Inhalte schreiben
+			// -----------------
+      char today[12]; sprintf(today, "%s", __HEUTE__);
+      char   now[12]; sprintf(  now, "%s", __NOW__);
+      sprintf(lza, LZA, PROGNAME);
+      sprintf(lze, LZE, today, now);
+      sprintf(buf, "%s(%d)-%s%s", lza, strlen(Message), Message, lze);
+      
+      if(write(fd_list, buf, sizeof(buf)) != sizeof(buf))
+      { // --- Debug-Ausgaben ---------------------------------------------------
+    		perror("write FEHLER_LISTE");
+      } // ----------------------------------------------------------------------
+  		// Log-Datei schließen
+  		// -------------------
+      close(fd_list);    
+  	}
+  }
+}
 //*********************************************************************************************//
 
 #define FATAL_MESSAGE        "Programm-Abbruch in '%s':\n%s\n-wkh-\n"
@@ -59,14 +111,14 @@ void show_Error(char* ErrorMessage, char* MailMessage)
     #ifdef _DEBUG                                         // Fehler ausgeben
     fprintf(stdout, "-- %s()#%d - Header: '%s'\n", __FUNCTION__, __LINE__, Header);
     #endif
-  
+
     sprintf(MailBody, MailMessage, PROGNAME, ErrorMessage);
     MailBody[BODYLEN-1] = '\0';                           // Begrenzung
     #ifdef _DEBUG                                         // Fehler ausgeben
     fprintf(stdout, "-- %s()#%d - Body: >>>\n%s\n<<<\n", __FUNCTION__, __LINE__, MailBody);
     fprintf(stdout, "-- ----------------------------------------------\n");
     #endif
-  
+
 //    sendmail(Header, MailBody);                           // Mail-Message absetzen
   }
 }
@@ -83,6 +135,10 @@ void finish_with_Error(char* ErrorMessage)
   fprintf(stdout, "\n-- ---------- finish_with_Error() ---------------\n");
   fprintf(stdout, "-- %s()#%d: '%s'\n", __FUNCTION__, __LINE__, ErrorMessage);
 #endif
+
+  // in Fehlerliste eintragen
+  // ------------------------
+  Fehlerliste(ErrorMessage);
 
   // Fehlerausgabe
   // --------------
@@ -109,35 +165,17 @@ void finish_with_Error(char* ErrorMessage)
 
 void report_Error(char* ErrorMessage, bool withMail)
 {
-  // Fehlerstatistik
-  // ---------------
-  {
-    #define  FEHLER_STATISTIK  "/home/pi/motion/aux/errors" 
-    #define   LZA  "\n ---------- %s ---------------------------- \n"
-    #define   LZE  "\n ---------- %s - %s --------------- \n"
-    char buf[256] = {'\0'}; 
-    char lza[256] = {'\0'};
-    char lze[256] = {'\0'};
-    FILE *fp;                                   // Dateizeiger erstellen  
-    fp = fopen(FEHLER_STATISTIK, "a");          // Datei öffnen
-    if(fp == NULL) 
-      perror("open FEHLER_STATISTIK");
-    else 
-    {
-      sprintf(lza, LZA, PROGNAME);
-      sprintf(lze, LZE, __DATE__, __TIME__);
-      sprintf(buf, "%s(%d)-%s%s", lza, strlen(ErrorMessage), ErrorMessage, lze);
-      fwrite(buf, sizeof(buf), 1, fp);
-      fclose(fp);                               // Datei schliessen
-    }
-  }
+  // in Fehlerliste eintragen
+  // ------------------------
+  Fehlerliste(ErrorMessage);
+
   // Fehlerausgabe
   // --------------
   {
     if (withMail)
       show_Error(ErrorMessage, NONFATAL_MESSAGE);
     else
-      show_Error(ErrorMessage, "");  
-  } 
+      show_Error(ErrorMessage, "");
+  }
 }
 //*********************************************************************************************//

@@ -3,7 +3,7 @@
 //* File:          common.c                                                                   *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2021-04-18;                                                                *//
-//* Last change:   2022-03-31 - 17:32:53                                                      *//
+//* Last change:   2022-04-11 - 16:15:18                                                      *//
 //* Description:   Hilfsfunktionen und  Vereinbarungen zwischen den Programmen                *//
 //*                                                                                           *//
 //* Copyright (C) 2019-21 by Wolfgang Keuch                                                   *//
@@ -22,6 +22,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <sys/stat.h>
 
 //#include <wiringPi.h>
 
@@ -43,7 +44,7 @@
 
 #define DEBUG_s(...) // printf(__VA_ARGS__)
 
-#define DEBUG_p(...) //  printf(__VA_ARGS__)
+#define DEBUG_p(...)  // printf(__VA_ARGS__)
 
 //***********************************************************************************************
 
@@ -594,31 +595,77 @@ bool MyLog(const char* Program, const char* Function, int Line, const char* pLog
     exit(1);
   }
 
-  // die eigentliche Log-Funktion
+  // die eigentliche Log-Funktion =================================================================
   // ----------------------------
   {
-    FILE* logFile = fopen(LOGFILE, "a+");
-    if(NULL == logFile)
+//#define  eLOGFILE      "/home/pi/motion/aux/eMotion.log"
+    /*---------------------------------------------------
+      S_IRUSR 	[r--------] 	read (user; Leserecht für Eigentümer)
+      S_IWUSR 	[-w-------] 	write (user; Schreibrecht für Eigentümer)
+      S_IXUSR 	[--x------] 	execute (user; Ausführungsrecht für Eigentümer)
+      S_IRWXU 	[rwx------] 	read, write, execute (user; Lese-, Schreib-, Ausführungsrecht für Eigentümer)
+      S_IRGRP 	[---r-----] 	read (group; Leserecht für Gruppe)
+      S_IWGRP 	[----w----] 	write (group; Schreibrecht für Gruppe)
+      S_IXGRP 	[-----x---] 	execute (group; Ausführungsrecht für Gruppe)
+      S_IRWXG 	[---rwx---] 	read, write, execute (group; Lese-, Schreib-, Ausführungsrecht für Eigentümer)
+      S_IROTH 	[------r--] 	read (other; Leserecht für alle anderen Benutzer)
+      S_IWOTH 	[-------w-] 	write (other; Schreibrecht für alle anderen Benutzer)
+      S_IXOTH 	[--------x] 	execute (other; Ausführungsrecht für alle anderen Benutzer)
+			S_IRWXO 	[------rwx] 	read, write, execute (other; Lese-, Schreib-, Ausführungsrecht für alle anderen Benutzer)
+    -----------------------------------------------------*/
+    mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH;  
     { // --- Debug-Ausgaben ---------------------------------------------------
       char ErrText[ZEILE];
-      sprintf(ErrText, "Error fopen('%s'): Error %d(%s)", LOGFILE, errno, strerror(errno));
+      sprintf(ErrText, " mode_t mode = %o", mode);
+      DEBUG_p("         %s()#%d: %s!\n", __FUNCTION__, __LINE__, ErrText);
+    } // ----------------------------------------------------------------------
+    /*---------------------------------------------------
+      Neue Datei erzeugen                   (O_CREAT)
+      zum Schreiben                         (O_WRONLY)
+      zum Anfügen                           (O_APPEND)
+      falls Datei existiert, nicht erzeugen (O_EXCL)
+      Zugriffsrechte der Datei erteilen     (modus)
+    -----------------------------------------------------*/
+    // Log-Datei öffnen
+    // ----------------
+    int fd_log = open(LOGFILE, O_CREAT | O_APPEND | O_RDWR, mode);
+    if(fd_log == -1) 
+    { // --- Debug-Ausgaben ---------------------------------------------------
+      char ErrText[ZEILE];
+      sprintf(ErrText, "Error open('%s'): Error %d(%s)", LOGFILE, errno, strerror(errno));
       DEBUG_p("         %s()#%d: %s!\n", __FUNCTION__, __LINE__, ErrText);
     } // ----------------------------------------------------------------------
     else
-    {
-      char neueZeile[ZEILE];
-      char aktuelleZeit[NOTIZ];
-      sprintf(neueZeile, "%s- %s.%s()#%d: %s\n",
-                mkdatum(time(0), aktuelleZeit), Program, Function, Line, pLogText);
+    {	// Attribute setzen
+    	// -----------------
+      if(fchmod(fd_log, mode) == -1) 
       { // --- Debug-Ausgaben ---------------------------------------------------
-        DEBUG_p("         %s()#%d: neue Zeile: '%s'!\n",
-                                              __FUNCTION__, __LINE__, neueZeile);
+        char ErrText[ZEILE];
+        sprintf(ErrText, "Error fchmod('%s'): Error %d(%s)", LOGFILE, errno, strerror(errno));
+        DEBUG_p("         %s()#%d: %s!\n", __FUNCTION__, __LINE__, ErrText);
       } // ----------------------------------------------------------------------
-      fputs(neueZeile, logFile);
-      fclose(logFile);
-      status = true;
+			else
+			{	// Inhalte schreiben
+				// -----------------
+        char neueZeile[ZEILE];
+        char aktuelleZeit[NOTIZ];
+        sprintf(neueZeile, "%s- %s.%s()#%d: %s\n",
+                  mkdatum(time(0), aktuelleZeit), Program, Function, Line, pLogText);
+        int size = strlen(neueZeile);
+        if(write(fd_log, neueZeile, size) != size)
+        { // --- Debug-Ausgaben ---------------------------------------------------
+          char ErrText[ZEILE];
+          sprintf(ErrText, "Error write('%s'): Error %d(%s)", LOGFILE, errno, strerror(errno));
+          DEBUG_p("         %s()#%d: %s!\n", __FUNCTION__, __LINE__, ErrText);
+        } // ----------------------------------------------------------------------
+    		// Log-Datei schließen
+    		// -------------------
+        close(fd_log);    
+        status = true;
+    	}
     }
   }
+  // ==============================================================================================
 
   // die Sperre wieder freigeben
   // ---------------------------

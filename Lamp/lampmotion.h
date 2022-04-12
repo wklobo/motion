@@ -20,8 +20,6 @@
 
 #include "../common.h"
 
-//#define FDIR                "/home/pi/motion/aux"
-//#define FPID                "/home/pi/motion/aux/%s.pid"
 #define __LAMP__            "'./Lamp'"
 
 #endif //_LAMPMOTION_H

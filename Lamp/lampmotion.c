@@ -1115,7 +1115,7 @@ int main(int argc, char *argv[])
 
   { // --- Testausgabe --------------------------------------------------------
   	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "*** Start '%s'", PROGNAME);
+    char TestText[ZEILE];  sprintf(TestText, "*** Start '%s' ***", PROGNAME);
 		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
   } // ------------------------------------------------------------------------
 

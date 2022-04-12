@@ -126,10 +126,10 @@ static int delFolders = 0;            // gelöschte Verzeichnisse
 // fügt Informationen ein und ruft Standard-Fehlermeldung auf
 void showMain_Error( char* Message, const char* Func, int Zeile)
 {
-  int errsv = errno;                            // Fehlernummer sicherstellen
+  int  errsave = errno;                            // Fehlernummer sicherstellen
   char ErrText[ERRBUFLEN];
   char Fehler[2*NOTIZ];
-  sprintf( Fehler, "%s - Err %d-%s", Message, errsv, strerror(errsv));
+  sprintf( Fehler, "%s - Err %d-%s", Message,  errsave, strerror( errsave));
   sprintf( ErrText, "%s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
 
   printf("    -- Fehler -->  %s\n", ErrText);   // lokale Fehlerausgabe
@@ -158,13 +158,13 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
  // Fehler wird nur geloggt
 int Error_NonFatal( char* Message, const char* Func, int Zeile)
 {
-  int errsv = errno;                            // Fehlernummer sicherstellen
+  int  errsave = errno;                         // Fehlernummer sicherstellen
   char ErrText[ERRBUFLEN];
   char Fehler[2*NOTIZ];
-  if (errsv == 0)
+  if ( errsave == 0)
     sprintf( Fehler, "%s", Message);            // kein Fehler, nur Meldung
   else
-    sprintf( Fehler, "%s - Err %d-%s", Message, errsv, strerror(errsv));
+    sprintf( Fehler, "%s - Err %d-%s", Message,  errsave, strerror( errsave));
 
   sprintf( ErrText, ">>> %s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
 
@@ -173,7 +173,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
-  if (errsv == 24)                              // 'too many open files' ...
+  if ( errsave == 24)                           // 'too many open files' ...
     report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
 //    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben   --- vorläufig
   else
@@ -185,7 +185,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
-  return errsv;
+  return  errsave;
 }
 //***********************************************************************************************
 
@@ -1323,7 +1323,7 @@ int main(int argc, char *argv[])
 
   { // --- Testausgabe --------------------------------------------------------
   	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "*** Start '%s'", PROGNAME);
+    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
 		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
   } // ------------------------------------------------------------------------
 
@@ -1401,15 +1401,15 @@ int main(int argc, char *argv[])
   }
 
   bool ShowReady = true;
-  DO_FOREVER // *********************** Endlosschleife **************************************
+  DO_FOREVER // *********************** Endlosschleife ********************************************
   {
     feedWatchdog(PROGNAME);
     if (ShowReady)    // nur einmalig anzeigen
-    { // --- Debug-Ausgaben ----------------------------------------------------------------
+    { // --- Debug-Ausgaben -----------------------------------------------------------------------
       #define MELDUNG   "\n>>> %s()#%d: -------------------- bereit  --  @ %s ---------------------\n"
       DEBUG(MELDUNG, __FUNCTION__, __LINE__, __NOW__);
       #undef MELDUNG
-    } // ------------------------------------------------------------------------------------
+    } // ------------------------------------------------------------------------------------------
     ShowReady = false;
     digitalWrite (LED_BLAU, LED_AUS);
     digitalWrite (LED_GRUEN, LED_EIN);
@@ -1426,15 +1426,15 @@ int main(int argc, char *argv[])
       delFiles   = 0;                           // gelöschte Dateien
       delFolders = 0;                           // gelöschte Verzeichnisse
 
-      // === Dateien übertragen ==================================================================
+      // === Dateien übertragen ===================================================================
 
       Startzeit(T_FOLDER);
 
-      // === Daten einlesen ==========================================================================
-      { // --- Log-Ausgabe ---------------------------------------------------------
+      // === Daten einlesen =======================================================================
+      { // --- Log-Ausgabe ------------------------------------------------------------------------
         char LogText[ZEILE];  sprintf(LogText, "    ----- neuer Auftrag ----->>>");
         MYLOG(LogText);
-      } // ------------------------------------------------------------------------
+      } // ---------------------------------------------------------------------------------------
 
       {                                                   // Zeitmessung starten
         #define MELDUNG   "\n>>> %s()#%d: ################ neuer Auftrag @ %s ###############\n"
@@ -1442,7 +1442,7 @@ int main(int argc, char *argv[])
         #undef MELDUNG
       }
       long Items = FileTransfer(puffer, DESTINATION);     // Daten einlesen
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
+      { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n>>> %s()#%d: Items=%ld\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__,Items);
         #undef MELDUNG
@@ -1465,19 +1465,19 @@ int main(int argc, char *argv[])
         UNUSED (fldCount);
         UNUSED (aviCount);
         UNUSED (jpgCount);
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
       UNUSED(Items);
 
-      // === aufräumen ==========================================================================
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
+      // === aufräumen ============================================================================
+      { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n\n>>> %s()#%d: ################## es wird aufgeraeumt ##################\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__);
         #undef MELDUNG
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
 
       Startzeit(T_FOLDER);                                // Zeitmessung starten
       delOldest(DESTINATION);                                   // aufräumen
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
+      { // --- Debug-Ausgaben --------------------------------------------------------------------
         #define MELDUNG   "\n    %s()#%d: -- %d Verzeichnis%s, %d Datei%s in %ld msec geloescht! --\n"
         DEBUG(MELDUNG,  __FUNCTION__, __LINE__, delFolders,(delFolders!=1 ? "se" : ""),
                                                 delFiles,(delFiles!=1 ? "en" : ""),
@@ -1487,42 +1487,43 @@ int main(int argc, char *argv[])
                         __FUNCTION__, __LINE__, delFolders,(delFolders!=1 ? "se" : ""),
                                                 delFiles,(delFiles!=1 ? "en" : ""),
                                                 Zwischenzeit(T_FOLDER));
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
 
-      // === berechnen ===========================================================================
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
+      // === berechnen ============================================================================
+      { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n\n>>> %s()#%d: ################## es wird berechnet ####################\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__);
         #undef MELDUNG
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
 
       Startzeit(T_FOLDER);                                // Zeitmessung starten
       double Speicherplatz = (float)calcSize(DESTINATION)/(1024*1024);
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
+      { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n    %s()#%d: -- Berechnung Speicherplatz: %2.3f MBytes in %ld msec --\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__, Speicherplatz, Zwischenzeit(T_FOLDER));
         #undef MELDUNG
         char LogText[ZEILE];
-        sprintf(LogText, "    %s()#%d: Speicherplatz: %3.1f MB", __FUNCTION__, __LINE__, Speicherplatz);
+        sprintf(LogText, "    %s()#%d: Speicherplatz: %5.1f MB", __FUNCTION__, __LINE__, Speicherplatz);
         syslog(LOG_NOTICE, "%s", LogText);
         MYLOG(LogText);
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
       UNUSED(Speicherplatz);
 
-      // === fertig ==============================================================================
+      // === fertig ===============================================================================
+			double Gesamtzeit = Zwischenzeit(T_GESAMT)/1000;		// in [sec]
 
-      { // --- Debug-Ausgaben ----------------------------------------------------------------
-        #define MELDUNG   "\n\n>>> %s()#%d: ###### done in %ld msec ####################\n\n"
-        DEBUG(MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_GESAMT));
+      { // --- Debug-Ausgaben ---------------------------------------------------------------------
+        #define MELDUNG   "\n\n>>> %s()#%d: ###### done in %5.3f sec ####################\n\n"
+        DEBUG(MELDUNG, __FUNCTION__, __LINE__, Gesamtzeit);
         #undef MELDUNG
-      } // ------------------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
 
-      syslog(LOG_NOTICE, ">>> %s()#%d: <###---  done in %ld msec  ---###>",
-                                                      __FUNCTION__, __LINE__, Zwischenzeit(T_GESAMT));
-      { // --- Log-Ausgabe ---------------------------------------------------------
-        char LogText[ZEILE];  sprintf(LogText, "    <<<----- fertig in %ld msec ---", Zwischenzeit(T_GESAMT));
+      syslog(LOG_NOTICE, ">>> %s()#%d: <###---  done in %3.3f sec  ---###>",
+                                                      __FUNCTION__, __LINE__, Gesamtzeit);
+      { // --- Log-Ausgabe ------------------------------------------------------------------------
+        char LogText[ZEILE];  sprintf(LogText, "    <<<----- fertig in %5.3f sec ---", Gesamtzeit);
         MYLOG(LogText);
-      } // ------------------------------------------------------------------------
+      } // ----------------------------------------------------------------------------------------
 
 
       digitalWrite (LED_GELB, LED_AUS);             // wurde von SqlMotion eingeschaltet!

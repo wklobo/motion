@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-04-06 - 12:07:44                                    *//
+//* Last change:   2022-04-10 - 16:09:45                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -1316,7 +1316,7 @@ Phase_2:
     #undef MELDUNG
     { // --- Log-Ausgabe ---------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
-         "<<< Data ready in %ld msec!", Zwischenzeit(T_ABSCHNITT));
+         "    Data ready in %ld msec!", Zwischenzeit(T_ABSCHNITT));
       MYLOG(LogText);
     } // ------------------------------------------------------------------------
   } // ----------------------------------------------------------

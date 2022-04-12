@@ -1,86 +1,1553 @@
-09.04.2022 10:01:13- SqlMotion.main()#1320: <<< Data ready in 458 msec!
-09.04.2022 10:01:13- SqlMotion.main()#1374: <<< fertig in 461 msec!
-09.04.2022 10:01:28- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2232, User 118, Group 127, Anzahl Argumente: '42'
-09.04.2022 10:01:29- SqlMotion.main()#1320: <<< Data ready in 707 msec!
-09.04.2022 10:01:29- SqlMotion.main()#1374: <<< fertig in 709 msec!
-09.04.2022 10:01:51- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2248, User 118, Group 127, Anzahl Argumente: '99'
-09.04.2022 10:01:53- SqlMotion.main()#1320: <<< Data ready in 1063 msec!
-09.04.2022 10:01:53- SqlMotion.main()#1374: <<< fertig in 1069 msec!
-09.04.2022 10:02:06- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2261, User 118, Group 127, Anzahl Argumente: '34'
-09.04.2022 10:02:15- SqlMotion.main()#1320: <<< Data ready in 1619 msec!
-09.04.2022 10:02:15- SqlMotion.main()#1374: <<< fertig in 8370 msec!
-09.04.2022 10:02:16- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2278, User 118, Group 127, Anzahl Argumente: '22'
-09.04.2022 10:02:19- SqlMotion.main()#1320: <<< Data ready in 2359 msec!
-09.04.2022 10:02:19- SqlMotion.main()#1374: <<< fertig in 2442 msec!
-09.04.2022 10:02:36- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2295, User 118, Group 127, Anzahl Argumente: '75'
-09.04.2022 10:02:37- SqlMotion.main()#1320: <<< Data ready in 771 msec!
-09.04.2022 10:02:37- SqlMotion.main()#1374: <<< fertig in 775 msec!
-09.04.2022 10:02:53- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2309, User 118, Group 127, Anzahl Argumente: '28'
-09.04.2022 10:02:59- SqlMotion.main()#1320: <<< Data ready in 5266 msec!
-09.04.2022 10:02:59- SqlMotion.main()#1374: <<< fertig in 5268 msec!
-09.04.2022 10:04:21- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2324, User 118, Group 127, Anzahl Argumente: '98'
-09.04.2022 10:04:22- SqlMotion.main()#1320: <<< Data ready in 816 msec!
-09.04.2022 10:04:22- SqlMotion.main()#1374: <<< fertig in 827 msec!
-09.04.2022 10:07:13- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2383, User 118, Group 127, Anzahl Argumente: '17'
-09.04.2022 10:07:14- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 2385, User 118, Group 127, Anzahl Argumente: '17'
-09.04.2022 10:07:14- SqlMotion.showMain_Error()#149: <<< CreateDB()#428 @10:07:14 in sqlmotion.c: "Connect -- SQL-Error 2002(Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2))": Exit!
-09.04.2022 10:07:14- SqlMotion.showMain_Error()#149: <<< CreateDB()#428 @10:07:14 in sqlmotion.c: "Connect -- SQL-Error 2002(Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2))": Exit!
-09.04.2022 10:08:16- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 986, User 118, Group 127, Anzahl Argumente: '42'
-09.04.2022 10:08:16- SqlMotion.main()#1320: <<< Data ready in 3 msec!
-09.04.2022 10:08:16- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 10:08:16- SqlMotion.main()#1374: <<< fertig in 4 msec!
-09.04.2022 10:10:02- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1051, User 118, Group 127, Anzahl Argumente: '191'
-09.04.2022 10:10:03- SqlMotion.main()#1320: <<< Data ready in 578 msec!
-09.04.2022 10:10:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 10:10:03- SqlMotion.main()#1374: <<< fertig in 588 msec!
-09.04.2022 10:10:34- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1065, User 118, Group 127, Anzahl Argumente: '70'
-09.04.2022 10:10:35- SqlMotion.main()#1320: <<< Data ready in 524 msec!
-09.04.2022 10:10:35- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 10:10:35- SqlMotion.main()#1374: <<< fertig in 529 msec!
-09.04.2022 11:05:31- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1443, User 118, Group 127, Anzahl Argumente: '102'
-09.04.2022 11:05:32- SqlMotion.main()#1320: <<< Data ready in 554 msec!
-09.04.2022 11:05:32- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:05:32- SqlMotion.main()#1374: <<< fertig in 559 msec!
-09.04.2022 11:05:50- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1462, User 118, Group 127, Anzahl Argumente: '103'
-09.04.2022 11:05:51- SqlMotion.main()#1320: <<< Data ready in 550 msec!
-09.04.2022 11:05:51- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:05:51- SqlMotion.main()#1374: <<< fertig in 579 msec!
-09.04.2022 11:07:08- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1477, User 118, Group 127, Anzahl Argumente: '56'
-09.04.2022 11:07:09- SqlMotion.main()#1320: <<< Data ready in 526 msec!
-09.04.2022 11:07:09- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:07:09- SqlMotion.main()#1374: <<< fertig in 528 msec!
-09.04.2022 11:07:27- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1491, User 118, Group 127, Anzahl Argumente: '104'
-09.04.2022 11:07:28- SqlMotion.main()#1320: <<< Data ready in 591 msec!
-09.04.2022 11:07:28- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:07:28- SqlMotion.main()#1374: <<< fertig in 596 msec!
-09.04.2022 11:13:21- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1568, User 118, Group 127, Anzahl Argumente: '90'
-09.04.2022 11:13:22- SqlMotion.main()#1320: <<< Data ready in 473 msec!
-09.04.2022 11:13:22- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:13:22- SqlMotion.main()#1374: <<< fertig in 477 msec!
-09.04.2022 11:15:33- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1596, User 118, Group 127, Anzahl Argumente: '123'
-09.04.2022 11:15:34- SqlMotion.main()#1320: <<< Data ready in 427 msec!
-09.04.2022 11:15:34- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 11:15:34- SqlMotion.main()#1374: <<< fertig in 434 msec!
-09.04.2022 12:00:13- SqlMotion.main()#744: >>> Vers. 4.3.45/Apr  7 2022
-                   - PID 1797, User 118, Group 127, Anzahl Argumente: '79'
-09.04.2022 12:00:14- SqlMotion.main()#1320: <<< Data ready in 446 msec!
-09.04.2022 12:00:14- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
-09.04.2022 12:00:14- SqlMotion.main()#1374: <<< fertig in 458 msec!
+11.04.2022 18:20:37- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 468, User 1000, Group 1000
+11.04.2022 18:20:37- FifoMotion.main()#1225:     Hostname: 'Vogel'
+11.04.2022 18:20:37- FifoMotion.main()#1235:     meine PID = '468'
+11.04.2022 18:20:37- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+11.04.2022 18:20:37- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+11.04.2022 18:20:37- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+11.04.2022 18:20:39- FifoMotion.main()#1317:     GPIO OK !
+11.04.2022 18:20:39- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @18:20:39 in fifomotion.c: "*** Start 'FifoMotion' ***"
+11.04.2022 18:20:39- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+11.04.2022 18:20:42- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 472, User 1000/1000, Group 1000/1000
+11.04.2022 18:20:42- LampMotion.main()#880:     Hostname: 'Vogel'
+11.04.2022 18:20:42- LampMotion.main()#889:     meine PID = '472'
+11.04.2022 18:20:42- LampMotion.main()#898:     meine IP: '192.168.0.196'
+11.04.2022 18:20:43- LampMotion.main()#938:     GPIO OK !
+11.04.2022 18:20:43- LampMotion.main()#951:     2 DS18B20-Sensoren:
+11.04.2022 18:20:43- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+11.04.2022 18:20:43- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+11.04.2022 18:20:43- LampMotion.main()#976:     Sensor BME280 OK !
+11.04.2022 18:20:43- LampMotion.main()#990:     Sensor TLS2561 OK !
+11.04.2022 18:20:45- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+11.04.2022 18:20:45- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+11.04.2022 18:20:45- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+11.04.2022 18:20:45- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+11.04.2022 18:20:48- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 18:20:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4229/'
+11.04.2022 18:20:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4230/event_1823.info'
+11.04.2022 18:20:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4230/03-20220411181818.mkv'
+11.04.2022 18:20:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4231/'
+11.04.2022 18:20:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4231/01-20220411182043-03.jpg(64437)'
+11.04.2022 18:20:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4231/01-20220411182042.mkv(2289406)'
+11.04.2022 18:20:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4231/event_1824.info(138)'
+11.04.2022 18:22:51- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 466, User 1000, Group 1000, Anzahl Argumente: '6'
+11.04.2022 18:22:51- SqlMotion.main()#1320:     Data ready in 8 msec!
+11.04.2022 18:22:51- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+11.04.2022 18:22:51- SqlMotion.main()#1374: <<< fertig in 9 msec!
+11.04.2022 18:23:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 1935.5 MB
+11.04.2022 18:23:05- FifoMotion.main()#1525:     <<<----- fertig in 136.000 sec ---
+11.04.2022 18:23:05- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 18:23:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4230/'
+11.04.2022 18:23:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4231/01-20220411182043-03.jpg'
+11.04.2022 18:23:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4231/01-20220411182042.mkv'
+11.04.2022 18:23:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4231/event_1824.info'
+11.04.2022 18:23:22- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 1935.5 MB
+11.04.2022 18:23:22- FifoMotion.main()#1525:     <<<----- fertig in 16.000 sec ---
+11.04.2022 20:00:00- LampMotion.main()#1343:       IR-Lampen Aus/Ein
+11.04.2022 20:00:25- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:00:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4232/'
+11.04.2022 20:00:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4232/event_1825.info(138)'
+11.04.2022 20:00:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4232/02-20220411200000.mkv(20728980)'
+11.04.2022 20:00:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4231/'
+11.04.2022 20:01:02- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 1955.3 MB
+11.04.2022 20:01:02- FifoMotion.main()#1525:     <<<----- fertig in 36.000 sec ---
+11.04.2022 20:10:46- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:10:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4232/event_1825.info'
+11.04.2022 20:10:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4232/02-20220411200000.mkv'
+11.04.2022 20:10:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4233/'
+11.04.2022 20:11:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4233/03-20220411201006.mkv(32127109)'
+11.04.2022 20:11:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4233/event_1826.info(138)'
+11.04.2022 20:11:36- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 1986.0 MB
+11.04.2022 20:11:36- FifoMotion.main()#1525:     <<<----- fertig in 49.000 sec ---
+11.04.2022 20:11:36- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:11:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4232/'
+11.04.2022 20:11:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4235/'
+11.04.2022 20:11:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4235/05-20220411201101.mkv(2427844)'
+11.04.2022 20:11:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4235/event_1828.info(138)'
+11.04.2022 20:11:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4236/'
+11.04.2022 20:11:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4236/06-20220411201105.mkv(19231132)'
+11.04.2022 20:11:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4236/event_1829.info(138)'
+11.04.2022 20:11:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4234/'
+11.04.2022 20:11:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4234/event_1827.info(138)'
+11.04.2022 20:11:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4234/04-20220411201042.mkv(2399465)'
+11.04.2022 20:11:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4233/03-20220411201006.mkv'
+11.04.2022 20:11:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4233/event_1826.info'
+11.04.2022 20:12:11- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 2008.9 MB
+11.04.2022 20:12:11- FifoMotion.main()#1525:     <<<----- fertig in 35.000 sec ---
+11.04.2022 20:12:11- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:12:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4235/05-20220411201101.mkv'
+11.04.2022 20:12:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4235/event_1828.info'
+11.04.2022 20:12:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4236/06-20220411201105.mkv'
+11.04.2022 20:12:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4236/event_1829.info'
+11.04.2022 20:12:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4238/'
+11.04.2022 20:12:14- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4238/08-20220411201202.mkv(5437914)'
+11.04.2022 20:12:14- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4238/event_1831.info(138)'
+11.04.2022 20:12:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4234/event_1827.info'
+11.04.2022 20:12:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4234/04-20220411201042.mkv'
+11.04.2022 20:12:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4233/'
+11.04.2022 20:12:14- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4237/'
+11.04.2022 20:12:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4237/07-20220411201130.mkv(13441302)'
+11.04.2022 20:12:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4237/event_1830.info(138)'
+11.04.2022 20:12:44- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 2026.9 MB
+11.04.2022 20:12:44- FifoMotion.main()#1525:     <<<----- fertig in 32.000 sec ---
+11.04.2022 20:12:44- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:12:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4235/'
+11.04.2022 20:12:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4236/'
+11.04.2022 20:12:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4238/08-20220411201202.mkv'
+11.04.2022 20:12:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4238/event_1831.info'
+11.04.2022 20:12:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4239/'
+11.04.2022 20:12:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4239/09-20220411201211.mkv(3925054)'
+11.04.2022 20:12:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4239/event_1832.info(138)'
+11.04.2022 20:12:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4234/'
+11.04.2022 20:12:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4240/'
+11.04.2022 20:12:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4240/event_1833.info(138)'
+11.04.2022 20:12:51- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4240/10-20220411201221.mkv(11436527)'
+11.04.2022 20:12:51- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4237/07-20220411201130.mkv'
+11.04.2022 20:12:51- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4237/event_1830.info'
+11.04.2022 20:13:17- FifoMotion.main()#1508:     main()#1506: Speicherplatz: 2041.6 MB
+11.04.2022 20:13:17- FifoMotion.main()#1525:     <<<----- fertig in 32.000 sec ---
+11.04.2022 20:13:17- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:13:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4238/'
+11.04.2022 20:13:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4239/09-20220411201211.mkv'
+11.04.2022 20:13:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4239/event_1832.info'
+11.04.2022 20:13:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4241/'
+11.04.2022 20:13:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4241/11-20220411201245.mkv(12628751)'
+11.04.2022 20:13:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4241/event_1834.info(138)'
+11.04.2022 20:13:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4240/event_1833.info'
+11.04.2022 20:13:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4240/10-20220411201221.mkv'
+11.04.2022 20:13:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4237/'
+11.04.2022 20:13:44- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -2042.4 MB
+11.04.2022 20:13:44- FifoMotion.main()#1525:     <<<----- fertig in 27.000 sec ---
+11.04.2022 20:13:44- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:13:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4242/'
+11.04.2022 20:13:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4242/12-20220411201315.mkv(6279283)'
+11.04.2022 20:13:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4242/event_1835.info(138)'
+11.04.2022 20:13:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4239/'
+11.04.2022 20:13:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4241/11-20220411201245.mkv'
+11.04.2022 20:13:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4241/event_1834.info'
+11.04.2022 20:13:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4240/'
+11.04.2022 20:14:10- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -2036.4 MB
+11.04.2022 20:14:10- FifoMotion.main()#1525:     <<<----- fertig in 25.000 sec ---
+11.04.2022 20:14:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:14:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4242/12-20220411201315.mkv'
+11.04.2022 20:14:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4242/event_1835.info'
+11.04.2022 20:14:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4243/'
+11.04.2022 20:14:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4243/13-20220411201332.mkv(11574145)'
+11.04.2022 20:14:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4243/event_1836.info(138)'
+11.04.2022 20:14:45- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4241/'
+11.04.2022 20:14:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4244/'
+11.04.2022 20:14:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4244/event_1837.info(138)'
+11.04.2022 20:14:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4244/14-20220411201426.mkv(10466540)'
+11.04.2022 20:15:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -2015.4 MB
+11.04.2022 20:15:05- FifoMotion.main()#1525:     <<<----- fertig in 24.000 sec ---
+11.04.2022 20:15:15- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:15:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4242/'
+11.04.2022 20:15:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4243/13-20220411201332.mkv'
+11.04.2022 20:15:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4243/event_1836.info'
+11.04.2022 20:15:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4244/event_1837.info'
+11.04.2022 20:15:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4244/14-20220411201426.mkv'
+11.04.2022 20:15:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4245/'
+11.04.2022 20:15:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4245/event_1838.info(138)'
+11.04.2022 20:15:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4245/15-20220411201458.mkv(10674805)'
+11.04.2022 20:15:35- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -2005.2 MB
+11.04.2022 20:15:35- FifoMotion.main()#1525:     <<<----- fertig in 19.000 sec ---
+11.04.2022 20:15:35- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:15:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4243/'
+11.04.2022 20:15:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4246/'
+11.04.2022 20:15:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4246/16-20220411201516.mkv(8710277)'
+11.04.2022 20:15:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4246/event_1839.info(138)'
+11.04.2022 20:15:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4244/'
+11.04.2022 20:15:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4245/event_1838.info'
+11.04.2022 20:15:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4245/15-20220411201458.mkv'
+11.04.2022 20:15:54- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1996.9 MB
+11.04.2022 20:15:54- FifoMotion.main()#1525:     <<<----- fertig in 18.000 sec ---
+11.04.2022 20:16:21- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:16:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4246/16-20220411201516.mkv'
+11.04.2022 20:16:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4246/event_1839.info'
+11.04.2022 20:16:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4247/'
+11.04.2022 20:16:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4247/17-20220411201612.mkv(5475031)'
+11.04.2022 20:16:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4247/event_1840.info(138)'
+11.04.2022 20:16:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4245/'
+11.04.2022 20:16:38- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1991.7 MB
+11.04.2022 20:16:38- FifoMotion.main()#1525:     <<<----- fertig in 17.000 sec ---
+11.04.2022 20:18:42- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:18:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4248/'
+11.04.2022 20:18:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4248/event_1841.info(138)'
+11.04.2022 20:18:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4248/18-20220411201837.mkv(1945200)'
+11.04.2022 20:18:43- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4246/'
+11.04.2022 20:18:43- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4247/17-20220411201612.mkv'
+11.04.2022 20:18:43- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4247/event_1840.info'
+11.04.2022 20:19:00- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1989.8 MB
+11.04.2022 20:19:00- FifoMotion.main()#1525:     <<<----- fertig in 17.000 sec ---
+11.04.2022 20:19:00- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:19:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4248/event_1841.info'
+11.04.2022 20:19:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4248/18-20220411201837.mkv'
+11.04.2022 20:19:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4249/'
+11.04.2022 20:19:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4249/19-20220411201843.mkv(9616482)'
+11.04.2022 20:19:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4249/event_1842.info(138)'
+11.04.2022 20:19:03- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4247/'
+11.04.2022 20:19:21- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1980.7 MB
+11.04.2022 20:19:21- FifoMotion.main()#1525:     <<<----- fertig in 20.000 sec ---
+11.04.2022 20:23:32- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:23:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4248/'
+11.04.2022 20:23:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4249/19-20220411201843.mkv'
+11.04.2022 20:23:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4249/event_1842.info'
+11.04.2022 20:23:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4250/'
+11.04.2022 20:23:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4250/20-20220411202325.mkv(4099670)'
+11.04.2022 20:23:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4250/event_1843.info(138)'
+11.04.2022 20:23:51- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1976.7 MB
+11.04.2022 20:23:51- FifoMotion.main()#1525:     <<<----- fertig in 19.000 sec ---
+11.04.2022 20:23:51- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:23:51- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4251/'
+11.04.2022 20:23:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4251/21-20220411202332.mkv(2167661)'
+11.04.2022 20:23:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4251/event_1844.info(138)'
+11.04.2022 20:23:54- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4249/'
+11.04.2022 20:23:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4252/'
+11.04.2022 20:23:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4252/22-20220411202341.mkv(3664635)'
+11.04.2022 20:23:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4252/event_1845.info(138)'
+11.04.2022 20:23:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4250/20-20220411202325.mkv'
+11.04.2022 20:23:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4250/event_1843.info'
+11.04.2022 20:24:23- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1971.2 MB
+11.04.2022 20:24:23- FifoMotion.main()#1525:     <<<----- fertig in 31.000 sec ---
+11.04.2022 20:24:23- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:24:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4251/21-20220411202332.mkv'
+11.04.2022 20:24:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4251/event_1844.info'
+11.04.2022 20:24:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4252/22-20220411202341.mkv'
+11.04.2022 20:24:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4252/event_1845.info'
+11.04.2022 20:24:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4250/'
+11.04.2022 20:24:23- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4253/'
+11.04.2022 20:24:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4253/23-20220411202353.mkv(5989848)'
+11.04.2022 20:24:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4253/event_1846.info(138)'
+11.04.2022 20:24:52- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1965.5 MB
+11.04.2022 20:24:52- FifoMotion.main()#1525:     <<<----- fertig in 28.000 sec ---
+11.04.2022 20:24:52- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:24:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4254/'
+11.04.2022 20:24:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4254/event_1847.info(138)'
+11.04.2022 20:24:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4254/24-20220411202410.mkv(10948147)'
+11.04.2022 20:24:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4251/'
+11.04.2022 20:24:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4252/'
+11.04.2022 20:24:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4255/'
+11.04.2022 20:25:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4255/25-20220411202435.mkv(9683953)'
+11.04.2022 20:25:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4255/event_1848.info(138)'
+11.04.2022 20:25:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4253/23-20220411202353.mkv'
+11.04.2022 20:25:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4253/event_1846.info'
+11.04.2022 20:24:13- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 501, User 1000, Group 1000
+11.04.2022 20:24:13- FifoMotion.main()#1225:     Hostname: 'Vogel'
+11.04.2022 20:24:13- FifoMotion.main()#1235:     meine PID = '501'
+11.04.2022 20:24:13- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+11.04.2022 20:24:13- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+11.04.2022 20:24:13- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+11.04.2022 20:24:15- FifoMotion.main()#1317:     GPIO OK !
+11.04.2022 20:24:15- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @20:24:15 in fifomotion.c: "*** Start 'FifoMotion' ***"
+11.04.2022 20:24:15- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+11.04.2022 20:24:18- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 483, User 1000/1000, Group 1000/1000
+11.04.2022 20:24:18- LampMotion.main()#880:     Hostname: 'Vogel'
+11.04.2022 20:24:18- LampMotion.main()#889:     meine PID = '483'
+11.04.2022 20:24:18- LampMotion.main()#898:     meine IP: '192.168.0.196'
+11.04.2022 20:24:19- LampMotion.main()#938:     GPIO OK !
+11.04.2022 20:24:19- LampMotion.main()#951:     2 DS18B20-Sensoren:
+11.04.2022 20:24:19- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+11.04.2022 20:24:19- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+11.04.2022 20:24:19- LampMotion.main()#976:     Sensor BME280 OK !
+11.04.2022 20:24:19- LampMotion.main()#990:     Sensor TLS2561 OK !
+11.04.2022 20:24:21- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+11.04.2022 20:24:21- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+11.04.2022 20:24:21- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+11.04.2022 20:24:21- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+11.04.2022 20:24:23- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:24:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4266/'
+11.04.2022 20:40:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4266/36-20220411203616.mkv(10015739)'
+11.04.2022 20:40:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4266/event_1859.info(138)'
+11.04.2022 20:40:27- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4254/event_1847.info'
+11.04.2022 20:40:27- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4254/24-20220411202410.mkv'
+11.04.2022 20:40:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4271/'
+11.04.2022 20:40:27- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 494, User 1000, Group 1000, Anzahl Argumente: '55'
+11.04.2022 20:40:29- SqlMotion.main()#1320:     Data ready in 735 msec!
+11.04.2022 20:40:29- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+11.04.2022 20:40:29- SqlMotion.main()#1374: <<< fertig in 740 msec!
+11.04.2022 20:40:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4271/41-20220411203835.mkv(9003082)'
+11.04.2022 20:40:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4271/event_1864.info(138)'
+11.04.2022 20:40:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4257/'
+11.04.2022 20:40:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4257/event_1850.info(138)'
+11.04.2022 20:40:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4257/27-20220411202716.mkv(6062461)'
+11.04.2022 20:40:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4260/'
+11.04.2022 20:40:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4260/event_1853.info(138)'
+11.04.2022 20:40:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4260/30-20220411203508.mkv(1935997)'
+11.04.2022 20:40:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4264/'
+11.04.2022 20:40:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4264/34-20220411203546.mkv(6774297)'
+11.04.2022 20:40:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4264/event_1857.info(138)'
+11.04.2022 20:40:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4258/'
+11.04.2022 20:40:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4258/event_1851.info(138)'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4258/28-20220411202723.mkv(9138205)'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4274/'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4274/event_1867.info(138)'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4274/01-20220411202418.mkv(765420)'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4270/'
+11.04.2022 20:40:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4270/event_1863.info(138)'
+11.04.2022 20:40:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4270/40-20220411203808.mkv(6731931)'
+11.04.2022 20:40:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4268/'
+11.04.2022 20:40:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4268/38-20220411203714.mkv(2553591)'
+11.04.2022 20:40:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4268/event_1861.info(138)'
+11.04.2022 20:40:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4259/'
+11.04.2022 20:40:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4259/29-20220411203008.mkv(2596966)'
+11.04.2022 20:40:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4259/event_1852.info(138)'
+11.04.2022 20:40:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4265/'
+11.04.2022 20:40:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4265/35-20220411203603.mkv(10006076)'
+11.04.2022 20:40:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4265/event_1858.info(138)'
+11.04.2022 20:40:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4269/'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4269/39-20220411203801.mkv(4675297)'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4269/event_1862.info(138)'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4262/'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4262/event_1855.info(138)'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4262/32-20220411203516.mkv(2181635)'
+11.04.2022 20:40:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4263/'
+11.04.2022 20:40:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4263/33-20220411203527.mkv(1973940)'
+11.04.2022 20:40:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4263/event_1856.info(138)'
+11.04.2022 20:40:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4256/'
+11.04.2022 20:40:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4256/event_1849.info(138)'
+11.04.2022 20:40:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4256/26-20220411202552.mkv(10004027)'
+11.04.2022 20:40:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4261/'
+11.04.2022 20:40:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4261/event_1854.info(138)'
+11.04.2022 20:40:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4261/31-20220411203512.mkv(1946022)'
+11.04.2022 20:40:48- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4255/25-20220411202435.mkv'
+11.04.2022 20:40:48- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4255/event_1848.info'
+11.04.2022 20:40:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4272/'
+11.04.2022 20:40:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4272/event_1865.info(138)'
+11.04.2022 20:40:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4272/42-20220411203858.mkv(8210829)'
+11.04.2022 20:40:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4273/'
+11.04.2022 20:40:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4273/event_1866.info(0)'
+11.04.2022 20:40:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4273/43-20220411203911.mkv(4194304)'
+11.04.2022 20:40:50- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4253/'
+11.04.2022 20:40:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4267/'
+11.04.2022 20:40:51- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4267/37-20220411203641.mkv(1958600)'
+11.04.2022 20:40:51- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4267/event_1860.info(138)'
+11.04.2022 20:41:32- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1849.7 MB
+11.04.2022 20:41:32- FifoMotion.main()#1525:     <<<----- fertig in 1028.000 sec ---
+11.04.2022 20:41:32- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:41:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4266/36-20220411203616.mkv'
+11.04.2022 20:41:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4266/event_1859.info'
+11.04.2022 20:41:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4254/'
+11.04.2022 20:41:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4271/41-20220411203835.mkv'
+11.04.2022 20:41:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4271/event_1864.info'
+11.04.2022 20:41:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4276/'
+11.04.2022 20:41:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4276/event_1869.info(138)'
+11.04.2022 20:41:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4276/03-20220411204029.mkv(9978897)'
+11.04.2022 20:41:34- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4257/event_1850.info'
+11.04.2022 20:41:34- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4257/27-20220411202716.mkv'
+11.04.2022 20:41:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4275/'
+11.04.2022 20:41:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4275/02-20220411202421.mkv(5313558)'
+11.04.2022 20:41:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4275/event_1868.info(138)'
+11.04.2022 20:41:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4275/02-20220411202422-02.jpg(64936)'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4260/event_1853.info'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4260/30-20220411203508.mkv'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4264/34-20220411203546.mkv'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4264/event_1857.info'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4258/event_1851.info'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4258/28-20220411202723.mkv'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4274/event_1867.info'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4274/01-20220411202418.mkv'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4270/event_1863.info'
+11.04.2022 20:41:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4270/40-20220411203808.mkv'
+11.04.2022 20:41:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4277/'
+11.04.2022 20:41:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4277/04-20220411204108.mkv(1943156)'
+11.04.2022 20:41:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4277/event_1870.info(138)'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4268/38-20220411203714.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4268/event_1861.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4259/29-20220411203008.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4259/event_1852.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4265/35-20220411203603.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4265/event_1858.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4269/39-20220411203801.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4269/event_1862.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4262/event_1855.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4262/32-20220411203516.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4263/33-20220411203527.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4263/event_1856.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4256/event_1849.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4256/26-20220411202552.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4261/event_1854.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4261/31-20220411203512.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4255/'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4272/event_1865.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4272/42-20220411203858.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4273/event_1866.info'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4273/43-20220411203911.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4267/37-20220411203641.mkv'
+11.04.2022 20:41:36- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4267/event_1860.info'
+11.04.2022 20:42:16- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1833.2 MB
+11.04.2022 20:42:16- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 20:42:16- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4266/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4271/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4276/event_1869.info'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4276/03-20220411204029.mkv'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4257/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4275/02-20220411202421.mkv'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4275/event_1868.info'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4275/02-20220411202422-02.jpg'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4260/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4264/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4258/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4274/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4270/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4277/04-20220411204108.mkv'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4277/event_1870.info'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4268/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4259/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4265/'
+11.04.2022 20:42:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4269/'
+11.04.2022 20:42:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4278/'
+11.04.2022 20:42:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4278/05-20220411204133.mkv(2757884)'
+11.04.2022 20:42:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4278/event_1871.info(138)'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4262/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4263/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4256/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4261/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4272/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4273/'
+11.04.2022 20:42:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4267/'
+11.04.2022 20:42:56- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1830.6 MB
+11.04.2022 20:42:56- FifoMotion.main()#1525:     <<<----- fertig in 39.000 sec ---
+11.04.2022 20:42:56- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:42:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4276/'
+11.04.2022 20:42:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4275/'
+11.04.2022 20:42:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4277/'
+11.04.2022 20:42:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4278/05-20220411204133.mkv'
+11.04.2022 20:42:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4278/event_1871.info'
+11.04.2022 20:42:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4280/'
+11.04.2022 20:42:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4280/event_1873.info(138)'
+11.04.2022 20:42:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4280/07-20220411204249.mkv(2724248)'
+11.04.2022 20:42:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4279/'
+11.04.2022 20:42:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4279/06-20220411204226.mkv(6829486)'
+11.04.2022 20:42:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4279/event_1872.info(138)'
+11.04.2022 20:43:35- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1821.5 MB
+11.04.2022 20:43:35- FifoMotion.main()#1525:     <<<----- fertig in 39.000 sec ---
+11.04.2022 20:43:35- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:43:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4281/'
+11.04.2022 20:43:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4281/event_1874.info(138)'
+11.04.2022 20:43:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4281/08-20220411204325.mkv(5578758)'
+11.04.2022 20:43:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4278/'
+11.04.2022 20:43:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4280/event_1873.info'
+11.04.2022 20:43:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4280/07-20220411204249.mkv'
+11.04.2022 20:43:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4279/06-20220411204226.mkv'
+11.04.2022 20:43:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4279/event_1872.info'
+11.04.2022 20:44:15- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1816.2 MB
+11.04.2022 20:44:15- FifoMotion.main()#1525:     <<<----- fertig in 39.000 sec ---
+11.04.2022 20:44:47- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:44:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4281/event_1874.info'
+11.04.2022 20:44:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4281/08-20220411204325.mkv'
+11.04.2022 20:44:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4280/'
+11.04.2022 20:44:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4282/'
+11.04.2022 20:44:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4282/09-20220411204442.mkv(2096445)'
+11.04.2022 20:44:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4282/event_1875.info(138)'
+11.04.2022 20:44:48- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4279/'
+11.04.2022 20:45:31- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1814.2 MB
+11.04.2022 20:45:31- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 20:48:57- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:48:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4281/'
+11.04.2022 20:48:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4283/'
+11.04.2022 20:48:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4283/10-20220411204850.mkv(3067302)'
+11.04.2022 20:48:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4283/event_1876.info(138)'
+11.04.2022 20:48:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4282/09-20220411204442.mkv'
+11.04.2022 20:48:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4282/event_1875.info'
+11.04.2022 20:49:37- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1811.2 MB
+11.04.2022 20:49:37- FifoMotion.main()#1525:     <<<----- fertig in 40.000 sec ---
+11.04.2022 20:51:16- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:51:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4284/'
+11.04.2022 20:51:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4284/event_1877.info(138)'
+11.04.2022 20:51:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4284/11-20220411205106.mkv(5510443)'
+11.04.2022 20:51:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4283/10-20220411204850.mkv'
+11.04.2022 20:51:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4283/event_1876.info'
+11.04.2022 20:51:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4282/'
+11.04.2022 20:51:57- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1806.0 MB
+11.04.2022 20:51:57- FifoMotion.main()#1525:     <<<----- fertig in 41.000 sec ---
+11.04.2022 20:51:57- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:51:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4285/'
+11.04.2022 20:51:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4285/12-20220411205114.mkv(1479549)'
+11.04.2022 20:51:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4285/event_1878.info(138)'
+11.04.2022 20:51:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4286/'
+11.04.2022 20:51:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4286/13-20220411205140.mkv(2049201)'
+11.04.2022 20:51:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4286/event_1879.info(138)'
+11.04.2022 20:51:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4284/event_1877.info'
+11.04.2022 20:51:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4284/11-20220411205106.mkv'
+11.04.2022 20:51:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4283/'
+11.04.2022 20:52:41- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1802.6 MB
+11.04.2022 20:52:41- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 20:52:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:52:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4285/12-20220411205114.mkv'
+11.04.2022 20:52:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4285/event_1878.info'
+11.04.2022 20:52:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4286/13-20220411205140.mkv'
+11.04.2022 20:52:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4286/event_1879.info'
+11.04.2022 20:52:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4288/'
+11.04.2022 20:52:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4288/15-20220411205219.mkv(8270048)'
+11.04.2022 20:52:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4288/event_1881.info(138)'
+11.04.2022 20:52:43- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4284/'
+11.04.2022 20:52:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4287/'
+11.04.2022 20:52:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4287/14-20220411205212.mkv(5417904)'
+11.04.2022 20:52:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4287/event_1880.info(138)'
+11.04.2022 20:53:25- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1789.6 MB
+11.04.2022 20:53:25- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 20:53:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4285/'
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4286/'
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4288/15-20220411205219.mkv'
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4288/event_1881.info'
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4287/14-20220411205212.mkv'
+11.04.2022 20:53:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4287/event_1880.info'
+11.04.2022 20:53:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4289/'
+11.04.2022 20:53:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4289/16-20220411205336.mkv(1894941)'
+11.04.2022 20:53:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4289/event_1882.info(138)'
+11.04.2022 20:54:18- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1787.8 MB
+11.04.2022 20:54:18- FifoMotion.main()#1525:     <<<----- fertig in 37.000 sec ---
+11.04.2022 20:59:57- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 20:59:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4288/'
+11.04.2022 20:59:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4287/'
+11.04.2022 20:59:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4289/16-20220411205336.mkv'
+11.04.2022 20:59:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4289/event_1882.info'
+11.04.2022 20:59:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4290/'
+11.04.2022 20:59:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4290/17-20220411205951.mkv(1893452)'
+11.04.2022 20:59:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4290/event_1883.info(138)'
+11.04.2022 21:00:40- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1786.0 MB
+11.04.2022 21:00:40- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 21:10:59- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:10:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4291/'
+11.04.2022 21:10:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4291/event_1884.info(138)'
+11.04.2022 21:10:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4291/18-20220411211054.mkv(1882034)'
+11.04.2022 21:10:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4289/'
+11.04.2022 21:10:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4290/17-20220411205951.mkv'
+11.04.2022 21:10:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4290/event_1883.info'
+11.04.2022 21:11:41- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1784.2 MB
+11.04.2022 21:11:41- FifoMotion.main()#1525:     <<<----- fertig in 41.000 sec ---
+11.04.2022 21:11:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:11:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4292/'
+11.04.2022 21:11:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4292/19-20220411211107.mkv(2528165)'
+11.04.2022 21:11:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4292/event_1885.info(138)'
+11.04.2022 21:11:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4291/event_1884.info'
+11.04.2022 21:11:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4291/18-20220411211054.mkv'
+11.04.2022 21:11:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4290/'
+11.04.2022 21:12:21- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1781.8 MB
+11.04.2022 21:12:21- FifoMotion.main()#1525:     <<<----- fertig in 40.000 sec ---
+11.04.2022 21:17:17- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:17:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4292/19-20220411211107.mkv'
+11.04.2022 21:17:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4292/event_1885.info'
+11.04.2022 21:17:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4291/'
+11.04.2022 21:17:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4293/'
+11.04.2022 21:17:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4293/event_1886.info(138)'
+11.04.2022 21:17:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4293/20-20220411211706.mkv(6551027)'
+11.04.2022 21:17:58- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1775.5 MB
+11.04.2022 21:17:58- FifoMotion.main()#1525:     <<<----- fertig in 41.000 sec ---
+11.04.2022 21:18:27- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:18:27- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4292/'
+11.04.2022 21:18:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4294/'
+11.04.2022 21:18:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4294/event_1887.info(138)'
+11.04.2022 21:18:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4294/21-20220411211821.mkv(2298667)'
+11.04.2022 21:18:28- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4293/event_1886.info'
+11.04.2022 21:18:28- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4293/20-20220411211706.mkv'
+11.04.2022 21:19:07- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1773.3 MB
+11.04.2022 21:19:07- FifoMotion.main()#1525:     <<<----- fertig in 39.000 sec ---
+11.04.2022 21:19:24- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:19:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4294/event_1887.info'
+11.04.2022 21:19:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4294/21-20220411211821.mkv'
+11.04.2022 21:19:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4294/'
+11.04.2022 21:19:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4295/'
+11.04.2022 21:19:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4295/event_1888.info(138)'
+11.04.2022 21:19:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4295/22-20220411211918.mkv(2520011)'
+11.04.2022 21:19:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4293/'
+11.04.2022 21:26:05- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 528, User 1000, Group 1000
+11.04.2022 21:26:05- FifoMotion.main()#1225:     Hostname: 'Vogel'
+11.04.2022 21:26:05- FifoMotion.main()#1235:     meine PID = '528'
+11.04.2022 21:26:05- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+11.04.2022 21:26:05- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+11.04.2022 21:26:05- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+11.04.2022 21:26:07- FifoMotion.main()#1317:     GPIO OK !
+11.04.2022 21:26:07- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @21:26:07 in fifomotion.c: "*** Start 'FifoMotion' ***"
+11.04.2022 21:26:07- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+11.04.2022 21:26:10- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 533, User 1000/1000, Group 1000/1000
+11.04.2022 21:26:10- LampMotion.main()#880:     Hostname: 'Vogel'
+11.04.2022 21:26:10- LampMotion.main()#889:     meine PID = '533'
+11.04.2022 21:26:10- LampMotion.main()#898:     meine IP: '192.168.0.196'
+11.04.2022 21:26:11- LampMotion.main()#938:     GPIO OK !
+11.04.2022 21:26:11- LampMotion.main()#951:     2 DS18B20-Sensoren:
+11.04.2022 21:26:11- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+11.04.2022 21:26:11- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+11.04.2022 21:26:11- LampMotion.main()#976:     Sensor BME280 OK !
+11.04.2022 21:26:11- LampMotion.main()#990:     Sensor TLS2561 OK !
+11.04.2022 21:26:13- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+11.04.2022 21:26:13- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+11.04.2022 21:26:13- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+11.04.2022 21:26:13- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+11.04.2022 21:26:15- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:26:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4304/'
+11.04.2022 21:36:45- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 530, User 1000, Group 1000, Anzahl Argumente: '49'
+11.04.2022 21:36:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4304/31-20220411212623.mkv(7954342)'
+11.04.2022 21:36:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4304/event_1897.info(138)'
+11.04.2022 21:36:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4303/'
+11.04.2022 21:36:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4303/30-20220411212432.mkv(2672675)'
+11.04.2022 21:36:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4303/event_1896.info(138)'
+11.04.2022 21:36:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4298/'
+11.04.2022 21:36:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4298/event_1891.info(138)'
+11.04.2022 21:36:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4298/25-20220411212030.mkv(3343526)'
+11.04.2022 21:36:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4296/'
+11.04.2022 21:36:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4296/event_1889.info(138)'
+11.04.2022 21:36:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4296/23-20220411212000.mkv(2297616)'
+11.04.2022 21:36:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4300/'
+11.04.2022 21:36:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4300/27-20220411212353.mkv(8360893)'
+11.04.2022 21:36:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4300/event_1893.info(138)'
+11.04.2022 21:36:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4301/'
+11.04.2022 21:36:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4301/28-20220411212407.mkv(1839331)'
+11.04.2022 21:36:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4301/event_1894.info(138)'
+11.04.2022 21:36:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4307/'
+11.04.2022 21:36:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4307/event_1900.info(138)'
+11.04.2022 21:36:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4307/34-20220411212949.mkv(9457898)'
+11.04.2022 21:36:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4310/'
+11.04.2022 21:36:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4310/event_1903.info(138)'
+11.04.2022 21:36:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4310/01-20220411212610.mkv(707717)'
+11.04.2022 21:36:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4299/'
+11.04.2022 21:37:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4299/26-20220411212235.mkv(4543803)'
+11.04.2022 21:37:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4299/event_1892.info(138)'
+11.04.2022 21:37:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4295/event_1888.info'
+11.04.2022 21:37:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4295/22-20220411211918.mkv'
+11.04.2022 21:37:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4309/'
+11.04.2022 21:37:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4309/event_1902.info(138)'
+11.04.2022 21:37:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4309/36-20220411213506.mkv(9495584)'
+11.04.2022 21:37:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4305/'
+11.04.2022 21:37:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4305/event_1898.info(138)'
+11.04.2022 21:37:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4305/32-20220411212735.mkv(4083757)'
+11.04.2022 21:37:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4306/'
+11.04.2022 21:37:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4306/event_1899.info(138)'
+11.04.2022 21:37:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4306/33-20220411212852.mkv(3254710)'
+11.04.2022 21:37:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4297/'
+11.04.2022 21:37:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4297/24-20220411212016.mkv(2558117)'
+11.04.2022 21:37:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4297/event_1890.info(138)'
+11.04.2022 21:37:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4308/'
+11.04.2022 21:37:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4308/event_1901.info(138)'
+11.04.2022 21:37:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4308/35-20220411213254.mkv(2095873)'
+11.04.2022 21:37:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4302/'
+11.04.2022 21:37:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4302/29-20220411212422.mkv(3282423)'
+11.04.2022 21:37:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4302/event_1895.info(138)'
+11.04.2022 21:37:51- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1708.0 MB
+11.04.2022 21:37:51- FifoMotion.main()#1525:     <<<----- fertig in 696.000 sec ---
+11.04.2022 21:37:51- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:37:51- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4304/31-20220411212623.mkv'
+11.04.2022 21:37:51- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4304/event_1897.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4303/30-20220411212432.mkv'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4303/event_1896.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4298/event_1891.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4298/25-20220411212030.mkv'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4296/event_1889.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4296/23-20220411212000.mkv'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4300/27-20220411212353.mkv'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4300/event_1893.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4301/28-20220411212407.mkv'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4301/event_1894.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4307/event_1900.info'
+11.04.2022 21:37:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4307/34-20220411212949.mkv'
+11.04.2022 21:37:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4313/'
+11.04.2022 21:37:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4313/event_1906.info(138)'
+11.04.2022 21:37:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4313/04-20220411213711.mkv(14017824)'
+11.04.2022 21:37:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4312/'
+11.04.2022 21:37:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4312/event_1905.info(135)'
+11.04.2022 21:37:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4312/03-20220411212618.mkv(2362068)'
+11.04.2022 21:37:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4310/event_1903.info'
+11.04.2022 21:37:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4310/01-20220411212610.mkv'
+11.04.2022 21:37:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4299/26-20220411212235.mkv'
+11.04.2022 21:37:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4299/event_1892.info'
+11.04.2022 21:37:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4295/'
+11.04.2022 21:37:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4311/'
+11.04.2022 21:37:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4311/event_1904.info(138)'
+11.04.2022 21:37:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4311/02-20220411212613.mkv(5120260)'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4309/event_1902.info'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4309/36-20220411213506.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4305/event_1898.info'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4305/32-20220411212735.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4306/event_1899.info'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4306/33-20220411212852.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4297/24-20220411212016.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4297/event_1890.info'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4308/event_1901.info'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4308/35-20220411213254.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4302/29-20220411212422.mkv'
+11.04.2022 21:37:58- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4302/event_1895.info'
+11.04.2022 21:38:42- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1687.5 MB
+11.04.2022 21:38:42- FifoMotion.main()#1525:     <<<----- fertig in 50.000 sec ---
+11.04.2022 21:38:42- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4304/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4303/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4298/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4296/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4300/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4301/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4307/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4313/event_1906.info'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4313/04-20220411213711.mkv'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4312/event_1905.info'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4312/03-20220411212618.mkv'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4310/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4299/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4311/event_1904.info'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4311/02-20220411212613.mkv'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4309/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4305/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4306/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4297/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4308/'
+11.04.2022 21:38:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4302/'
+11.04.2022 21:38:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4314/'
+11.04.2022 21:38:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4314/05-20220411213813.mkv(2986539)'
+11.04.2022 21:38:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4314/event_1907.info(138)'
+11.04.2022 21:39:36- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1684.7 MB
+11.04.2022 21:39:36- FifoMotion.main()#1525:     <<<----- fertig in 53.000 sec ---
+11.04.2022 21:41:53- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:41:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4313/'
+11.04.2022 21:41:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4312/'
+11.04.2022 21:41:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4311/'
+11.04.2022 21:41:53- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4315/'
+11.04.2022 21:41:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4315/06-20220411214142.mkv(6614819)'
+11.04.2022 21:41:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4315/event_1908.info(138)'
+11.04.2022 21:41:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4314/05-20220411213813.mkv'
+11.04.2022 21:41:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4314/event_1907.info'
+11.04.2022 21:42:37- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1678.4 MB
+11.04.2022 21:42:37- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 21:43:54- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:43:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4316/'
+11.04.2022 21:43:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4316/07-20220411214348.mkv(3374576)'
+11.04.2022 21:43:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4316/event_1909.info(138)'
+11.04.2022 21:43:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4315/06-20220411214142.mkv'
+11.04.2022 21:43:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4315/event_1908.info'
+11.04.2022 21:43:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4314/'
+11.04.2022 21:44:37- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1675.1 MB
+11.04.2022 21:44:37- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+11.04.2022 21:44:37- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:44:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4317/'
+11.04.2022 21:44:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4317/08-20220411214352.mkv(3132319)'
+11.04.2022 21:44:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4317/event_1910.info(138)'
+11.04.2022 21:44:38- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4316/07-20220411214348.mkv'
+11.04.2022 21:44:38- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4316/event_1909.info'
+11.04.2022 21:44:38- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4315/'
+11.04.2022 21:45:21- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1672.1 MB
+11.04.2022 21:45:21- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 21:47:22- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:47:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4317/08-20220411214352.mkv'
+11.04.2022 21:47:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4317/event_1910.info'
+11.04.2022 21:47:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4318/'
+11.04.2022 21:47:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4318/event_1911.info(138)'
+11.04.2022 21:47:23- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4318/09-20220411214716.mkv(2552585)'
+11.04.2022 21:47:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4316/'
+11.04.2022 21:48:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1669.7 MB
+11.04.2022 21:48:05- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 21:49:29- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:49:29- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4317/'
+11.04.2022 21:49:29- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4318/event_1911.info'
+11.04.2022 21:49:29- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4318/09-20220411214716.mkv'
+11.04.2022 21:49:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4319/'
+11.04.2022 21:49:30- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4319/10-20220411214922.mkv(3371191)'
+11.04.2022 21:49:30- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4319/event_1912.info(138)'
+11.04.2022 21:50:11- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1666.5 MB
+11.04.2022 21:50:11- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+11.04.2022 21:50:12- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:50:12- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4318/'
+11.04.2022 21:50:12- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4319/10-20220411214922.mkv'
+11.04.2022 21:50:12- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4319/event_1912.info'
+11.04.2022 21:50:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4320/'
+11.04.2022 21:50:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4320/event_1913.info(138)'
+11.04.2022 21:50:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4320/11-20220411214928.mkv(1912948)'
+11.04.2022 21:50:56- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1664.7 MB
+11.04.2022 21:50:56- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 21:50:56- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:50:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4319/'
+11.04.2022 21:50:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4321/'
+11.04.2022 21:50:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4321/12-20220411215043.mkv(2307467)'
+11.04.2022 21:50:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4321/event_1914.info(138)'
+11.04.2022 21:50:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4320/event_1913.info'
+11.04.2022 21:50:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4320/11-20220411214928.mkv'
+11.04.2022 21:51:39- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1662.5 MB
+11.04.2022 21:51:39- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 21:51:39- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:51:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4322/'
+11.04.2022 21:51:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4322/13-20220411215100.mkv(6311268)'
+11.04.2022 21:51:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4322/event_1915.info(138)'
+11.04.2022 21:51:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4321/12-20220411215043.mkv'
+11.04.2022 21:51:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4321/event_1914.info'
+11.04.2022 21:51:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4320/'
+11.04.2022 21:52:23- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1656.5 MB
+11.04.2022 21:52:23- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+11.04.2022 21:55:21- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:55:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4322/13-20220411215100.mkv'
+11.04.2022 21:55:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4322/event_1915.info'
+11.04.2022 21:55:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4321/'
+11.04.2022 21:55:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4323/'
+11.04.2022 21:55:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4323/event_1916.info(138)'
+11.04.2022 21:55:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4323/14-20220411215516.mkv(2111621)'
+11.04.2022 21:56:07- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1654.4 MB
+11.04.2022 21:56:07- FifoMotion.main()#1525:     <<<----- fertig in 45.000 sec ---
+11.04.2022 21:57:18- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:57:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4324/'
+11.04.2022 21:57:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4324/15-20220411215712.mkv(2133624)'
+11.04.2022 21:57:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4324/event_1917.info(138)'
+11.04.2022 21:57:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4322/'
+11.04.2022 21:57:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4323/event_1916.info'
+11.04.2022 21:57:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4323/14-20220411215516.mkv'
+11.04.2022 21:58:02- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1652.4 MB
+11.04.2022 21:58:02- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+11.04.2022 21:59:32- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 21:59:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4324/15-20220411215712.mkv'
+11.04.2022 21:59:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4324/event_1917.info'
+11.04.2022 21:59:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4325/'
+11.04.2022 21:59:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4325/16-20220411215926.mkv(2117610)'
+11.04.2022 21:59:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4325/event_1918.info(138)'
+11.04.2022 21:59:33- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4323/'
+11.04.2022 22:00:00- LampMotion.main()#1343:       IR-Lampen Aus/Ein
+11.04.2022 22:00:14- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1650.4 MB
+11.04.2022 22:00:14- FifoMotion.main()#1525:     <<<----- fertig in 41.000 sec ---
+11.04.2022 22:00:25- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:00:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4324/'
+11.04.2022 22:00:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4325/16-20220411215926.mkv'
+11.04.2022 22:00:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4325/event_1918.info'
+11.04.2022 22:00:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4326/'
+11.04.2022 22:02:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4326/event_1919.info(138)'
+11.04.2022 22:03:07- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4326/17-20220411220010.mkv(9355999)'
+11.04.2022 22:03:07- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4326/17-20220411220011-02.jpg(67651)'
+11.04.2022 22:07:07- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1641.4 MB
+11.04.2022 22:07:07- FifoMotion.main()#1525:     <<<----- fertig in 401.000 sec ---
+11.04.2022 22:07:07- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:07:07- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4331/'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4331/22-20220411220522.mkv(3673733)'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4331/event_1924.info(138)'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4327/'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4327/event_1920.info(138)'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4327/18-20220411220029.mkv(2693436)'
+11.04.2022 22:07:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4329/'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4329/20-20220411220408.mkv(1906264)'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4329/event_1922.info(138)'
+11.04.2022 22:07:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4325/'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4328/'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4328/19-20220411220242.mkv(1896498)'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4328/event_1921.info(138)'
+11.04.2022 22:07:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4326/event_1919.info'
+11.04.2022 22:07:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4326/17-20220411220010.mkv'
+11.04.2022 22:07:16- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4326/17-20220411220011-02.jpg'
+11.04.2022 22:07:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4330/'
+11.04.2022 22:07:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4330/event_1923.info(138)'
+11.04.2022 22:07:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4330/21-20220411220515.mkv(3478366)'
+11.04.2022 22:08:34- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1628.4 MB
+11.04.2022 22:08:34- FifoMotion.main()#1525:     <<<----- fertig in 87.000 sec ---
+11.04.2022 22:08:34- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:08:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4334/'
+11.04.2022 22:08:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4334/25-20220411220816.mkv(10744118)'
+11.04.2022 22:08:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4334/event_1927.info(138)'
+11.04.2022 22:08:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4331/22-20220411220522.mkv'
+11.04.2022 22:08:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4331/event_1924.info'
+11.04.2022 22:08:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4327/event_1920.info'
+11.04.2022 22:08:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4327/18-20220411220029.mkv'
+11.04.2022 22:08:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4332/'
+11.04.2022 22:08:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4332/event_1925.info(138)'
+11.04.2022 22:08:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4332/23-20220411220748.mkv(10037197)'
+11.04.2022 22:08:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4333/'
+11.04.2022 22:08:54- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4333/event_1926.info(138)'
+11.04.2022 22:08:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4333/24-20220411220801.mkv(9480640)'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4329/20-20220411220408.mkv'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4329/event_1922.info'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4328/19-20220411220242.mkv'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4328/event_1921.info'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4326/'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4330/event_1923.info'
+11.04.2022 22:08:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4330/21-20220411220515.mkv'
+11.04.2022 22:17:20- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 451, User 1000, Group 1000
+11.04.2022 22:17:20- FifoMotion.main()#1225:     Hostname: 'Vogel'
+11.04.2022 22:17:20- FifoMotion.main()#1235:     meine PID = '451'
+11.04.2022 22:17:20- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+11.04.2022 22:17:20- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+11.04.2022 22:17:20- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+11.04.2022 22:17:22- FifoMotion.main()#1317:     GPIO OK !
+11.04.2022 22:17:22- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @22:17:22 in fifomotion.c: "*** Start 'FifoMotion' ***"
+11.04.2022 22:17:22- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+11.04.2022 22:17:25- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 454, User 1000/1000, Group 1000/1000
+11.04.2022 22:17:25- LampMotion.main()#880:     Hostname: 'Vogel'
+11.04.2022 22:17:25- LampMotion.main()#889:     meine PID = '454'
+11.04.2022 22:17:25- LampMotion.main()#898:     meine IP: '192.168.0.196'
+11.04.2022 22:17:26- LampMotion.main()#938:     GPIO OK !
+11.04.2022 22:17:26- LampMotion.main()#951:     2 DS18B20-Sensoren:
+11.04.2022 22:17:26- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+11.04.2022 22:17:26- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+11.04.2022 22:17:26- LampMotion.main()#976:     Sensor BME280 OK !
+11.04.2022 22:17:26- LampMotion.main()#990:     Sensor TLS2561 OK !
+11.04.2022 22:17:28- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+11.04.2022 22:17:28- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+11.04.2022 22:17:28- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+11.04.2022 22:17:28- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+11.04.2022 22:17:30- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:17:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4345/'
+11.04.2022 22:17:34- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4345/event_1938.info(138)'
+11.04.2022 22:25:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4345/36-20220411221358.mkv(1817351)'
+11.04.2022 22:25:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4335/'
+11.04.2022 22:25:55- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 459, User 1000, Group 1000, Anzahl Argumente: '47'
+11.04.2022 22:25:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4335/event_1928.info(138)'
+11.04.2022 22:25:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4335/26-20220411220913.mkv(1876264)'
+11.04.2022 22:25:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4334/25-20220411220816.mkv'
+11.04.2022 22:25:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4334/event_1927.info'
+11.04.2022 22:25:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4331/'
+11.04.2022 22:25:55- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4327/'
+11.04.2022 22:25:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4349/'
+11.04.2022 22:25:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4349/01-20220411221725.mkv(937488)'
+11.04.2022 22:25:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4349/event_1942.info(138)'
+11.04.2022 22:25:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4332/event_1925.info'
+11.04.2022 22:25:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4332/23-20220411220748.mkv'
+11.04.2022 22:25:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4333/event_1926.info'
+11.04.2022 22:25:56- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4333/24-20220411220801.mkv'
+11.04.2022 22:25:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4337/'
+11.04.2022 22:25:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4337/28-20220411220952.mkv(2786015)'
+11.04.2022 22:25:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4337/event_1930.info(138)'
+11.04.2022 22:25:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4339/'
+11.04.2022 22:25:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4339/30-20220411221030.mkv(3687672)'
+11.04.2022 22:25:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4339/event_1932.info(138)'
+11.04.2022 22:25:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4329/'
+11.04.2022 22:25:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4344/'
+11.04.2022 22:25:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4344/event_1937.info(138)'
+11.04.2022 22:26:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4344/35-20220411221349.mkv(2860405)'
+11.04.2022 22:26:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4336/'
+11.04.2022 22:26:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4336/27-20220411220947.mkv(3424455)'
+11.04.2022 22:26:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4336/event_1929.info(138)'
+11.04.2022 22:26:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4348/'
+11.04.2022 22:26:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4348/event_1941.info(138)'
+11.04.2022 22:26:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4348/39-20220411222422.mkv(9683659)'
+11.04.2022 22:26:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4340/'
+11.04.2022 22:26:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4340/31-20220411221053.mkv(18091364)'
+11.04.2022 22:26:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4340/event_1933.info(138)'
+11.04.2022 22:26:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4328/'
+11.04.2022 22:26:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4343/'
+11.04.2022 22:26:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4343/34-20220411221250.mkv(4696890)'
+11.04.2022 22:26:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4343/event_1936.info(138)'
+11.04.2022 22:26:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4346/'
+11.04.2022 22:26:12- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4346/event_1939.info(138)'
+11.04.2022 22:26:14- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4346/37-20220411221602.mkv(3029418)'
+11.04.2022 22:26:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4347/'
+11.04.2022 22:26:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4347/38-20220411222025.mkv(7757332)'
+11.04.2022 22:26:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4347/event_1940.info(138)'
+11.04.2022 22:26:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4338/'
+11.04.2022 22:26:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4338/event_1931.info(138)'
+11.04.2022 22:26:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4338/29-20220411221023.mkv(5429886)'
+11.04.2022 22:26:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4330/'
+11.04.2022 22:26:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4341/'
+11.04.2022 22:26:20- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4341/32-20220411221210.mkv(2504094)'
+11.04.2022 22:26:20- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4341/event_1934.info(138)'
+11.04.2022 22:26:20- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4342/'
+11.04.2022 22:26:20- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4342/event_1935.info(138)'
+11.04.2022 22:26:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4342/33-20220411221213.mkv(9648385)'
+11.04.2022 22:27:04- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1524.9 MB
+11.04.2022 22:27:04- FifoMotion.main()#1525:     <<<----- fertig in 573.000 sec ---
+11.04.2022 22:27:04- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4345/event_1938.info'
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4345/36-20220411221358.mkv'
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4335/event_1928.info'
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4335/26-20220411220913.mkv'
+11.04.2022 22:27:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4353/'
+11.04.2022 22:27:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4353/event_1946.info(138)'
+11.04.2022 22:27:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4353/05-20220411222629.mkv(1982082)'
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4334/'
+11.04.2022 22:27:04- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4349/01-20220411221725.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4349/event_1942.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4349/'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4332/'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4333/'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4352/'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4352/event_1945.info(138)'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4352/04-20220411222620.mkv(2439498)'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4351/'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4351/event_1944.info(135)'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4351/03-20220411221731.mkv(785031)'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4337/28-20220411220952.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4337/event_1930.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4339/30-20220411221030.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4339/event_1932.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4344/event_1937.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4344/35-20220411221349.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4336/27-20220411220947.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4336/event_1929.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4348/event_1941.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4348/39-20220411222422.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4340/31-20220411221053.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4340/event_1933.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4343/34-20220411221250.mkv'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4343/event_1936.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4346/event_1939.info'
+11.04.2022 22:27:05- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4346/37-20220411221602.mkv'
+11.04.2022 22:27:05- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4350/'
+11.04.2022 22:27:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4350/02-20220411221728.mkv(3144010)'
+11.04.2022 22:27:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4350/event_1943.info(138)'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4347/38-20220411222025.mkv'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4347/event_1940.info'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4338/event_1931.info'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4338/29-20220411221023.mkv'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4341/32-20220411221210.mkv'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4341/event_1934.info'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4342/event_1935.info'
+11.04.2022 22:27:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4342/33-20220411221213.mkv'
+11.04.2022 22:27:50- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1516.9 MB
+11.04.2022 22:27:50- FifoMotion.main()#1525:     <<<----- fertig in 45.000 sec ---
+11.04.2022 22:29:59- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4345/'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4335/'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4353/event_1946.info'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4353/05-20220411222629.mkv'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4352/event_1945.info'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4352/04-20220411222620.mkv'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4351/event_1944.info'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4351/03-20220411221731.mkv'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4337/'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4339/'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4344/'
+11.04.2022 22:29:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4336/'
+11.04.2022 22:29:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4354/'
+11.04.2022 22:30:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4354/06-20220411222944.mkv(9943451)'
+11.04.2022 22:30:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4354/event_1947.info(138)'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4348/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4340/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4343/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4346/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4350/02-20220411221728.mkv'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4350/event_1943.info'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4347/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4338/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4341/'
+11.04.2022 22:30:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4342/'
+11.04.2022 22:30:49- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1507.5 MB
+11.04.2022 22:30:49- FifoMotion.main()#1525:     <<<----- fertig in 49.000 sec ---
+11.04.2022 22:30:49- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+11.04.2022 22:30:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4353/'
+11.04.2022 22:30:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4352/'
+11.04.2022 22:30:49- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4351/'
+11.04.2022 22:30:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4355/'
+11.04.2022 22:31:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4355/07-20220411223001.mkv(12298464)'
+11.04.2022 22:31:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-11/Event_4355/event_1948.info(138)'
+11.04.2022 22:31:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4354/06-20220411222944.mkv'
+11.04.2022 22:31:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4354/event_1947.info'
+11.04.2022 22:31:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4350/'
+11.04.2022 22:31:32- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1495.7 MB
+11.04.2022 22:31:32- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+11.04.2022 22:42:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1546 @22:42:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' missing! - Err 2-No such file or directory"
+11.04.2022 22:42:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1573 @22:42:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' wieder da"
+11.04.2022 22:44:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1546 @22:44:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' missing! - Err 2-No such file or directory"
+11.04.2022 22:44:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1573 @22:44:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' wieder da"
+12.04.2022 05:10:14- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:10:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4355/07-20220411223001.mkv'
+12.04.2022 05:10:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4355/event_1948.info'
+12.04.2022 05:10:14- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4354/'
+12.04.2022 05:10:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/'
+12.04.2022 05:10:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4356/'
+12.04.2022 05:10:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4356/08-20220412 51000.mkv(8963979)'
+12.04.2022 05:10:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4356/event_1949.info(138)'
+12.04.2022 05:10:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4356/08-20220412 51001-01.jpg(64472)'
+12.04.2022 05:11:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1487.1 MB
+12.04.2022 05:11:05- FifoMotion.main()#1525:     <<<----- fertig in 51.000 sec ---
+12.04.2022 05:17:17- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:17:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4357/'
+12.04.2022 05:17:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4357/09-20220412 51711.mkv(2889592)'
+12.04.2022 05:17:18- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4357/event_1950.info(138)'
+12.04.2022 05:17:18- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4355/'
+12.04.2022 05:17:18- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4356/08-20220412 51000.mkv'
+12.04.2022 05:17:18- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4356/event_1949.info'
+12.04.2022 05:17:18- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4356/08-20220412 51001-01.jpg'
+12.04.2022 05:17:59- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1484.4 MB
+12.04.2022 05:17:59- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+12.04.2022 05:18:00- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:18:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4357/09-20220412 51711.mkv'
+12.04.2022 05:18:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4357/event_1950.info'
+12.04.2022 05:18:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4358/'
+12.04.2022 05:18:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4358/10-20220412 51719.mkv(2948314)'
+12.04.2022 05:18:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4358/event_1951.info(138)'
+12.04.2022 05:18:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4356/'
+12.04.2022 05:18:37- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1481.6 MB
+12.04.2022 05:18:37- FifoMotion.main()#1525:     <<<----- fertig in 37.000 sec ---
+12.04.2022 05:18:37- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:18:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4357/'
+12.04.2022 05:18:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4358/10-20220412 51719.mkv'
+12.04.2022 05:18:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4358/event_1951.info'
+12.04.2022 05:18:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4359/'
+12.04.2022 05:18:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4359/11-20220412 51802.mkv(13835523)'
+12.04.2022 05:18:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4359/event_1952.info(138)'
+12.04.2022 05:19:17- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1468.4 MB
+12.04.2022 05:19:17- FifoMotion.main()#1525:     <<<----- fertig in 39.000 sec ---
+12.04.2022 05:27:22- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:27:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4358/'
+12.04.2022 05:27:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4359/11-20220412 51802.mkv'
+12.04.2022 05:27:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4359/event_1952.info'
+12.04.2022 05:27:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4360/'
+12.04.2022 05:27:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4360/event_1953.info(138)'
+12.04.2022 05:27:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4360/12-20220412 52627.mkv(29933012)'
+12.04.2022 05:28:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1439.8 MB
+12.04.2022 05:28:05- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+12.04.2022 05:29:23- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:29:23- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4361/'
+12.04.2022 05:29:24- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4361/13-20220412 52914.mkv(2720321)'
+12.04.2022 05:29:24- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4361/event_1954.info(138)'
+12.04.2022 05:29:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4359/'
+12.04.2022 05:29:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4360/event_1953.info'
+12.04.2022 05:29:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4360/12-20220412 52627.mkv'
+12.04.2022 05:30:05- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1437.2 MB
+12.04.2022 05:30:05- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+12.04.2022 05:49:06- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:49:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4361/13-20220412 52914.mkv'
+12.04.2022 05:49:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4361/event_1954.info'
+12.04.2022 05:49:06- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4360/'
+12.04.2022 05:49:06- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4362/'
+12.04.2022 05:49:10- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4362/14-20220412 54858.mkv(4102066)'
+12.04.2022 05:49:10- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4362/event_1955.info(138)'
+12.04.2022 05:49:37- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1433.3 MB
+12.04.2022 05:49:37- FifoMotion.main()#1525:     <<<----- fertig in 30.000 sec ---
+12.04.2022 05:50:37- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:50:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4361/'
+12.04.2022 05:50:37- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4362/14-20220412 54858.mkv'
+12.04.2022 05:50:38- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4362/event_1955.info'
+12.04.2022 05:50:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4363/'
+12.04.2022 05:50:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4363/15-20220412 55027.mkv(5253065)'
+12.04.2022 05:50:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4363/event_1956.info(138)'
+12.04.2022 05:51:02- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1428.3 MB
+12.04.2022 05:51:02- FifoMotion.main()#1525:     <<<----- fertig in 24.000 sec ---
+12.04.2022 05:56:17- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:56:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4364/'
+12.04.2022 05:56:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4364/event_1957.info(138)'
+12.04.2022 05:56:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4364/16-20220412 55556.mkv(13314515)'
+12.04.2022 05:56:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4362/'
+12.04.2022 05:56:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4363/15-20220412 55027.mkv'
+12.04.2022 05:56:22- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4363/event_1956.info'
+12.04.2022 05:56:43- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1415.6 MB
+12.04.2022 05:56:43- FifoMotion.main()#1525:     <<<----- fertig in 26.000 sec ---
+12.04.2022 06:00:00- LampMotion.main()#1343:       IR-Lampen Aus/Ein
+12.04.2022 06:00:24- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:00:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4364/event_1957.info'
+12.04.2022 06:00:24- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4364/16-20220412 55556.mkv'
+12.04.2022 06:00:24- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4365/'
+12.04.2022 06:00:26- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4365/17-20220412 60010.mkv(9264194)'
+12.04.2022 06:00:26- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4365/event_1958.info(138)'
+12.04.2022 06:00:26- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4363/'
+12.04.2022 06:00:51- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1406.8 MB
+12.04.2022 06:00:51- FifoMotion.main()#1525:     <<<----- fertig in 26.000 sec ---
+12.04.2022 06:00:57- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:00:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4364/'
+12.04.2022 06:00:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4366/'
+12.04.2022 06:00:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4366/event_1959.info(138)'
+12.04.2022 06:01:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4366/18-20220412 60038.mkv(11944966)'
+12.04.2022 06:01:01- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4365/17-20220412 60010.mkv'
+12.04.2022 06:01:01- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4365/event_1958.info'
+12.04.2022 06:01:21- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1395.4 MB
+12.04.2022 06:01:21- FifoMotion.main()#1525:     <<<----- fertig in 23.000 sec ---
+12.04.2022 06:01:21- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:01:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4366/event_1959.info'
+12.04.2022 06:01:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4366/18-20220412 60038.mkv'
+12.04.2022 06:01:21- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4365/'
+12.04.2022 06:01:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4367/'
+12.04.2022 06:01:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4367/19-20220412 60114.mkv(3328425)'
+12.04.2022 06:01:22- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4367/event_1960.info(138)'
+12.04.2022 06:01:40- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1392.2 MB
+12.04.2022 06:01:40- FifoMotion.main()#1525:     <<<----- fertig in 19.000 sec ---
+12.04.2022 06:02:19- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:02:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4366/'
+12.04.2022 06:02:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4367/19-20220412 60114.mkv'
+12.04.2022 06:02:19- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4367/event_1960.info'
+12.04.2022 06:02:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4368/'
+12.04.2022 06:02:19- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4368/event_1961.info(138)'
+12.04.2022 06:02:21- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4368/20-20220412 60209.mkv(6443534)'
+12.04.2022 05:49:27- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 497, User 1000, Group 1000
+12.04.2022 05:49:27- FifoMotion.main()#1225:     Hostname: 'Vogel'
+12.04.2022 05:49:27- FifoMotion.main()#1235:     meine PID = '497'
+12.04.2022 05:49:27- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+12.04.2022 05:49:27- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+12.04.2022 05:49:27- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+12.04.2022 05:49:28- FifoMotion.main()#1317:     GPIO OK !
+12.04.2022 05:49:28- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @05:49:28 in fifomotion.c: "*** Start 'FifoMotion' ***"
+12.04.2022 05:49:28- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+12.04.2022 05:49:32- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 505, User 1000/1000, Group 1000/1000
+12.04.2022 05:49:32- LampMotion.main()#880:     Hostname: 'Vogel'
+12.04.2022 05:49:32- LampMotion.main()#889:     meine PID = '505'
+12.04.2022 05:49:32- LampMotion.main()#898:     meine IP: '192.168.0.196'
+12.04.2022 05:49:33- LampMotion.main()#938:     GPIO OK !
+12.04.2022 05:49:33- LampMotion.main()#951:     2 DS18B20-Sensoren:
+12.04.2022 05:49:33- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+12.04.2022 05:49:33- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+12.04.2022 05:49:33- LampMotion.main()#976:     Sensor BME280 OK !
+12.04.2022 05:49:33- LampMotion.main()#990:     Sensor TLS2561 OK !
+12.04.2022 05:49:35- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+12.04.2022 05:49:35- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+12.04.2022 05:49:35- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+12.04.2022 05:49:35- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+12.04.2022 05:49:38- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 05:49:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4369/'
+12.04.2022 05:49:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4369/event_1962.info(138)'
+12.04.2022 06:17:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4369/21-20220412 60247.mkv(5181532)'
+12.04.2022 06:17:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4387/'
+12.04.2022 06:17:32- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 501, User 1000, Group 1000, Anzahl Argumente: '53'
+12.04.2022 06:17:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4387/01-20220412 54932.mkv(1754608)'
+12.04.2022 06:17:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4387/event_1980.info(138)'
+12.04.2022 06:17:32- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4384/'
+12.04.2022 06:17:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4384/36-20220412 61149.mkv(4466953)'
+12.04.2022 06:17:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4384/event_1977.info(138)'
+12.04.2022 06:17:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4370/'
+12.04.2022 06:17:33- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4370/event_1963.info(138)'
+12.04.2022 06:17:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4370/22-20220412 60354.mkv(17118693)'
+12.04.2022 06:17:36- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4378/'
+12.04.2022 06:17:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4378/30-20220412 60826.mkv(2196880)'
+12.04.2022 06:17:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4378/event_1971.info(138)'
+12.04.2022 06:17:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4383/'
+12.04.2022 06:17:37- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4383/event_1976.info(138)'
+12.04.2022 06:17:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4383/35-20220412 61117.mkv(8451980)'
+12.04.2022 06:17:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4376/'
+12.04.2022 06:17:39- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4376/event_1969.info(138)'
+12.04.2022 06:17:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4376/28-20220412 60748.mkv(14560061)'
+12.04.2022 06:17:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4386/'
+12.04.2022 06:17:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4386/38-20220412 61252.mkv(1955960)'
+12.04.2022 06:17:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4386/event_1979.info(138)'
+12.04.2022 06:17:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4373/'
+12.04.2022 06:17:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4373/25-20220412 60502.mkv(16839736)'
+12.04.2022 06:17:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4373/event_1966.info(138)'
+12.04.2022 06:17:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4367/'
+12.04.2022 06:17:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4371/'
+12.04.2022 06:17:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4371/event_1964.info(138)'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4371/23-20220412 60421.mkv(6524979)'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4377/'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4377/29-20220412 60816.mkv(1943305)'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4377/event_1970.info(138)'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4381/'
+12.04.2022 06:17:48- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4381/event_1974.info(138)'
+12.04.2022 06:17:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4381/33-20220412 60944.mkv(10473176)'
+12.04.2022 06:17:50- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4382/'
+12.04.2022 06:17:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4382/34-20220412 61047.mkv(8869507)'
+12.04.2022 06:17:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4382/event_1975.info(138)'
+12.04.2022 06:17:53- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4375/'
+12.04.2022 06:17:53- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4375/event_1968.info(138)'
+12.04.2022 06:17:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4375/27-20220412 60701.mkv(13754727)'
+12.04.2022 06:17:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4379/'
+12.04.2022 06:17:55- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4379/event_1972.info(138)'
+12.04.2022 06:17:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4379/31-20220412 60904.mkv(2977827)'
+12.04.2022 06:17:56- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4372/'
+12.04.2022 06:17:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4372/24-20220412 60430.mkv(1810822)'
+12.04.2022 06:17:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4372/event_1965.info(135)'
+12.04.2022 06:17:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4368/event_1961.info'
+12.04.2022 06:17:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4368/20-20220412 60209.mkv'
+12.04.2022 06:17:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4374/'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4374/26-20220412 60546.mkv(4506413)'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4374/event_1967.info(138)'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4380/'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4380/32-20220412 60909.mkv(1750692)'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4380/event_1973.info(138)'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4385/'
+12.04.2022 06:17:58- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4385/37-20220412 61206.mkv(1950951)'
+12.04.2022 06:17:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4385/event_1978.info(138)'
+12.04.2022 06:18:44- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1264.9 MB
+12.04.2022 06:18:44- FifoMotion.main()#1525:     <<<----- fertig in 1746.000 sec ---
+12.04.2022 06:18:44- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4369/event_1962.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4369/21-20220412 60247.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4387/01-20220412 54932.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4387/event_1980.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4384/36-20220412 61149.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4384/event_1977.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4370/event_1963.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4370/22-20220412 60354.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4378/30-20220412 60826.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4378/event_1971.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4383/event_1976.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4383/35-20220412 61117.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4376/event_1969.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4376/28-20220412 60748.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4386/38-20220412 61252.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4386/event_1979.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4373/25-20220412 60502.mkv'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4373/event_1966.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4371/event_1964.info'
+12.04.2022 06:18:44- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4371/23-20220412 60421.mkv'
+12.04.2022 06:18:44- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4388/'
+12.04.2022 06:18:45- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4388/02-20220412 54935.mkv(5140335)'
+12.04.2022 06:18:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4388/event_1981.info(138)'
+12.04.2022 06:18:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4377/29-20220412 60816.mkv'
+12.04.2022 06:18:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4377/event_1970.info'
+12.04.2022 06:18:46- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4381/event_1974.info'
+12.04.2022 06:18:46- FifoMotion.Deleted()#202:     gelöscht: '/home/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             12.04.2022 06:18:19- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 499, User 1000, Group 1000
+12.04.2022 06:18:19- FifoMotion.main()#1225:     Hostname: 'Vogel'
+12.04.2022 06:18:19- FifoMotion.main()#1235:     meine PID = '499'
+12.04.2022 06:18:19- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+12.04.2022 06:18:19- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+12.04.2022 06:18:19- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+12.04.2022 06:18:21- FifoMotion.main()#1317:     GPIO OK !
+12.04.2022 06:18:21- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @06:18:21 in fifomotion.c: "*** Start 'FifoMotion' ***"
+12.04.2022 06:18:21- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+12.04.2022 06:18:24- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 502, User 1000/1000, Group 1000/1000
+12.04.2022 06:18:24- LampMotion.main()#880:     Hostname: 'Vogel'
+12.04.2022 06:18:24- LampMotion.main()#889:     meine PID = '502'
+12.04.2022 06:18:24- LampMotion.main()#898:     meine IP: '192.168.0.196'
+12.04.2022 06:18:25- LampMotion.main()#938:     GPIO OK !
+12.04.2022 06:18:25- LampMotion.main()#951:     2 DS18B20-Sensoren:
+12.04.2022 06:18:25- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+12.04.2022 06:18:25- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+12.04.2022 06:18:25- LampMotion.main()#976:     Sensor BME280 OK !
+12.04.2022 06:18:25- LampMotion.main()#990:     Sensor TLS2561 OK !
+12.04.2022 06:18:27- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+12.04.2022 06:18:27- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+12.04.2022 06:18:27- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+12.04.2022 06:18:27- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+12.04.2022 06:19:38- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 497, User 1000, Group 1000, Anzahl Argumente: '64'
+12.04.2022 06:19:40- SqlMotion.main()#1320:     Data ready in 737 msec!
+12.04.2022 06:19:40- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+12.04.2022 06:19:40- SqlMotion.main()#1374: <<< fertig in 740 msec!
+12.04.2022 06:19:40- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4369/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4387/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4384/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4370/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4378/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4383/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4376/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4386/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4373/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4371/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4388/02-20220412 54935.mkv'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4388/event_1981.info'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4377/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4381/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4389/event_1982.info'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4389/03-20220412 54940.mkv'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4382/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4375/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4379/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4372/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4374/'
+12.04.2022 06:19:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4380/'
+12.04.2022 06:19:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4390/'
+12.04.2022 06:19:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4390/01-20220412 61824.mkv(8430514)'
+12.04.2022 06:19:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4390/event_1983.info(138)'
+12.04.2022 06:19:43- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4385/'
+12.04.2022 06:20:53- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1249.7 MB
+12.04.2022 06:20:53- FifoMotion.main()#1525:     <<<----- fertig in 73.000 sec ---
+12.04.2022 06:20:53- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:20:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4388/'
+12.04.2022 06:20:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4389/'
+12.04.2022 06:20:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4390/01-20220412 61824.mkv'
+12.04.2022 06:20:53- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4390/event_1983.info'
+12.04.2022 06:21:38- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1249.7 MB
+12.04.2022 06:21:38- FifoMotion.main()#1525:     <<<----- fertig in 45.000 sec ---
+12.04.2022 06:23:29- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:23:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4391/'
+12.04.2022 06:23:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4391/02-20220412 62318.mkv(6357647)'
+12.04.2022 06:23:31- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4391/event_1984.info(138)'
+12.04.2022 06:23:31- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4390/'
+12.04.2022 06:24:19- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1243.6 MB
+12.04.2022 06:24:19- FifoMotion.main()#1525:     <<<----- fertig in 50.000 sec ---
+12.04.2022 06:24:25- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:24:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4391/02-20220412 62318.mkv'
+12.04.2022 06:24:25- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4391/event_1984.info'
+12.04.2022 06:24:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4392/'
+12.04.2022 06:24:25- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4392/event_1985.info(138)'
+12.04.2022 06:24:27- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4392/03-20220412 62417.mkv(4353428)'
+12.04.2022 06:25:09- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1239.5 MB
+12.04.2022 06:25:09- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+12.04.2022 06:25:16- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:25:16- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4393/'
+12.04.2022 06:25:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4393/04-20220412 62509.mkv(3722531)'
+12.04.2022 06:25:17- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4393/event_1986.info(138)'
+12.04.2022 06:25:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4391/'
+12.04.2022 06:25:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4392/event_1985.info'
+12.04.2022 06:25:17- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4392/03-20220412 62417.mkv'
+12.04.2022 06:26:00- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1235.9 MB
+12.04.2022 06:26:00- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+12.04.2022 06:26:00- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:26:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4393/04-20220412 62509.mkv'
+12.04.2022 06:26:00- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4393/event_1986.info'
+12.04.2022 06:26:00- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4394/'
+12.04.2022 06:26:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4394/05-20220412 62546.mkv(7982922)'
+12.04.2022 06:26:02- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4394/event_1987.info(138)'
+12.04.2022 06:26:02- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4392/'
+12.04.2022 06:26:43- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1228.3 MB
+12.04.2022 06:26:43- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+12.04.2022 06:27:01- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:27:01- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4393/'
+12.04.2022 06:27:01- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4394/05-20220412 62546.mkv'
+12.04.2022 06:27:01- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4394/event_1987.info'
+12.04.2022 06:27:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4395/'
+12.04.2022 06:27:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4395/event_1988.info(138)'
+12.04.2022 06:27:03- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4395/06-20220412 62648.mkv(7289645)'
+12.04.2022 06:27:49- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1221.3 MB
+12.04.2022 06:27:49- FifoMotion.main()#1525:     <<<----- fertig in 48.000 sec ---
+12.04.2022 06:30:15- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:30:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4394/'
+12.04.2022 06:30:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4396/'
+12.04.2022 06:30:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4396/event_1989.info(138)'
+12.04.2022 06:30:20- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4396/07-20220412 62933.mkv(25449686)'
+12.04.2022 06:30:20- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4395/event_1988.info'
+12.04.2022 06:30:20- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4395/06-20220412 62648.mkv'
+12.04.2022 06:31:04- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1197.1 MB
+12.04.2022 06:31:04- FifoMotion.main()#1525:     <<<----- fertig in 49.000 sec ---
+12.04.2022 06:31:04- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:31:04- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4397/'
+12.04.2022 06:31:07- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4397/08-20220412 63049.mkv(3060419)'
+12.04.2022 06:31:07- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4397/event_1990.info(138)'
+12.04.2022 06:31:07- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4396/event_1989.info'
+12.04.2022 06:31:07- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4396/07-20220412 62933.mkv'
+12.04.2022 06:31:07- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4395/'
+12.04.2022 06:31:47- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1194.2 MB
+12.04.2022 06:31:47- FifoMotion.main()#1525:     <<<----- fertig in 42.000 sec ---
+12.04.2022 06:31:47- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:31:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4397/08-20220412 63049.mkv'
+12.04.2022 06:31:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4397/event_1990.info'
+12.04.2022 06:31:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4398/'
+12.04.2022 06:31:47- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4398/event_1991.info(138)'
+12.04.2022 06:31:52- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4398/09-20220412 63100.mkv(10053226)'
+12.04.2022 06:31:52- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4396/'
+12.04.2022 06:32:32- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1184.6 MB
+12.04.2022 06:32:32- FifoMotion.main()#1525:     <<<----- fertig in 44.000 sec ---
+12.04.2022 06:32:32- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:32:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4397/'
+12.04.2022 06:32:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4398/event_1991.info'
+12.04.2022 06:32:32- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4398/09-20220412 63100.mkv'
+12.04.2022 06:32:38- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4399/'
+12.04.2022 06:32:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4399/10-20220412 63139.mkv(6950683)'
+12.04.2022 06:32:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4399/event_1992.info(138)'
+12.04.2022 06:33:24- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1177.9 MB
+12.04.2022 06:33:24- FifoMotion.main()#1525:     <<<----- fertig in 51.000 sec ---
+12.04.2022 06:33:24- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 06:33:24- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4400/'
+12.04.2022 06:33:24- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4400/event_1993.info(138)'
+12.04.2022 06:33:46- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4400/11-20220412 63221.mkv(29299086)'
+12.04.2022 06:33:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4398/'
+12.04.2022 06:33:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4399/10-20220412 63139.mkv'
+12.04.2022 06:33:47- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4399/event_1992.info'
+12.04.2022 06:34:24- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1150.0 MB
+12.04.2022 06:34:24- FifoMotion.main()#1525:     <<<----- fertig in 60.000 sec ---
+12.04.2022 06:46:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1546 @06:46:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' missing! - Err 2-No such file or directory"
+12.04.2022 06:46:00- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1573 @06:46:00 in fifomotion.c: "'/home/pi/motion/pix/lastsnap.jpg' wieder da"
+12.04.2022 08:00:00- LampMotion.main()#1343:       IR-Lampen Aus/Ein
+12.04.2022 08:00:09- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:00:09- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4401/'
+12.04.2022 08:00:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4401/12-20220412 80000.mkv(5838721)'
+12.04.2022 08:00:11- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4401/event_1994.info(138)'
+12.04.2022 08:00:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4400/event_1993.info'
+12.04.2022 08:00:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4400/11-20220412 63221.mkv'
+12.04.2022 08:00:11- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4399/'
+12.04.2022 08:00:59- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1144.4 MB
+12.04.2022 08:00:59- FifoMotion.main()#1525:     <<<----- fertig in 49.000 sec ---
+12.04.2022 08:00:59- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:00:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4401/12-20220412 80000.mkv'
+12.04.2022 08:00:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4401/event_1994.info'
+12.04.2022 08:00:59- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4400/'
+12.04.2022 08:00:59- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4402/'
+12.04.2022 08:01:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4402/13-20220412 80010.mkv(7421259)'
+12.04.2022 08:01:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4402/13-20220412 80011-02.jpg(66857)'
+12.04.2022 08:01:01- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4402/event_1995.info(138)'
+12.04.2022 08:01:45- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1137.3 MB
+12.04.2022 08:01:45- FifoMotion.main()#1525:     <<<----- fertig in 46.000 sec ---
+12.04.2022 08:42:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:42:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4401/'
+12.04.2022 08:42:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4402/13-20220412 80010.mkv'
+12.04.2022 08:42:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4402/13-20220412 80011-02.jpg'
+12.04.2022 08:42:41- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4402/event_1995.info'
+12.04.2022 08:42:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4403/'
+12.04.2022 08:42:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4403/14-20220412 84204.mkv(27197303)'
+12.04.2022 08:42:49- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4403/event_1996.info(138)'
+12.04.2022 08:43:34- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1111.3 MB
+12.04.2022 08:43:34- FifoMotion.main()#1525:     <<<----- fertig in 53.000 sec ---
+12.04.2022 08:57:41- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:57:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4404/'
+12.04.2022 08:57:41- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4404/event_1997.info(138)'
+12.04.2022 08:57:57- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4404/15-20220412 85553.mkv(75182344)'
+12.04.2022 08:57:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4402/'
+12.04.2022 08:57:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4403/14-20220412 84204.mkv'
+12.04.2022 08:57:57- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4403/event_1996.info'
+12.04.2022 08:58:42- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1039.6 MB
+12.04.2022 08:58:42- FifoMotion.main()#1525:     <<<----- fertig in 60.000 sec ---
+12.04.2022 08:58:42- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:58:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4404/event_1997.info'
+12.04.2022 08:58:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4404/15-20220412 85553.mkv'
+12.04.2022 08:58:42- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4403/'
+12.04.2022 08:58:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4405/'
+12.04.2022 08:58:42- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4405/event_1998.info(138)'
+12.04.2022 08:58:43- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4405/16-20220412 85737.mkv(4457065)'
+12.04.2022 08:59:25- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1035.4 MB
+12.04.2022 08:59:25- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+12.04.2022 08:59:35- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 08:59:35- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4404/'
+12.04.2022 08:59:35- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4406/'
+12.04.2022 08:59:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4406/17-20220412 85908.mkv(19899832)'
+12.04.2022 08:59:40- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4406/event_1999.info(138)'
+12.04.2022 08:59:40- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4405/event_1998.info'
+12.04.2022 08:59:40- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4405/16-20220412 85737.mkv'
+12.04.2022 09:00:19- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -1016.4 MB
+12.04.2022 09:00:19- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
+12.04.2022 09:54:10- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 09:54:10- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4407/'
+12.04.2022 09:54:10- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4407/event_2000.info(138)'
+12.04.2022 09:54:15- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4407/18-20220412 95336.mkv(26653686)'
+12.04.2022 09:54:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4406/17-20220412 85908.mkv'
+12.04.2022 09:54:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4406/event_1999.info'
+12.04.2022 09:54:15- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4405/'
+12.04.2022 10:00:00- LampMotion.main()#1343:       IR-Lampen Aus/Ein
+12.04.2022 10:01:16- FifoMotion.main()#1188: >>> Vers. 4.3.35/Apr 11 2022
+                   - PID 512, User 1000, Group 1000
+12.04.2022 10:01:16- FifoMotion.main()#1225:     Hostname: 'Vogel'
+12.04.2022 10:01:16- FifoMotion.main()#1235:     meine PID = '512'
+12.04.2022 10:01:16- FifoMotion.main()#1244:     meine IP: '192.168.0.196'
+12.04.2022 10:01:16- FifoMotion.main()#1262:     Speicherziel: '/media/Kamera/Vogel/'
+12.04.2022 10:01:16- FifoMotion.main()#1283:     Fifo OK: '/home/pi/motion/aux/MOTION.FIFO'
+12.04.2022 10:01:18- FifoMotion.main()#1317:     GPIO OK !
+12.04.2022 10:01:18- FifoMotion.Error_NonFatal()#185: <<< >>> main()#1327 @10:01:18 in fifomotion.c: "*** Start 'FifoMotion' ***"
+12.04.2022 10:01:18- FifoMotion.main()#1357: <<< ----- Init FifoMotion OK -------
+12.04.2022 10:01:21- LampMotion.main()#860: >>> Vers. 4.3.68/Apr 11 2022
+                   - PID 503, User 1000/1000, Group 1000/1000
+12.04.2022 10:01:21- LampMotion.main()#880:     Hostname: 'Vogel'
+12.04.2022 10:01:21- LampMotion.main()#889:     meine PID = '503'
+12.04.2022 10:01:21- LampMotion.main()#898:     meine IP: '192.168.0.196'
+12.04.2022 10:01:23- LampMotion.main()#938:     GPIO OK !
+12.04.2022 10:01:23- LampMotion.main()#951:     2 DS18B20-Sensoren:
+12.04.2022 10:01:23- LampMotion.main()#960:       Sensor(0) = '28-00044cb880ff'
+12.04.2022 10:01:23- LampMotion.main()#960:       Sensor(1) = '28-818b891d64ff'
+12.04.2022 10:01:23- LampMotion.main()#976:     Sensor BME280 OK !
+12.04.2022 10:01:23- LampMotion.main()#990:     Sensor TLS2561 OK !
+12.04.2022 10:01:25- LampMotion.main()#1012:     MQTT Vers.'1.05.07' OK !
+12.04.2022 10:01:25- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+12.04.2022 10:01:25- LampMotion.MQTT_Subscribe()#510: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+12.04.2022 10:01:25- LampMotion.main()#1111: <<< ----- Init LampMotion OK -------
+12.04.2022 10:01:27- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 10:01:28- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4407/event_2000.info'
+12.04.2022 10:01:28- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4407/18-20220412 95336.mkv'
+12.04.2022 10:01:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4409/'
+12.04.2022 10:01:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4409/event_2002.info(138)'
+12.04.2022 10:01:28- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4409/01-20220412100123-03.jpg(63777)'
+12.04.2022 10:01:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4409/01-20220412100122.mkv(2182741)'
+12.04.2022 10:01:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4408/'
+12.04.2022 10:01:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4408/event_2001.info(138)'
+12.04.2022 10:01:29- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4408/19-20220412100011-01.jpg(67126)'
+12.04.2022 10:08:23- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 507, User 1000, Group 1000, Anzahl Argumente: '34'
+12.04.2022 10:08:23- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4408/19-20220412100000.mkv(11046315)'
+12.04.2022 10:08:23- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4406/'
+12.04.2022 10:09:07- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -978.3 MB
+12.04.2022 10:09:07- FifoMotion.main()#1525:     <<<----- fertig in 459.000 sec ---
+12.04.2022 10:09:07- FifoMotion.main()#1436:     ----- neuer Auftrag ----->>>
+12.04.2022 10:09:07- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4407/'
+12.04.2022 10:09:07- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4409/event_2002.info'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4409/01-20220412100123-03.jpg'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4409/01-20220412100122.mkv'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4409/'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4408/event_2001.info'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4408/19-20220412100011-01.jpg'
+12.04.2022 10:09:08- FifoMotion.Deleted()#202:     gelöscht: '/home/pi/motion/pix/Event_4408/19-20220412100000.mkv'
+12.04.2022 10:09:08- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4410/'
+12.04.2022 10:09:08- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4410/02-20220412100125.mkv(4843556)'
+12.04.2022 10:09:08- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4410/02-20220412100126-00.jpg(64032)'
+12.04.2022 10:09:09- FifoMotion.Added()#220:            neu: '/media/Kamera/Vogel/2022-04-12/Event_4410/event_2003.info(138)'
+12.04.2022 10:09:50- FifoMotion.main()#1508:     main()#1506: Speicherplatz: -973.6 MB
+12.04.2022 10:09:50- FifoMotion.main()#1525:     <<<----- fertig in 43.000 sec ---
