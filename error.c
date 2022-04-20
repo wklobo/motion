@@ -50,7 +50,7 @@ void Fehlerliste(char* Message)
   char lza[256] = {'\0'};
   char lze[256] = {'\0'};
   
- 	//mode_t mode = S_IRWXU|S_IRWXG;  
+  //mode_t mode = S_IRWXU|S_IRWXG;  
   //mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH;  
   mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH;  
   int fd_list = open(FEHLER_LISTE, O_CREAT | O_APPEND | O_RDWR, mode);
@@ -59,15 +59,15 @@ void Fehlerliste(char* Message)
     perror("open FEHLER_LISTE");
   } // ----------------------------------------------------------------------
   else
-  {	// Attribute setzen
+  { // Attribute setzen
     // -----------------
     if(fchmod(fd_list, mode) == -1) 
     { // --- Debug-Ausgaben ---------------------------------------------------
-    	perror("fchmod FEHLER_LISTE");
+      perror("fchmod FEHLER_LISTE");
     } // ----------------------------------------------------------------------
-		else
-		{	// Inhalte schreiben
-			// -----------------
+    else
+    { // Inhalte schreiben
+      // -----------------
       char today[12]; sprintf(today, "%s", __HEUTE__);
       char   now[12]; sprintf(  now, "%s", __NOW__);
       sprintf(lza, LZA, PROGNAME);
@@ -76,12 +76,12 @@ void Fehlerliste(char* Message)
       
       if(write(fd_list, buf, sizeof(buf)) != sizeof(buf))
       { // --- Debug-Ausgaben ---------------------------------------------------
-    		perror("write FEHLER_LISTE");
+        perror("write FEHLER_LISTE");
       } // ----------------------------------------------------------------------
-  		// Log-Datei schlieﬂen
-  		// -------------------
+      // Log-Datei schlieﬂen
+      // -------------------
       close(fd_list);    
-  	}
+    }
   }
 }
 //*********************************************************************************************//
@@ -119,7 +119,7 @@ void show_Error(char* ErrorMessage, char* MailMessage)
     fprintf(stdout, "-- ----------------------------------------------\n");
     #endif
 
-//    sendmail(Header, MailBody);                           // Mail-Message absetzen
+    sendmail(Header, MailBody);                           // Mail-Message absetzen
   }
 }
 //*********************************************************************************************//

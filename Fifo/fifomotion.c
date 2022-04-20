@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-04-08 - 12:29:38                                    *//
+//* Last change:   2022-04-19 - 10:35:37                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -38,6 +38,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <wiringPi.h>
 #include <sys/stat.h>
@@ -121,6 +122,32 @@ static int delFolders = 0;            // gelöschte Verzeichnisse
 
 //***********************************************************************************************
 
+// Signal-Handler
+// --------------
+// Signale SIGTERM und SIGKILL werden meist durch den Watchdog ausgelöst
+
+void sigfunc(int sig)
+{
+ if(sig == SIGTERM)
+ {
+ 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGTERM %s -------", PROGNAME);
+    MYLOG(LogText);
+  	} // ----------------------------------------------------------------------------
+ }
+ else if(sig == SIGKILL)
+ {
+ 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGKILL %s -------", PROGNAME);
+    MYLOG(LogText);
+  	} // ----------------------------------------------------------------------------
+  	aborted = true;
+ }
+ else
+		return;
+}
+//***********************************************************************************************
+
 // fataler Fehler
 // ------------------------
 // fügt Informationen ein und ruft Standard-Fehlermeldung auf
@@ -166,7 +193,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   else
     sprintf( Fehler, "%s - Err %d-%s", Message,  errsave, strerror( errsave));
 
-  sprintf( ErrText, ">>> %s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
+  sprintf( ErrText, "%s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
 
   DEBUG("   -- Fehler -->  %s\n", ErrText);     // lokale Fehlerausgabe
 
@@ -174,8 +201,8 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
   if ( errsave == 24)                           // 'too many open files' ...
-    report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
-//    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben   --- vorläufig
+    //report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
+    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben   --- vorläufig
   else
     report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
 
@@ -1188,6 +1215,10 @@ int main(int argc, char *argv[])
     MYLOG(LogText);
   } // -----------------------------------------------------------------------------
 
+	// Signale registrieren
+	// --------------------
+	signal(SIGTERM, sigfunc);
+	signal(SIGKILL, sigfunc);
 
   char puffer[BUFFER];
   char ErrText[ERRBUFLEN];
@@ -1321,11 +1352,11 @@ int main(int argc, char *argv[])
 
 
 
-  { // --- Testausgabe --------------------------------------------------------
+  { // --- Testausgabe ----------------------------------------------------------------
   	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
-		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
-  } // ------------------------------------------------------------------------
+    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
+		Error_NonFatal( Text, __FUNCTION__, __LINE__);
+  } // ---------------------------------------------------------------------------------
 
 
 
@@ -1347,7 +1378,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, Zeile);
     DEBUG( "MailBody: %s\n", MailBody);
 
-//    sendmail(Betreff, MailBody);  // vorläufig
+    sendmail(Betreff, MailBody);  // vorläufig
   } // -----  Bereitmeldung per Mail -----------------------------------
 
 
@@ -1397,11 +1428,12 @@ int main(int argc, char *argv[])
     strcat(MailBody, Zeile);
     DEBUG( "MailBody: %s\n", MailBody);
 
-//    sendmail(Betreff, MailBody);
+    sendmail(Betreff, MailBody);
   }
 
   bool ShowReady = true;
-  DO_FOREVER // *********************** Endlosschleife ********************************************
+//  DO_FOREVER // *********************** Endlosschleife ********************************************
+  UNTIL_ABORTED // ********************** Schleife bis externes Signal ********************************************
   {
     feedWatchdog(PROGNAME);
     if (ShowReady)    // nur einmalig anzeigen
@@ -1615,16 +1647,24 @@ int main(int argc, char *argv[])
   // ------------------------
   killPID(FPID);
 
+  { // --- Log-Ausgabe ------------------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "    <<<----- Programm beendet ----->>>");
+    MYLOG(LogText);
+  } // ----------------------------------------------------------------------------------------
 
-//  // Fehler-Mail abschicken (hier nutzlos)
-//  // -------------------------------------
-//  digitalWrite (LED_ROT, LED_EIN);
-//  sprintf(Logtext, ">> %s()#%d: Error %s ---> '%s' OK\n",__FUNCTION__, __LINE__, PROGNAME, "lastItem");
-//  syslog(LOG_NOTICE, "%s: %s", __FIFO__, Logtext);
-//
-//  strcat(MailBody, Logtext);
-//  char Betreff[ERRBUFLEN];
-//  sprintf(Betreff, "Error-Message von %s: >>%s<<", PROGNAME, "lastItem");
-//  sendmail(Betreff, MailBody);                  // Mail-Message absetzen
+
+  // Fehler-Mail abschicken (hier nutzlos)
+  // -------------------------------------
+  digitalWrite (LED_ROT, LED_EIN);
+  { // --- Log-Ausgabe ------------------------------------------------------------------------
+    char Logtext[ZEILE];  sprintf(Logtext, ">> %s()#%d: Error %s ---> '%s' OK\n",__FUNCTION__, __LINE__, PROGNAME, "lastItem");
+    syslog(LOG_NOTICE, "%s: %s", __FIFO__, Logtext);
+
+  	char MailBody[BODYLEN] = {'\0'};
+  	strcat(MailBody, Logtext);
+    char Betreff[ERRBUFLEN];
+    sprintf(Betreff, "Error-Message von %s: >>%s<<", PROGNAME, "lastItem");
+    sendmail(Betreff, MailBody);                  // Mail-Message absetzen
+  } // ----------------------------------------------------------------------------------------
 }
 //***********************************************************************************************

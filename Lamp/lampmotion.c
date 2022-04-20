@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-04-08 - 12:29:57                                    *//
+//* Last change:   2022-04-20 - 13:37:50                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -34,6 +34,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <wiringPi.h>
 #include <sys/stat.h>
@@ -114,6 +115,32 @@ enum RESPONSE { RESP_KEINEANTWORT,
 ////#endif
 
 //
+//***********************************************************************************************
+
+// Signal-Handler
+// --------------
+// Signale SIGTERM und SIGKILL werden meist durch den Watchdog ausgelöst
+
+void sigfunc(int sig)
+{
+ if(sig == SIGTERM)
+ {
+ 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGTERM %s -------", PROGNAME);
+    MYLOG(LogText);
+  	} // ----------------------------------------------------------------------------
+ }
+ else if(sig == SIGKILL)
+ {
+ 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGKILL %s -------", PROGNAME);
+    MYLOG(LogText);
+  	} // ----------------------------------------------------------------------------
+  	aborted = true;
+ }
+ else
+		return;
+}
 //***********************************************************************************************
 
 // fataler Fehler
@@ -860,6 +887,12 @@ int main(int argc, char *argv[])
     MYLOG(LogText);
   } // ------------------------------------------------------------------------------
 
+	// Signale registrieren
+	// --------------------
+	signal(SIGTERM, sigfunc);
+	signal(SIGKILL, sigfunc);
+
+
   // schon mal den Watchdog füttern
   // ------------------------------
   feedWatchdog(PROGNAME);
@@ -1094,7 +1127,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, mySubscriptions);
 
     DEBUG( "MailBody:\n%s\n", MailBody);
-//    sendmail(Betreff, MailBody);
+    sendmail(Betreff, MailBody);
   } // -----  Bereitmeldung per Mail -----------------------------------
 
   syslog(LOG_NOTICE, "--- Init done ---");
@@ -1115,7 +1148,7 @@ int main(int argc, char *argv[])
 
   { // --- Testausgabe --------------------------------------------------------
   	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "*** Start '%s' ***", PROGNAME);
+    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
 		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
   } // ------------------------------------------------------------------------
 
@@ -1123,8 +1156,9 @@ int main(int argc, char *argv[])
 
   DEBUG("\n");
   time_t AbfrageStart = time(0);
-  DO_FOREVER // *********************** Endlosschleife **************************************
-             // *****************************************************************************
+//  DO_FOREVER // *********************** Endlosschleife *****************************************
+  UNTIL_ABORTED // ********************** Schleife bis externes Signal ***************************
+                // *******************************************************************************
   {
     feedWatchdog(PROGNAME);
 
@@ -1374,12 +1408,17 @@ int main(int argc, char *argv[])
 
   } // ===========================================================================================
 
+  tsl2561_close(tsl);
+
   // PID-Datei wieder löschen
   // ------------------------
   killPID(FPID);
 
+  { // --- Log-Ausgabe ------------------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "    <<<----- Programm beendet ----->>>");
+    MYLOG(LogText);
+  } // ----------------------------------------------------------------------------------------
 
-  tsl2561_close(tsl);
 
   // Fehler-Mail abschicken
   // ----------------------
@@ -1392,6 +1431,6 @@ int main(int argc, char *argv[])
   strcat(MailBody, Logtext);
   char Betreff[ERRBUFLEN];
   DEBUG(Betreff, "Error-Message von %s: >>%s<<", PROGNAME, "lastItem");
-  //sendmail(Betreff, MailBody);                  // Mail-Message absetzen
+  sendmail(Betreff, MailBody);                  // Mail-Message absetzen
 }
 //************************************************************************************************

@@ -3,7 +3,7 @@
 //* File:          error.h                                                                    *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2018-07-14;                                                                *//
-//* Last change:   2022-03-22 - 12:43:16                                                      *//
+//* Last change:   2022-04-18 - 16:54:51                                                      *//
 //* Description:   SolarControl - Überwachung und Messung des Solarmoduls                     *//
 //*                Standard-Fehlerausgänge                                                    *//
 //*                                                                                           *//
@@ -27,14 +27,19 @@ void report_Error(char* ErrorMessage, bool withMail); // Nicht-Fatale Fehlermeld
 #define MAXERROR  12
 
 #ifndef EXTERN
-#ifdef _MODUL0
-  #define EXTERN
-#else
-  #define EXTERN extern
-#endif
+	#ifdef _MODUL0
+  	#define EXTERN
+	#else
+  	#define EXTERN extern
+	#endif
 #endif
 
-#define DO_FOREVER     while(true)
+#define DO_FOREVER     		while(true)
+
+#ifdef _MODUL0
+	bool aborted=false;
+#endif
+#define UNTIL_ABORTED			while(!aborted)
 
 #endif //_ERROR_H
 

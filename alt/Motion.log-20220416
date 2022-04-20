@@ -1,0 +1,761 @@
+15.04.2022 12:33:48- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2248, User 118, Group 127, Anzahl Argumente: '122'
+15.04.2022 12:33:49- SqlMotion.main()#1320:     Data ready in 832 msec!
+15.04.2022 12:33:49- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 12:33:49- SqlMotion.main()#1374: <<< fertig in 840 msec!
+15.04.2022 12:37:48- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2268, User 118, Group 127, Anzahl Argumente: '93'
+15.04.2022 12:37:49- SqlMotion.main()#1320:     Data ready in 815 msec!
+15.04.2022 12:37:49- SqlMotion.main()#1374: <<< fertig in 826 msec!
+15.04.2022 12:51:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1005, User 118, Group 127, Anzahl Argumente: '41'
+15.04.2022 12:51:42- SqlMotion.main()#1320:     Data ready in 1237 msec!
+15.04.2022 12:51:42- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 12:51:42- SqlMotion.main()#1374: <<< fertig in 1240 msec!
+15.04.2022 12:51:44- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1082, User 118, Group 127, Anzahl Argumente: '16'
+15.04.2022 12:51:45- SqlMotion.main()#1320:     Data ready in 768 msec!
+15.04.2022 12:51:45- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 12:51:45- SqlMotion.main()#1374: <<< fertig in 769 msec!
+15.04.2022 13:27:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1303, User 118, Group 127, Anzahl Argumente: '57'
+15.04.2022 13:27:01- SqlMotion.main()#1320:     Data ready in 795 msec!
+15.04.2022 13:27:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:27:01- SqlMotion.main()#1374: <<< fertig in 798 msec!
+15.04.2022 13:29:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1322, User 118, Group 127, Anzahl Argumente: '52'
+15.04.2022 13:29:44- SqlMotion.main()#1320:     Data ready in 848 msec!
+15.04.2022 13:29:44- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:29:44- SqlMotion.main()#1374: <<< fertig in 851 msec!
+15.04.2022 13:31:16- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1338, User 118, Group 127, Anzahl Argumente: '51'
+15.04.2022 13:31:17- SqlMotion.main()#1320:     Data ready in 805 msec!
+15.04.2022 13:31:17- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:31:17- SqlMotion.main()#1374: <<< fertig in 808 msec!
+15.04.2022 13:32:35- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1354, User 118, Group 127, Anzahl Argumente: '64'
+15.04.2022 13:32:36- SqlMotion.main()#1320:     Data ready in 847 msec!
+15.04.2022 13:32:36- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:32:36- SqlMotion.main()#1374: <<< fertig in 851 msec!
+15.04.2022 13:34:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1372, User 118, Group 127, Anzahl Argumente: '77'
+15.04.2022 13:34:03- SqlMotion.main()#1320:     Data ready in 870 msec!
+15.04.2022 13:34:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:34:03- SqlMotion.main()#1374: <<< fertig in 874 msec!
+15.04.2022 13:35:04- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1388, User 118, Group 127, Anzahl Argumente: '79'
+15.04.2022 13:35:05- SqlMotion.main()#1320:     Data ready in 839 msec!
+15.04.2022 13:35:05- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:35:05- SqlMotion.main()#1374: <<< fertig in 843 msec!
+15.04.2022 13:36:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1403, User 118, Group 127, Anzahl Argumente: '56'
+15.04.2022 13:36:01- SqlMotion.main()#1320:     Data ready in 861 msec!
+15.04.2022 13:36:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:36:01- SqlMotion.main()#1374: <<< fertig in 864 msec!
+15.04.2022 13:37:13- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1418, User 118, Group 127, Anzahl Argumente: '87'
+15.04.2022 13:37:14- SqlMotion.main()#1320:     Data ready in 851 msec!
+15.04.2022 13:37:14- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:37:14- SqlMotion.main()#1374: <<< fertig in 863 msec!
+15.04.2022 13:38:36- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1435, User 118, Group 127, Anzahl Argumente: '76'
+15.04.2022 13:38:37- SqlMotion.main()#1320:     Data ready in 863 msec!
+15.04.2022 13:38:37- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:38:37- SqlMotion.main()#1374: <<< fertig in 873 msec!
+15.04.2022 13:39:47- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1499, User 118, Group 127, Anzahl Argumente: '78'
+15.04.2022 13:39:48- SqlMotion.main()#1320:     Data ready in 851 msec!
+15.04.2022 13:39:48- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:39:48- SqlMotion.main()#1374: <<< fertig in 856 msec!
+15.04.2022 13:41:20- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1517, User 118, Group 127, Anzahl Argumente: '80'
+15.04.2022 13:41:21- SqlMotion.main()#1320:     Data ready in 838 msec!
+15.04.2022 13:41:21- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 13:41:21- SqlMotion.main()#1374: <<< fertig in 845 msec!
+15.04.2022 14:00:24- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1548, User 118, Group 127, Anzahl Argumente: '102'
+15.04.2022 14:00:25- SqlMotion.main()#1320:     Data ready in 801 msec!
+15.04.2022 14:00:25- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 14:00:25- SqlMotion.main()#1374: <<< fertig in 807 msec!
+15.04.2022 14:43:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1715, User 118, Group 127, Anzahl Argumente: '42'
+15.04.2022 14:43:44- SqlMotion.main()#1320:     Data ready in 879 msec!
+15.04.2022 14:43:44- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 14:43:44- SqlMotion.main()#1374: <<< fertig in 883 msec!
+15.04.2022 16:00:14- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1916, User 118, Group 127, Anzahl Argumente: '55'
+15.04.2022 16:00:15- SqlMotion.main()#1320:     Data ready in 849 msec!
+15.04.2022 16:00:15- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 16:00:15- SqlMotion.main()#1374: <<< fertig in 854 msec!
+15.04.2022 18:00:14- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2256, User 118, Group 127, Anzahl Argumente: '52'
+15.04.2022 18:00:15- SqlMotion.main()#1320:     Data ready in 792 msec!
+15.04.2022 18:00:15- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 18:00:15- SqlMotion.main()#1374: <<< fertig in 795 msec!
+15.04.2022 18:15:35- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1077, User 118, Group 127, Anzahl Argumente: '43'
+15.04.2022 18:15:37- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1128, User 118, Group 127, Anzahl Argumente: '11'
+15.04.2022 18:15:38- SqlMotion.main()#1320:     Data ready in 793 msec!
+15.04.2022 18:15:38- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 18:15:38- SqlMotion.main()#1374: <<< fertig in 794 msec!
+15.04.2022 18:17:42- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 952, User 118, Group 127, Anzahl Argumente: '8'
+15.04.2022 19:25:42- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1243, User 118, Group 127, Anzahl Argumente: '126'
+15.04.2022 19:25:43- SqlMotion.main()#1320:     Data ready in 822 msec!
+15.04.2022 19:25:43- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:25:43- SqlMotion.main()#1374: <<< fertig in 831 msec!
+15.04.2022 19:27:12- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1263, User 118, Group 127, Anzahl Argumente: '90'
+15.04.2022 19:27:13- SqlMotion.main()#1320:     Data ready in 816 msec!
+15.04.2022 19:27:13- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:27:13- SqlMotion.main()#1374: <<< fertig in 829 msec!
+15.04.2022 19:29:15- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1278, User 118, Group 127, Anzahl Argumente: '99'
+15.04.2022 19:29:16- SqlMotion.main()#1320:     Data ready in 820 msec!
+15.04.2022 19:29:16- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:29:16- SqlMotion.main()#1374: <<< fertig in 826 msec!
+15.04.2022 19:45:28- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1359, User 118, Group 127, Anzahl Argumente: '79'
+15.04.2022 19:45:29- SqlMotion.main()#1320:     Data ready in 818 msec!
+15.04.2022 19:45:29- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:45:29- SqlMotion.main()#1374: <<< fertig in 826 msec!
+15.04.2022 19:45:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1378, User 118, Group 127, Anzahl Argumente: '20'
+15.04.2022 19:45:41- SqlMotion.main()#1320:     Data ready in 809 msec!
+15.04.2022 19:45:41- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:45:41- SqlMotion.main()#1374: <<< fertig in 811 msec!
+15.04.2022 19:45:57- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1391, User 118, Group 127, Anzahl Argumente: '19'
+15.04.2022 19:45:58- SqlMotion.main()#1320:     Data ready in 988 msec!
+15.04.2022 19:45:58- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:45:58- SqlMotion.main()#1374: <<< fertig in 989 msec!
+15.04.2022 19:46:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1405, User 118, Group 127, Anzahl Argumente: '18'
+15.04.2022 19:46:01- SqlMotion.main()#1320:     Data ready in 818 msec!
+15.04.2022 19:46:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:46:01- SqlMotion.main()#1374: <<< fertig in 819 msec!
+15.04.2022 19:46:25- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1422, User 118, Group 127, Anzahl Argumente: '29'
+15.04.2022 19:46:26- SqlMotion.main()#1320:     Data ready in 826 msec!
+15.04.2022 19:46:26- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:46:26- SqlMotion.main()#1374: <<< fertig in 856 msec!
+15.04.2022 19:46:36- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1436, User 118, Group 127, Anzahl Argumente: '19'
+15.04.2022 19:46:38- SqlMotion.main()#1320:     Data ready in 1047 msec!
+15.04.2022 19:46:38- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:46:38- SqlMotion.main()#1374: <<< fertig in 1048 msec!
+15.04.2022 19:46:38- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1450, User 118, Group 127, Anzahl Argumente: '20'
+15.04.2022 19:46:39- SqlMotion.main()#1320:     Data ready in 901 msec!
+15.04.2022 19:46:39- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:46:39- SqlMotion.main()#1374: <<< fertig in 902 msec!
+15.04.2022 19:47:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1464, User 118, Group 127, Anzahl Argumente: '57'
+15.04.2022 19:47:03- SqlMotion.main()#1320:     Data ready in 896 msec!
+15.04.2022 19:47:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:47:03- SqlMotion.main()#1374: <<< fertig in 902 msec!
+15.04.2022 19:47:12- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1479, User 118, Group 127, Anzahl Argumente: '26'
+15.04.2022 19:47:15- SqlMotion.main()#1320:     Data ready in 2739 msec!
+15.04.2022 19:47:15- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:47:15- SqlMotion.main()#1374: <<< fertig in 2740 msec!
+15.04.2022 19:47:18- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1493, User 118, Group 127, Anzahl Argumente: '23'
+15.04.2022 19:47:19- SqlMotion.main()#1320:     Data ready in 834 msec!
+15.04.2022 19:47:19- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:47:19- SqlMotion.main()#1374: <<< fertig in 836 msec!
+15.04.2022 19:48:07- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1507, User 118, Group 127, Anzahl Argumente: '84'
+15.04.2022 19:48:08- SqlMotion.main()#1320:     Data ready in 965 msec!
+15.04.2022 19:48:08- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:48:08- SqlMotion.main()#1374: <<< fertig in 970 msec!
+15.04.2022 19:48:22- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1520, User 118, Group 127, Anzahl Argumente: '37'
+15.04.2022 19:48:23- SqlMotion.main()#1320:     Data ready in 885 msec!
+15.04.2022 19:48:23- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:48:23- SqlMotion.main()#1374: <<< fertig in 888 msec!
+15.04.2022 19:48:50- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1535, User 118, Group 127, Anzahl Argumente: '20'
+15.04.2022 19:48:51- SqlMotion.main()#1320:     Data ready in 889 msec!
+15.04.2022 19:48:51- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:48:51- SqlMotion.main()#1374: <<< fertig in 890 msec!
+15.04.2022 19:49:08- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1549, User 118, Group 127, Anzahl Argumente: '62'
+15.04.2022 19:49:09- SqlMotion.main()#1320:     Data ready in 868 msec!
+15.04.2022 19:49:09- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:49:09- SqlMotion.main()#1374: <<< fertig in 872 msec!
+15.04.2022 19:49:12- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1563, User 118, Group 127, Anzahl Argumente: '20'
+15.04.2022 19:49:13- SqlMotion.main()#1320:     Data ready in 837 msec!
+15.04.2022 19:49:13- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:49:13- SqlMotion.main()#1374: <<< fertig in 839 msec!
+15.04.2022 19:49:24- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1577, User 118, Group 127, Anzahl Argumente: '21'
+15.04.2022 19:49:26- SqlMotion.main()#1320:     Data ready in 1396 msec!
+15.04.2022 19:49:26- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:49:26- SqlMotion.main()#1374: <<< fertig in 1397 msec!
+15.04.2022 19:49:47- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1592, User 118, Group 127, Anzahl Argumente: '53'
+15.04.2022 19:49:48- SqlMotion.main()#1320:     Data ready in 933 msec!
+15.04.2022 19:49:48- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:49:48- SqlMotion.main()#1374: <<< fertig in 939 msec!
+15.04.2022 19:51:13- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1610, User 118, Group 127, Anzahl Argumente: '61'
+15.04.2022 19:51:17- SqlMotion.main()#1320:     Data ready in 801 msec!
+15.04.2022 19:51:17- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:51:17- SqlMotion.main()#1374: <<< fertig in 3296 msec!
+15.04.2022 19:51:39- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1624, User 118, Group 127, Anzahl Argumente: '38'
+15.04.2022 19:51:40- SqlMotion.main()#1320:     Data ready in 829 msec!
+15.04.2022 19:51:40- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:51:40- SqlMotion.main()#1374: <<< fertig in 834 msec!
+15.04.2022 19:51:59- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1638, User 118, Group 127, Anzahl Argumente: '50'
+15.04.2022 19:52:00- SqlMotion.main()#1320:     Data ready in 852 msec!
+15.04.2022 19:52:00- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:52:00- SqlMotion.main()#1374: <<< fertig in 855 msec!
+15.04.2022 19:52:11- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1652, User 118, Group 127, Anzahl Argumente: '38'
+15.04.2022 19:52:12- SqlMotion.main()#1320:     Data ready in 911 msec!
+15.04.2022 19:52:12- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:52:12- SqlMotion.main()#1374: <<< fertig in 914 msec!
+15.04.2022 19:52:41- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1667, User 118, Group 127, Anzahl Argumente: '56'
+15.04.2022 19:52:43- SqlMotion.main()#1320:     Data ready in 938 msec!
+15.04.2022 19:52:43- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:52:43- SqlMotion.main()#1374: <<< fertig in 941 msec!
+15.04.2022 19:53:46- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1681, User 118, Group 127, Anzahl Argumente: '55'
+15.04.2022 19:53:47- SqlMotion.main()#1320:     Data ready in 906 msec!
+15.04.2022 19:53:47- SqlMotion.main()#1374: <<< fertig in 912 msec!
+15.04.2022 19:54:10- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1696, User 118, Group 127, Anzahl Argumente: '56'
+15.04.2022 19:54:11- SqlMotion.main()#1320:     Data ready in 834 msec!
+15.04.2022 19:54:11- SqlMotion.main()#1374: <<< fertig in 841 msec!
+15.04.2022 19:54:17- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1710, User 118, Group 127, Anzahl Argumente: '21'
+15.04.2022 19:54:18- SqlMotion.main()#1320:     Data ready in 846 msec!
+15.04.2022 19:54:18- SqlMotion.main()#1374: <<< fertig in 847 msec!
+15.04.2022 19:55:06- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1724, User 118, Group 127, Anzahl Argumente: '60'
+15.04.2022 19:55:07- SqlMotion.main()#1320:     Data ready in 826 msec!
+15.04.2022 19:55:07- SqlMotion.main()#1374: <<< fertig in 831 msec!
+15.04.2022 19:55:34- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1738, User 118, Group 127, Anzahl Argumente: '74'
+15.04.2022 19:55:35- SqlMotion.main()#1320:     Data ready in 874 msec!
+15.04.2022 19:55:35- SqlMotion.main()#1374: <<< fertig in 878 msec!
+15.04.2022 19:56:12- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1754, User 118, Group 127, Anzahl Argumente: '63'
+15.04.2022 19:56:13- SqlMotion.main()#1320:     Data ready in 859 msec!
+15.04.2022 19:56:13- SqlMotion.main()#1374: <<< fertig in 862 msec!
+15.04.2022 19:56:39- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1769, User 118, Group 127, Anzahl Argumente: '61'
+15.04.2022 19:56:40- SqlMotion.main()#1320:     Data ready in 834 msec!
+15.04.2022 19:56:40- SqlMotion.main()#1374: <<< fertig in 839 msec!
+15.04.2022 19:57:22- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1786, User 118, Group 127, Anzahl Argumente: '45'
+15.04.2022 19:57:23- SqlMotion.main()#1320:     Data ready in 972 msec!
+15.04.2022 19:57:23- SqlMotion.main()#1374: <<< fertig in 975 msec!
+15.04.2022 19:57:59- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1800, User 118, Group 127, Anzahl Argumente: '39'
+15.04.2022 19:58:01- SqlMotion.main()#1320:     Data ready in 1159 msec!
+15.04.2022 19:58:01- SqlMotion.main()#1374: <<< fertig in 1161 msec!
+15.04.2022 19:59:08- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1817, User 118, Group 127, Anzahl Argumente: '66'
+15.04.2022 19:59:10- SqlMotion.main()#1320:     Data ready in 1128 msec!
+15.04.2022 19:59:10- SqlMotion.main()#1374: <<< fertig in 1131 msec!
+15.04.2022 19:59:27- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1830, User 118, Group 127, Anzahl Argumente: '64'
+15.04.2022 19:59:30- SqlMotion.main()#1320:     Data ready in 2536 msec!
+15.04.2022 19:59:30- SqlMotion.main()#1374: <<< fertig in 2543 msec!
+15.04.2022 20:00:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1846, User 118, Group 127, Anzahl Argumente: '183'
+15.04.2022 20:00:41- SqlMotion.main()#1320:     Data ready in 989 msec!
+15.04.2022 20:00:41- SqlMotion.main()#1374: <<< fertig in 1001 msec!
+15.04.2022 20:02:25- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1863, User 118, Group 127, Anzahl Argumente: '36'
+15.04.2022 20:02:27- SqlMotion.main()#1320:     Data ready in 1876 msec!
+15.04.2022 20:02:27- SqlMotion.main()#1374: <<< fertig in 1877 msec!
+15.04.2022 20:03:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1878, User 118, Group 127, Anzahl Argumente: '68'
+15.04.2022 20:03:13- SqlMotion.main()#1320:     Data ready in 12689 msec!
+15.04.2022 20:03:13- SqlMotion.main()#1374: <<< fertig in 12692 msec!
+15.04.2022 20:03:19- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1893, User 118, Group 127, Anzahl Argumente: '32'
+15.04.2022 20:03:20- SqlMotion.main()#1320:     Data ready in 865 msec!
+15.04.2022 20:03:20- SqlMotion.main()#1374: <<< fertig in 866 msec!
+15.04.2022 20:04:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1907, User 118, Group 127, Anzahl Argumente: '93'
+15.04.2022 20:04:03- SqlMotion.main()#1320:     Data ready in 852 msec!
+15.04.2022 20:04:03- SqlMotion.main()#1374: <<< fertig in 856 msec!
+15.04.2022 20:04:16- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1921, User 118, Group 127, Anzahl Argumente: '70'
+15.04.2022 20:04:22- SqlMotion.main()#1320:     Data ready in 5430 msec!
+15.04.2022 20:04:22- SqlMotion.main()#1374: <<< fertig in 5434 msec!
+15.04.2022 20:04:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1936, User 118, Group 127, Anzahl Argumente: '70'
+15.04.2022 20:04:41- SqlMotion.main()#1320:     Data ready in 812 msec!
+15.04.2022 20:04:41- SqlMotion.main()#1374: <<< fertig in 817 msec!
+15.04.2022 20:05:11- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1950, User 118, Group 127, Anzahl Argumente: '38'
+15.04.2022 20:05:12- SqlMotion.main()#1320:     Data ready in 815 msec!
+15.04.2022 20:05:12- SqlMotion.main()#1374: <<< fertig in 816 msec!
+15.04.2022 20:05:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1964, User 118, Group 127, Anzahl Argumente: '69'
+15.04.2022 20:05:41- SqlMotion.main()#1320:     Data ready in 954 msec!
+15.04.2022 20:05:41- SqlMotion.main()#1374: <<< fertig in 957 msec!
+15.04.2022 20:05:57- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1978, User 118, Group 127, Anzahl Argumente: '46'
+15.04.2022 20:05:58- SqlMotion.main()#1320:     Data ready in 852 msec!
+15.04.2022 20:05:58- SqlMotion.main()#1374: <<< fertig in 880 msec!
+15.04.2022 20:06:37- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1994, User 118, Group 127, Anzahl Argumente: '117'
+15.04.2022 20:06:38- SqlMotion.main()#1320:     Data ready in 812 msec!
+15.04.2022 20:06:38- SqlMotion.main()#1374: <<< fertig in 825 msec!
+15.04.2022 20:06:52- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2008, User 118, Group 127, Anzahl Argumente: '61'
+15.04.2022 20:06:54- SqlMotion.main()#1320:     Data ready in 1270 msec!
+15.04.2022 20:06:54- SqlMotion.main()#1374: <<< fertig in 1274 msec!
+15.04.2022 20:07:22- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2023, User 118, Group 127, Anzahl Argumente: '78'
+15.04.2022 20:07:23- SqlMotion.main()#1320:     Data ready in 855 msec!
+15.04.2022 20:07:23- SqlMotion.main()#1374: <<< fertig in 860 msec!
+15.04.2022 20:08:45- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2039, User 118, Group 127, Anzahl Argumente: '79'
+15.04.2022 20:08:46- SqlMotion.main()#1320:     Data ready in 881 msec!
+15.04.2022 20:08:46- SqlMotion.main()#1374: <<< fertig in 884 msec!
+15.04.2022 20:09:38- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2105, User 118, Group 127, Anzahl Argumente: '79'
+15.04.2022 20:09:39- SqlMotion.main()#1320:     Data ready in 873 msec!
+15.04.2022 20:09:39- SqlMotion.main()#1374: <<< fertig in 877 msec!
+15.04.2022 20:10:05- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 2120, User 118, Group 127, Anzahl Argumente: '72'
+15.04.2022 20:10:07- SqlMotion.main()#1320:     Data ready in 1183 msec!
+15.04.2022 20:10:07- SqlMotion.main()#1374: <<< fertig in 1185 msec!
+                                                                                                                                                                                                                                                                                                15.04.2022 19:17:30- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 935, User 118, Group 127, Anzahl Argumente: '46'
+15.04.2022 19:17:31- SqlMotion.main()#1320:     Data ready in 860 msec!
+15.04.2022 19:17:31- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 19:17:31- SqlMotion.main()#1374: <<< fertig in 862 msec!
+15.04.2022 20:12:05- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1034, User 118, Group 127, Anzahl Argumente: '87'
+15.04.2022 20:12:07- SqlMotion.main()#1320:     Data ready in 928 msec!
+15.04.2022 20:12:07- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:12:07- SqlMotion.main()#1374: <<< fertig in 1088 msec!
+15.04.2022 20:12:20- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1048, User 118, Group 127, Anzahl Argumente: '86'
+15.04.2022 20:12:21- SqlMotion.main()#1320:     Data ready in 839 msec!
+15.04.2022 20:12:21- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:12:21- SqlMotion.main()#1374: <<< fertig in 845 msec!
+                                                                                                                                                                                                                                                                                                                                                                                      15.04.2022 20:12:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 936, User 118, Group 127, Anzahl Argumente: '49'
+15.04.2022 20:12:45- SqlMotion.main()#1320:     Data ready in 1022 msec!
+15.04.2022 20:12:45- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:12:45- SqlMotion.main()#1374: <<< fertig in 1023 msec!
+15.04.2022 20:14:06- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 982, User 118, Group 127, Anzahl Argumente: '60'
+15.04.2022 20:14:07- SqlMotion.main()#1320:     Data ready in 3 msec!
+15.04.2022 20:14:07- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:14:07- SqlMotion.main()#1374: <<< fertig in 4 msec!
+15.04.2022 20:14:34- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1101, User 118, Group 127, Anzahl Argumente: '107'
+15.04.2022 20:14:37- SqlMotion.main()#1320:     Data ready in 933 msec!
+15.04.2022 20:14:37- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:14:37- SqlMotion.main()#1374: <<< fertig in 2772 msec!
+15.04.2022 20:15:15- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1114, User 118, Group 127, Anzahl Argumente: '75'
+15.04.2022 20:15:17- SqlMotion.main()#1320:     Data ready in 966 msec!
+15.04.2022 20:15:17- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:15:17- SqlMotion.main()#1374: <<< fertig in 996 msec!
+15.04.2022 20:15:45- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1128, User 118, Group 127, Anzahl Argumente: '88'
+15.04.2022 20:15:46- SqlMotion.main()#1320:     Data ready in 930 msec!
+15.04.2022 20:15:46- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:15:46- SqlMotion.main()#1374: <<< fertig in 933 msec!
+15.04.2022 20:16:46- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1141, User 118, Group 127, Anzahl Argumente: '113'
+15.04.2022 20:16:47- SqlMotion.main()#1320:     Data ready in 876 msec!
+15.04.2022 20:16:47- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:16:47- SqlMotion.main()#1374: <<< fertig in 879 msec!
+15.04.2022 20:17:09- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1164, User 118, Group 127, Anzahl Argumente: '111'
+15.04.2022 20:17:11- SqlMotion.main()#1320:     Data ready in 1746 msec!
+15.04.2022 20:17:11- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:17:11- SqlMotion.main()#1374: <<< fertig in 1750 msec!
+15.04.2022 20:17:35- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1178, User 118, Group 127, Anzahl Argumente: '95'
+15.04.2022 20:17:37- SqlMotion.main()#1320:     Data ready in 1676 msec!
+15.04.2022 20:17:37- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:17:37- SqlMotion.main()#1374: <<< fertig in 1679 msec!
+15.04.2022 20:17:52- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1192, User 118, Group 127, Anzahl Argumente: '82'
+15.04.2022 20:17:55- SqlMotion.main()#1320:     Data ready in 2983 msec!
+15.04.2022 20:17:55- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:17:55- SqlMotion.main()#1374: <<< fertig in 2985 msec!
+15.04.2022 20:19:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1207, User 118, Group 127, Anzahl Argumente: '113'
+15.04.2022 20:19:01- SqlMotion.main()#1320:     Data ready in 894 msec!
+15.04.2022 20:19:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:19:01- SqlMotion.main()#1374: <<< fertig in 897 msec!
+15.04.2022 20:19:13- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1221, User 118, Group 127, Anzahl Argumente: '116'
+15.04.2022 20:19:14- SqlMotion.main()#1320:     Data ready in 844 msec!
+15.04.2022 20:19:14- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:19:14- SqlMotion.main()#1374: <<< fertig in 852 msec!
+15.04.2022 20:19:47- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1238, User 118, Group 127, Anzahl Argumente: '116'
+15.04.2022 20:19:48- SqlMotion.main()#1320:     Data ready in 928 msec!
+15.04.2022 20:19:48- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:19:48- SqlMotion.main()#1374: <<< fertig in 931 msec!
+15.04.2022 20:21:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1253, User 118, Group 127, Anzahl Argumente: '103'
+15.04.2022 20:21:44- SqlMotion.main()#1320:     Data ready in 953 msec!
+15.04.2022 20:21:44- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:21:44- SqlMotion.main()#1374: <<< fertig in 958 msec!
+15.04.2022 20:22:05- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1267, User 118, Group 127, Anzahl Argumente: '118'
+15.04.2022 20:22:06- SqlMotion.main()#1320:     Data ready in 973 msec!
+15.04.2022 20:22:06- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:22:06- SqlMotion.main()#1374: <<< fertig in 980 msec!
+15.04.2022 20:22:28- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1283, User 118, Group 127, Anzahl Argumente: '129'
+15.04.2022 20:22:30- SqlMotion.main()#1320:     Data ready in 1372 msec!
+15.04.2022 20:22:30- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:22:30- SqlMotion.main()#1374: <<< fertig in 1380 msec!
+15.04.2022 20:22:48- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1298, User 118, Group 127, Anzahl Argumente: '106'
+15.04.2022 20:22:50- SqlMotion.main()#1320:     Data ready in 1125 msec!
+15.04.2022 20:22:50- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:22:50- SqlMotion.main()#1374: <<< fertig in 1127 msec!
+15.04.2022 20:23:05- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1312, User 118, Group 127, Anzahl Argumente: '86'
+15.04.2022 20:23:06- SqlMotion.main()#1320:     Data ready in 879 msec!
+15.04.2022 20:23:06- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:23:06- SqlMotion.main()#1374: <<< fertig in 881 msec!
+15.04.2022 20:23:27- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1326, User 118, Group 127, Anzahl Argumente: '127'
+15.04.2022 20:23:28- SqlMotion.main()#1320:     Data ready in 1031 msec!
+15.04.2022 20:23:28- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:23:28- SqlMotion.main()#1374: <<< fertig in 1035 msec!
+15.04.2022 20:23:38- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1341, User 118, Group 127, Anzahl Argumente: '119'
+15.04.2022 20:23:39- SqlMotion.main()#1320:     Data ready in 894 msec!
+15.04.2022 20:23:39- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:23:39- SqlMotion.main()#1374: <<< fertig in 898 msec!
+15.04.2022 20:23:47- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1355, User 118, Group 127, Anzahl Argumente: '100'
+15.04.2022 20:23:48- SqlMotion.main()#1320:     Data ready in 857 msec!
+15.04.2022 20:23:48- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:23:48- SqlMotion.main()#1374: <<< fertig in 860 msec!
+15.04.2022 20:25:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1371, User 118, Group 127, Anzahl Argumente: '88'
+15.04.2022 20:25:01- SqlMotion.main()#1320:     Data ready in 884 msec!
+15.04.2022 20:25:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:25:01- SqlMotion.main()#1374: <<< fertig in 910 msec!
+15.04.2022 20:25:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1385, User 118, Group 127, Anzahl Argumente: '92'
+15.04.2022 20:25:41- SqlMotion.main()#1320:     Data ready in 884 msec!
+15.04.2022 20:25:41- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:25:41- SqlMotion.main()#1374: <<< fertig in 887 msec!
+15.04.2022 20:26:13- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1400, User 118, Group 127, Anzahl Argumente: '194'
+15.04.2022 20:26:15- SqlMotion.main()#1320:     Data ready in 876 msec!
+15.04.2022 20:26:15- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:26:15- SqlMotion.main()#1374: <<< fertig in 891 msec!
+15.04.2022 20:26:36- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1415, User 118, Group 127, Anzahl Argumente: '132'
+15.04.2022 20:26:38- SqlMotion.main()#1320:     Data ready in 1098 msec!
+15.04.2022 20:26:38- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:26:38- SqlMotion.main()#1374: <<< fertig in 1104 msec!
+15.04.2022 20:27:28- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1431, User 118, Group 127, Anzahl Argumente: '129'
+15.04.2022 20:27:32- SqlMotion.main()#1320:     Data ready in 3489 msec!
+15.04.2022 20:27:32- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:27:32- SqlMotion.main()#1374: <<< fertig in 3847 msec!
+15.04.2022 20:28:11- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1448, User 118, Group 127, Anzahl Argumente: '99'
+15.04.2022 20:28:13- SqlMotion.main()#1320:     Data ready in 1745 msec!
+15.04.2022 20:28:13- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:28:13- SqlMotion.main()#1374: <<< fertig in 1748 msec!
+15.04.2022 20:28:44- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1461, User 118, Group 127, Anzahl Argumente: '121'
+15.04.2022 20:28:47- SqlMotion.main()#1320:     Data ready in 2358 msec!
+15.04.2022 20:28:47- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:28:47- SqlMotion.main()#1374: <<< fertig in 2361 msec!
+15.04.2022 20:29:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1476, User 118, Group 127, Anzahl Argumente: '115'
+15.04.2022 20:29:03- SqlMotion.main()#1320:     Data ready in 2477 msec!
+15.04.2022 20:29:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:29:03- SqlMotion.main()#1374: <<< fertig in 2955 msec!
+15.04.2022 20:29:46- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1491, User 118, Group 127, Anzahl Argumente: '112'
+15.04.2022 20:29:47- SqlMotion.main()#1320:     Data ready in 828 msec!
+15.04.2022 20:29:47- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:29:47- SqlMotion.main()#1374: <<< fertig in 857 msec!
+15.04.2022 20:30:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1506, User 118, Group 127, Anzahl Argumente: '131'
+15.04.2022 20:30:04- SqlMotion.main()#1320:     Data ready in 1382 msec!
+15.04.2022 20:30:04- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:30:04- SqlMotion.main()#1374: <<< fertig in 1386 msec!
+15.04.2022 20:30:36- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1520, User 118, Group 127, Anzahl Argumente: '131'
+15.04.2022 20:30:37- SqlMotion.main()#1320:     Data ready in 859 msec!
+15.04.2022 20:30:37- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:30:37- SqlMotion.main()#1374: <<< fertig in 863 msec!
+15.04.2022 20:31:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1534, User 118, Group 127, Anzahl Argumente: '134'
+15.04.2022 20:31:03- SqlMotion.main()#1320:     Data ready in 849 msec!
+15.04.2022 20:31:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:31:03- SqlMotion.main()#1374: <<< fertig in 853 msec!
+15.04.2022 20:32:31- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1549, User 118, Group 127, Anzahl Argumente: '99'
+15.04.2022 20:32:32- SqlMotion.main()#1320:     Data ready in 856 msec!
+15.04.2022 20:32:32- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:32:32- SqlMotion.main()#1374: <<< fertig in 857 msec!
+15.04.2022 20:32:44- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1564, User 118, Group 127, Anzahl Argumente: '128'
+15.04.2022 20:32:45- SqlMotion.main()#1320:     Data ready in 843 msec!
+15.04.2022 20:32:45- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:32:45- SqlMotion.main()#1374: <<< fertig in 849 msec!
+15.04.2022 20:33:19- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1582, User 118, Group 127, Anzahl Argumente: '121'
+15.04.2022 20:33:20- SqlMotion.main()#1320:     Data ready in 796 msec!
+15.04.2022 20:33:20- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:33:20- SqlMotion.main()#1374: <<< fertig in 799 msec!
+15.04.2022 20:33:36- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1597, User 118, Group 127, Anzahl Argumente: '126'
+15.04.2022 20:33:37- SqlMotion.main()#1320:     Data ready in 895 msec!
+15.04.2022 20:33:37- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:33:37- SqlMotion.main()#1374: <<< fertig in 898 msec!
+15.04.2022 20:34:06- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1611, User 118, Group 127, Anzahl Argumente: '102'
+15.04.2022 20:34:07- SqlMotion.main()#1320:     Data ready in 860 msec!
+15.04.2022 20:34:07- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:34:07- SqlMotion.main()#1374: <<< fertig in 863 msec!
+15.04.2022 20:37:27- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1627, User 118, Group 127, Anzahl Argumente: '102'
+15.04.2022 20:37:28- SqlMotion.main()#1320:     Data ready in 864 msec!
+15.04.2022 20:37:28- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:37:28- SqlMotion.main()#1374: <<< fertig in 865 msec!
+15.04.2022 20:44:05- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1701, User 118, Group 127, Anzahl Argumente: '116'
+15.04.2022 20:44:07- SqlMotion.main()#1320:     Data ready in 1509 msec!
+15.04.2022 20:44:07- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:44:07- SqlMotion.main()#1374: <<< fertig in 1545 msec!
+15.04.2022 20:51:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1725, User 118, Group 127, Anzahl Argumente: '97'
+15.04.2022 20:51:01- SqlMotion.main()#1320:     Data ready in 831 msec!
+15.04.2022 20:51:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:51:01- SqlMotion.main()#1374: <<< fertig in 834 msec!
+15.04.2022 21:03:17- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1749, User 118, Group 127, Anzahl Argumente: '49'
+15.04.2022 21:03:18- SqlMotion.main()#1320:     Data ready in 820 msec!
+15.04.2022 21:03:18- SqlMotion.main()#1374: <<< fertig in 822 msec!
+15.04.2022 21:05:09- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1769, User 118, Group 127, Anzahl Argumente: '97'
+15.04.2022 21:05:10- SqlMotion.main()#1320:     Data ready in 896 msec!
+15.04.2022 21:05:10- SqlMotion.main()#1374: <<< fertig in 900 msec!
+15.04.2022 21:05:23- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1783, User 118, Group 127, Anzahl Argumente: '87'
+15.04.2022 21:05:24- SqlMotion.main()#1320:     Data ready in 874 msec!
+15.04.2022 21:05:24- SqlMotion.main()#1374: <<< fertig in 881 msec!
+15.04.2022 21:05:39- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1798, User 118, Group 127, Anzahl Argumente: '91'
+15.04.2022 21:05:40- SqlMotion.main()#1320:     Data ready in 853 msec!
+15.04.2022 21:05:40- SqlMotion.main()#1374: <<< fertig in 856 msec!
+15.04.2022 21:06:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1812, User 118, Group 127, Anzahl Argumente: '92'
+15.04.2022 21:06:04- SqlMotion.main()#1320:     Data ready in 1114 msec!
+15.04.2022 21:06:04- SqlMotion.main()#1374: <<< fertig in 1118 msec!
+15.04.2022 21:06:35- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1828, User 118, Group 127, Anzahl Argumente: '78'
+15.04.2022 21:06:36- SqlMotion.main()#1320:     Data ready in 838 msec!
+15.04.2022 21:06:36- SqlMotion.main()#1374: <<< fertig in 841 msec!
+15.04.2022 21:06:57- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1842, User 118, Group 127, Anzahl Argumente: '90'
+15.04.2022 21:06:58- SqlMotion.main()#1320:     Data ready in 881 msec!
+15.04.2022 21:06:58- SqlMotion.main()#1374: <<< fertig in 884 msec!
+15.04.2022 21:07:26- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1856, User 118, Group 127, Anzahl Argumente: '91'
+15.04.2022 21:07:27- SqlMotion.main()#1320:     Data ready in 867 msec!
+15.04.2022 21:07:27- SqlMotion.main()#1374: <<< fertig in 870 msec!
+15.04.2022 21:08:37- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1871, User 118, Group 127, Anzahl Argumente: '78'
+15.04.2022 21:08:38- SqlMotion.main()#1320:     Data ready in 1102 msec!
+15.04.2022 21:08:38- SqlMotion.main()#1374: <<< fertig in 1104 msec!
+15.04.2022 21:08:58- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1885, User 118, Group 127, Anzahl Argumente: '131'
+15.04.2022 21:08:59- SqlMotion.main()#1320:     Data ready in 855 msec!
+15.04.2022 21:08:59- SqlMotion.main()#1374: <<< fertig in 865 msec!
+15.04.2022 20:30:52- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 938, User 118, Group 127, Anzahl Argumente: '58'
+15.04.2022 20:30:53- SqlMotion.main()#1320:     Data ready in 982 msec!
+15.04.2022 20:30:53- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 20:30:53- SqlMotion.main()#1374: <<< fertig in 984 msec!
+15.04.2022 21:11:37- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1020, User 118, Group 127, Anzahl Argumente: '75'
+15.04.2022 21:13:49- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1018, User 118, Group 127, Anzahl Argumente: '34'
+15.04.2022 21:13:50- SqlMotion.main()#1320:     Data ready in 2 msec!
+15.04.2022 21:13:50- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:13:50- SqlMotion.main()#1374: <<< fertig in 383 msec!
+15.04.2022 21:14:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1036, User 118, Group 127, Anzahl Argumente: '32'
+15.04.2022 21:14:44- SqlMotion.main()#1320:     Data ready in 1026 msec!
+15.04.2022 21:14:44- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:14:44- SqlMotion.main()#1374: <<< fertig in 1028 msec!
+15.04.2022 21:15:58- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1050, User 118, Group 127, Anzahl Argumente: '29'
+15.04.2022 21:15:59- SqlMotion.main()#1320:     Data ready in 914 msec!
+15.04.2022 21:15:59- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:15:59- SqlMotion.main()#1374: <<< fertig in 916 msec!
+15.04.2022 21:16:15- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1064, User 118, Group 127, Anzahl Argumente: '32'
+15.04.2022 21:16:17- SqlMotion.main()#1320:     Data ready in 1343 msec!
+15.04.2022 21:16:17- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:16:17- SqlMotion.main()#1374: <<< fertig in 1344 msec!
+15.04.2022 21:16:24- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1078, User 118, Group 127, Anzahl Argumente: '41'
+15.04.2022 21:16:25- SqlMotion.main()#1320:     Data ready in 925 msec!
+15.04.2022 21:16:25- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:16:25- SqlMotion.main()#1374: <<< fertig in 955 msec!
+15.04.2022 21:16:57- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1092, User 118, Group 127, Anzahl Argumente: '28'
+15.04.2022 21:16:58- SqlMotion.main()#1320:     Data ready in 898 msec!
+15.04.2022 21:16:58- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:16:58- SqlMotion.main()#1374: <<< fertig in 900 msec!
+15.04.2022 21:17:44- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1114, User 118, Group 127, Anzahl Argumente: '29'
+15.04.2022 21:17:45- SqlMotion.main()#1320:     Data ready in 842 msec!
+15.04.2022 21:17:45- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:17:45- SqlMotion.main()#1374: <<< fertig in 844 msec!
+15.04.2022 21:18:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1133, User 118, Group 127, Anzahl Argumente: '146'
+15.04.2022 21:18:44- SqlMotion.main()#1320:     Data ready in 904 msec!
+15.04.2022 21:18:44- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:18:44- SqlMotion.main()#1374: <<< fertig in 925 msec!
+15.04.2022 21:20:23- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1148, User 118, Group 127, Anzahl Argumente: '29'
+15.04.2022 21:20:24- SqlMotion.main()#1320:     Data ready in 874 msec!
+15.04.2022 21:20:24- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:20:24- SqlMotion.main()#1374: <<< fertig in 876 msec!
+15.04.2022 21:21:55- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1162, User 118, Group 127, Anzahl Argumente: '54'
+15.04.2022 21:21:56- SqlMotion.main()#1320:     Data ready in 860 msec!
+15.04.2022 21:21:56- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:21:56- SqlMotion.main()#1374: <<< fertig in 865 msec!
+15.04.2022 21:25:37- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1183, User 118, Group 127, Anzahl Argumente: '67'
+15.04.2022 21:25:38- SqlMotion.main()#1320:     Data ready in 805 msec!
+15.04.2022 21:25:38- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:25:38- SqlMotion.main()#1374: <<< fertig in 813 msec!
+15.04.2022 21:26:03- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1200, User 118, Group 127, Anzahl Argumente: '64'
+15.04.2022 21:26:04- SqlMotion.main()#1320:     Data ready in 988 msec!
+15.04.2022 21:26:04- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:26:04- SqlMotion.main()#1374: <<< fertig in 993 msec!
+15.04.2022 21:26:39- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1215, User 118, Group 127, Anzahl Argumente: '65'
+15.04.2022 21:26:40- SqlMotion.main()#1320:     Data ready in 938 msec!
+15.04.2022 21:26:40- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:26:40- SqlMotion.main()#1374: <<< fertig in 945 msec!
+15.04.2022 21:34:49- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1239, User 118, Group 127, Anzahl Argumente: '69'
+15.04.2022 21:34:51- SqlMotion.main()#1320:     Data ready in 1416 msec!
+15.04.2022 21:34:51- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:34:51- SqlMotion.main()#1374: <<< fertig in 1420 msec!
+15.04.2022 21:35:40- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1255, User 118, Group 127, Anzahl Argumente: '27'
+15.04.2022 21:35:41- SqlMotion.main()#1320:     Data ready in 973 msec!
+15.04.2022 21:35:41- SqlMotion.main()#1374: <<< fertig in 975 msec!
+15.04.2022 21:35:43- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1269, User 118, Group 127, Anzahl Argumente: '28'
+15.04.2022 21:35:45- SqlMotion.main()#1320:     Data ready in 1209 msec!
+15.04.2022 21:35:45- SqlMotion.main()#1374: <<< fertig in 1211 msec!
+15.04.2022 21:36:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1284, User 118, Group 127, Anzahl Argumente: '67'
+15.04.2022 21:36:04- SqlMotion.main()#1320:     Data ready in 1339 msec!
+15.04.2022 21:36:04- SqlMotion.main()#1374: <<< fertig in 1343 msec!
+15.04.2022 21:36:20- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1298, User 118, Group 127, Anzahl Argumente: '41'
+15.04.2022 21:36:22- SqlMotion.main()#1320:     Data ready in 1009 msec!
+15.04.2022 21:36:22- SqlMotion.main()#1374: <<< fertig in 1040 msec!
+15.04.2022 21:38:34- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1314, User 118, Group 127, Anzahl Argumente: '81'
+15.04.2022 21:38:35- SqlMotion.main()#1320:     Data ready in 857 msec!
+15.04.2022 21:38:35- SqlMotion.main()#1374: <<< fertig in 864 msec!
+15.04.2022 21:38:46- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1329, User 118, Group 127, Anzahl Argumente: '43'
+15.04.2022 21:38:47- SqlMotion.main()#1320:     Data ready in 927 msec!
+15.04.2022 21:38:47- SqlMotion.main()#1374: <<< fertig in 930 msec!
+15.04.2022 21:38:50- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1343, User 118, Group 127, Anzahl Argumente: '33'
+15.04.2022 21:38:53- SqlMotion.main()#1320:     Data ready in 2913 msec!
+15.04.2022 21:38:53- SqlMotion.main()#1374: <<< fertig in 2914 msec!
+15.04.2022 21:39:11- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1359, User 118, Group 127, Anzahl Argumente: '47'
+15.04.2022 21:39:12- SqlMotion.main()#1320:     Data ready in 859 msec!
+15.04.2022 21:39:12- SqlMotion.main()#1374: <<< fertig in 862 msec!
+15.04.2022 21:40:21- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1423, User 118, Group 127, Anzahl Argumente: '74'
+15.04.2022 21:40:22- SqlMotion.main()#1320:     Data ready in 863 msec!
+15.04.2022 21:40:22- SqlMotion.main()#1374: <<< fertig in 866 msec!
+15.04.2022 21:43:35- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1439, User 118, Group 127, Anzahl Argumente: '37'
+15.04.2022 21:43:36- SqlMotion.main()#1320:     Data ready in 808 msec!
+15.04.2022 21:43:36- SqlMotion.main()#1374: <<< fertig in 809 msec!
+15.04.2022 21:48:49- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1459, User 118, Group 127, Anzahl Argumente: '39'
+15.04.2022 21:48:50- SqlMotion.main()#1320:     Data ready in 826 msec!
+15.04.2022 21:48:50- SqlMotion.main()#1374: <<< fertig in 827 msec!
+15.04.2022 21:50:30- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1475, User 118, Group 127, Anzahl Argumente: '38'
+                                                                                                                                              15.04.2022 21:47:47- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 941, User 118, Group 127, Anzahl Argumente: '39'
+15.04.2022 21:47:49- SqlMotion.main()#1320:     Data ready in 1094 msec!
+15.04.2022 21:47:49- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:47:49- SqlMotion.main()#1374: <<< fertig in 1097 msec!
+15.04.2022 21:51:39- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 984, User 118, Group 127, Anzahl Argumente: '46'
+15.04.2022 21:51:44- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 998, User 118, Group 127, Anzahl Argumente: '36'
+15.04.2022 21:51:45- SqlMotion.main()#1320:     Data ready in 995 msec!
+15.04.2022 21:51:45- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:51:45- SqlMotion.main()#1374: <<< fertig in 997 msec!
+15.04.2022 21:52:11- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1117, User 118, Group 127, Anzahl Argumente: '30'
+15.04.2022 21:52:12- SqlMotion.main()#1320:     Data ready in 862 msec!
+15.04.2022 21:52:12- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:52:12- SqlMotion.main()#1374: <<< fertig in 864 msec!
+15.04.2022 21:52:16- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1131, User 118, Group 127, Anzahl Argumente: '33'
+15.04.2022 21:52:17- SqlMotion.main()#1320:     Data ready in 884 msec!
+15.04.2022 21:52:17- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 21:52:17- SqlMotion.main()#1374: <<< fertig in 885 msec!
+15.04.2022 22:00:24- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1149, User 118, Group 127, Anzahl Argumente: '68'
+15.04.2022 22:00:25- SqlMotion.main()#1320:     Data ready in 912 msec!
+15.04.2022 22:00:25- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 22:00:25- SqlMotion.main()#1374: <<< fertig in 916 msec!
+15.04.2022 22:00:57- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1167, User 118, Group 127, Anzahl Argumente: '19'
+15.04.2022 22:00:59- SqlMotion.main()#1320:     Data ready in 1265 msec!
+15.04.2022 22:00:59- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 22:00:59- SqlMotion.main()#1374: <<< fertig in 1266 msec!
+15.04.2022 22:01:00- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1182, User 118, Group 127, Anzahl Argumente: '20'
+15.04.2022 22:01:01- SqlMotion.main()#1320:     Data ready in 1090 msec!
+15.04.2022 22:01:01- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 22:01:01- SqlMotion.main()#1374: <<< fertig in 1092 msec!
+15.04.2022 22:01:52- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1199, User 118, Group 127, Anzahl Argumente: '17'
+15.04.2022 22:01:53- SqlMotion.main()#1320:     Data ready in 889 msec!
+15.04.2022 22:01:53- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 22:01:53- SqlMotion.main()#1374: <<< fertig in 890 msec!
+15.04.2022 22:02:02- SqlMotion.main()#744: >>> Vers. 4.3.100/Apr 11 2022
+                   - PID 1213, User 118, Group 127, Anzahl Argumente: '16'
+15.04.2022 22:02:03- SqlMotion.main()#1320:     Data ready in 879 msec!
+15.04.2022 22:02:03- SqlMotion.toFIFO()#703:    ----->>> in FIFO übertragen: 20 Bytes
+15.04.2022 22:02:03- SqlMotion.main()#1374: <<< fertig in 880 msec!
