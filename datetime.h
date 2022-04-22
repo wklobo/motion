@@ -69,7 +69,7 @@ char* mkdatum(time_t zeit, char* buf);        // Datum/Uhrzeit aus time_t(=long)
 #define T_DBASE       4
 #define TIMER 6                   /* Anzahl Zeitmess-Timer */
 bool Startzeit(int Timer);        // Zeitmessung starten
-long Zwischenzeit(int Timer);     // Zeit nehmen/auslesen
+long Zwischenzeit(int Timer);     // Zeit nehmen/auslesen [msec]
 
 // liegt aktuelle Zeit in einem Zeitfenster?
 // -----------------------------------------

@@ -3,7 +3,7 @@
 //* File:          common.h                                                                   *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2021-04-18;                                                                *//
-//* Last change:   2022-04-07 - 09:50:29                                                      *//
+//* Last change:   2022-04-22 - 11:03:55                                                      *//
 //* Description:   Hilfsfunktionen und  Vereinbarungen zwischen den Programmen                *//
 //*                                                                                           *//
 //* Copyright (C) 2019-22 by Wolfgang Keuch                                                   *//
@@ -25,19 +25,23 @@
 
 // Buffer-Größen
 // -------------
+#define KBYTES             1024
+#define MBYTES        1024*KBYTES
+#define GBYTES        1024*MBYTES
+
 #define NOTIZ                64       /* Kurzmeldung */ 
 #define ZEILE               256
-#define BLOCK           10*1024
-#define BUFFER         256*1024
-#define MIN_FILESIZE    62*1024
-#define MIN_FILMSIZE   200*1024
+#define BLOCK           10*KBYTES
+#define BUFFER         256*KBYTES
+#define MIN_FILESIZE    60*KBYTES
+#define MIN_FILMSIZE   200*KBYTES
 
 #define NOINT -999999999              /* kein Integer-Wert */
 
 // Aufbewahrungsdauer Filme/Bilder
 // -------------------------------
-#define SEC      1000 	/* -- msec */
-#define STD   (60*60) 	/* -- min  */
+#define SEC      1000   /* -- msec */
+#define STD   (60*60)   /* -- min  */
 #define SOFORT_h        0
 #define KURZ_h          1
 #define MITTEL_h       25             /* Aufbewahrungsdauer [h]: Eine Tag + 1 Std   */
@@ -131,7 +135,7 @@ enum Device { D_NODEVICE,
   D_MQTT=100,
   D_IRLAMPE_RECHTS,
   D_IRLAMPE_LINKS,
-  D_IRLAMPEN,					/* beide betreffend */
+  D_IRLAMPEN,         /* beide betreffend */
   D_LED_ROT,
   D_LED_GELB,
   D_LED_GRUEN,

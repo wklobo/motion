@@ -65,12 +65,13 @@ bool Startzeit(int Timer)
 // gibt Zeit im [msec] zurück
 long Zwischenzeit(int Timer)
 {
-  long long elapsedTime;
-  gettimeofday(&t2, NULL);    // Endwert
+//  long long elapsedTime;
+  long elapsedTime;
+  gettimeofday(&t2, NULL);            // Endwert
 
   if (Timer < TIMER)
   {
-  // verbrauchte Zeit in Microsekunden
+    // verbrauchte Zeit in Microsekunden
     // ---------------------------------
     elapsedTime = ((t2.tv_sec * 1000000) + t2.tv_usec)
                 - ((t1[Timer].tv_sec * 1000000) + t1[Timer].tv_usec);

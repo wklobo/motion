@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-04-19 - 10:35:37                                    *//
+//* Last change:   2022-04-22 - 15:10:42                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -130,21 +130,21 @@ void sigfunc(int sig)
 {
  if(sig == SIGTERM)
  {
- 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    { // --- Log-Ausgabe ------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGTERM %s -------", PROGNAME);
     MYLOG(LogText);
-  	} // ----------------------------------------------------------------------------
+    } // ----------------------------------------------------------------------------
  }
  else if(sig == SIGKILL)
  {
- 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    { // --- Log-Ausgabe ------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGKILL %s -------", PROGNAME);
     MYLOG(LogText);
-  	} // ----------------------------------------------------------------------------
-  	aborted = true;
+    } // ----------------------------------------------------------------------------
+    aborted = true;
  }
  else
-		return;
+    return;
 }
 //***********************************************************************************************
 
@@ -678,12 +678,12 @@ static int SyncoFiles (const char *Pfad)
 
 // belegten Speicherplatz ermitteln
 // ---------------------------------
-long calcSize(char* Pfad)
+unsigned long calcSize(char* Pfad)
 {
   DEBUG_c("=> %s()#%d: %s(%s) =============\n",
                               __FUNCTION__, __LINE__, __FUNCTION__, Pfad);
 
-  long SizeTotal = 0;                          // gesamte Speicherbelegung
+  unsigned long SizeTotal = 0;                          // gesamte Speicherbelegung
   char ErrText[ERRBUFLEN];
 
   // alle Dateien in allen Verzeichnisse durchsuchen
@@ -773,7 +773,7 @@ long calcSize(char* Pfad)
               unsigned long cFSize = cAttribut.st_size;       // Dateilänge
               cSizeofall += cFSize;                           // Gesamtlänge [kB]
               { // --- Debug-Ausgaben ----------------------------------------------------------------
-                #define MELDUNG   "== %s()#%d:   cSizeofall = '%ld' chars += '%ld' chars\n"
+                #define MELDUNG   "== %s()#%d:   cSizeofall = '%lu' chars += '%lu' chars\n"
                 DEBUG_c(MELDUNG, __FUNCTION__, __LINE__, cSizeofall, cFSize);
                 #undef MELDUNG
               } // ------------------------------------------------------------------------------------
@@ -786,7 +786,7 @@ long calcSize(char* Pfad)
           }
           SizeTotal += cSizeofall;                            // gesamte Speicherbelegung
           { // --- Debug-Ausgaben ----------------------------------------------------------------
-            #define MELDUNG   "== %s()#%d:   SizeTotal = '%ld' chars\n\n"
+            #define MELDUNG   "== %s()#%d:   SizeTotal = '%lu' chars\n\n"
             DEBUG_c(MELDUNG, __FUNCTION__, __LINE__, SizeTotal);
             #undef MELDUNG
           } // ------------------------------------------------------------------------------------
@@ -804,11 +804,6 @@ long calcSize(char* Pfad)
     sprintf(ErrText, "closedir '%s'", Pfad);
     return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
   }
-//
-//  sprintf(Logtext, ">>> %s()#%d: belegt gesamt: %3.3f MB\n",
-//                       __FUNCTION__, __LINE__, ((float)SizeTotal+((1024*1024)/2))/(1024*1024));
-//  syslog(LOG_NOTICE, "%s", Logtext);
-//
 #if BREAK22
   { // // STOP! -- weiter mit ENTER
     // -------------------------------
@@ -819,7 +814,13 @@ long calcSize(char* Pfad)
   }
 #endif
 
-  DEBUG_c("<- %s()#%d -(%ld)-\n",  __FUNCTION__, __LINE__, SizeTotal);
+//        {
+//          char LogText[ZEILE];
+//          sprintf(LogText, "       --- belegter Speicher: %lu Bytes", SizeTotal);
+//          MYLOG(LogText);
+//        }
+
+  DEBUG_c("<- %s()#%d -(%lu)-\n",  __FUNCTION__, __LINE__, SizeTotal);
   return SizeTotal;
 }
 //***********************************************************************************************
@@ -1215,10 +1216,10 @@ int main(int argc, char *argv[])
     MYLOG(LogText);
   } // -----------------------------------------------------------------------------
 
-	// Signale registrieren
-	// --------------------
-	signal(SIGTERM, sigfunc);
-	signal(SIGKILL, sigfunc);
+  // Signale registrieren
+  // --------------------
+  signal(SIGTERM, sigfunc);
+  signal(SIGKILL, sigfunc);
 
   char puffer[BUFFER];
   char ErrText[ERRBUFLEN];
@@ -1236,7 +1237,7 @@ int main(int argc, char *argv[])
   if(NULL == lastsnap)
     perror("open SNAPSHOT");
    else
-   	fclose(lastsnap);
+    fclose(lastsnap);
 
 
   // Host ermitteln
@@ -1289,8 +1290,8 @@ int main(int argc, char *argv[])
   // -------------
   {
     char LogText[ZEILE];
-  	sprintf(LogText,"    Speicherziel: '%s'",  DESTINATION);
-  	MYLOG(LogText);
+    sprintf(LogText,"    Speicherziel: '%s'",  DESTINATION);
+    MYLOG(LogText);
   }
 
   // named pipe(Fifo) erstellen
@@ -1353,9 +1354,9 @@ int main(int argc, char *argv[])
 
 
   { // --- Testausgabe ----------------------------------------------------------------
-  	errno = 0;
+    errno = 0;
     char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
-		Error_NonFatal( Text, __FUNCTION__, __LINE__);
+    Error_NonFatal( Text, __FUNCTION__, __LINE__);
   } // ---------------------------------------------------------------------------------
 
 
@@ -1397,7 +1398,7 @@ int main(int argc, char *argv[])
     fd = open (FIFO, O_RDONLY);                   // Empfänger liest nur aus dem FIFO
     if (fd == -1)
     {
-    	char LogText[ZEILE];
+      char LogText[ZEILE];
       sprintf(LogText, ">> %s()#%d: Error Open Fifo !",  __FUNCTION__, __LINE__);
       DEBUG(LogText);
       showMain_Error(LogText, __FUNCTION__, __LINE__);
@@ -1458,22 +1459,30 @@ int main(int argc, char *argv[])
       delFiles   = 0;                           // gelöschte Dateien
       delFolders = 0;                           // gelöschte Verzeichnisse
 
-      // === Dateien übertragen ===================================================================
 
-      Startzeit(T_FOLDER);
 
-      // === Daten einlesen =======================================================================
+      // === Dateien übertragen, im Raspi aufräumen  ==============================================
       { // --- Log-Ausgabe ------------------------------------------------------------------------
-        char LogText[ZEILE];  sprintf(LogText, "    ----- neuer Auftrag ----->>>");
+        char LogText[ZEILE];  sprintf(LogText, "    >>>----- neuer Auftrag ----->>>");
         MYLOG(LogText);
       } // ---------------------------------------------------------------------------------------
 
-      {                                                   // Zeitmessung starten
+      {                  
         #define MELDUNG   "\n>>> %s()#%d: ################ neuer Auftrag @ %s ###############\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__, __NOW__);
         #undef MELDUNG
       }
-      long Items = FileTransfer(puffer, DESTINATION);     // Daten einlesen
+      
+      { // --- Log-Ausgabe ------------------------------------------------------------------------
+        char LogText[ZEILE]; 
+        sprintf(LogText, "     ----< FileTransfer(FIFO --> '%s') >----", DESTINATION);
+        MYLOG(LogText);
+      } // ---------------------------------------------------------------------------------------
+
+      Startzeit(T_FOLDER);                                          // Zeitmessung starten
+      long Items = FileTransfer(puffer, DESTINATION);               // ***** Dateien übertragen *****
+      double trZeit = (float)Zwischenzeit(T_FOLDER) / 1000.0;       // [msec] --> [sec]
+      
       { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n>>> %s()#%d: Items=%ld\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__,Items);
@@ -1482,23 +1491,38 @@ int main(int argc, char *argv[])
         int aviCount  = (Items % DFAKTOR) / FFAKTOR;      // Zähler Filmdateien
         int jpgCount  = Items / DFAKTOR;                  // Zähler Bilddateien
         #define MELDUNG   "    %s()#%d: -- %d Verzeichnis%s, %d Film%s, %d Bild%s kopiert\n"\
-               "                    von '%s' ---> '%s' in %ld msec --"
+               "                    von '%s' ---> '%s' in %2f3 sec --"
         DEBUG( MELDUNG, __FUNCTION__, __LINE__, fldCount,(fldCount>1 ? "se" : ""),
                                                 aviCount,(aviCount>1 ? "e" : ""),
                                                 jpgCount,(jpgCount>1 ? "er" : ""),
-                                                SOURCE, puffer, Zwischenzeit(T_GESAMT));
-//                                                SOURCE, target, Zwischenzeit(T_GESAMT));
+                                                SOURCE, puffer, trZeit);
         #undef MELDUNG
-        SYSLOG(LOG_NOTICE, ">>> %s()#%d: %d Verzeichnis%s, %d Film%s, %d Bild%s kopiert in %ld msec",
-                        __FUNCTION__, __LINE__, fldCount,(fldCount>1 ? "se" : ""),
-                                                aviCount,(aviCount>1 ? "e" : ""),
-                                                jpgCount,(jpgCount>1 ? "er" : ""),
-                                                Zwischenzeit(T_GESAMT));
+        { // --- Log-Ausgabe ------------------------------------------------------------------------
+          char LogText[ZEILE];  
+          sprintf(LogText, "     --- %d Verzeichnis%s, %d Film%s, %d Bild%s kopiert ...",
+                                    fldCount,(fldCount>1 ? "se" : ""),
+                                    aviCount,(aviCount>1 ? "e" : ""),
+                                    jpgCount,(jpgCount>1 ? "er" : ""));
+         MYLOG(LogText);
+        } // ---------------------------------------------------------------------------------------
+        { // --- Log-Ausgabe -----------------------------------------------------------------------
+          char LogText[ZEILE];  
+          sprintf(LogText, "     ... und %d Verzeichnis%s, %d Datei%s gelöscht in %2.3f sec! ---", 
+                                    delFolders,(delFolders!=1 ? "se" : ""),
+                                    delFiles,(delFiles!=1 ? "en" : ""),
+                                    trZeit);
+          MYLOG(LogText);
+        } // ---------------------------------------------------------------------------------------
+        delFolders=0;
+        delFiles=0;
         UNUSED (fldCount);
         UNUSED (aviCount);
         UNUSED (jpgCount);
       } // ----------------------------------------------------------------------------------------
       UNUSED(Items);
+      UNUSED(trZeit);
+
+
 
       // === aufräumen ============================================================================
       { // --- Debug-Ausgaben ---------------------------------------------------------------------
@@ -1507,42 +1531,64 @@ int main(int argc, char *argv[])
         #undef MELDUNG
       } // ----------------------------------------------------------------------------------------
 
+      { // --- Log-Ausgabe ------------------------------------------------------------------------
+        char LogText[ZEILE];  sprintf(LogText, "     ----< delOldest(in '%s') >----", DESTINATION);
+        MYLOG(LogText);
+      } // ---------------------------------------------------------------------------------------
+      
       Startzeit(T_FOLDER);                                // Zeitmessung starten
-      delOldest(DESTINATION);                                   // aufräumen
+      delOldest(DESTINATION);                             // aufräumen
+      double delZeit = (float)Zwischenzeit(T_FOLDER)/1000;
+      
       { // --- Debug-Ausgaben --------------------------------------------------------------------
-        #define MELDUNG   "\n    %s()#%d: -- %d Verzeichnis%s, %d Datei%s in %ld msec geloescht! --\n"
+        #define MELDUNG   "\n    %s()#%d: -- %d Verzeichnis%s, %d Datei%s in %f msec geloescht! --\n"
         DEBUG(MELDUNG,  __FUNCTION__, __LINE__, delFolders,(delFolders!=1 ? "se" : ""),
                                                 delFiles,(delFiles!=1 ? "en" : ""),
-                                                Zwischenzeit(T_FOLDER));
+                                                delZeit);
         #undef MELDUNG
-        SYSLOG(LOG_NOTICE, ">>> %s()#%d: %d Verzeichnis%s, %d Datei%s in %ld msec geloescht!",
-                        __FUNCTION__, __LINE__, delFolders,(delFolders!=1 ? "se" : ""),
-                                                delFiles,(delFiles!=1 ? "en" : ""),
-                                                Zwischenzeit(T_FOLDER));
-      } // ----------------------------------------------------------------------------------------
+      } // ---------------------------------------------------------------------------------------
+      { // --- Log-Ausgabe -----------------------------------------------------------------------
+        char LogText[ZEILE];  
+        sprintf(LogText, "     --- %d Verzeichnis%s, %d Datei%s gelöscht in %2.3f sec! ---", 
+                                  delFolders,(delFolders!=1 ? "se" : ""),
+                                  delFiles,(delFiles!=1 ? "en" : ""),
+                                  delZeit);
+        MYLOG(LogText);
+      } // ---------------------------------------------------------------------------------------
+      UNUSED(delZeit);
 
-      // === berechnen ============================================================================
+
+
+      // === Berechnungen =========================================================================
       { // --- Debug-Ausgaben ---------------------------------------------------------------------
-        #define MELDUNG   "\n\n>>> %s()#%d: ################## es wird berechnet ####################\n"
+        #define MELDUNG   "\n\n>>> %s()#%d: ################ es wird berechnet #################\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__);
         #undef MELDUNG
       } // ----------------------------------------------------------------------------------------
 
       Startzeit(T_FOLDER);                                // Zeitmessung starten
-      double Speicherplatz = (float)calcSize(DESTINATION)/(1024*1024);
+      double dbSize = (double)calcSize(DESTINATION) * 1.0;
+      double usedSize = dbSize/(double)((unsigned long)GBYTES);
+      double calcZeit = (double)Zwischenzeit(T_FOLDER) / 1000.0;
+      
+      
       { // --- Debug-Ausgaben ---------------------------------------------------------------------
-        #define MELDUNG   "\n    %s()#%d: -- Berechnung Speicherplatz: %2.3f MBytes in %ld msec --\n"
-        DEBUG(MELDUNG, __FUNCTION__, __LINE__, Speicherplatz, Zwischenzeit(T_FOLDER));
+        #define MELDUNG   "\n    %s()#%d: -- Berechnung Speicherplatz: %2.3f MBytes in %2.3f sec --\n"
+        DEBUG(MELDUNG, __FUNCTION__, __LINE__, usedSize, calcZeit);
         #undef MELDUNG
-        char LogText[ZEILE];
-        sprintf(LogText, "    %s()#%d: Speicherplatz: %5.1f MB", __FUNCTION__, __LINE__, Speicherplatz);
-        syslog(LOG_NOTICE, "%s", LogText);
-        MYLOG(LogText);
+        {
+          char LogText[ZEILE];
+          sprintf(LogText, "     --- belegter Speicher: %2.3f GB (in %2.3f sec)", usedSize, calcZeit);
+          MYLOG(LogText);
+        }
       } // ----------------------------------------------------------------------------------------
-      UNUSED(Speicherplatz);
+      UNUSED(usedSize);
+      UNUSED(calcZeit);
 
-      // === fertig ===============================================================================
-			double Gesamtzeit = Zwischenzeit(T_GESAMT)/1000;		// in [sec]
+
+
+      // === Abschluss ============================================================================
+      double Gesamtzeit = (float)Zwischenzeit(T_GESAMT)/1000.0;   // in [sec]
 
       { // --- Debug-Ausgaben ---------------------------------------------------------------------
         #define MELDUNG   "\n\n>>> %s()#%d: ###### done in %5.3f sec ####################\n\n"
@@ -1550,66 +1596,74 @@ int main(int argc, char *argv[])
         #undef MELDUNG
       } // ----------------------------------------------------------------------------------------
 
-      syslog(LOG_NOTICE, ">>> %s()#%d: <###---  done in %3.3f sec  ---###>",
+      syslog(LOG_NOTICE, ">>> %s()#%d: <###---  done in %2.3f sec  ---###>",
                                                       __FUNCTION__, __LINE__, Gesamtzeit);
       { // --- Log-Ausgabe ------------------------------------------------------------------------
-        char LogText[ZEILE];  sprintf(LogText, "    <<<----- fertig in %5.3f sec ---", Gesamtzeit);
+        char LogText[ZEILE];  
+        sprintf(LogText, "    <<<----- fertig in %2.1f sec -----<<<", Gesamtzeit);
         MYLOG(LogText);
       } // ----------------------------------------------------------------------------------------
-
 
       digitalWrite (LED_GELB, LED_AUS);             // wurde von SqlMotion eingeschaltet!
     } // ======== Auftrag erledigt =================================================================
 
 
-    // Überwachung, ob 'motion' noch läuft
-    // -----------------------------------
-    // es wird in regelmäßigen Abständen ein 'snapshot' erzeugt.
-    static bool ganzneu = true;
+
+
+    // === Überwachung, ob 'motion' noch läuft ====================================================
+    // ---------------------------------------
     {
-      struct stat attribut;
-      static bool zualt = true;
-      if(stat(SNAPSHOT, &attribut) == -1)
+      // 'motion' erzeugt in regelmäßigen Abständen ein 'snapshot'.
+      static bool ganzneu = true;
       {
-        char ErrText[ERRBUFLEN];
-        if (ErrorFlag == 0)
+        struct stat attribut;
+        static bool zualt = true;
+        if(stat(SNAPSHOT, &attribut) == -1)
         {
-          sprintf(ErrText, "'%s' missing!", SNAPSHOT);
-          Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
-          zualt = true;
-        }
-      }
-      else
-      {
-        errno = 0;
-        time_t Alter = time(0) - attribut.st_mtime;
-        //  DEBUG(">> %s()#%d @ %s; Alter '%s' = %ld sec\n",
-        //           __FUNCTION__, __LINE__, __NOW__, SNAPSHOT, Alter);
-        if (Alter > 4*REFRESH)
-        { // Meldung nur einmal anzeigen
-          // ----------------------------
-          if (!zualt)
+          if (ErrorFlag == 0)
           {
-            sprintf(ErrText, "'%s' fehlt seit %ld sec!", SNAPSHOT, Alter);
-            Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+            { // --- Log-Ausgabe ------------------------------------------------------------------------
+              char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' missing! -----", SNAPSHOT);
+              MYLOG(LogText);
+            } // ----------------------------------------------------------------------------------------
             zualt = true;
           }
         }
         else
         {
-          if (zualt)
-          {
-            if (!ganzneu)
+          errno = 0;
+          time_t Alter = time(0) - attribut.st_mtime;
+          if (Alter > 4*REFRESH)
+          { // Meldung nur einmal anzeigen
+            // ----------------------------
+            if (!zualt)
             {
-              sprintf(ErrText, "'%s' wieder da", SNAPSHOT);
+              char ErrText[ERRBUFLEN];
+              sprintf(ErrText, "'%s' fehlt seit %ld sec!", SNAPSHOT, Alter);
               Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+              zualt = true;
             }
-            ganzneu = false;
-            zualt = false;
+          }
+          else
+          {
+            if (zualt)
+            {
+              if (!ganzneu)
+              {
+                { // --- Log-Ausgabe ------------------------------------------------------------------------
+                  char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' wieder da! -----", SNAPSHOT);
+                  MYLOG(LogText);
+                } // ----------------------------------------------------------------------------------------
+              }
+              ganzneu = false;
+              zualt = false;
+            }
           }
         }
       }
     }
+    // === Ende Überwachung =======================================================================
+
 
 
     // Blinken grüne LED als Lebenszeichen! <
@@ -1660,8 +1714,8 @@ int main(int argc, char *argv[])
     char Logtext[ZEILE];  sprintf(Logtext, ">> %s()#%d: Error %s ---> '%s' OK\n",__FUNCTION__, __LINE__, PROGNAME, "lastItem");
     syslog(LOG_NOTICE, "%s: %s", __FIFO__, Logtext);
 
-  	char MailBody[BODYLEN] = {'\0'};
-  	strcat(MailBody, Logtext);
+    char MailBody[BODYLEN] = {'\0'};
+    strcat(MailBody, Logtext);
     char Betreff[ERRBUFLEN];
     sprintf(Betreff, "Error-Message von %s: >>%s<<", PROGNAME, "lastItem");
     sendmail(Betreff, MailBody);                  // Mail-Message absetzen
