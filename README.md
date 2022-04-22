@@ -26,6 +26,11 @@
 ***
 2022-03-22 - 11:40:41: Aufsetzen nach Hardware-Fehler
 ***
+2022-04-22 - 16:17:26: jetzt mit GMX-Mail
+***
+2022-04-22 - 16:17:55: FifoMotion Logeinträge repariert
+***
+
 
 
 

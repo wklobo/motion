@@ -3073,3 +3073,205 @@ cap.capabilities=0x85200005
 [1:ml1] [NTC] [EVT] [Apr 22 16:20:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
 [1:ml1] [NTC] [EVT] [Apr 22 16:22:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
 [1:ml1] [NTC] [EVT] [Apr 22 16:24:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:09] mlp_actions: End of event 3
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:09] motion_loop: Thread exiting
+[1:ml1] [NTC] [STR] [Apr 22 16:26:09] stream_stop: Closing motion-stream listen socket & active motion-stream sockets
+[1:ml1] [NTC] [STR] [Apr 22 16:26:09] stream_stop: Closed motion-stream listen socket & active motion-stream sockets
+[1:ml1] [NTC] [VID] [Apr 22 16:26:09] vid_close: Cleaning up V4L2 device
+[1:ml1] [NTC] [VID] [Apr 22 16:26:09] v4l2_cleanup: Closing video device /dev/video0
+[0:motion] [NTC] [ALL] [Apr 22 16:26:09] main: Threads finished
+[0:motion] [NTC] [ALL] [Apr 22 16:26:10] main: Motion terminating
+[0:motion] [NTC] [ALL] [Apr 22 16:26:10] motion_remove_pid: Removed process id file (pid file).
+[0:motion] [NTC] [ALL] [Apr 22 16:26:10] motion_remove_pid: Closing logfile (/home/pi/motion/aux/motion.log).
+[10270344:motion] [NTC] [ALL] [Apr 22 16:26:19] motion_startup: Using default log type (ALL)
+[10270344:motion] [NTC] [ALL] [Apr 22 16:26:19] motion_startup: Using log type (ALL) log level (NTC)
+[10270344:motion] [NTC] [ALL] [Apr 22 16:26:19] become_daemon: Motion going to daemon mode
+[10270344:motion] [NTC] [ALL] [Apr 22 16:26:19] become_daemon: Created process id file /home/pi/motion/aux/motion.pid. Process ID is 687
+[10270344:motion] [NTC] [ALL] [Apr 22 16:26:19] motion_startup: Motion running as daemon process
+[10270344:motion] [NTC] [ENC] [Apr 22 16:26:19] ffmpeg_global_init: ffmpeg libavcodec version 58.35.100 libavformat version 58.20.100
+[0:motion] [NTC] [ALL] [Apr 22 16:26:19] main: Camera ID: 1 is from /home/pi/motion/motion_kam1.conf
+[0:motion] [NTC] [ALL] [Apr 22 16:26:19] main: Camera ID: 1 Camera Name: (null) Device: /dev/video0
+[0:motion] [NTC] [ALL] [Apr 22 16:26:19] main: Waiting for threads to finish, pid: 687
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:19] motion_init: Camera 1 started: motion detection Enabled
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] vid_start: Opening V4L2 device
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_start: Using videodevice /dev/video0 and input -1
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_get_capability: 
+------------------------
+cap.driver: "bm2835 mmal"
+cap.card: "mmal service 16.1"
+cap.bus_info: "platform:bcm2835-v4l2-0"
+cap.capabilities=0x85200005
+------------------------
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_get_capability: - VIDEO_CAPTURE
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_get_capability: - VIDEO_OVERLAY
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_get_capability: - READWRITE
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_get_capability: - STREAMING
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_select_input: name = "Camera 0", type 0x00000002, status 00000000
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_select_input: - CAMERA
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_select_input: Device does not support specifying PAL/NTSC norm
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_do_set_pix_format: Testing palette YU12 (960x720)
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_do_set_pix_format: Using palette YU12 (960x720) bytesperlines 960 sizeimage 1036800 colorspace 00000001
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x00980900, "Brightness", range 0,100 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Brightness", default 50, current 50
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x00980901, "Contrast", range -100,100 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Contrast", default 0, current 0
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x00980902, "Saturation", range -100,100 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Saturation", default 0, current 0
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x00980918, "Power Line Frequency", range 0,3 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Power Line Frequency", default 1, current 1
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x0098090e, "Red Balance", range 1,7999 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Red Balance", default 1000, current 1000
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: found control 0x0098090f, "Blue Balance", range 1,7999 
+[1:ml1] [NTC] [VID] [Apr 22 16:26:19] v4l2_scan_controls: 	"Blue Balance", default 1000, current 1000
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:20] image_ring_resize: Resizing pre_capture buffer to 1 items
+[1:ml1] [NTC] [STR] [Apr 22 16:26:20] http_bindsock: listening on any IPv4 address port 2401
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:20] motion_init: Started motion-stream server on port 2401 (auth Disabled)
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:20] image_ring_resize: Resizing pre_capture buffer to 7 items
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:38] event_newfile: File of type 8 saved to: /home/pi/motion/pix/01-20220422162636.mkv
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:38] motion_detected: Motion detected - starting event 1
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:38] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162636-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:38] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162636-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:38] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162637-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162637-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162637-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162637-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162638-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162638-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:39] event_newfile: File of type 1 saved to: /home/pi/motion/pix/01-20220422162639-00.jpg
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:40] mlp_actions: End of event 1
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:41] event_newfile: File of type 8 saved to: /home/pi/motion/pix/02-20220422162640.mkv
+[1:ml1] [NTC] [ALL] [Apr 22 16:26:41] motion_detected: Motion detected - starting event 2
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:41] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162640-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:41] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162640-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162640-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162640-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162641-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162641-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162641-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162641-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162642-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:42] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162642-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:43] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162642-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:43] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162643-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:43] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162643-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:43] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162643-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:44] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162643-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:44] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162644-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:44] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162644-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:44] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162644-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:45] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162644-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:45] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162645-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:45] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162645-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:45] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162645-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162645-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:26:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162646-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:29:19] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162646-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:29:19] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162919-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:29:19] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162919-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:29:19] event_newfile: File of type 1 saved to: /home/pi/motion/pix/02-20220422162919-02.jpg
+[1:ml1] [NTC] [ALL] [Apr 22 16:29:20] mlp_actions: End of event 2
+[1:ml1] [NTC] [EVT] [Apr 22 16:30:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:32:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:34:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:36:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:38:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:40:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:42:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:44:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 8 saved to: /home/pi/motion/pix/03-20220422164644.mkv
+[1:ml1] [NTC] [ALL] [Apr 22 16:46:46] motion_detected: Motion detected - starting event 3
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164644-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164645-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164645-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164645-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:46] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164645-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164646-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164646-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164646-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164646-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164647-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164647-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:47] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164647-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:48] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164647-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:48] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164648-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:48] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164648-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:48] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164648-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:49] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164648-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:49] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164649-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:49] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164649-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:49] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164649-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:50] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164649-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:50] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164650-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:50] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164650-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:50] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164650-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:51] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164650-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:51] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164651-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:51] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164651-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:51] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164651-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:52] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164651-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:52] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164652-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:52] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164652-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:52] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164652-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:53] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164652-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:53] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164653-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:53] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164653-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:53] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164653-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:54] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164653-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:54] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164654-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:54] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164654-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:54] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164654-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:55] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164654-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:55] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164655-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:55] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164655-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:55] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164655-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:56] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164655-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:56] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164656-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:56] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164656-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:56] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164656-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:57] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164656-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:57] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164657-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:57] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164657-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:57] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164657-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:58] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164657-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:58] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164658-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:58] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164658-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:58] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164658-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:59] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164658-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:59] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164659-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:59] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164659-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:46:59] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164659-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:00] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164659-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:00] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164700-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:00] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164700-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:00] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164700-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:01] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164700-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:01] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164701-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:01] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164701-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:01] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164701-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:02] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164701-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:02] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164702-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:02] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164702-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:02] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164702-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:03] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164702-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:03] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164703-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:03] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164703-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:03] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164703-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:04] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164703-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:04] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164704-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:04] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164704-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:04] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164704-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:05] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164704-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:05] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164705-00.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:05] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164705-01.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:05] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164705-02.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:06] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164705-03.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:47:06] event_newfile: File of type 1 saved to: /home/pi/motion/pix/03-20220422164706-00.jpg
+[1:ml1] [NTC] [ALL] [Apr 22 16:47:07] mlp_actions: End of event 3
+[1:ml1] [NTC] [EVT] [Apr 22 16:48:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:50:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:52:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:54:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:56:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
+[1:ml1] [NTC] [EVT] [Apr 22 16:58:00] event_newfile: File of type 2 saved to: /home/pi/motion/pix/lastsnap.jpg
