@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-04-10 - 16:09:45                                    *//
+//* Last change:   2022-04-24 - 14:41:37                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -144,8 +144,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "<<< %s: Exit!",  ErrText);
+    char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
   
@@ -192,17 +191,15 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
+  {// --- Log-Ausgabe ---------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< %s",  ErrText);
+    MYLOG(LogText);
+  } // ------------------------------------------------------------------------
+
   if (errsv == 24)                              // 'too many open files' ...
     report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben
   else
     report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
-
-  {// --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "<<< %s",  ErrText);
-    MYLOG(LogText);
-  } // ------------------------------------------------------------------------
-
   return errsv;
 }
 //************************************************************************************//
@@ -729,20 +726,24 @@ int main(int argc, char* argv[])
   SYSLOG(LOG_NOTICE, ">>>>>> %s - %s - PID %d - User %d - Group %d <<<<<<",
                           		PROGNAME, Version, getpid(), geteuid(), getegid());
                                                     		
-  {	//--- Monitor-Ausgabe ----------------------------------------------------------
+  {	//--- Monitor-Ausgabe -------------------------------------------------------------
   	char PrintText[ZEILE];
   	sprintf(PrintText, "\n%s %s - User %d, Group %d\n",
                         PROGNAME, Version, getuid(), getgid());
   	printf(PrintText);
- 	} // -----------------------------------------------------------------------------
-   
-  {// --- Log-Ausgabe --------------------------------------------------------------
+ 	} // --------------------------------------------------------------------------------
+
+
+  {// --- Log-Ausgabe -----------------------------------------------------------------
    	char LogText[ZEILE];  
     sprintf(LogText, 
-    ">>> %s\n                   - PID %d, User %d, Group %d, Anzahl Argumente: '%d'",
-                      Version, getpid(), geteuid(), getgid(), argc);
+    " >>> %s    ************ Start '%s' ************\n"\
+    "                                               "\
+    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
+    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
     MYLOG(LogText);
-  } // -----------------------------------------------------------------------------
+  } // --------------------------------------------------------------------------------
+
 
   if (argc <= 1)
   {     // -- Error
@@ -750,11 +751,11 @@ int main(int argc, char* argv[])
     printf("   - Aufruf: \"%s\": Exit !\n", *argv);
     syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exit!",
                                       __FUNCTION__, __LINE__, argc);
-    {// --- Log-Ausgabe ---------------------------------------------------------
+    {// --- Log-Ausgabe ------------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
          "<<< Anzahl Argumente '%d': Exit!",  argc);
       MYLOG(LogText);
-    } // ------------------------------------------------------------------------
+    } // ---------------------------------------------------------------------------
     exit (EXIT_FAILURE);
   }
 

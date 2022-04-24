@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-04-20 - 13:37:50                                    *//
+//* Last change:   2022-04-24 - 14:53:26                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -159,6 +159,11 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_BLAU1,   LED_AUS);
   digitalWrite (LED_ROT,    LED_EIN);
 
+  {// --- Log-Ausgabe ---------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
+    MYLOG(LogText);
+  } // ------------------------------------------------------------------------
+
   // PID-Datei wieder löschen
   // ------------------------
   killPID(FPID);
@@ -187,6 +192,11 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 
   digitalWrite (LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
+
+  {// --- Log-Ausgabe ---------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "<<*** %s",  ErrText);
+    MYLOG(LogText);
+  } // ------------------------------------------------------------------------
 
   if (errsv == 24)                              // 'too many open files' ...
     report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben
@@ -878,14 +888,17 @@ int main(int argc, char *argv[])
   syslog(LOG_NOTICE, ">>>>> %s - %s - PID %d - User %d, Group %d <<<<<<",
                           		PROGNAME, Version, getpid(), geteuid(), getegid());
 
-  // Dieses Programm
-  // ----------------
-  {// --- Log-Ausgabe --------------------------------------------------------------
-    char LogText[ZEILE];
-    sprintf(LogText, ">>> %s\n                   - PID %d, User %d/%d, Group %d/%d",
-                      Version, getpid(), geteuid(),getuid(), getegid(),getgid());
+
+  {// --- Log-Ausgabe -----------------------------------------------------------------
+   	char LogText[ZEILE];  
+    sprintf(LogText, 
+    ">>> %s   ************ Start '%s' ************\n"\
+    "                                               "\
+    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
+    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
     MYLOG(LogText);
-  } // ------------------------------------------------------------------------------
+  } // --------------------------------------------------------------------------------
+
 
 	// Signale registrieren
 	// --------------------
@@ -1127,7 +1140,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, mySubscriptions);
 
     DEBUG( "MailBody:\n%s\n", MailBody);
-    sendmail(Betreff, MailBody);
+//    sendmail(Betreff, MailBody);
   } // -----  Bereitmeldung per Mail -----------------------------------
 
   syslog(LOG_NOTICE, "--- Init done ---");
@@ -1145,13 +1158,13 @@ int main(int argc, char *argv[])
   } // ------------------------------------------------------------------------
 
 
-
-  { // --- Testausgabe --------------------------------------------------------
-  	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
-		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
-  } // ------------------------------------------------------------------------
-
+//
+//  { // --- Testausgabe --------------------------------------------------------
+//  	errno = 0;
+//    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
+//		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
+//  } // ------------------------------------------------------------------------
+//
 
 
   DEBUG("\n");

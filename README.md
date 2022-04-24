@@ -30,6 +30,9 @@
 ***
 2022-04-22 - 16:17:55: FifoMotion Logeinträge repariert
 ***
+2022-04-24 - 16:41:15: Startanzeige im Logfile korrigiert
+***
+
 
 
 

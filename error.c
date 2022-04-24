@@ -3,7 +3,7 @@
 //* File:          error.c                                                                    *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2018-07-14;                                                                *//
-//* Last change:   2022-04-11 - 17:15:36                                                      *//
+//* Last change:   2022-04-23 - 15:52:15                                                     *//
 //* Description:   Nistkastenprogramm: Standard-Fehlerausgänge                                *//
 //*                                                                                           *//
 //* Copyright (C) 2018-21 by Wolfgang Keuch                                                   *//
@@ -41,6 +41,7 @@ char Uhrzeitbuffer[TIMLEN];
 
 // Meldung in Fehlerliste eintragen
 // ---------------------------------
+// 
 void Fehlerliste(char* Message)
 {
   #define  FEHLER_LISTE "/home/pi/motion/aux/errors"
@@ -50,8 +51,6 @@ void Fehlerliste(char* Message)
   char lza[256] = {'\0'};
   char lze[256] = {'\0'};
   
-  //mode_t mode = S_IRWXU|S_IRWXG;  
-  //mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH;  
   mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH;  
   int fd_list = open(FEHLER_LISTE, O_CREAT | O_APPEND | O_RDWR, mode);
   if(fd_list == -1) 
@@ -89,20 +88,21 @@ void Fehlerliste(char* Message)
 #define FATAL_MESSAGE        "Programm-Abbruch in '%s':\n%s\n-wkh-\n"
 #define NONFATAL_MESSAGE     "Fehler in '%s':\n%s\n-wkh-\n"
 
+//*********************************************************************************************//
+
 // Fehlermeldung ausgeben
 // ------------------------
-
-void show_Error(char* ErrorMessage, char* MailMessage)
+void show_Error(char* ErrorMessage, char* MailMaske)
 {
   char Header[SUBJECT] = {'\0'};
   char MailBody[BODYLEN] = {'\0'};
 
   char ErrText[ERRBUFLEN]={'\0'};
   sprintf(ErrText, "Error! <%s>", ErrorMessage);
-  sprintf(ErrText, "%s<%s>", strlen(MailMessage) == 0 ? "" : "Error! ", ErrorMessage);
+  sprintf(ErrText, "%s<%s>", strlen(MailMaske) == 0 ? "" : "Error! ", ErrorMessage);
   syslog(LOG_NOTICE, ErrText);                            // im Log vermerken
 
-  if (strlen(MailMessage) > 0)
+  if (strlen(MailMaske) > 0)
   {
     // Fehler-Mail abschicken
     // ----------------------
@@ -112,7 +112,7 @@ void show_Error(char* ErrorMessage, char* MailMessage)
     fprintf(stdout, "-- %s()#%d - Header: '%s'\n", __FUNCTION__, __LINE__, Header);
     #endif
 
-    sprintf(MailBody, MailMessage, PROGNAME, ErrorMessage);
+    sprintf(MailBody, MailMaske, PROGNAME, ErrorMessage);
     MailBody[BODYLEN-1] = '\0';                           // Begrenzung
     #ifdef _DEBUG                                         // Fehler ausgeben
     fprintf(stdout, "-- %s()#%d - Body: >>>\n%s\n<<<\n", __FUNCTION__, __LINE__, MailBody);

@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-04-22 - 15:10:42                                    *//
+//* Last change:   2022-04-24 - 14:53:05                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -166,8 +166,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "<<< %s: Exit!",  ErrText);
+    char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
@@ -200,17 +199,17 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
-  if ( errsave == 24)                           // 'too many open files' ...
-    //report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
-    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben   --- vorläufig
-  else
-    report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
-
   {// --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "<<< %s",  ErrText);
+    char LogText[ZEILE];  sprintf(LogText, "<<*** %s",  ErrText);
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
+
+  report_Error(ErrText, true);                	// Fehlermeldung immer mit Mail ausgeben   
+
+//  if ( errsave == 24)                           // 'too many open files' ...
+//    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben   
+//  else
+//    report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
 
   return  errsave;
 }
@@ -224,8 +223,7 @@ int Deleted(const char* ItemName)
   int status = 1;
 
   { // --- Log-Ausgabe --------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "    gelöscht: '%s'",  ItemName);
+    char LogText[ZEILE];  sprintf(LogText, "    gelöscht: '%s'",  ItemName);
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
@@ -1209,12 +1207,17 @@ int main(int argc, char *argv[])
     printf(PrintText);
   } // -----------------------------------------------------------------------------
 
-  {// --- Log-Ausgabe --------------------------------------------------------------
-    char LogText[ZEILE];
-    sprintf(LogText, ">>> %s\n                   - PID %d, User %d, Group %d",
-                      Version, getpid(), geteuid(), getgid());
+
+  {// --- Log-Ausgabe -----------------------------------------------------------------
+   	char LogText[ZEILE];  
+    sprintf(LogText, 
+    ">>> %s   ************ Start '%s' ************\n"\
+    "                                               "\
+    "  - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
+    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
     MYLOG(LogText);
-  } // -----------------------------------------------------------------------------
+  } // --------------------------------------------------------------------------------
+
 
   // Signale registrieren
   // --------------------
@@ -1352,13 +1355,13 @@ int main(int argc, char *argv[])
   }
 
 
-
-  { // --- Testausgabe ----------------------------------------------------------------
-    errno = 0;
-    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
-    Error_NonFatal( Text, __FUNCTION__, __LINE__);
-  } // ---------------------------------------------------------------------------------
-
+//
+//  { // --- Testausgabe ----------------------------------------------------------------
+//    errno = 0;
+//    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
+//    Error_NonFatal( Text, __FUNCTION__, __LINE__);
+//  } // ---------------------------------------------------------------------------------
+//
 
 
   { // Bereitmeldung per Mail ---------------------------------------
@@ -1379,7 +1382,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, Zeile);
     DEBUG( "MailBody: %s\n", MailBody);
 
-    sendmail(Betreff, MailBody);  // vorläufig
+//    sendmail(Betreff, MailBody);  // vorläufig
   } // -----  Bereitmeldung per Mail -----------------------------------
 
 
@@ -1410,6 +1413,13 @@ int main(int argc, char *argv[])
     DEBUG(LogText);
     DEBUG(">>> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
 
+//    {// --- Log-Ausgabe -----------------------------------------------------------------
+//     	char LogText[ZEILE];        sprintf(LogText, 
+//      ">>>                   --- FIFO '%s' open !", FIFO);
+//      MYLOG(LogText);
+//    } // --------------------------------------------------------------------------------
+//
+
     char Betreff[ZEILE] = {'\0'};
     char Zeitbuf[NOTIZ];
     sprintf( Betreff, "FIFO open >%s< @ %s",  FIFO, mkdatum(time(0), Zeitbuf));
@@ -1429,7 +1439,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, Zeile);
     DEBUG( "MailBody: %s\n", MailBody);
 
-    sendmail(Betreff, MailBody);
+//    sendmail(Betreff, MailBody);
   }
 
   bool ShowReady = true;
