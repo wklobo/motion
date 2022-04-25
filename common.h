@@ -3,7 +3,7 @@
 //* File:          common.h                                                                   *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2021-04-18;                                                                *//
-//* Last change:   2022-04-22 - 11:03:55                                                      *//
+//* Last change:   2022-04-25 - 16:57:57                                                      *//
 //* Description:   Hilfsfunktionen und  Vereinbarungen zwischen den Programmen                *//
 //*                                                                                           *//
 //* Copyright (C) 2019-22 by Wolfgang Keuch                                                   *//
@@ -30,10 +30,11 @@
 #define GBYTES        1024*MBYTES
 
 #define NOTIZ                64       /* Kurzmeldung */ 
-#define ZEILE               256
-#define BLOCK           10*KBYTES
+#define ZEILE            KBYTES/4
+#define BLOCK           16*KBYTES
 #define BUFFER         256*KBYTES
-#define MIN_FILESIZE    60*KBYTES
+
+#define MIN_FILESIZE    56*KBYTES
 #define MIN_FILMSIZE   200*KBYTES
 
 #define NOINT -999999999              /* kein Integer-Wert */

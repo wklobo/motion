@@ -1,0 +1,1807 @@
+
+SqlMotion Vers. 4.3.150/Apr 25 2022 - User 118, Group 127
+------ savePID()->'/home/pi/motion/aux/SqlMotion.pid'
+
+main()#1110: ==== Phase 2: nochmal alle Verzeichnisse in '/home/pi/motion/pix/' durchsuchen ========
+
+main()#1149: 0. ---  '/home/pi/motion/pix/.': 892928 Bytes ---
+
+main()#1149: 1. ---  '/home/pi/motion/pix/..': 4096 Bytes ---
+
+main()#1149: 2. ---  '/home/pi/motion/pix/Event_6607': 4096 Bytes ---
+
+main()#1149: 3. ---  '/home/pi/motion/pix/Event_6610': 4096 Bytes ---
+
+main()#1149: 4. ---  '/home/pi/motion/pix/Event_6604': 4096 Bytes ---
+
+main()#1149: 5. ---  '/home/pi/motion/pix/lastEvent': 25 Bytes ---
+
+main()#1149: 6. ---  '/home/pi/motion/pix/02-20220425174052-02.jpg': 56517 Bytes ---
+
+main()#1149: 7. ---  '/home/pi/motion/pix/event_0008': 12288 Bytes ---
+
+main()#1166: --- Verzeichnis '/home/pi/motion/pix/event_0008' durchsuchen ---
+main()#1202: Datei '.' untersuchen
+             reclen    16
+             type      4
+             offset    1
+             inode     397629
+             ..........
+main()#1202: Datei '..' untersuchen
+             reclen    16
+             type      4
+             offset    297141166
+             inode     396084
+             ...........
+main()#1202: Datei '08-20220425175421.mkv' untersuchen
+             reclen    40
+             type      8
+             offset    2063954227
+             inode     397417
+             FileDate  1650902112
+             FileSize  35976125
+             FileType  3
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '08-20220425175450-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2076237741
+             inode     397535
+             FileDate  1650902091
+             FileSize  58314
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175450-03.jpg' zu kurz: 58314! 
+main()#1202: Datei '08-20220425175503-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2077834548
+             inode     397579
+             FileDate  1650902103
+             FileSize  57948
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175503-03.jpg' zu kurz: 57948! 
+main()#1202: Datei '08-20220425175501-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2080186813
+             inode     397566
+             FileDate  1650902101
+             FileSize  58977
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175501-00.jpg' zu kurz: 58977! 
+main()#1202: Datei '08-20220425175444-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2090315242
+             inode     397513
+             FileDate  1650902084
+             FileSize  58151
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175444-01.jpg' zu kurz: 58151! 
+main()#1202: Datei '08-20220425175439-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2091244097
+             inode     397492
+             FileDate  1650902079
+             FileSize  58772
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175439-02.jpg' zu kurz: 58772! 
+main()#1202: Datei '08-20220425175427-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2092596304
+             inode     397457
+             FileDate  1650902067
+             FileSize  57903
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175427-01.jpg' zu kurz: 57903! 
+main()#1202: Datei '08-20220425175452-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2097877068
+             inode     397541
+             FileDate  1650902092
+             FileSize  58361
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175452-01.jpg' zu kurz: 58361! 
+main()#1202: Datei '08-20220425175440-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2108262647
+             inode     397494
+             FileDate  1650902080
+             FileSize  58556
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175440-00.jpg' zu kurz: 58556! 
+main()#1202: Datei '08-20220425175455-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2113490003
+             inode     397553
+             FileDate  1650902095
+             FileSize  58715
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175455-01.jpg' zu kurz: 58715! 
+main()#1202: Datei '08-20220425175421-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2126521344
+             inode     397487
+             FileDate  1650902063
+             FileSize  57913
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175421-02.jpg' zu kurz: 57913! 
+main()#1202: Datei '08-20220425175422-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2128033659
+             inode     397517
+             FileDate  1650902063
+             FileSize  58000
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175422-00.jpg' zu kurz: 58000! 
+main()#1202: Datei '08-20220425175424-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2145657892
+             inode     397410
+             FileDate  1650902064
+             FileSize  57727
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175424-00.jpg' zu kurz: 57727! 
+main()#1202: Datei '08-20220425175456-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2147483647
+             inode     397556
+             FileDate  1650902096
+             FileSize  58938
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0008/08-20220425175456-00.jpg' zu kurz: 58938! 
+main()#1345: 
+main()#1354: === in die Datenbank ===> EventKey: 'event_4200'
+main()#1382: 
+
+main()#1149: 8. ---  '/home/pi/motion/pix/lastsnap.jpg': 57974 Bytes ---
+
+main()#1149: 9. ---  '/home/pi/motion/pix/Event_6605': 12288 Bytes ---
+
+main()#1149: 10. ---  '/home/pi/motion/pix/Event_6611': 12288 Bytes ---
+
+main()#1149: 11. ---  '/home/pi/motion/pix/Event_6609': 4096 Bytes ---
+
+main()#1149: 12. ---  '/home/pi/motion/pix/event_0012': 4096 Bytes ---
+
+main()#1166: --- Verzeichnis '/home/pi/motion/pix/event_0012' durchsuchen ---
+main()#1202: Datei '12-20220425180337-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    8007134
+             inode     397505
+             FileDate  1650902617
+             FileSize  61500
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180330-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    52947388
+             inode     397428
+             FileDate  1650902610
+             FileSize  61483
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180335-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    87794059
+             inode     397497
+             FileDate  1650902616
+             FileSize  61443
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180326-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    165443603
+             inode     397403
+             FileDate  1650902608
+             FileSize  57998
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0012/12-20220425180326-03.jpg' zu kurz: 57998! 
+main()#1202: Datei '12-20220425180336-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    265150788
+             inode     397499
+             FileDate  1650902616
+             FileSize  61470
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180329-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    293835203
+             inode     397421
+             FileDate  1650902609
+             FileSize  61403
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180326-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    371181735
+             inode     397402
+             FileDate  1650902608
+             FileSize  57997
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0012/12-20220425180326-02.jpg' zu kurz: 57997! 
+main()#1202: Datei '12-20220425180332-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    547271332
+             inode     397469
+             FileDate  1650902612
+             FileSize  61398
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180336-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    608711965
+             inode     397498
+             FileDate  1650902616
+             FileSize  61441
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180328-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    625449656
+             inode     397409
+             FileDate  1650902609
+             FileSize  61528
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180332-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    684487798
+             inode     397475
+             FileDate  1650902613
+             FileSize  61471
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180337-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    716230830
+             inode     397507
+             FileDate  1650902619
+             FileSize  61446
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180339-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    733704747
+             inode     397510
+             FileDate  1650902620
+             FileSize  61427
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180334-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    752206109
+             inode     397489
+             FileDate  1650902614
+             FileSize  61494
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180333-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    759472770
+             inode     397476
+             FileDate  1650902613
+             FileSize  61527
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180327-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    781737150
+             inode     397408
+             FileDate  1650902609
+             FileSize  61436
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180336-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    863348939
+             inode     397504
+             FileDate  1650902617
+             FileSize  61522
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180330-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    891968056
+             inode     397424
+             FileDate  1650902610
+             FileSize  61414
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180339-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    995545700
+             inode     397508
+             FileDate  1650902619
+             FileSize  61475
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180326.mkv' untersuchen
+             reclen    40
+             type      8
+             offset    1079899399
+             inode     397368
+             FileDate  1650902621
+             FileSize  10407533
+             FileType  3
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180337-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1146749120
+             inode     397506
+             FileDate  1650902619
+             FileSize  61371
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180331-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1230661114
+             inode     397467
+             FileDate  1650902611
+             FileSize  61479
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180333-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1321762544
+             inode     397480
+             FileDate  1650902613
+             FileSize  61440
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180327-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1379528400
+             inode     397406
+             FileDate  1650902608
+             FileSize  61482
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180329-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1485728862
+             inode     397420
+             FileDate  1650902609
+             FileSize  61499
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180334-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1501875347
+             inode     397491
+             FileDate  1650902615
+             FileSize  61453
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180340-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1565294720
+             inode     397511
+             FileDate  1650902620
+             FileSize  61400
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180333-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1595665925
+             inode     397482
+             FileDate  1650902614
+             FileSize  61452
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '.' untersuchen
+             reclen    16
+             type      4
+             offset    1652193879
+             inode     397512
+             ..........
+main()#1202: Datei '12-20220425180327-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1665131936
+             inode     397407
+             FileDate  1650902609
+             FileSize  61546
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180334-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1668653275
+             inode     397486
+             FileDate  1650902614
+             FileSize  61458
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180335-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1671014726
+             inode     397495
+             FileDate  1650902615
+             FileSize  61477
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180331-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1701546379
+             inode     397468
+             FileDate  1650902612
+             FileSize  61460
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180333-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1721943751
+             inode     397481
+             FileDate  1650902613
+             FileSize  61490
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180335-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1733583227
+             inode     397493
+             FileDate  1650902615
+             FileSize  61500
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180329-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1737108855
+             inode     397423
+             FileDate  1650902610
+             FileSize  61469
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '..' untersuchen
+             reclen    16
+             type      4
+             offset    1741271056
+             inode     396084
+             ...........
+main()#1202: Datei '12-20220425180331-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1772826997
+             inode     397465
+             FileDate  1650902611
+             FileSize  61347
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180332-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1788838581
+             inode     397472
+             FileDate  1650902612
+             FileSize  61432
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180329-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1799627831
+             inode     397422
+             FileDate  1650902609
+             FileSize  61459
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180331-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1816944282
+             inode     397464
+             FileDate  1650902611
+             FileSize  61417
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180328-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1825449883
+             inode     397416
+             FileDate  1650902609
+             FileSize  61413
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180332-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1869376356
+             inode     397471
+             FileDate  1650902612
+             FileSize  61428
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180330-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1893551066
+             inode     397462
+             FileDate  1650902611
+             FileSize  61475
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180334-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2035965345
+             inode     397488
+             FileDate  1650902614
+             FileSize  61435
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180336-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2047180564
+             inode     397502
+             FileDate  1650902616
+             FileSize  61421
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180327-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2063533909
+             inode     397404
+             FileDate  1650902608
+             FileSize  57852
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0012/12-20220425180327-00.jpg' zu kurz: 57852! 
+main()#1202: Datei '12-20220425180335-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2118310378
+             inode     397496
+             FileDate  1650902615
+             FileSize  61401
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '12-20220425180330-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2147483647
+             inode     397461
+             FileDate  1650902610
+             FileSize  61553
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1345: 
+main()#1354: === in die Datenbank ===> EventKey: 'event_4201'
+main()#1382: 
+
+main()#1149: 13. ---  '/home/pi/motion/pix/Event_6606': 4096 Bytes ---
+
+main()#1149: 14. ---  '/home/pi/motion/pix/02-20220425174052-03.jpg': 56538 Bytes ---
+
+main()#1149: 15. ---  '/home/pi/motion/pix/event_0011': 4096 Bytes ---
+
+main()#1166: --- Verzeichnis '/home/pi/motion/pix/event_0011' durchsuchen ---
+main()#1202: Datei '11-20220425180321-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    87513330
+             inode     397705
+             FileDate  1650902601
+             FileSize  57919
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180321-01.jpg' zu kurz: 57919! 
+main()#1202: Datei '11-20220425180306-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    120922583
+             inode     397549
+             FileDate  1650902587
+             FileSize  59123
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180306-03.jpg' zu kurz: 59123! 
+main()#1202: Datei '11-20220425180302-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    141641083
+             inode     397478
+             FileDate  1650902582
+             FileSize  58198
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180302-00.jpg' zu kurz: 58198! 
+main()#1202: Datei '11-20220425180311-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    143130168
+             inode     397646
+             FileDate  1650902592
+             FileSize  57928
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180311-03.jpg' zu kurz: 57928! 
+main()#1202: Datei '11-20220425180315-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    180288277
+             inode     397681
+             FileDate  1650902595
+             FileSize  58914
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180315-01.jpg' zu kurz: 58914! 
+main()#1202: Datei '11-20220425180307-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    217337545
+             inode     397562
+             FileDate  1650902587
+             FileSize  59457
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180322-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    218659004
+             inode     397709
+             FileDate  1650902602
+             FileSize  57846
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180322-01.jpg' zu kurz: 57846! 
+main()#1202: Datei '11-20220425180312-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    221104848
+             inode     397659
+             FileDate  1650902592
+             FileSize  57980
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180312-02.jpg' zu kurz: 57980! 
+main()#1202: Datei '11-20220425180312-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    249467454
+             inode     397648
+             FileDate  1650902592
+             FileSize  57814
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180312-00.jpg' zu kurz: 57814! 
+main()#1202: Datei '11-20220425180325-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    255873344
+             inode     397720
+             FileDate  1650902605
+             FileSize  57807
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180325-00.jpg' zu kurz: 57807! 
+main()#1202: Datei '11-20220425180323-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    265821050
+             inode     397715
+             FileDate  1650902604
+             FileSize  58104
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180323-03.jpg' zu kurz: 58104! 
+main()#1202: Datei '11-20220425180318-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    267762451
+             inode     397693
+             FileDate  1650902598
+             FileSize  57678
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180318-01.jpg' zu kurz: 57678! 
+main()#1202: Datei '11-20220425180312-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    300461588
+             inode     397650
+             FileDate  1650902592
+             FileSize  57875
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180312-01.jpg' zu kurz: 57875! 
+main()#1202: Datei '11-20220425180315-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    343258907
+             inode     397680
+             FileDate  1650902595
+             FileSize  57315
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180315-00.jpg' zu kurz: 57315! 
+main()#1202: Datei '11-20220425180318-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    350930116
+             inode     397695
+             FileDate  1650902599
+             FileSize  57747
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180318-03.jpg' zu kurz: 57747! 
+main()#1202: Datei '11-20220425180316-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    397467925
+             inode     397684
+             FileDate  1650902596
+             FileSize  57552
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180316-00.jpg' zu kurz: 57552! 
+main()#1202: Datei '11-20220425180314-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    402809647
+             inode     397677
+             FileDate  1650902594
+             FileSize  61609
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180313-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    405176438
+             inode     397672
+             FileDate  1650902593
+             FileSize  57877
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180313-00.jpg' zu kurz: 57877! 
+main()#1202: Datei '11-20220425180325-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    412032338
+             inode     397721
+             FileDate  1650902605
+             FileSize  57926
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180325-01.jpg' zu kurz: 57926! 
+main()#1202: Datei '11-20220425180305-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    412950712
+             inode     397529
+             FileDate  1650902585
+             FileSize  54716
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180305-01.jpg' zu kurz: 54716! 
+main()#1202: Datei '11-20220425180318-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    424094073
+             inode     397694
+             FileDate  1650902598
+             FileSize  57736
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180318-02.jpg' zu kurz: 57736! 
+main()#1202: Datei '11-20220425180309-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    427503786
+             inode     397581
+             FileDate  1650902589
+             FileSize  57517
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180309-00.jpg' zu kurz: 57517! 
+main()#1202: Datei '11-20220425180321-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    444718430
+             inode     397706
+             FileDate  1650902601
+             FileSize  57902
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180321-02.jpg' zu kurz: 57902! 
+main()#1202: Datei '11-20220425180309-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    458234938
+             inode     397596
+             FileDate  1650902590
+             FileSize  59806
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180301-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    478915284
+             inode     397470
+             FileDate  1650902582
+             FileSize  58128
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180301-02.jpg' zu kurz: 58128! 
+main()#1202: Datei '11-20220425180317-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    482803816
+             inode     397690
+             FileDate  1650902597
+             FileSize  57602
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180317-02.jpg' zu kurz: 57602! 
+main()#1202: Datei '11-20220425180310-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    516481287
+             inode     397598
+             FileDate  1650902590
+             FileSize  57627
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180310-00.jpg' zu kurz: 57627! 
+main()#1202: Datei '11-20220425180318-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    517988542
+             inode     397692
+             FileDate  1650902598
+             FileSize  57655
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180318-00.jpg' zu kurz: 57655! 
+main()#1202: Datei '11-20220425180316-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    518227504
+             inode     397685
+             FileDate  1650902596
+             FileSize  58107
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180316-01.jpg' zu kurz: 58107! 
+main()#1202: Datei '11-20220425180308-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    533622114
+             inode     397578
+             FileDate  1650902589
+             FileSize  59856
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180309-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    596846009
+             inode     397586
+             FileDate  1650902589
+             FileSize  59835
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180303-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    617836971
+             inode     397503
+             FileDate  1650902584
+             FileSize  54982
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180303-03.jpg' zu kurz: 54982! 
+main()#1202: Datei '11-20220425180308-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    621595197
+             inode     397580
+             FileDate  1650902589
+             FileSize  57608
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180308-03.jpg' zu kurz: 57608! 
+main()#1202: Datei '11-20220425180313-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    641297550
+             inode     397673
+             FileDate  1650902593
+             FileSize  57888
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180313-01.jpg' zu kurz: 57888! 
+main()#1202: Datei '11-20220425180319-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    664291522
+             inode     397698
+             FileDate  1650902599
+             FileSize  57753
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180319-02.jpg' zu kurz: 57753! 
+main()#1202: Datei '11-20220425180304-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    669648061
+             inode     397522
+             FileDate  1650902584
+             FileSize  55344
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180304-02.jpg' zu kurz: 55344! 
+main()#1202: Datei '11-20220425180304-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    673114716
+             inode     397515
+             FileDate  1650902584
+             FileSize  54963
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180304-00.jpg' zu kurz: 54963! 
+main()#1202: Datei '11-20220425180316-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    682925628
+             inode     397686
+             FileDate  1650902596
+             FileSize  56612
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180316-02.jpg' zu kurz: 56612! 
+main()#1202: Datei '11-20220425180305-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    794477408
+             inode     397531
+             FileDate  1650902585
+             FileSize  54947
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180305-02.jpg' zu kurz: 54947! 
+main()#1202: Datei '11-20220425180317-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    795039162
+             inode     397688
+             FileDate  1650902597
+             FileSize  57597
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180317-00.jpg' zu kurz: 57597! 
+main()#1202: Datei '11-20220425180321-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    839285009
+             inode     397707
+             FileDate  1650902602
+             FileSize  57833
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180321-03.jpg' zu kurz: 57833! 
+main()#1202: Datei '11-20220425180310-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    860453209
+             inode     397619
+             FileDate  1650902591
+             FileSize  57723
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180310-03.jpg' zu kurz: 57723! 
+main()#1202: Datei '11-20220425180302-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    926548160
+             inode     397484
+             FileDate  1650902583
+             FileSize  56347
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180302-02.jpg' zu kurz: 56347! 
+main()#1202: Datei '11-20220425180300-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    961065915
+             inode     397412
+             FileDate  1650902582
+             FileSize  57919
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180300-02.jpg' zu kurz: 57919! 
+main()#1202: Datei '11-20220425180319-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    973823766
+             inode     397697
+             FileDate  1650902599
+             FileSize  57717
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180319-01.jpg' zu kurz: 57717! 
+main()#1202: Datei '11-20220425180322-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    989271665
+             inode     397708
+             FileDate  1650902602
+             FileSize  57864
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180322-00.jpg' zu kurz: 57864! 
+main()#1202: Datei '11-20220425180314-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1006561540
+             inode     397676
+             FileDate  1650902594
+             FileSize  62083
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180307-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1011340329
+             inode     397565
+             FileDate  1650902588
+             FileSize  57837
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180307-02.jpg' zu kurz: 57837! 
+main()#1202: Datei '11-20220425180300-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1026394841
+             inode     397425
+             FileDate  1650902582
+             FileSize  57992
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180300-03.jpg' zu kurz: 57992! 
+main()#1202: Datei '11-20220425180323-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1043235159
+             inode     397713
+             FileDate  1650902603
+             FileSize  57922
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180323-01.jpg' zu kurz: 57922! 
+main()#1202: Datei '11-20220425180306-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1052909385
+             inode     397537
+             FileDate  1650902586
+             FileSize  52311
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180306-01.jpg' zu kurz: 52311! 
+main()#1202: Datei '11-20220425180303-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1217122044
+             inode     397490
+             FileDate  1650902583
+             FileSize  46959
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180303-00.jpg' zu kurz: 46959! 
+main()#1202: Datei '11-20220425180311-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1218216668
+             inode     397626
+             FileDate  1650902591
+             FileSize  57736
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180311-01.jpg' zu kurz: 57736! 
+main()#1202: Datei '11-20220425180319-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1239867025
+             inode     397699
+             FileDate  1650902600
+             FileSize  57950
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180319-03.jpg' zu kurz: 57950! 
+main()#1202: Datei '11-20220425180307-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1254243773
+             inode     397564
+             FileDate  1650902588
+             FileSize  60401
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180320-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1275001647
+             inode     397700
+             FileDate  1650902600
+             FileSize  57961
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180320-00.jpg' zu kurz: 57961! 
+main()#1202: Datei '11-20220425180308-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1282907820
+             inode     397568
+             FileDate  1650902588
+             FileSize  57488
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180308-00.jpg' zu kurz: 57488! 
+main()#1202: Datei '11-20220425180317-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1298296259
+             inode     397691
+             FileDate  1650902598
+             FileSize  57587
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180317-03.jpg' zu kurz: 57587! 
+main()#1202: Datei '11-20220425180314-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1351317915
+             inode     397679
+             FileDate  1650902595
+             FileSize  57344
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180314-03.jpg' zu kurz: 57344! 
+main()#1202: Datei '11-20220425180310-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1353096960
+             inode     397615
+             FileDate  1650902590
+             FileSize  57560
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180310-02.jpg' zu kurz: 57560! 
+main()#1202: Datei '11-20220425180322-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1414772612
+             inode     397710
+             FileDate  1650902602
+             FileSize  57925
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180322-02.jpg' zu kurz: 57925! 
+main()#1202: Datei '11-20220425180300.mkv' untersuchen
+             reclen    40
+             type      8
+             offset    1480101313
+             inode     397369
+             FileDate  1650902606
+             FileSize  21982890
+             FileType  3
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180303-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1493818225
+             inode     397501
+             FileDate  1650902583
+             FileSize  54370
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180303-02.jpg' zu kurz: 54370! 
+main()#1202: Datei '11-20220425180322-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1520407144
+             inode     397711
+             FileDate  1650902603
+             FileSize  57868
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180322-03.jpg' zu kurz: 57868! 
+main()#1202: Datei '11-20220425180323-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1527855713
+             inode     397714
+             FileDate  1650902603
+             FileSize  57977
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180323-02.jpg' zu kurz: 57977! 
+main()#1202: Datei '11-20220425180315-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1534154044
+             inode     397683
+             FileDate  1650902596
+             FileSize  58484
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180315-03.jpg' zu kurz: 58484! 
+main()#1202: Datei '11-20220425180304-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1534709058
+             inode     397518
+             FileDate  1650902584
+             FileSize  54877
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180304-01.jpg' zu kurz: 54877! 
+main()#1202: Datei '11-20220425180306-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1535405264
+             inode     397533
+             FileDate  1650902586
+             FileSize  51466
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180306-00.jpg' zu kurz: 51466! 
+main()#1202: Datei '11-20220425180302-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1583879742
+             inode     397479
+             FileDate  1650902583
+             FileSize  58067
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180302-01.jpg' zu kurz: 58067! 
+main()#1202: Datei '11-20220425180320-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1590971312
+             inode     397703
+             FileDate  1650902601
+             FileSize  57638
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180320-03.jpg' zu kurz: 57638! 
+main()#1202: Datei '11-20220425180320-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1595665925
+             inode     397702
+             FileDate  1650902600
+             FileSize  57691
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180320-02.jpg' zu kurz: 57691! 
+main()#1202: Datei '.' untersuchen
+             reclen    16
+             type      4
+             offset    1737108855
+             inode     397722
+             ..........
+main()#1202: Datei '..' untersuchen
+             reclen    16
+             type      4
+             offset    1739745109
+             inode     396084
+             ...........
+main()#1202: Datei '11-20220425180321-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1828140608
+             inode     397704
+             FileDate  1650902601
+             FileSize  57643
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180321-00.jpg' zu kurz: 57643! 
+main()#1202: Datei '11-20220425180324-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1828745763
+             inode     397719
+             FileDate  1650902605
+             FileSize  57970
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180324-03.jpg' zu kurz: 57970! 
+main()#1202: Datei '11-20220425180311-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1842217047
+             inode     397623
+             FileDate  1650902591
+             FileSize  57679
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180311-00.jpg' zu kurz: 57679! 
+main()#1202: Datei '11-20220425180309-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1862438526
+             inode     397592
+             FileDate  1650902589
+             FileSize  59844
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180302-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1879143914
+             inode     397485
+             FileDate  1650902583
+             FileSize  50403
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180302-03.jpg' zu kurz: 50403! 
+main()#1202: Datei '11-20220425180319-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1896744931
+             inode     397696
+             FileDate  1650902599
+             FileSize  57731
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180319-00.jpg' zu kurz: 57731! 
+main()#1202: Datei '11-20220425180323-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1909258173
+             inode     397712
+             FileDate  1650902603
+             FileSize  58014
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180323-00.jpg' zu kurz: 58014! 
+main()#1202: Datei '11-20220425180324-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1939055794
+             inode     397717
+             FileDate  1650902604
+             FileSize  57750
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180324-01.jpg' zu kurz: 57750! 
+main()#1202: Datei '11-20220425180301-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1942096453
+             inode     397460
+             FileDate  1650902582
+             FileSize  57938
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180301-00.jpg' zu kurz: 57938! 
+main()#1202: Datei '11-20220425180301-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1942534812
+             inode     397477
+             FileDate  1650902582
+             FileSize  58153
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180301-03.jpg' zu kurz: 58153! 
+main()#1202: Datei '11-20220425180324-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1974209869
+             inode     397718
+             FileDate  1650902604
+             FileSize  58014
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180324-02.jpg' zu kurz: 58014! 
+main()#1202: Datei '11-20220425180314-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1982494143
+             inode     397678
+             FileDate  1650902594
+             FileSize  58991
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180314-02.jpg' zu kurz: 58991! 
+main()#1202: Datei '11-20220425180320-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1991783601
+             inode     397701
+             FileDate  1650902600
+             FileSize  57755
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180320-01.jpg' zu kurz: 57755! 
+main()#1202: Datei '11-20220425180315-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    1993857944
+             inode     397682
+             FileDate  1650902595
+             FileSize  59165
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180315-02.jpg' zu kurz: 59165! 
+main()#1202: Datei '11-20220425180301-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2002585381
+             inode     397463
+             FileDate  1650902582
+             FileSize  57654
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180301-01.jpg' zu kurz: 57654! 
+main()#1202: Datei '11-20220425180317-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2016025892
+             inode     397689
+             FileDate  1650902597
+             FileSize  57575
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180317-01.jpg' zu kurz: 57575! 
+main()#1202: Datei '11-20220425180312-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2034320029
+             inode     397667
+             FileDate  1650902593
+             FileSize  57956
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180312-03.jpg' zu kurz: 57956! 
+main()#1202: Datei '11-20220425180324-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2037053104
+             inode     397716
+             FileDate  1650902604
+             FileSize  58126
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180324-00.jpg' zu kurz: 58126! 
+main()#1202: Datei '11-20220425180313-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2053535439
+             inode     397675
+             FileDate  1650902594
+             FileSize  57998
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180313-03.jpg' zu kurz: 57998! 
+main()#1202: Datei '11-20220425180304-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2062478706
+             inode     397527
+             FileDate  1650902585
+             FileSize  55032
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180304-03.jpg' zu kurz: 55032! 
+main()#1202: Datei '11-20220425180311-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2071554251
+             inode     397637
+             FileDate  1650902591
+             FileSize  57691
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180311-02.jpg' zu kurz: 57691! 
+main()#1202: Datei '11-20220425180308-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2093251026
+             inode     397573
+             FileDate  1650902588
+             FileSize  59817
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1202: Datei '11-20220425180313-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2096666019
+             inode     397674
+             FileDate  1650902593
+             FileSize  58049
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180313-02.jpg' zu kurz: 58049! 
+main()#1202: Datei '11-20220425180305-00.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2112125637
+             inode     397528
+             FileDate  1650902585
+             FileSize  54936
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180305-00.jpg' zu kurz: 54936! 
+main()#1202: Datei '11-20220425180303-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2130194730
+             inode     397500
+             FileDate  1650902583
+             FileSize  53504
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180303-01.jpg' zu kurz: 53504! 
+main()#1202: Datei '11-20220425180316-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2133882916
+             inode     397687
+             FileDate  1650902597
+             FileSize  57428
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180316-03.jpg' zu kurz: 57428! 
+main()#1202: Datei '11-20220425180305-03.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2139117130
+             inode     397532
+             FileDate  1650902586
+             FileSize  50472
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180305-03.jpg' zu kurz: 50472! 
+main()#1202: Datei '11-20220425180310-01.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2142275455
+             inode     397603
+             FileDate  1650902590
+             FileSize  57614
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180310-01.jpg' zu kurz: 57614! 
+main()#1202: Datei '11-20220425180306-02.jpg' untersuchen
+             reclen    40
+             type      8
+             offset    2147483647
+             inode     397545
+             FileDate  1650902586
+             FileSize  58421
+             FileType  1
+              minimum  59392
+                 JPG?  1
+main()#1261: -- Datei '/home/pi/motion/pix/event_0011/11-20220425180306-02.jpg' zu kurz: 58421! 
+main()#1345: 
+main()#1354: === in die Datenbank ===> EventKey: 'event_4202'
+main()#1382: 
+
+main()#1149: 16. ---  '/home/pi/motion/pix/Event_6608': 12288 Bytes ---
+------ killPID()->'/home/pi/motion/aux/SqlMotion.pid'

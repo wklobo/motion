@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-04-24 - 14:41:37                                    *//
+//* Last change:   2022-04-25 - 11:25:29                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -22,14 +22,18 @@
 #define _DEFAULT_SOURCE
 #define _MODUL0
 #define __SQLMOTION_MYLOG__    true
+#define __SQLMOTION_MYLOG1__   true
+#define __SQLMOTION_MYLOG2__   true
 #define __SQLMOTION_DEBUG__    false
 #define __SQLMOTION_DEBUG__d   false     /* Datenbanken */
 #define __SQLMOTION_DEBUG__1   false
-#define __SQLMOTION_DEBUG__2   false
+#define __SQLMOTION_DEBUG__2   true
 #define __SQLMOTION_DEBUG__z   false
+
 
 #include "./version.h"
 #include "./sqlmotion.h"
+
 
 #include <time.h>
 #include <stdio.h>
@@ -69,6 +73,7 @@ static time_t ErrorFlag = 0;          // Steuerung rote LED
 
 char MailBody[BODYLEN];
 
+
 //***************************************************************************// bool MyLog(const char* pLogText)
 
 /*
@@ -79,9 +84,21 @@ char MailBody[BODYLEN];
 //// Log-Ausgabe
 //// -----------
 #if __SQLMOTION_MYLOG__
-#define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+	#define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
 #else
-#define MYLOG(...)
+	#define MYLOG(...)
+#endif
+
+#if __SQLMOTION_MYLOG1__
+	#define MYLOG1(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+#else
+	#define MYLOG1(...)
+#endif
+
+#if __SQLMOTION_MYLOG2__
+	#define MYLOG2(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+#else
+	#define MYLOG2(...)
 #endif
 
 // main()
@@ -125,6 +142,7 @@ int cnt = 0;
 #else
 #define DEBUG_z(...)
 #endif
+
 
 //************************************************************************************//
 
@@ -196,10 +214,12 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
-  if (errsv == 24)                              // 'too many open files' ...
-    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben
-  else
-    report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
+  report_Error(ErrText, true);                	// Fehlermeldung immer mit Mail ausgeben
+
+//  if (errsv == 24)                              // 'too many open files' ...
+//    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben
+//  else
+//    report_Error(ErrText, false);               // Fehlermeldung ohne Mail ausgeben
   return errsv;
 }
 //************************************************************************************//
@@ -402,6 +422,8 @@ pid_t getPID(void)
   return myPID;
 }
 //***********************************************************************************************
+//
+//
 //***********************************************************************************************
 
 // Datenbank anlegen
@@ -907,6 +929,9 @@ int main(int argc, char* argv[])
   DEBUG("%s\n\n", Logtext);
   goto Phase_1;
 
+
+
+
 Phase_1:
 //* ===== Phase 1 =================================================================================
 //*
@@ -937,11 +962,16 @@ Phase_1:
 
   // alle Elemente im Verzeichnis durchlaufen
   // ----------------------------------------
-  { // --- Debug-Ausgaben ----------------------------------------------------------------------
+  { // --- Debug-Ausgaben ------------------------------------------------------------------------
     #define MELDUNG   "%s()#%d: ---- alle Elemente im '%s' durchlaufen -----\n"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__, thisPfad);
     #undef MELDUNG
-  } // -----------------------------------------------------------------------------------------
+  } // -------------------------------------------------------------------------------------------
+  { // --- Log-Ausgabe ---------------------------------------------------------------------------
+    char LogText[ZEILE];
+    sprintf(LogText, "       --- Phase  1: alle Elemente im '%s' durchlaufen", thisPfad);
+    MYLOG1(LogText);
+  } // -------------------------------------------------------------------------------------------
 
   char** DateiListe = argv;                     // die übergebene Dateiliste
 
@@ -950,6 +980,12 @@ Phase_1:
     char* thisDatei = *DateiListe;              // eine einzelne Datei
     int thisFiletype = getFiletyp(thisDatei);
 
+    { // --- Log-Ausgabe -------------------------------------------------------------------------
+      char LogText[ZEILE];
+      sprintf(LogText, "         --- %s", thisDatei);
+      MYLOG1(LogText);
+    } // -----------------------------------------------------------------------------------------
+    
 		// um Konflikte zwischen 'pi' und 'motion' zu vermeiden
 		// ----------------------------------------------------
     if ((thisFiletype == AVI) || (thisFiletype == MKV) || (thisFiletype == JPG))
@@ -970,6 +1006,11 @@ Phase_1:
         DEBUG(MELDUNG, __FUNCTION__, __LINE__, thisDatei, thisEventnummer);
         #undef MELDUNG
       } // -----------------------------------------------------------
+      { // --- Log-Ausgabe -----------------------------------------------------------------------
+        char LogText[ZEILE];
+        sprintf(LogText, "          --- Eventnummer '%4d'", thisEventnummer);
+        MYLOG1(LogText);
+      } // ---------------------------------------------------------------------------------------
 
       // ein neues Verzeichnis anlegen
       // -----------------------------
@@ -990,18 +1031,26 @@ Phase_1:
         if (myEventnummer == thisEventnummer)
         {
           { // -----------------------------------------------------------
-            #define MELDUNG   "%s()#%d: '%s' Ev(%d) -> '%s'\n"
-            DEBUG(MELDUNG, __FUNCTION__, __LINE__, myDatei, myEventnummer, thisFolder);
+            #define MELDUNG   "%s()#%d: '%s' -> '%s'\n"
+            DEBUG(MELDUNG, __FUNCTION__, __LINE__, myDatei, thisFolder);
             #undef MELDUNG
           } // -----------------------------------------------------------
+          { // --- Log-Ausgabe -----------------------------------------------------------------------
+            char LogText[ZEILE];
+            sprintf(LogText, "            --- '%s' -> '%s'", myDatei, thisFolder);
+            MYLOG1(LogText);
+          }
 
 					errno = 0;
           if (MoveFile( myDatei, thisFolder))                   // Datei verschieben
+          { // --- Log-Ausgabe -----------------------------------------------------------------------
           	newFiles++;
+          }
           else
   				{ // --- Log-Ausgabe ----------------------------------------------------------------------
     				char LogText[ZEILE];  
-    				sprintf(LogText, "'%s'-->'%s': Error %d(%s)", myDatei, thisFolder, errno, strerror(errno));
+            sprintf(LogText, "            --- '%s' -> '%s': Error %d(%s)", 
+                                              myDatei, thisFolder, errno, strerror(errno));
     				MYLOG(LogText);
           } // ----------------------------------------------------------------------------------------
         }
@@ -1014,14 +1063,14 @@ Phase_1:
     }
   }
 // ===== Phase 1 beendet===========================================================================
-
-  { // --- Debug-Ausgaben ---------------------------------------
-    #define MELDUNG   "\n%s()#%d: ---- Phase 1 fertig: %d Folders, %d Files in %ld msec --------------------------------------\n"
-    DEBUG(MELDUNG, __FUNCTION__, __LINE__, newFolder, newFiles, Zwischenzeit(T_ABSCHNITT));
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, newFolder, newFiles, Zwischenzeit(T_ABSCHNITT));
-    #undef MELDUNG
-    // ----------------------------------------------------------
+  {
+    char LogText[ZEILE];
+    sprintf(LogText, "      --- Phase 1 fertig: %d Dateien -> %d neue Verzeichnisse, in %ld msec", 
+                                               newFiles, newFolder, Zwischenzeit(T_ABSCHNITT));
+    MYLOG(LogText);
   }
+ 
+  
   #if BREAKmain1
   { // STOP! -- weiter mit ENTER
     // -------------------------------
@@ -1032,6 +1081,9 @@ Phase_1:
   }
   #endif
   goto Phase_2;
+
+
+
 
 Phase_2:
 //* ===== Phase 2 ==================================================================================
@@ -1060,6 +1112,11 @@ Phase_2:
     #undef MELDUNG
   }
   // -------------------------------------------------------------------------------------------
+  { // --- Log-Ausgabe ---------------------------------------------------------------------------
+    char LogText[ZEILE];
+    sprintf(LogText, "      --- Phase  2: alle Verzeichnisse im '%s' durchsuchen", thisPfad);
+    MYLOG2(LogText);
+  } // -------------------------------------------------------------------------------------------
 
   DIR* pdir = opendir(thisPfad);                // das oberste Verzeichnis
   struct dirent* pdirzeiger;
@@ -1093,9 +1150,15 @@ Phase_2:
       #undef MELDUNG
       // -----------------------------------------------------------------
     }
+    { // --- Log-Ausgabe ---------------------------------------------------------------------------
+      char LogText[ZEILE];
+      sprintf(LogText, "        --- '%s': %ld Bytes", myPath, myFileSize);
+      MYLOG2(LogText);
+    } // -------------------------------------------------------------------------------------------
     SizeTotal += myFileSize;
 
     if (strstr(myPath, _FOLDER) != NULL)                  // ist dies ein Eventverzeichnis?
+//    if (strstr(myPath, _EVENT_) != NULL)                  // ist dies ein Eventverzeichnis?
     { // -- ja! Dies ist ein Eventverzeichnis
       // -------------------------------------
       { // --- Debug-Ausgaben ----------------------------------------------
@@ -1104,6 +1167,11 @@ Phase_2:
         #undef MELDUNG
       // ------------------------------------------------------------------
       }
+//      { // --- Log-Ausgabe ---------------------------------------------------------------------------
+//        char LogText[ZEILE];
+//        sprintf(LogText, "          --- '%s' durchsuchen", myPath);
+//        MYLOG2(LogText);
+//      } // -------------------------------------------------------------------------------------------
 
       Startzeit(T_FOLDER);            // Zeitmessung starten
       DIR* udir = opendir(myPath);    // das Eventverzeichnis öffnen
@@ -1141,6 +1209,12 @@ Phase_2:
           // not of any particular directory entry. See File Attributes.
         } // ----------------------------------------------------------------------
 
+//        { // --- Log-Ausgabe ---------------------------------------------------------------------------
+//          char LogText[ZEILE];
+//          sprintf(LogText, "          --- '.../%s' untersuchen", myFilename);
+//          MYLOG2(LogText);
+//        } // -------------------------------------------------------------------------------------------
+//
         if (myType == DT_REG)           //  struct dirent ('dirent.h'): A regular file.
         { // reguläre Datei
           // --------------
@@ -1159,6 +1233,13 @@ Phase_2:
             DEBUG_2("             FileDate  %ld\n",  myFileDatum);
           unsigned long myFileSize = myAttribut.st_size;  // Dateilänge
             DEBUG_2("             FileSize  %ld\n",  myFileSize);
+
+          { // --- Log-Ausgabe ---------------------------------------------------------------------------
+            char LogText[ZEILE];
+            sprintf(LogText, "           --- '%s' Lng.:%ld Bytes Datum: %ld", longFilename, myFileSize, myFileDatum);
+            MYLOG2(LogText);
+          } // -------------------------------------------------------------------------------------------
+
           // etwas Statistik
           // ---------------------------------------
           int myType = getFiletyp(longFilename);
@@ -1176,31 +1257,49 @@ Phase_2:
           { // Bilddatei zu klein
             // ------------------
             { // --- Debug-Ausgaben ---------------------------------------------------
-              #define MELDUNG   "%s()#%d: -- Datei '%s' zu kurz: %ld!\n"
+              #define MELDUNG   "%s()#%d: -- Datei '%s' zu kurz: %ld! \n"
               DEBUG_2(MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
               #undef MELDUNG
             } // ----------------------------------------------------------------------
+
+
+            { // --- Log-Ausgabe ---------------------------------------------------------------------------
+              char LogText[ZEILE];
+              sprintf(LogText, "             --- '%s'  zu kurz: %ld (min: %d)", 
+                                                  longFilename, myFileSize, MIN_FILESIZE);
+              MYLOG2(LogText);
+            } // -------------------------------------------------------------------------------------------
+
 
             // Datei löschen
             // ------------*
             remove(longFilename);
           }
-//          else if ((myFileSize < MIN_FILMSIZE) && (myType == MKV)) 
-//          { // Filmdatei zu klein
-//            // ------------------
-//            { // --- Debug-Ausgaben ---------------------------------------------------
-//              char ErrText[ERRBUFLEN];                      // Buffer für Fehlermeldungen
-//              #define MELDUNG   "%s()#%d: -- Datei '%s' zu kurz: %ld!\n"
-//              DEBUG_2(MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
-//              sprintf(ErrText, MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
-//              syslog(LOG_NOTICE, ErrText);
-//              #undef MELDUNG
-//            } // ----------------------------------------------------------------------
-//
-//            // Datei löschen
-//            // ------------*
-//            remove(longFilename);
-//          }
+          else if ((myFileSize < MIN_FILMSIZE) && (myType == MKV)) 
+          { // Filmdatei zu klein
+            // ------------------
+            { // --- Debug-Ausgaben ---------------------------------------------------
+              char ErrText[ERRBUFLEN];                      // Buffer für Fehlermeldungen
+              #define MELDUNG   "%s()#%d: -- Datei '%s' zu kurz: %ld!\n"
+              DEBUG_2(MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
+              sprintf(ErrText, MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
+              syslog(LOG_NOTICE, ErrText);
+              #undef MELDUNG
+            } // ----------------------------------------------------------------------
+
+
+            { // --- Log-Ausgabe ---------------------------------------------------------------------------
+              char LogText[ZEILE];
+              sprintf(LogText, "             --- '%s'  zu kurz: %ld (min: %d)", 
+                                                  longFilename, myFileSize, MIN_FILMSIZE);
+              MYLOG2(LogText);
+            } // -------------------------------------------------------------------------------------------
+
+
+            // Datei löschen
+            // ------------*
+            remove(longFilename);
+          }
           else
           {
             SizeTotal += myFileSize;
@@ -1214,11 +1313,13 @@ Phase_2:
         } // ---- Ende reguläre Datei
       }  // --- Ende Eventverzeichnis durchsuchen T_FILES
 
+
       { // --- Zeitmessung Dateien prüfen ---------------------------------------
         #define MELDUNG   "%s()#%d: ------ Zwischenzeit >Dateien pruefen<: '%ld' msec ------\n"
         DEBUG_z(MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_FILES));
         #undef MELDUNG
       } // ---------------------------------------------------------------
+
 
       // das Eventverzeichnis in der Datenbank vermerken
       // ------------------------------------------------
@@ -1310,21 +1411,44 @@ Phase_2:
     showMain_Error( ErrText,__FUNCTION__,__LINE__);
   }
 
-  { // --- Debug-Ausgaben ---------------------------------------
-    #define MELDUNG   "\n%s()#%d: ==== Phase 2 fertig in %ld msec ---------------------------------------------------------\n"
-    DEBUG_z(MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_ABSCHNITT));
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_ABSCHNITT));
-    #undef MELDUNG
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText,
-         "    Data ready in %ld msec!", Zwischenzeit(T_ABSCHNITT));
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-  } // ----------------------------------------------------------
+//  { // --- Debug-Ausgaben ---------------------------------------
+//    #define MELDUNG   "\n%s()#%d: ==== Phase 2 fertig in %ld msec ---------------------------------------------------------\n"
+//    DEBUG_z(MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_ABSCHNITT));
+//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, Zwischenzeit(T_ABSCHNITT));
+//    #undef MELDUNG
+//    { // --- Log-Ausgabe ---------------------------------------------------------
+//      char LogText[ZEILE];  sprintf(LogText,
+//         "    Data ready in %ld msec!", Zwischenzeit(T_ABSCHNITT));
+//      MYLOG(LogText);
+//    } // ------------------------------------------------------------------------
+//  } // ----------------------------------------------------------
 
   mysql_close(con);                             // Datenbank schließen
 
 // ===== Phase 2 beendet===========================================================================
+	double calcZeit = (double)Zwischenzeit(T_ABSCHNITT) / 1000.0;
+  {
+    char LogText[ZEILE];
+    sprintf(LogText, "     --- Phase 2 fertig in %2.3f sec", calcZeit);
+    MYLOG(LogText);
+  }
+  double dbSize = (double)SizeTotal * 1.0;
+  double usedSize = dbSize/(double)((unsigned long)GBYTES);
+
+  { // --- Debug-Ausgaben ---------------------------------------------------------------------
+    #define MELDUNG   "\n    %s()#%d: -- belegter Speicher: %2.3f MBytes in %2.3f sec --\n"
+    DEBUG(MELDUNG, __FUNCTION__, __LINE__, usedSize, calcZeit);
+    #undef MELDUNG
+    {
+      char LogText[ZEILE];
+      sprintf(LogText, "     --- belegter Speicher: %2.3f GB ", usedSize);
+      MYLOG(LogText);
+    }
+  } // ----------------------------------------------------------------------------------------
+  UNUSED(usedSize);
+  UNUSED(calcZeit);
+ 
+  
 
   char sTotal[50] = {'\0'};
   sprintf(sTotal, "%3.1f MB", (SizeTotal+((1024*1024)/2))/(1024*1024));
