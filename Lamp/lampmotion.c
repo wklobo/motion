@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-04-24 - 14:53:26                                    *//
+//* Last change:   2022-05-01 - 16:59:05                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//

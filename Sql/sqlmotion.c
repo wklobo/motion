@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-04-25 - 11:25:29                                    *//
+//* Last change:   2022-05-02 - 17:33:22                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -23,10 +23,11 @@
 #define _MODUL0
 #define __SQLMOTION_MYLOG__    true
 #define __SQLMOTION_MYLOG1__   true
+#define __SQLMOTION_MYLOG1a__  true
 #define __SQLMOTION_MYLOG2__   true
-#define __SQLMOTION_DEBUG__    false
+#define __SQLMOTION_DEBUG__    true
 #define __SQLMOTION_DEBUG__d   false     /* Datenbanken */
-#define __SQLMOTION_DEBUG__1   false
+#define __SQLMOTION_DEBUG__1   true
 #define __SQLMOTION_DEBUG__2   true
 #define __SQLMOTION_DEBUG__z   false
 
@@ -84,21 +85,27 @@ char MailBody[BODYLEN];
 //// Log-Ausgabe
 //// -----------
 #if __SQLMOTION_MYLOG__
-	#define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+  #define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
 #else
-	#define MYLOG(...)
+  #define MYLOG(...)
 #endif
 
 #if __SQLMOTION_MYLOG1__
-	#define MYLOG1(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+  #define MYLOG1(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
 #else
-	#define MYLOG1(...)
+  #define MYLOG1(...)
+#endif
+
+#if __SQLMOTION_MYLOG1a__
+  #define MYLOG1a(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+#else
+  #define MYLOG1a(...)
 #endif
 
 #if __SQLMOTION_MYLOG2__
-	#define MYLOG2(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+  #define MYLOG2(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
 #else
-	#define MYLOG2(...)
+  #define MYLOG2(...)
 #endif
 
 // main()
@@ -162,10 +169,10 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   digitalWrite (LED_ROT,    LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
+    char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exitosi!",  ErrText);
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
-  
+
   // PID-Datei wieder löschen
   // ------------------------
   killPID(FPID);
@@ -214,7 +221,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
     MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
-  report_Error(ErrText, true);                	// Fehlermeldung immer mit Mail ausgeben
+  report_Error(ErrText, true);                  // Fehlermeldung immer mit Mail ausgeben
 
 //  if (errsv == 24)                              // 'too many open files' ...
 //    report_Error(ErrText, true);                // Fehlermeldung mit Mail ausgeben
@@ -390,11 +397,11 @@ bool MoveFile( const char* File, const char* Verz)
 
   if( (rename(File, myDir)) < 0)
   { // -- Error
-    char ErrText[ERRBUFLEN];                  // Buffer für Fehlermeldungen
-    int errsv = errno;
-    sprintf(ErrText, "Error rename '%s' ->  '%s'- = %i(%s)",
-                     File, Verz, errsv, strerror(errsv));
-    Error_NonFatal( ErrText,__FUNCTION__,__LINE__);
+//    char ErrText[ERRBUFLEN];                  // Buffer für Fehlermeldungen
+//    int errsv = errno;
+//    sprintf(ErrText, "Error rename '%s' ->  '%s'- = %i(%s)",
+//                     File, Verz, errsv, strerror(errsv));
+//    showMain_Error( ErrText,__FUNCTION__,__LINE__);
     status = false;
   }
   DEBUG("<- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, status);
@@ -421,6 +428,76 @@ pid_t getPID(void)
   DEBUG("<---- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, myPID);
   return myPID;
 }
+//***********************************************************************************************
+
+// Verzeichnis löschen
+// ---------------------------------------------
+//  Foldername: ganzer Pfad
+int deleteFolder(const char* Foldername)
+{
+  DEBUG("===> %s()#%d: %s('%s')\n",
+          __FUNCTION__, __LINE__, __FUNCTION__, Foldername);
+
+  char ErrText[ERRBUFLEN];
+  int retval = 0;
+
+ 	// Verzeichnis muss leer sein: alle enthaltenen Dateien löschen
+  // ------------------------------------------------------------
+ 	DIR* pdir = opendir(Foldername);
+  struct dirent* pdirzeiger;
+  while((pdirzeiger=readdir(pdir)) != NULL)
+  {
+    if (((*pdirzeiger).d_type) == DT_REG)
+    { // reguläre Datei
+      // --------------
+      char Filename[ZEILE];                       // Pfad der Datei
+      sprintf(Filename,"%s/%s", Foldername, (pdirzeiger)->d_name);
+      if (remove(Filename) == 0)
+      { // --- Debug-Ausgaben ------------------------------------------
+        #define MELDUNG   "     %s()#%d: Datei: '%s' geloescht\n"
+        DEBUG(MELDUNG, __FUNCTION__, __LINE__, Filename);
+        #undef MELDUNG
+        // --- Log-Ausgabe -------------------------------------------------------------------------
+        char LogText[ZEILE];
+        sprintf(LogText, "           --- '%s' gelöscht", Filename);
+        MYLOG1a(LogText);
+      } // -----------------------------------------------------------------------------------------
+      else	
+  		{ // -- Error
+    		sprintf(ErrText, "remove '%s'", Filename);
+    		Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+    	}
+    }
+  }
+  if (closedir(pdir) != 0)
+  { // -- Error
+    sprintf(ErrText, "closedir '%s'", Foldername);
+    return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+  }
+  
+  // das Verzeichnis löschen
+  // ------------------------------------
+  if (rmdir(Foldername) == 0)
+  { // --- Debug-Ausgaben ------------------------------------------
+    #define MELDUNG   "     %s()#%d: Verzeichnis: '%s' geloescht\n"
+    DEBUG(MELDUNG, __FUNCTION__, __LINE__, Foldername);
+    #undef MELDUNG
+    // --- Log-Ausgabe -------------------------------------------------------------------------
+    char LogText[ZEILE];
+    sprintf(LogText, "           --- '%s' gelöscht", Foldername);
+    MYLOG1a(LogText);
+  } // -----------------------------------------------------------------------------------------
+  else	
+  { // -- Error
+    sprintf(ErrText, "rmdir '%s'", Foldername);
+    return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+  }
+
+  DEBUG("<--- %s()#%d -<%d>- \n\n",  __FUNCTION__, __LINE__ , retval);
+
+  return retval;
+}
+//***********************************************************************************************
 //***********************************************************************************************
 //
 //
@@ -631,7 +708,7 @@ int AddEvent(MYSQL* con, char* thisEvent, time_t* FaDatum, long thisSize, char* 
     } // --------------------------------------------------------------
 
     if (mysql_query(con, textQuery))
-      showMain_SQL_Error( textQuery, __FUNCTION__, __LINE__, con);
+      {}//showMain_SQL_Error( textQuery, __FUNCTION__, __LINE__, con);
     else   // Datensatz erfolgreich angelegt
     {
       if ((result = mysql_store_result(con)) == 0 &&
@@ -715,13 +792,14 @@ bool toFIFO (char* inhalt)
   } // ---------------------------------------------------------------------------
 
   int lng = strlen(inhalt);
-  status = write (fd, inhalt, lng + 1);			// <<< Übertragung
+  status = write (fd, inhalt, lng + 1);     // <<< Übertragung
   if (lng > 0)
-  { // --- Log-Ausgabe ------------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "   ----->>> in FIFO übertragen: %d Bytes", lng);
+  { // --- Log-Ausgabe ----------------------------------------------------------------------------
+    char LogText[ZEILE];  sprintf(LogText, "   ----->>> in FIFO übertragen: %d Bytes: \"%s\"",
+                                                                                   lng, inhalt);
     MYLOG(LogText);
-  } // ----------------------------------------------------------------------------
-  
+  } // --------------------------------------------------------------------------------------------
+
   if (status < 0)
   { // -- Error
     char ErrText[ERRBUFLEN];                    // Buffer für Fehlermeldungen
@@ -739,29 +817,51 @@ bool toFIFO (char* inhalt)
 //                                                                                              *
 //***********************************************************************************************
 
+// Hilfsfunktion für Quicksort
+// ---------------------------
+struct Files{char Name[ZEILE]; int Lng;};
+
+int compare(const void *lhs, const void *rhs)
+{
+  struct Files* left  = ((struct Files*) lhs);
+  struct Files* right = ((struct Files*) rhs);
+  
+//  { // --- Log-Ausgabe -----------------------------------------------------------
+//    char LogText[ZEILE];
+//    sprintf(LogText, "              -- %s <--> %s", left->Name, right->Name );
+//    MYLOG1(LogText);
+//    sprintf(LogText, "                 %d <--> %d", left->Lng,  right->Lng );
+//    MYLOG1(LogText);
+//  } // ---------------------------------------------------------------------------
+
+  if( left->Lng < right->Lng ) return  1;
+  if( left->Lng > right->Lng ) return -1;
+ 
+  return 0;
+}
+// ===============================================================================================
+
 int main(int argc, char* argv[])
 {
-  char thisPfad[ZEILE] = {'\0'};                  // aktueller Verzeichnispfad
-
   sprintf (Version, "Vers. %d.%d.%d/%s", MAXVERS, MINVERS, BUILD, __DATE__);
   openlog(PROGNAME, LOG_PID, LOG_LOCAL7 ); // Verbindung zum Dämon Syslog aufbauen
   SYSLOG(LOG_NOTICE, ">>>>>> %s - %s - PID %d - User %d - Group %d <<<<<<",
-                          		PROGNAME, Version, getpid(), geteuid(), getegid());
-                                                    		
-  {	//--- Monitor-Ausgabe -------------------------------------------------------------
-  	char PrintText[ZEILE];
-  	sprintf(PrintText, "\n%s %s - User %d, Group %d\n",
+                              PROGNAME, Version, getpid(), geteuid(), getegid());
+
+  { //--- Monitor-Ausgabe -------------------------------------------------------------
+    char PrintText[ZEILE];
+    sprintf(PrintText, "\n%s %s - User %d, Group %d\n",
                         PROGNAME, Version, getuid(), getgid());
-  	printf(PrintText);
- 	} // --------------------------------------------------------------------------------
+    printf(PrintText);
+  } // --------------------------------------------------------------------------------
 
 
   {// --- Log-Ausgabe -----------------------------------------------------------------
-   	char LogText[ZEILE];  
-    sprintf(LogText, 
+    char LogText[ZEILE];
+    sprintf(LogText,
     " >>> %s    ************ Start '%s' ************\n"\
     "                                               "\
-    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
+    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ",
     Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
     MYLOG(LogText);
   } // --------------------------------------------------------------------------------
@@ -771,19 +871,20 @@ int main(int argc, char* argv[])
   {     // -- Error
     printf("   - Anzahl Argumente '%d'\n", argc);
     printf("   - Aufruf: \"%s\": Exit !\n", *argv);
-    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exit!",
+    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exitis!",
                                       __FUNCTION__, __LINE__, argc);
     {// --- Log-Ausgabe ------------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
-         "<<< Anzahl Argumente '%d': Exit!",  argc);
+         "<<< Anzahl Argumente '%d': Exitti!",  argc);
       MYLOG(LogText);
     } // ---------------------------------------------------------------------------
     exit (EXIT_FAILURE);
   }
 
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wunused-value"
+  char thisPfad[ZEILE] = {'\0'};                  // aktueller Verzeichnispfad
   { // Verzeichnispfad ermitteln
     // -------------------------
     *argv++;
@@ -800,16 +901,16 @@ int main(int argc, char* argv[])
     { // --- Debug-Ausgaben -------------------------------------------
       #define MELDUNG ">> %s()#%d - Daten-Verzeichnis '%s'%c"
       DEBUG(MELDUNG, __FUNCTION__, __LINE__, thisPfad, '\n');
-      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, thisPfad, '\0');
+//      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, thisPfad, '\0');
       #undef MELDUNG
     } // ---------------------------------------------------------------
     *argv--;
   }
   #pragma GCC diagnostic pop
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
 //
-//	report_Error("ich bin eine Felermeldung\n", false);
+//  report_Error("ich bin eine Felermeldung\n", false);
 //
 
   for (int ix=0; ix < argc; ix++)
@@ -817,7 +918,7 @@ int main(int argc, char* argv[])
     { // --- Debug-Ausgaben -------------------------------------------
       #define MELDUNG ">> %s()#%d --- Argument %d: %s%c"
       DEBUG(MELDUNG, __FUNCTION__, __LINE__, ix, argv[ix], '\n');
-      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, ix, argv[ix], '\0');
+//      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, ix, argv[ix], '\0');
       #undef MELDUNG
     } // ---------------------------------------------------------------
 //    DEBUG(">> %s()#%d   - Argument %d: %s\n",
@@ -826,7 +927,7 @@ int main(int argc, char* argv[])
   { // --- Debug-Ausgaben -------------------------------------------
     #define MELDUNG ">> %s()#%d   ------ Argumentlist done ------%c"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__, '\n');
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
+//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
     #undef MELDUNG
   } // ---------------------------------------------------------------
 
@@ -836,16 +937,16 @@ int main(int argc, char* argv[])
   { // --- Debug-Ausgaben -------------------------------------------
     #define MELDUNG ">> %s()#%d: meine PID: '%ld'%c"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__, savePID(FPID), '\n');
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, savePID(FPID), '\0');
+//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, savePID(FPID), '\0');
     #undef MELDUNG
   } // ---------------------------------------------------------------
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
   // Ist GPIO klar?
   // -------------------------------------------
   #define ANZEIT  111 /* msec */
   wiringPiSetup();
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
   pinMode (LED_ROT,    OUTPUT);
   pinMode (LED_GELB,   OUTPUT);
   pinMode (LED_GRUEN,  OUTPUT);
@@ -871,7 +972,7 @@ int main(int argc, char* argv[])
   { // --- Debug-Ausgaben -------------------------------------------
     #define MELDUNG ">> %s()#%d: GPIO OK%c"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__, '\n');
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
+//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
     #undef MELDUNG
   } // ---------------------------------------------------------------
 
@@ -880,19 +981,19 @@ int main(int argc, char* argv[])
   // -------------------------------
   if (argc <= 2)
   {     // -- Error
-    printf("   - Anzahl Argumente '%d': Exit!\n", argc);
+    printf("   - Anzahl Argumente '%d': Exitata!\n", argc);
     printf("   - Aufruf: %s'\n", *argv);
-    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exit!\n",
+    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exitus!\n",
                                       __FUNCTION__, __LINE__, argc);
     {// --- Log-Ausgabe ---------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
-         "<<< Anzahl Argumente '%d': Exit!",  argc);
+         "<<< Anzahl Argumente '%d': Exitas!",  argc);
       MYLOG(LogText);
     } // ------------------------------------------------------------------------
-  	closelog();
-  	return EXIT_FAILURE;
+    closelog();
+    return EXIT_FAILURE;
   }
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
 
   // Datenbank und Tabellen erzeugen, wenn noch nicht vorhanden
@@ -904,10 +1005,10 @@ int main(int argc, char* argv[])
   { // --- Debug-Ausgaben -------------------------------------------
     #define MELDUNG ">> %s()#%d: Datenbank OK\n"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__);
-    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__);
+//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__);
     #undef MELDUNG
   } // ---------------------------------------------------------------
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
 
   // Zugriffsrechte
@@ -919,13 +1020,13 @@ int main(int argc, char* argv[])
     S_IROTH,S_IWOTH,S_IXOTH    /* Zugriffsrechte der Rest */
   };
   destroyInt(*bits);
-  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
   // Start im Log vermerken
   // ----------------------
   char Logtext[2*ZEILE];
   sprintf(Logtext, ">>> %s()#%d - Init OK ------- %d Elemente", __FUNCTION__, __LINE__, argc);
-  syslog(LOG_NOTICE, Logtext);
+//  syslog(LOG_NOTICE, Logtext);
   DEBUG("%s\n\n", Logtext);
   goto Phase_1;
 
@@ -951,7 +1052,7 @@ Phase_1:
   int newFiles = 0;                   // Dateizähler
 
   { // --- Debug-Ausgaben ----------------------------------------------------------------------
-    #define MELDUNG "\n%s()#%d: ==== Phase 1: Dateien in '%s' ordnen ================================\n\n"
+    #define MELDUNG "\n%s()#%d:  ==== Phase 1: Dateien in '%s' ordnen ================================\n\n"
     DEBUG(MELDUNG, __FUNCTION__, __LINE__, thisPfad);
     SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, thisPfad);
     #undef MELDUNG
@@ -969,10 +1070,10 @@ Phase_1:
   } // -------------------------------------------------------------------------------------------
   { // --- Log-Ausgabe ---------------------------------------------------------------------------
     char LogText[ZEILE];
-    sprintf(LogText, "       --- Phase  1: alle Elemente im '%s' durchlaufen", thisPfad);
+    sprintf(LogText, "      --- Phase  1: alle Elemente im '%s' durchlaufen", thisPfad);
     MYLOG1(LogText);
   } // -------------------------------------------------------------------------------------------
-
+  
   char** DateiListe = argv;                     // die übergebene Dateiliste
 
   while(*++DateiListe)
@@ -983,18 +1084,18 @@ Phase_1:
     { // --- Log-Ausgabe -------------------------------------------------------------------------
       char LogText[ZEILE];
       sprintf(LogText, "         --- %s", thisDatei);
-      MYLOG1(LogText);
+      MYLOG1a(LogText);
     } // -----------------------------------------------------------------------------------------
-    
-		// um Konflikte zwischen 'pi' und 'motion' zu vermeiden
-		// ----------------------------------------------------
+
+    // um Konflikte zwischen 'pi' und 'motion' zu vermeiden
+    // ----------------------------------------------------
     if ((thisFiletype == AVI) || (thisFiletype == MKV) || (thisFiletype == JPG))
     {
-			chmod(thisDatei, S_IRUSR+S_IWUSR+S_IXUSR+S_IRGRP+S_IWGRP+S_IROTH);
+      chmod(thisDatei, S_IRUSR+S_IWUSR+S_IXUSR+S_IRGRP+S_IWGRP+S_IROTH);
     }
 
-    // nächste Filmdatei suchen
-    // ------------------------
+    // nächste Filmdatei suchen (gibt Ereignis-Nummer vor)
+    // ----------------------------------------------------
     if ((thisFiletype == AVI) || (thisFiletype == MKV))
     {
       // Dies ist ein Film: Ereignis-Nummer ermitteln
@@ -1008,7 +1109,7 @@ Phase_1:
       } // -----------------------------------------------------------
       { // --- Log-Ausgabe -----------------------------------------------------------------------
         char LogText[ZEILE];
-        sprintf(LogText, "          --- Eventnummer '%4d'", thisEventnummer);
+        sprintf(LogText, "         --- Eventnummer '%d'", thisEventnummer);
         MYLOG1(LogText);
       } // ---------------------------------------------------------------------------------------
 
@@ -1023,6 +1124,7 @@ Phase_1:
       newFolder++;
       // alle Dateien mit diesem Ereignis in dieses Verzeichnis verschieben
       // -------------------------------------------------------------------
+      int FCnt = 0;
       char** DateiListe = argv;                 // nochmals die übergebene Dateiliste
       while(*++DateiListe)
       {
@@ -1030,6 +1132,7 @@ Phase_1:
         int myEventnummer = getEventNo(myDatei);
         if (myEventnummer == thisEventnummer)
         {
+          
           { // -----------------------------------------------------------
             #define MELDUNG   "%s()#%d: '%s' -> '%s'\n"
             DEBUG(MELDUNG, __FUNCTION__, __LINE__, myDatei, thisFolder);
@@ -1038,22 +1141,101 @@ Phase_1:
           { // --- Log-Ausgabe -----------------------------------------------------------------------
             char LogText[ZEILE];
             sprintf(LogText, "            --- '%s' -> '%s'", myDatei, thisFolder);
-            MYLOG1(LogText);
+            MYLOG1a(LogText);
           }
 
-					errno = 0;
+          errno = 0;
           if (MoveFile( myDatei, thisFolder))                   // Datei verschieben
           { // --- Log-Ausgabe -----------------------------------------------------------------------
-          	newFiles++;
+            newFiles++;
+            FCnt++;
           }
           else
-  				{ // --- Log-Ausgabe ----------------------------------------------------------------------
-    				char LogText[ZEILE];  
-            sprintf(LogText, "            --- '%s' -> '%s': Error %d(%s)", 
+          { // --- Log-Ausgabe ----------------------------------------------------------------------
+            char LogText[ZEILE];
+            sprintf(LogText, "            --- '%s' -> '%s': Error %d(%s)",
                                               myDatei, thisFolder, errno, strerror(errno));
-    				MYLOG(LogText);
+            MYLOG(LogText);
           } // ----------------------------------------------------------------------------------------
         }
+      }
+      
+      // alle Dateien dieses Ereignisses stehen jetzt in einem Verzeichnis
+      // -----------------------------------------------------------------
+      // Sie werden nach Länge sortiert und nur die  'n' größten behalten
+      {
+        { // --- Log-Ausgabe -----------------------------------------------------------------------
+          char LogText[ZEILE];
+          sprintf(LogText, "            --- %d Dateien in '%s'", FCnt, thisFolder);
+          MYLOG1(LogText);
+        }
+        struct Files Liste[FCnt+2];
+        int files = 0;
+        DIR* udir = opendir(thisFolder);                  // das Eventverzeichnis öffnen
+        struct dirent* udirzeiger;
+        while((udirzeiger=readdir(udir)) != NULL)         // Zeiger auf den Inhalt diese Unterverzeichnisses
+        {
+          char LogText[ZEILE];
+          char myFilename[ZEILE];
+          char longFilename[ZEILE];
+          unsigned long myFileSize = 0;                   // Dateilänge
+          struct stat myAttribut;
+          strcpy(myFilename, (*udirzeiger).d_name);
+          sprintf(longFilename,"%s/%s", thisFolder, myFilename);
+          if (stat(longFilename, &myAttribut) == -1)      // Datei-Attribute holen
+          { // -- Error
+            sprintf(LogText,"Lesefehler Datei '%s'!",  myFilename);
+            MYLOG1(LogText);
+            continue;
+          }
+          if (S_ISREG(myAttribut.st_mode))
+          {
+            myFileSize = myAttribut.st_size;              // Dateilänge
+            { // --- Log-Ausgabe -----------------------------------------------------------
+              sprintf(LogText, "              --- '%s': Länge %ld", myFilename, myFileSize);
+              MYLOG1a(LogText);
+            } // ---------------------------------------------------------------------------
+            strcpy(Liste[files].Name, longFilename);
+            Liste[files].Lng = myFileSize;
+            files++;
+          }
+          else
+          { // --- Log-Ausgabe -----------------------------------------------------------
+            sprintf(LogText, "              --- '%s' is not a file", myFilename);
+            MYLOG1a(LogText);
+          } // ---------------------------------------------------------------------------
+        }
+        
+        { // --- Log-Ausgabe -----------------------------------------------------------
+          char LogText[ZEILE];
+          sprintf(LogText, "                -- nach Dateilänge sortieren --");
+          MYLOG1(LogText);
+        } // ---------------------------------------------------------------------------
+        
+        qsort(Liste, files, sizeof(struct Files), compare); // nach Dateilänge sortieren
+        
+        for (int ix=0; ix < files; ix++)
+        { // --- Log-Ausgabe -----------------------------------------------------------
+          char LogText[ZEILE];
+          sprintf(LogText, "                -- %2d: -- '%s': Länge %d", ix, Liste[ix].Name, Liste[ix].Lng);
+          MYLOG1a(LogText);
+        } // ---------------------------------------------------------------------------
+
+        { // --- Log-Ausgabe -----------------------------------------------------------
+          char LogText[ZEILE];
+          sprintf(LogText, "                -- Überschuss löschen --");
+          MYLOG1(LogText);
+        } // ---------------------------------------------------------------------------
+        
+        for (int ix=5; ix < files; ix++)
+        { 
+          remove(Liste[ix].Name);
+          
+          // --- Log-Ausgabe -----------------------------------------------------------
+          char LogText[ZEILE];
+          sprintf(LogText, "                -- %2d: -- '%s': gelöscht", ix, Liste[ix].Name);
+          MYLOG1a(LogText);
+        } // ---------------------------------------------------------------------------       
       }
       { // -----------------------------------------------------------
         #define MELDUNG   "%s()#%d: --  Eventnummer '%d' fertig --'\n"
@@ -1065,12 +1247,12 @@ Phase_1:
 // ===== Phase 1 beendet===========================================================================
   {
     char LogText[ZEILE];
-    sprintf(LogText, "      --- Phase 1 fertig: %d Dateien -> %d neue Verzeichnisse, in %ld msec", 
+    sprintf(LogText, "      --- Phase 1: fertig %d Dateien -> %d neue Verzeichnisse in %ld msec",
                                                newFiles, newFolder, Zwischenzeit(T_ABSCHNITT));
     MYLOG(LogText);
   }
- 
-  
+
+
   #if BREAKmain1
   { // STOP! -- weiter mit ENTER
     // -------------------------------
@@ -1114,7 +1296,7 @@ Phase_2:
   // -------------------------------------------------------------------------------------------
   { // --- Log-Ausgabe ---------------------------------------------------------------------------
     char LogText[ZEILE];
-    sprintf(LogText, "      --- Phase  2: alle Verzeichnisse im '%s' durchsuchen", thisPfad);
+    sprintf(LogText, "      --- Phase 2: alle Verzeichnisse im '%s' durchsuchen", thisPfad);
     MYLOG2(LogText);
   } // -------------------------------------------------------------------------------------------
 
@@ -1136,12 +1318,16 @@ Phase_2:
   {
     char myPath[ZEILE];                                   // Name des aktuellen Unterverzeichnisses
     struct stat myAttribut;
-    sprintf(myPath,"%s%s", thisPfad, (*pdirzeiger).d_name);
+    sprintf(myPath, "%s%s", thisPfad, (*pdirzeiger).d_name);
     if (stat(myPath, &myAttribut) == -1)                  // Datei-Attribute holen
     { // -- Error
-      char ErrText[ERRBUFLEN];                            // Buffer für Fehlermeldungen
-      sprintf(ErrText,"Attribut '%s' nicht lesbar", myPath);
-      showMain_Error( ErrText,__FUNCTION__,__LINE__);
+      if (errno != 2)                                     // Err 2-No such file or directory
+      {
+        char ErrText[ERRBUFLEN];                          // Buffer für Fehlermeldungen
+        sprintf(ErrText,"Attribut '%s'", myPath);
+        Error_NonFatal( ErrText,__FUNCTION__,__LINE__);
+      }
+      continue;
     }
     unsigned long myFileSize = myAttribut.st_size;        // Dateilänge
     { // --- Debug-Ausgaben ----------------------------------------------
@@ -1150,28 +1336,28 @@ Phase_2:
       #undef MELDUNG
       // -----------------------------------------------------------------
     }
-    { // --- Log-Ausgabe ---------------------------------------------------------------------------
-      char LogText[ZEILE];
-      sprintf(LogText, "        --- '%s': %ld Bytes", myPath, myFileSize);
-      MYLOG2(LogText);
-    } // -------------------------------------------------------------------------------------------
+//    { // --- Log-Ausgabe ---------------------------------------------------------------------------
+//      char LogText[ZEILE];
+//      sprintf(LogText, "        --- '%s': %ld Bytes", myPath, myFileSize);
+//      MYLOG2(LogText);
+//    } // -------------------------------------------------------------------------------------------
     SizeTotal += myFileSize;
 
-    if (strstr(myPath, _FOLDER) != NULL)                  // ist dies ein Eventverzeichnis?
-//    if (strstr(myPath, _EVENT_) != NULL)                  // ist dies ein Eventverzeichnis?
+    if (strstr(myPath, _FOLDER) != NULL)                  // ist dies ein ("event_")Eventverzeichnis?
     { // -- ja! Dies ist ein Eventverzeichnis
       // -------------------------------------
+
       { // --- Debug-Ausgaben ----------------------------------------------
         #define MELDUNG "\n%s()#%d: --- Verzeichnis '%s' durchsuchen ---\n"
         DEBUG_2(MELDUNG, __FUNCTION__, __LINE__, myPath);
         #undef MELDUNG
       // ------------------------------------------------------------------
       }
-//      { // --- Log-Ausgabe ---------------------------------------------------------------------------
-//        char LogText[ZEILE];
-//        sprintf(LogText, "          --- '%s' durchsuchen", myPath);
-//        MYLOG2(LogText);
-//      } // -------------------------------------------------------------------------------------------
+      { // --- Log-Ausgabe ---------------------------------------------------------------------------
+        char LogText[ZEILE];
+        sprintf(LogText, "          --- Eventverzeichnis '%s' durchsuchen", myPath);
+        MYLOG2(LogText);
+      } // -------------------------------------------------------------------------------------------
 
       Startzeit(T_FOLDER);            // Zeitmessung starten
       DIR* udir = opendir(myPath);    // das Eventverzeichnis öffnen
@@ -1234,12 +1420,6 @@ Phase_2:
           unsigned long myFileSize = myAttribut.st_size;  // Dateilänge
             DEBUG_2("             FileSize  %ld\n",  myFileSize);
 
-          { // --- Log-Ausgabe ---------------------------------------------------------------------------
-            char LogText[ZEILE];
-            sprintf(LogText, "           --- '%s' Lng.:%ld Bytes Datum: %ld", longFilename, myFileSize, myFileDatum);
-            MYLOG2(LogText);
-          } // -------------------------------------------------------------------------------------------
-
           // etwas Statistik
           // ---------------------------------------
           int myType = getFiletyp(longFilename);
@@ -1251,9 +1431,12 @@ Phase_2:
           if (myType == JPG) cntJPGs++;
           else if (myType == AVI) cntAVIs++;
           else if (myType == MKV) cntAVIs++;
-          // zu kurze Bild-Dateien aussortieren
+
+
+          // zu kurze Dateien aussortieren
           // ---------------------------------------
-          if ((myFileSize < MIN_FILESIZE) && (myType == JPG)) 
+          if ((myFileSize < MIN_FILESIZE) && (myType == JPG))
+
           { // Bilddatei zu klein
             // ------------------
             { // --- Debug-Ausgaben ---------------------------------------------------
@@ -1261,21 +1444,20 @@ Phase_2:
               DEBUG_2(MELDUNG, __FUNCTION__, __LINE__,  longFilename, myFileSize);
               #undef MELDUNG
             } // ----------------------------------------------------------------------
-
-
             { // --- Log-Ausgabe ---------------------------------------------------------------------------
               char LogText[ZEILE];
-              sprintf(LogText, "             --- '%s'  zu kurz: %ld (min: %d)", 
+              sprintf(LogText, "           --- '%s' zu kurz: %ld (min: %d)",
                                                   longFilename, myFileSize, MIN_FILESIZE);
               MYLOG2(LogText);
             } // -------------------------------------------------------------------------------------------
-
 
             // Datei löschen
             // ------------*
             remove(longFilename);
           }
-          else if ((myFileSize < MIN_FILMSIZE) && (myType == MKV)) 
+
+
+          else if ((myFileSize < MIN_FILMSIZE) && (myType == MKV))
           { // Filmdatei zu klein
             // ------------------
             { // --- Debug-Ausgaben ---------------------------------------------------
@@ -1286,15 +1468,12 @@ Phase_2:
               syslog(LOG_NOTICE, ErrText);
               #undef MELDUNG
             } // ----------------------------------------------------------------------
-
-
             { // --- Log-Ausgabe ---------------------------------------------------------------------------
               char LogText[ZEILE];
-              sprintf(LogText, "             --- '%s'  zu kurz: %ld (min: %d)", 
+              sprintf(LogText, "             --- '%s'  zu kurz: %ld (min: %d)",
                                                   longFilename, myFileSize, MIN_FILMSIZE);
               MYLOG2(LogText);
             } // -------------------------------------------------------------------------------------------
-
 
             // Datei löschen
             // ------------*
@@ -1302,6 +1481,11 @@ Phase_2:
           }
           else
           {
+            { // --- Log-Ausgabe ---------------------------------------------------------------------------
+              char LogText[ZEILE];
+              sprintf(LogText, "           --- '%s'    Lng.:%ld - OK", longFilename, myFileSize);
+              MYLOG2(LogText);
+            } // -------------------------------------------------------------------------------------------
             SizeTotal += myFileSize;
           }
         }
@@ -1320,84 +1504,105 @@ Phase_2:
         #undef MELDUNG
       } // ---------------------------------------------------------------
 
+      if (cntAVIs == 1)
+      {
+        // das Eventverzeichnis in der Datenbank vermerken -----------------------------------
+        // ------------------------------------------------
+        // es enthält einen Film und 0...n Bilder
+        struct stat dAttribut;
+        char EventKey[ZEILE] = {'\0'};                              // Eventname
+        char Remark[ZEILE] = {'\0'};                                // Bemerkung
 
-      // das Eventverzeichnis in der Datenbank vermerken
-      // ------------------------------------------------
-      struct stat dAttribut;
-      char EventKey[ZEILE] = {'\0'};                               // Eventname
-      char Remark[ZEILE] = {'\0'};                                  // Bemerkung
+        Startzeit(T_DBASE);                                         // Zeitmessung starten
 
-      Startzeit(T_DBASE);                                           // Zeitmessung starten
+        if(stat(myPath, &dAttribut) == -1)
+        { // -- Error
+          char ErrText[ERRBUFLEN];                                  // Buffer für Fehlermeldungen
+          sprintf(ErrText,"Verzeichnis '%s' nicht lesbar", myPath);
+          showMain_Error( ErrText,__FUNCTION__,__LINE__);
+        }
 
-      if(stat(myPath, &dAttribut) == -1)
-      { // -- Error
-        char ErrText[ERRBUFLEN];                                    // Buffer für Fehlermeldungen
-        sprintf(ErrText,"Verzeichnis '%s' nicht lesbar", myPath);
-        showMain_Error( ErrText,__FUNCTION__,__LINE__);
-      }
-
-//      time_t dFaDatum = dAttribut.st_mtime;                         // Datum des Verzeichnisses
-      int PrimaryID = -1;                                           // PrimärID des Datensatzes
-      sprintf(Remark, "JPGs=%i - AVIs=%i - Mem: %i kB",             // Bemerkungs-Text
-                      cntJPGs,  cntAVIs, (int)(SizeFolder+1024/2)/1024);
-      { // --- Debug-Ausgaben ----------------------------------------------
-        #define MELDUNG "%s()#%d: \n"
-        DEBUG_2(MELDUNG, __FUNCTION__, __LINE__);
-        #undef MELDUNG
-        // -----------------------------------------------------------------
-      }
-      if (getEventKey(con, myPath, EventKey) == true)               // Eventnamen für Schlüssel erzeugen
-      { // in die Datenbank eintragen
-        // ----------------------------
+        int PrimaryID = -1;                                         // PrimärID des Datensatzes
+        sprintf(Remark, "JPGs=%i - AVIs=%i",                        // Bemerkungs-Text
+                        cntJPGs,  cntAVIs);
         { // --- Debug-Ausgaben ----------------------------------------------
-          #define MELDUNG "%s()#%d: === in die Datenbank ===> EventKey: '%s'\n"
-          DEBUG_2(MELDUNG, __FUNCTION__, __LINE__, EventKey);
+          #define MELDUNG "%s()#%d: \n"
+          DEBUG_2(MELDUNG, __FUNCTION__, __LINE__);
           #undef MELDUNG
           // -----------------------------------------------------------------
         }
-        PrimaryID = AddEvent(con, EventKey, &EventDatum, SizeFolder, Remark);
-        { // Eventkey als Datei
-          // -------------------
-          FILE *Datei;
-          char KeyFile[ZEILE];
-          sprintf(KeyFile,"%s/%s.info", myPath, EventKey);
-          Datei = fopen (KeyFile, "w");
-          fprintf(Datei, "%s %s\n", PROGNAME, Version);
-          fprintf(Datei, "   Source = %s\r\n", argv[1]);
-          fprintf(Datei, "PrimaryID = %d\r\n", PrimaryID);
-          fprintf(Datei, " EventKey = '%s'\r\n", EventKey);
-//          fprintf(Datei, "PrimaryID = %d\n", PrimaryID);
-//          fprintf(Datei, " EventKey = '%s'\n", EventKey);
-          fclose (Datei);
+        if (getEventKey(con, myPath, EventKey) == true)             // Eventnamen für Schlüssel erzeugen
+        { // in die Datenbank eintragen
+          // ----------------------------
+          { // --- Debug-Ausgaben ----------------------------------------------
+            #define MELDUNG "%s()#%d: === in die Datenbank ===> EventKey: '%s'\n"
+            DEBUG_2(MELDUNG, __FUNCTION__, __LINE__, EventKey);
+            #undef MELDUNG
+            // -----------------------------------------------------------------
+          }
+          PrimaryID = AddEvent(con, EventKey, &EventDatum, SizeFolder, Remark);
+          { // Eventkey als .info-Datei
+            // -------------------------
+            FILE *Datei;
+            char KeyFile[ZEILE];
+            sprintf(KeyFile,"%s/%s.info", myPath, EventKey);
+            Datei = fopen (KeyFile, "w");
+            fprintf(Datei, "%s %s\n", PROGNAME, Version);
+            fprintf(Datei, "   Source = %s\r\n", argv[1]);
+            fprintf(Datei, "PrimaryID = %d\r\n", PrimaryID);
+            fprintf(Datei, " EventKey = '%s'\r\n", EventKey);
+            fclose (Datei);
+          }
+          { // --- Log-Ausgabe ---------------------------------------------------------------------------
+            char LogText[ZEILE];
+            sprintf(LogText, "          --- '%s' --> %s#%d ", EventKey, MYDATABASE, PrimaryID);
+            MYLOG2(LogText);
+          } // -------------------------------------------------------------------------------------------
+
         }
-      }
-      else
-      { // -- Error
-        char ErrText[ERRBUFLEN];                                    // Buffer für Fehlermeldungen
-        sprintf(ErrText,"Error '%s' --> '%s'", myPath, EventKey);
-        showMain_Error( ErrText,__FUNCTION__,__LINE__);
-      }
-      { // --- Debug-Ausgaben ----------------------------------------------
-        #define MELDUNG "%s()#%d: \n"
-        DEBUG_2(MELDUNG, __FUNCTION__, __LINE__);
-        #undef MELDUNG
-        // -----------------------------------------------------------------
-      }
-      // LED_AUS der PrimärID einen neuen Event-Namen erzeugen
-      // -------------------------------------------------
-      {
-        char neuerEventName[ZEILE] = {'\0'};
-        sprintf(neuerEventName, "%s/%s%d", thisPfad, _EVENT_, PrimaryID);
-        if( (rename(myPath, neuerEventName)) < 0)
+        else
         { // -- Error
-          char ErrText[ERRBUFLEN];                  // Buffer für Fehlermeldungen
-          int errsv = errno;
-          sprintf(ErrText, "Error rename '%s' ->  '%s'- = %i(%s)",
-                           myPath, neuerEventName, errsv, strerror(errsv));
+          char ErrText[ERRBUFLEN];                                    // Buffer für Fehlermeldungen
+          sprintf(ErrText,"Error '%s' --> '%s'", myPath, EventKey);
           showMain_Error( ErrText,__FUNCTION__,__LINE__);
         }
+
+
+
+        { // --- Debug-Ausgaben ----------------------------------------------
+          #define MELDUNG "%s()#%d: \n"
+          DEBUG_2(MELDUNG, __FUNCTION__, __LINE__);
+          #undef MELDUNG
+          // -----------------------------------------------------------------
+        }
+
+        // aus der PrimärID einen neuen Event-Namen erzeugen
+        // -------------------------------------------------
+        // ... und damit 'myPath' verschieben
+        {
+          char neuerEventName[ZEILE] = {'\0'};
+          sprintf(neuerEventName, "%s/%s%d", thisPfad, _EVENT_, PrimaryID);
+          if( (rename(myPath, neuerEventName)) < 0)
+          { // -- Error
+            char ErrText[ERRBUFLEN];                  // Buffer für Fehlermeldungen
+            int errsv = errno;
+            sprintf(ErrText, "Error rename '%s' ->  '%s'- = %i(%s)",
+                             myPath, neuerEventName, errsv, strerror(errsv));
+            showMain_Error( ErrText,__FUNCTION__,__LINE__);
+          }
+          { // --- Log-Ausgabe ---------------------------------------------------------------------------
+            char LogText[ZEILE];
+            sprintf(LogText, "          --- '%s' ===> '%s", myPath, neuerEventName);
+            MYLOG2(LogText);
+          } // -------------------------------------------------------------------------------------------
+        }
+      }  // ---<<< ist dies ein Eventverzeichnis? >>>-------------------
+      else
+      {	// kein vollständiges Eventverzeichnis: Löschen!
+      	// ----------------------------------------------
+	 			deleteFolder(myPath);
       }
-    }     // --- ist dies ein Eventverzeichnis? -------------------
+    }     
   }
 
   // Lesezeiger wieder schließen
@@ -1426,10 +1631,10 @@ Phase_2:
   mysql_close(con);                             // Datenbank schließen
 
 // ===== Phase 2 beendet===========================================================================
-	double calcZeit = (double)Zwischenzeit(T_ABSCHNITT) / 1000.0;
+  double calcZeit = (double)Zwischenzeit(T_ABSCHNITT) / 1000.0;
   {
     char LogText[ZEILE];
-    sprintf(LogText, "     --- Phase 2 fertig in %2.3f sec", calcZeit);
+    sprintf(LogText, "      --- Phase 2: fertig in %2.3f sec", calcZeit);
     MYLOG(LogText);
   }
   double dbSize = (double)SizeTotal * 1.0;
@@ -1441,14 +1646,14 @@ Phase_2:
     #undef MELDUNG
     {
       char LogText[ZEILE];
-      sprintf(LogText, "     --- belegter Speicher: %2.3f GB ", usedSize);
+      sprintf(LogText, "      --- belegter Speicher: %2.3f GB ", usedSize);
       MYLOG(LogText);
     }
   } // ----------------------------------------------------------------------------------------
   UNUSED(usedSize);
   UNUSED(calcZeit);
- 
-  
+
+
 
   char sTotal[50] = {'\0'};
   sprintf(sTotal, "%3.1f MB", (SizeTotal+((1024*1024)/2))/(1024*1024));
@@ -1488,11 +1693,12 @@ Phase_2:
 
   digitalWrite (LED_GRUEN, LED_AUS);
   digitalWrite (LED_BLAU, LED_EIN);
-  
+
   toFIFO(thisPfad);                   // >>>>>>>>> über FIFO (named pipe) senden >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  
+
   digitalWrite (LED_ROT, LED_AUS);
-  SYSLOG(LOG_NOTICE, ">>> %s()#%d: %s --- fertig in %ld msec", __FUNCTION__,__LINE__, PROGNAME, Zwischenzeit(T_GESAMT));
+  SYSLOG(LOG_NOTICE, ">>>>>> %s()#%d: %s --- fertig in %ld msec   ------------------------ <<<<<<", 
+                     __FUNCTION__,__LINE__, PROGNAME, Zwischenzeit(T_GESAMT));
   { // --- Log-Ausgabe ---------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText,
        "<<< fertig in %ld msec!", Zwischenzeit(T_GESAMT));

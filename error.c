@@ -85,7 +85,7 @@ void Fehlerliste(char* Message)
 }
 //*********************************************************************************************//
 
-#define FATAL_MESSAGE        "Programm-Abbruch in '%s':\n%s\n-wkh-\n"
+#define FATAL_MESSAGE        "Programm-Abbruch in '%s': %s -wkh-\n"
 #define NONFATAL_MESSAGE     "Fehler in '%s':\n%s\n-wkh-\n"
 
 //*********************************************************************************************//

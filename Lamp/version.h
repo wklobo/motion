@@ -23,7 +23,7 @@ EXTERN char Version[50];
 
 #define MAXVERS 4
 #define MINVERS 3
-#define BUILD 86
+#define BUILD 87
 
 #endif //_VERSION_H
 

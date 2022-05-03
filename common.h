@@ -3,7 +3,7 @@
 //* File:          common.h                                                                   *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2021-04-18;                                                                *//
-//* Last change:   2022-04-25 - 16:57:57                                                      *//
+//* Last change:   2022-05-01 - 10:30:12                                                      *//
 //* Description:   Hilfsfunktionen und  Vereinbarungen zwischen den Programmen                *//
 //*                                                                                           *//
 //* Copyright (C) 2019-22 by Wolfgang Keuch                                                   *//
@@ -34,7 +34,7 @@
 #define BLOCK           16*KBYTES
 #define BUFFER         256*KBYTES
 
-#define MIN_FILESIZE    56*KBYTES
+#define MIN_FILESIZE    65*KBYTES
 #define MIN_FILMSIZE   200*KBYTES
 
 #define NOINT -999999999              /* kein Integer-Wert */
@@ -80,6 +80,7 @@
 #define FIFO          "/home/pi/motion/aux/MOTION.FIFO"
 #define FPID          "/home/pi/motion/aux/%s.pid"
 #define SOURCE        "/home/pi/motion/pix/"
+#define TEMP          "/home/pi/motion/tmp/"
 #define DESTINATION   "/media/Kamera/Vogel/"    /* = 'DISKSTATION/surveillance'/... */
 #define SPERRE        "/home/pi/motion/aux/locked!"
 

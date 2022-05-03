@@ -3,7 +3,7 @@
 //* File:          common.c                                                                   *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2021-04-18;                                                                *//
-//* Last change:   2022-04-11 - 16:15:18                                                      *//
+//* Last change:   2022-05-01 - 10:30:27                                                      *//
 //* Description:   Hilfsfunktionen und  Vereinbarungen zwischen den Programmen                *//
 //*                                                                                           *//
 //* Copyright (C) 2019-21 by Wolfgang Keuch                                                   *//
@@ -147,7 +147,8 @@ long savePID(char* dateipfad)
     sprintf(myPID,"%ld", pid);
     fprintf (piddatei, myPID);
     fclose (piddatei);
-    printf("------ savePID()->'%s'\n", dateiname);
+		chmod(dateiname, S_IRUSR | S_IWUSR | S_IRGRP |  S_IWGRP | S_IROTH);    
+		printf("------ savePID('%ld')->'%s'\n", pid, dateiname);
   }
   return pid;
 }
@@ -486,6 +487,14 @@ bool matchn(const char *topic,     int n,  int key)
      DEBUG("%s-%s:%s()#%d: -- -xx-: %s('%s')==%d('%s')\n",
                      __NOW__,__FILE__,__FUNCTION__,__LINE__, topic, ptr1, key, val2);
   return retval;
+}
+//*********************************************************************************************//
+     
+/* Vergleichsfunktion für qsort() */
+/* ------------------------------ */
+int cmp_integer(const void *wert1, const void *wert2) 
+{
+	return (*(int*)wert1 - *(int*)wert2);
 }
 //*********************************************************************************************//
 

@@ -14,8 +14,8 @@
 #ifndef _ERROR_H
 #define _ERROR_H  1
 
-#define ERRBUFLEN      1024
-#define ZEITBUFLEN       64
+#define ERRBUFLEN      2048
+#define ZEITBUFLEN      128
 
 #define FEHLERZEIT      12    /* Brenndauer rote LED nach Fehlern */
 

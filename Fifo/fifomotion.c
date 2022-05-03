@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-04-24 - 14:53:05                                    *//
+//* Last change:   2022-04-28 - 10:27:26                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -20,10 +20,10 @@
 
 #define _MODUL0
 #define __FIFOMOTION_MYLOG__         true
-#define __FIFOMOTION_DEBUG__         false
-#define __FIFOMOTION_DEBUG__c__      false     // calcSize
-#define __FIFOMOTION_DEBUG__t__      false     // FileTransfer
-#define __FIFOMOTION_DEBUG__d__      false     // delOldest
+#define __FIFOMOTION_DEBUG__         true
+#define __FIFOMOTION_DEBUG__c__      true     // calcSize
+#define __FIFOMOTION_DEBUG__t__      true     // FileTransfer
+#define __FIFOMOTION_DEBUG__d__      true     // delOldest
 
 
 #include "./version.h"
@@ -460,13 +460,15 @@ int remFolder(const char* Foldername, int maxAlter)
     } // ---------------------------------------------------------------
 
     if (Alter > (maxAlter*3600))
-    { // Verzeichnis nach Verfalldatum löschen
-      // -------------------------------
+    { // Verzeichnis hat Verfalldatum erreicht: löschen
+      // ==============================================
       DIR* pdir = opendir(Foldername);
       if (pdir == NULL)
       { // -- Error
         sprintf(ErrText, "Error opendir(%s): %d", Foldername, errno);
-        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+//        int retval = Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+  			DEBUG_d("<--- %s()#%d -<%d>- \n\n",  __FUNCTION__, __LINE__ , 9999);
+  			return 9999;
       }
       // Verzeichnis muss leer sein: alle enthaltenen Dateien löschen
       // ------------------------------------------------------------
@@ -481,6 +483,12 @@ int remFolder(const char* Foldername, int maxAlter)
           delFiles += remFile(Filename, MAXALTER);
         }
       }
+      if (closedir(pdir) != 0)
+      { // -- Error
+        sprintf(ErrText, "closedir '%s'", Foldername);
+        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+      }
+
 
       // nun auch noch das Verzeichnis löschen
       // ------------------------------------
@@ -498,11 +506,11 @@ int remFolder(const char* Foldername, int maxAlter)
         //return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
       }
 
-      if (closedir(pdir) != 0)
-      { // -- Error
-        sprintf(ErrText, "closedir '%s'", Foldername);
-        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
-      }
+//      if (closedir(pdir) != 0)
+//      { // -- Error
+//        sprintf(ErrText, "closedir '%s'", Foldername);
+//        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+//      }
 
       if (deleted > 0)
       { // ------------------------------------------------------------
@@ -581,11 +589,11 @@ enum Filetype copyFile(char* destination, const char* source)
       sprintf(ErrText, "write '%s'", destination);
       return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
     }
-    { // --- Debug-Ausgaben ------------------------------------------
-      #define MELDUNG   "       %s()#%d: '%d' chars kopiert!\n"
-      DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, n_chars);
-      #undef MELDUNG
-    } // --------------------------------------------------------------
+//    { // --- Debug-Ausgaben ------------------------------------------
+//      #define MELDUNG   "       %s()#%d: '%d' chars kopiert!\n"
+//      DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, n_chars);
+//      #undef MELDUNG
+//    } // --------------------------------------------------------------
     lng += n_chars;
   } // =============== fertig =====================
 
@@ -1576,24 +1584,27 @@ int main(int argc, char *argv[])
         #undef MELDUNG
       } // ----------------------------------------------------------------------------------------
 
-      Startzeit(T_FOLDER);                                // Zeitmessung starten
-      double dbSize = (double)calcSize(DESTINATION) * 1.0;
-      double usedSize = dbSize/(double)((unsigned long)GBYTES);
-      double calcZeit = (double)Zwischenzeit(T_FOLDER) / 1000.0;
-      
-      
-      { // --- Debug-Ausgaben ---------------------------------------------------------------------
-        #define MELDUNG   "\n    %s()#%d: -- Berechnung Speicherplatz: %2.3f MBytes in %2.3f sec --\n"
-        DEBUG(MELDUNG, __FUNCTION__, __LINE__, usedSize, calcZeit);
-        #undef MELDUNG
-        {
-          char LogText[ZEILE];
-          sprintf(LogText, "     --- belegter Speicher: %2.3f GB (in %2.3f sec)", usedSize, calcZeit);
-          MYLOG(LogText);
-        }
-      } // ----------------------------------------------------------------------------------------
-      UNUSED(usedSize);
-      UNUSED(calcZeit);
+
+// wg. Überlastung vorerst stillgelegt
+// ------------------------------------
+//      Startzeit(T_FOLDER);                                // Zeitmessung starten
+//      double dbSize = (double)calcSize(DESTINATION) * 1.0;
+//      double usedSize = dbSize/(double)((unsigned long)GBYTES);
+//      double calcZeit = (double)Zwischenzeit(T_FOLDER) / 1000.0;
+//      
+//      
+//      { // --- Debug-Ausgaben ---------------------------------------------------------------------
+//        #define MELDUNG   "\n    %s()#%d: -- Berechnung Speicherplatz: %2.3f MBytes in %2.3f sec --\n"
+//        DEBUG(MELDUNG, __FUNCTION__, __LINE__, usedSize, calcZeit);
+//        #undef MELDUNG
+//        {
+//          char LogText[ZEILE];
+//          sprintf(LogText, "     --- belegter Speicher: %2.3f GB (in %2.3f sec)", usedSize, calcZeit);
+//          MYLOG(LogText);
+//        }
+//      } // ----------------------------------------------------------------------------------------
+//      UNUSED(usedSize);
+//      UNUSED(calcZeit);
 
 
 
