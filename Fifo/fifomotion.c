@@ -20,6 +20,7 @@
 
 #define _MODUL0
 #define __FIFOMOTION_MYLOG__         true
+#define __FIFOMOTION_MYLOG1__        true
 #define __FIFOMOTION_DEBUG__         true
 #define __FIFOMOTION_DEBUG__c__      true     // calcSize
 #define __FIFOMOTION_DEBUG__t__      true     // FileTransfer
@@ -66,13 +67,19 @@ static int delFolders = 0;            // gelöschte Verzeichnisse
 
 //***************************************************************************//
 /*
- * Define debug functions.
+ * Define log functions.
  * ----------------------
  */
 #if __FIFOMOTION_MYLOG__
 #define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
 #else
 #define MYLOG(...)
+#endif
+
+#if __FIFOMOTION_MYLOG1__
+#define MYLOG1(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
+#else
+#define MYLOG1(...)
 #endif
 
 // main()
@@ -221,12 +228,14 @@ int Deleted(const char* ItemName)
 {
   DEBUG_d("=======> %s()#%d: %s('%s')\n", __FUNCTION__, __LINE__, __FUNCTION__, ItemName);
   int status = 1;
+	Startzeit(T_PRINT);                     								// Zeitmessung starten
 
   { // --- Log-Ausgabe --------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "    gelöscht: '%s'",  ItemName);
-    MYLOG(LogText);
+    MYLOG1(LogText);
   } // ------------------------------------------------------------------------
 
+	status = (int)Zwischenzeit(T_PRINT);
   DEBUG_d("<------- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, status);
   return status;
 }
@@ -238,13 +247,14 @@ int Added(const char* ItemName)
 {
   DEBUG_d("=======> %s()#%d: %s('%s')\n", __FUNCTION__, __LINE__, __FUNCTION__, ItemName);
   int status = 1;
+	Startzeit(T_PRINT);                     								// Zeitmessung starten
 
   { // --- Log-Ausgabe --------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText,
-       "           neu: '%s'",  ItemName);
-    MYLOG(LogText);
+    char LogText[ZEILE];  sprintf(LogText, "           neu: '%s'",  ItemName);
+    MYLOG1(LogText);
   } // ------------------------------------------------------------------------
 
+	status = (int)Zwischenzeit(T_PRINT);
   DEBUG_d("<------- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, status);
   return status;
 }
@@ -393,8 +403,13 @@ int remFile(const char* Dateiname, int maxAlter)
       remove(Dateiname);
       { // --- Debug-Ausgaben ------------------------------------------
         DEBUG_d("       %s()#%d: --- '%s' gelöscht!\n",
-                             __FUNCTION__, __LINE__, Dateiname);
+                                      __FUNCTION__, __LINE__, Dateiname);
       } // --------------------------------------------------------------
+      { // --- Log-Ausgabe --------------------------------------------------------
+//        char LogText[ZEILE];  sprintf(LogText, "         err: '%d'",  9999);
+        char LogText[ZEILE];  sprintf(LogText, "      gelöscht: '%s'",  Dateiname);
+        MYLOG(LogText);
+      } // ------------------------------------------------------------------------
       delFiles += Deleted(Dateiname);       // im Log vermerken
       deleted++;
     }
@@ -466,8 +481,13 @@ int remFolder(const char* Foldername, int maxAlter)
       if (pdir == NULL)
       { // -- Error
         sprintf(ErrText, "Error opendir(%s): %d", Foldername, errno);
-//        int retval = Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+        Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
   			DEBUG_d("<--- %s()#%d -<%d>- \n\n",  __FUNCTION__, __LINE__ , 9999);
+        { // --- Log-Ausgabe --------------------------------------------------------
+          char LogText[ZEILE];  sprintf(LogText, "         err: '%d'",  9999);
+          MYLOG(LogText);
+        } // ------------------------------------------------------------------------
+//        closedir(pdir);
   			return 9999;
       }
       // Verzeichnis muss leer sein: alle enthaltenen Dateien löschen
@@ -489,7 +509,6 @@ int remFolder(const char* Foldername, int maxAlter)
         return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
       }
 
-
       // nun auch noch das Verzeichnis löschen
       // ------------------------------------
       if (rmdir(Foldername) == 0)
@@ -498,18 +517,12 @@ int remFolder(const char* Foldername, int maxAlter)
         sprintf(TmpText, "%s/", Foldername);    // als Verzeichnis kennzeichnen
         delFolders += Deleted(TmpText);         // im Log vermerken
       }
-      else
-      { // -- Error
-        sprintf(ErrText, "rmdir('%s'):"\
-        "              Err %d - '%s'", Foldername, errno, strerror(errno));
-        // keine Fehlerausgabe, kann '..'-Verzeichnis sein
-        //return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
-      }
-
-//      if (closedir(pdir) != 0)
+//      else
 //      { // -- Error
-//        sprintf(ErrText, "closedir '%s'", Foldername);
-//        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+//        sprintf(ErrText, "rmdir('%s'):"\
+//        "              Err %d - '%s'", Foldername, errno, strerror(errno));
+//        // keine Fehlerausgabe, kann '..'-Verzeichnis sein
+//        // return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
 //      }
 
       if (deleted > 0)
@@ -543,7 +556,7 @@ enum Filetype copyFile(char* destination, const char* source)
   char buf[BUFFER];
   char ErrText[ERRBUFLEN];
 
-//  chown(source, 1000, 1000);
+	Startzeit(T_COPY);                     									// Zeitmessung starten
 
   // Quell- und Zieldatei öffnen
   // ---------------------------
@@ -581,6 +594,11 @@ enum Filetype copyFile(char* destination, const char* source)
 
   // Inhalt übertragen
   // =====================
+  { // --- Debug-Ausgaben ------------------------------------------
+    #define MELDUNG   "     %s()#%d: "
+    DEBUG_t(MELDUNG, __FUNCTION__, __LINE__);
+    #undef MELDUNG
+  } // --------------------------------------------------------------
   long lng = 0;
   while( (n_chars = read(in_fd, buf, BUFFER)) > 0 )       // Quell-Datei lesen ...
   {                                                       // ... und in Ziel-Datei schreiben
@@ -589,13 +607,15 @@ enum Filetype copyFile(char* destination, const char* source)
       sprintf(ErrText, "write '%s'", destination);
       return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
     }
-//    { // --- Debug-Ausgaben ------------------------------------------
-//      #define MELDUNG   "       %s()#%d: '%d' chars kopiert!\n"
-//      DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, n_chars);
-//      #undef MELDUNG
-//    } // --------------------------------------------------------------
+    printf(".");
     lng += n_chars;
   } // =============== fertig =====================
+  printf("\n");
+  { // --- Debug-Ausgaben -------------------------------------------------------
+    #define MELDUNG   "     %s()#%d: '%ld' chars in %d msec kopiert!\n"
+    DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, lng, (int)Zwischenzeit(T_COPY));
+    #undef MELDUNG
+  } // --------------------------------------------------------------------------
 
   if( n_chars == -1 )                                     // Lesefehler
   { // -- Error
@@ -610,6 +630,11 @@ enum Filetype copyFile(char* destination, const char* source)
     Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
     return OHNE;
   }
+  { // --- Debug-Ausgaben -------------------------------------------------------
+    #define MELDUNG   "     %s()#%d: nach %d msec: '%s' geschlossen\n"
+    DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, (int)Zwischenzeit(T_COPY), destination);
+    #undef MELDUNG
+  } // --------------------------------------------------------------------------
 
   if( close(out_fd) == -1 )                               // Ziel-Datei schließen
   { // -- Error
@@ -617,7 +642,11 @@ enum Filetype copyFile(char* destination, const char* source)
     Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
     return OHNE;
   }
-
+  { // --- Debug-Ausgaben -------------------------------------------------------
+    #define MELDUNG   "     %s()#%d: nach %d msec: '%s' geschlossen\n"
+    DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, (int)Zwischenzeit(T_COPY), source);
+    #undef MELDUNG
+  } // --------------------------------------------------------------------------
   char tmpbuf[NOTIZ];
   sprintf(tmpbuf, "%s(%ld)", destination, lng);
   newFiles = Added(tmpbuf);
@@ -645,7 +674,8 @@ enum Filetype copyFile(char* destination, const char* source)
     sprintf("newItem", "Event %s - %s", event, datum);
   }
 
-  DEBUG_t("<--- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__ , getFiletyp(source));
+  DEBUG_t("<--- %s()#%d -<%d>- in %d msec\n",
+           __FUNCTION__, __LINE__ , getFiletyp(source), (int)Zwischenzeit(T_COPY));
 
   return getFiletyp(source);
 }
@@ -921,6 +951,12 @@ int delOldest(char* Pfad)
           FileKill += remFile(Datei, MAXALTER);
         }
       }
+      if (closedir(cdir) != 0)
+      { // -- Error
+        sprintf(ErrText, "closedir '%s'", cDirname);
+        return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+      }
+
     }
 
     // Versuch, das Datumsverzeichnis zu löschen (wenn leer)
@@ -941,16 +977,17 @@ int delOldest(char* Pfad)
     }
     #endif
 
-  } // das waren die Datums-Verzeichnisse
+  } //  ----------- das waren die Datums-Verzeichnisse -----------
 
-
-  // jetzt noch die Statistik ausgeben
-  // =====================================
   if (closedir(pdir) != 0)
   { // -- Error
     sprintf(ErrText, "closedir '%s'", Pfad);
     return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
   }
+
+
+  // jetzt noch die Statistik ausgeben
+  // =====================================
   if ((FileKill == 0) && (FoldKill == 0))
   {
     { // --- Debug-Ausgaben ----------------------------------------------------------------
@@ -1026,24 +1063,29 @@ long FileTransfer(const char* Pfad, const char* Ziel)
   } // --------------------------------------------------------------
 
   DIR *pdir = opendir(Pfad);                                        // '.../pix' öffnen
-  if (pdir == NULL)
-  { // -- Error
-    char ErrText[ZEILE];
-    sprintf(ErrText, "opendir('%s')", Pfad);
-    return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
-  }
+//  if (pdir == NULL)
+//  { // -- Error
+//    char ErrText[ZEILE];
+//    sprintf(ErrText, "opendir('%s')", Pfad);
+//    return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
+//  }
 
   // das komplette Quell-Verzeichnis auslesen
   // ----------------------------------------
   bool Toggle=0;
   struct dirent* pdirzeiger;
   while((pdirzeiger=readdir(pdir)) != NULL)
-  {
+	{
     Toggle = !Toggle;
 
     char QuellPfad[ZEILE];                                          // Gesamt-Pfad des Unterverzeichnisses
     char QuellVerzeichnis[ZEILE];                                   // Name des Unterverzeichnisses
     strcpy(QuellVerzeichnis, (*pdirzeiger).d_name);                 // Name des Unterverzeichnisses
+      { // --- Debug-Ausgabe ------------------------------------------
+        #define MELDUNG   "   %s()#%d: - Unterverzeichnis '%s' untersuchen\n"
+        DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, QuellVerzeichnis);
+        #undef MELDUNG
+      } // --------------------------------------------------------------
     sprintf(QuellPfad,"%s%s", Pfad, QuellVerzeichnis);
     if (strstr(QuellVerzeichnis, _EVENT_) != NULL)                  // soll diese Verzeichnis angesehen werden?
     {
@@ -1054,6 +1096,25 @@ long FileTransfer(const char* Pfad, const char* Ziel)
         #undef MELDUNG
       } // --------------------------------------------------------------
 
+  		// zunächst untersuchen, ob leeres Verzeichnis  
+      // ------------------------------------
+      // ... löschen, wenn das Verzeichnis leer ist
+      if (rmdir(QuellPfad) == 0)
+      { // gelöscht!
+      	char TmpText[ZEILE];
+        sprintf(TmpText, "%s/", QuellPfad);     // als Verzeichnis kennzeichnen
+        delFolders += Deleted(TmpText);         // im Log vermerken
+      }
+      else
+      { // --- Debug-Ausgabe ------------------------------------------
+        #define MELDUNG   "   %s()#%d: -   '%s' nicht geloescht: Err %d - '%s'\n"
+        DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, QuellPfad, errno, strerror(errno));
+        #undef MELDUNG
+      } // --------------------------------------------------------------
+
+			
+			
+			
 //*                       !------------- QuellPfad -----------------!
 //*                                              !-QuellVerzeichnis-!
 //*      SOURCE           /home/pi/motion/pix/ - Event_2879/*
@@ -1106,7 +1167,7 @@ long FileTransfer(const char* Pfad, const char* Ziel)
         #undef MELDUNG
       } // ------------------------------------------------------------------
 
-      { // 3. Dateien übertragen
+      { // Dateien übertragen
         // ---------------------
         DIR* QuellDir = opendir(QuellPfad);                         // QuellVerzeichnis öffnen
         if (QuellDir == NULL)
@@ -1117,7 +1178,7 @@ long FileTransfer(const char* Pfad, const char* Ziel)
         }
 
         struct dirent* QuellZeiger;
-        while((QuellZeiger=readdir(QuellDir)) != NULL)              // alle Dateien dieses Verzeichnisses
+        while((QuellZeiger=readdir(QuellDir)) != NULL)              	// alle Dateien dieses Verzeichnisses
         {
           char Dateiname[ZEILE];
           strcpy(Dateiname, (*QuellZeiger).d_name);                   // zu kopierende Datei
@@ -1170,6 +1231,27 @@ long FileTransfer(const char* Pfad, const char* Ziel)
       remFolder(QuellPfad, SOFORT_h);
 
     }  // --- dieses Eventverzeichnis
+
+
+    // nun auch noch das Verzeichnis löschen
+    // ------------------------------------
+    // ... wenn das Verzeichnis leer ist
+    if (rmdir(QuellPfad) == 0)
+    { // gelöscht!
+    	char TmpText[ZEILE];
+      sprintf(TmpText, "%s/", QuellPfad);     // als Verzeichnis kennzeichnen
+      delFolders += Deleted(TmpText);         // im Log vermerken
+    }
+//    else
+//    { // -- Error
+//     char ErrText[ZEILE];
+//     sprintf(ErrText, "rmdir('%s'):"\
+//      "              Err %d - '%s'", QuellPfad, errno, strerror(errno));
+//      Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+//    }
+
+
+
   } // --. Gesamt-Verzeichnis --
   // Gesamt-Verzeichnis schließen
   // ------------------------------
@@ -1362,6 +1444,9 @@ int main(int argc, char *argv[])
     destroyInt(status);
   }
 
+		Fehlerliste("Hallo Echo");  
+
+
 
 //
 //  { // --- Testausgabe ----------------------------------------------------------------
@@ -1469,7 +1554,8 @@ int main(int argc, char *argv[])
     {
       ShowReady = true;
       Startzeit(T_GESAMT);                      // Zeitmessung starten
-      syslog(LOG_NOTICE, ">>> %s()#%d: <###---    neuer Auftrag    ---###>", __FUNCTION__, __LINE__);
+//      syslog(LOG_NOTICE, ">>> %s()#%d: <###---    neuer Auftrag: '%s'    ---###>",
+//                                                __FUNCTION__, __LINE__, puffer);
       digitalWrite (LED_BLAU, LED_EIN);
       digitalWrite (LED_GRUEN, LED_AUS);
       newFiles   = 0;                           // neue Dateien
@@ -1480,19 +1566,15 @@ int main(int argc, char *argv[])
 
 
       // === Dateien übertragen, im Raspi aufräumen  ==============================================
-      { // --- Log-Ausgabe ------------------------------------------------------------------------
-        char LogText[ZEILE];  sprintf(LogText, "    >>>----- neuer Auftrag ----->>>");
-        MYLOG(LogText);
-      } // ---------------------------------------------------------------------------------------
-
       {                  
         #define MELDUNG   "\n>>> %s()#%d: ################ neuer Auftrag @ %s ###############\n"
         DEBUG(MELDUNG, __FUNCTION__, __LINE__, __NOW__);
         #undef MELDUNG
       }
-      
       { // --- Log-Ausgabe ------------------------------------------------------------------------
-        char LogText[ZEILE]; 
+        char LogText[ZEILE];  
+        sprintf(LogText, "    >>>----- neuer Auftrag: '%s' ----->>>", puffer);
+        MYLOG(LogText);
         sprintf(LogText, "     ----< FileTransfer(FIFO --> '%s') >----", DESTINATION);
         MYLOG(LogText);
       } // ---------------------------------------------------------------------------------------
@@ -1521,10 +1603,7 @@ int main(int argc, char *argv[])
                                     fldCount,(fldCount>1 ? "se" : ""),
                                     aviCount,(aviCount>1 ? "e" : ""),
                                     jpgCount,(jpgCount>1 ? "er" : ""));
-         MYLOG(LogText);
-        } // ---------------------------------------------------------------------------------------
-        { // --- Log-Ausgabe -----------------------------------------------------------------------
-          char LogText[ZEILE];  
+          MYLOG(LogText);
           sprintf(LogText, "     ... und %d Verzeichnis%s, %d Datei%s gelöscht in %2.3f sec! ---", 
                                     delFolders,(delFolders!=1 ? "se" : ""),
                                     delFiles,(delFiles!=1 ? "en" : ""),

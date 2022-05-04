@@ -1,0 +1,363 @@
+'/home/pi/motion/Fifo/FifoMotion Vers. 4.3.140/May  3 2022' - User 1000, Group 1000
+>> 17:37:05-main()#1314: Hostname: 'Vogel'
+------ savePID('2380')->'/home/pi/motion/aux/FifoMotion.pid'
+>> 17:37:05-main()#1326: meine PID: '2380'
+------ readIP()='192.168.0.196 
+'
+>> 17:37:05-main()#1339: meine ganze IP: '192.168.0.196'
+>> 17:37:05-main()#1347: meine IP: '196'
+>> main()#1407 @ 17:37:06 ----- GPIO OK -------
+Betreff: Start >FifoMotion< @ 03.05.2022 17:37:06
+------ readIP()='192.168.0.196 
+'
+MailBody: Programm '/home/pi/FifoMotion' Vers. 4.3.140/May  3 2022
+RaspBerry Pi  No. --===< Vogel (4#43) >===-- - 'Vogel' -- IP-Adresse '192.168.0.196:2401'
+
+>> main()#1447 @ 17:37:06
+
+>> main()#1457 @ 17:37:06
+>>> main()#1469: FIFO '/home/pi/motion/aux/MOTION.FIFO' open !>>> main()#1472 @ 17:42:03
+Betreff: FIFO open >/home/pi/motion/aux/MOTION.FIFO< @ 03.05.2022 17:42:03
+>> main()#1485 @ 17:42:03
+>> main()#1491 @ 17:42:03
+------ readIP()='192.168.0.196 
+'
+>> main()#1496 @ 17:42:03
+MailBody: Programm '/home/pi/FifoMotion' Vers. 4.3.140/May  3 2022
+RaspBerry Pi  No. --===< Vogel (4#43) >===-- - 'Vogel' -- IP-Adresse '192.168.0.196'
+
+>>> main()#1511: -------------------- bereit  --  @ 17:42:03 ---------------------
+
+>>> main()#1536: ################ neuer Auftrag @ 17:42:03 ###############
+=> FileTransfer()#1025: >FileTransfer('/home/pi/motion/pix/',
+                               ===>  '/media/Kamera/Vogel/')
+   FileTransfer()#1034: Verzeichnis '/home/pi/motion/pix/' untersuchen
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/.'):              Err 22 - 'Invalid argument' - Err 22-Invalid argument"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/..'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174158-03.jpg'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174200-03.jpg'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   FileTransfer()#1063: - Unterverzeichnis 'Event_14020' untersuchen
+   FileTransfer()#1079: -   '/home/pi/motion/pix/Event_14020' nicht geloescht: Err 39 - 'Directory not empty'
+===> makeDatumsFoldername()#267:  makeDatumsFoldername('1651592083',
+                                                   ----> '')
+     makeDatumsFoldername()#276: Name '2022-05-03' erstellt!
+<--- makeDatumsFoldername()#279 -<0>- 
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03)
+     makeFolder()#344: Verzeichnis '/media/Kamera/Vogel/2022-05-03' existiert!
+<--- makeFolder()#349 -<0>- 
+   FileTransfer()#1119: --> ZielPfad '/media/Kamera/Vogel/2022-05-03' (No.0)
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03/Event_14020)
+     makeFolder()#344: Verzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14020' existiert!
+<--- makeFolder()#349 -<0>- 
+   FileTransfer()#1134: EventVerzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14020' (No.0)
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14020/event_11274.info,
+                       <----- /home/pi/motion/pix/Event_14020/event_11274.info) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14020/event_11274.info' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14020/event_11274.info', '0')
+       remFile()#389: '/home/pi/motion/pix/Event_14020/event_11274.info':
+                                              Alter   0:07:17 Std - max: 0 Std
+       remFile()#402: --- '/home/pi/motion/pix/Event_14020/event_11274.info' gelöscht!
+=======> Deleted()#229: Deleted('/home/pi/motion/pix/Event_14020/event_11274.info')
+<------- Deleted()#237 -<1>- 
+<----- remFile()#408 -<1>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14020/49-20220503173431.mkv,
+                       <----- /home/pi/motion/pix/Event_14020/49-20220503173431.mkv) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14020/49-20220503173431.mkv' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14020/49-20220503173431.mkv', '0')
+       remFile()#389: '/home/pi/motion/pix/Event_14020/49-20220503173431.mkv':
+                                              Alter   0:07:21 Std - max: 0 Std
+       remFile()#402: --- '/home/pi/motion/pix/Event_14020/49-20220503173431.mkv' gelöscht!
+=======> Deleted()#229: Deleted('/home/pi/motion/pix/Event_14020/49-20220503173431.mkv')
+<------- Deleted()#237 -<1>- 
+<----- remFile()#408 -<1>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14020/.,
+                       <----- /home/pi/motion/pix/Event_14020/.) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14020/.' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14020/.', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14020/..,
+                       <----- /home/pi/motion/pix/Event_14020/..) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14020/..' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14020/..', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> remFolder()#421: remFolder('/home/pi/motion/pix/Event_14020', '0')
+     remFolder()#464: '/home/pi/motion/pix/Event_14020':
+                                     Alter   0:00:00 Std - max: 0 Std
+<--- remFolder()#529 -<0>- 
+
+=======> Deleted()#229: Deleted('/home/pi/motion/pix/Event_14020/')
+<------- Deleted()#237 -<1>- 
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/lastEvent'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174158-00.jpg'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174202-02.jpg'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   -- Fehler -->  FileTransfer()#1218 @17:42:03 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174157-01.jpg'):              Err 20 - 'Not a directory' - Err 20-Not a directory"
+   FileTransfer()#1063: - Unterverzeichnis 'Event_14013' untersuchen
+   FileTransfer()#1079: -   '/home/pi/motion/pix/Event_14013' nicht geloescht: Err 39 - 'Directory not empty'
+===> makeDatumsFoldername()#267:  makeDatumsFoldername('1651591717',
+                                                   ----> '')
+     makeDatumsFoldername()#276: Name '2022-05-03' erstellt!
+<--- makeDatumsFoldername()#279 -<0>- 
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03)
+     makeFolder()#344: Verzeichnis '/media/Kamera/Vogel/2022-05-03' existiert!
+<--- makeFolder()#349 -<0>- 
+   FileTransfer()#1119: --> ZielPfad '/media/Kamera/Vogel/2022-05-03' (No.0)
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03/Event_14013)
+     makeFolder()#337: Verzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14013' angelegt!
+=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/')
+<------- Added()#254 -<1>- 
+<--- makeFolder()#349 -<1>- 
+   FileTransfer()#1134: EventVerzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14013' (No.1)
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/.,
+                       <----- /home/pi/motion/pix/Event_14013/.) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14013/.' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/.', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/..,
+                       <----- /home/pi/motion/pix/Event_14013/..) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14013/..' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/..', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/event_11267.info,
+                       <----- /home/pi/motion/pix/Event_14013/event_11267.info) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/event_11267.info(140)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<99>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172805-00.jpg,
+                       <----- /home/pi/motion/pix/Event_14013/42-20220503172805-00.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172805-00.jpg(71689)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172740.mkv,
+                       <----- /home/pi/motion/pix/Event_14013/42-20220503172740.mkv) ========
+       copyFile()#590: ..........................................................................................................................................................................................................................................................................=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172740.mkv(69530563)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<3>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172804-03.jpg,
+                       <----- /home/pi/motion/pix/Event_14013/42-20220503172804-03.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172804-03.jpg(71414)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172805-03.jpg,
+                       <----- /home/pi/motion/pix/Event_14013/42-20220503172805-03.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172805-03.jpg(71450)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172806-00.jpg,
+                       <----- /home/pi/motion/pix/Event_14013/42-20220503172806-00.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14013/42-20220503172806-00.jpg(72202)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> remFolder()#421: remFolder('/home/pi/motion/pix/Event_14013', '0')
+     remFolder()#464: '/home/pi/motion/pix/Event_14013':
+                                     Alter   0:13:51 Std - max: 0 Std
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/event_11267.info', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/event_11267.info':
+                                              Alter   0:13:51 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/42-20220503172805-00.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/42-20220503172805-00.jpg':
+                                              Alter   0:14:27 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/42-20220503172740.mkv', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/42-20220503172740.mkv':
+                                              Alter   0:13:55 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/42-20220503172804-03.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/42-20220503172804-03.jpg':
+                                              Alter   0:14:27 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/42-20220503172805-03.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/42-20220503172805-03.jpg':
+                                              Alter   0:14:26 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14013/42-20220503172806-00.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14013/42-20220503172806-00.jpg':
+                                              Alter   0:14:26 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+   -- Fehler -->  remFolder()#516 @17:42:32 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14013'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:32 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14013'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   FileTransfer()#1063: - Unterverzeichnis 'Event_14019' untersuchen
+   FileTransfer()#1079: -   '/home/pi/motion/pix/Event_14019' nicht geloescht: Err 39 - 'Directory not empty'
+===> makeDatumsFoldername()#267:  makeDatumsFoldername('1651591994',
+                                                   ----> '')
+     makeDatumsFoldername()#276: Name '2022-05-03' erstellt!
+<--- makeDatumsFoldername()#279 -<0>- 
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03)
+     makeFolder()#344: Verzeichnis '/media/Kamera/Vogel/2022-05-03' existiert!
+<--- makeFolder()#349 -<0>- 
+   FileTransfer()#1119: --> ZielPfad '/media/Kamera/Vogel/2022-05-03' (No.1)
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03/Event_14019)
+     makeFolder()#337: Verzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14019' angelegt!
+=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/')
+<------- Added()#254 -<1>- 
+<--- makeFolder()#349 -<1>- 
+   FileTransfer()#1134: EventVerzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14019' (No.2)
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-02.jpg,
+                       <----- /home/pi/motion/pix/Event_14019/48-20220503173304-02.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-02.jpg(66822)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-00.jpg,
+                       <----- /home/pi/motion/pix/Event_14019/48-20220503173304-00.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-00.jpg(66785)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173305-00.jpg,
+                       <----- /home/pi/motion/pix/Event_14019/48-20220503173305-00.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173305-00.jpg(66832)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/event_11273.info,
+                       <----- /home/pi/motion/pix/Event_14019/event_11273.info) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/event_11273.info(140)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<99>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173259.mkv,
+                       <----- /home/pi/motion/pix/Event_14019/48-20220503173259.mkv) ========
+       copyFile()#590: .................................................................=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173259.mkv(17032496)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<3>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/.,
+                       <----- /home/pi/motion/pix/Event_14019/.) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14019/.' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/.', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/..,
+                       <----- /home/pi/motion/pix/Event_14019/..) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14019/..' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/..', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-01.jpg,
+                       <----- /home/pi/motion/pix/Event_14019/48-20220503173304-01.jpg) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14019/48-20220503173304-01.jpg(66910)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<1>- 
+===> remFolder()#421: remFolder('/home/pi/motion/pix/Event_14019', '0')
+     remFolder()#464: '/home/pi/motion/pix/Event_14019':
+                                     Alter   0:09:20 Std - max: 0 Std
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/48-20220503173304-02.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/48-20220503173304-02.jpg':
+                                              Alter   0:09:33 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/48-20220503173304-00.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/48-20220503173304-00.jpg':
+                                              Alter   0:09:34 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/48-20220503173305-00.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/48-20220503173305-00.jpg':
+                                              Alter   0:09:33 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/event_11273.info', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/event_11273.info':
+                                              Alter   0:09:20 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/48-20220503173259.mkv', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/48-20220503173259.mkv':
+                                              Alter   0:09:24 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14019/48-20220503173304-01.jpg', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14019/48-20220503173304-01.jpg':
+                                              Alter   0:09:34 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+   -- Fehler -->  remFolder()#516 @17:42:38 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14019'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:38 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14019'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:38 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174202-01.jpg'):              Err 2 - 'No such file or directory' - Err 2-No such file or FileTransfer()#1218 @17:42:38 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174202-01.jpg'):              Err 2 - 'No such file or directory' - Err 2-No "
+   FileTransfer()#1063: - Unterverzeichnis 'Event_14014' untersuchen
+   FileTransfer()#1079: -   '/home/pi/motion/pix/Event_14014' nicht geloescht: Err 39 - 'Directory not empty'
+===> makeDatumsFoldername()#267:  makeDatumsFoldername('1651591845',
+                                                   ----> '')
+     makeDatumsFoldername()#276: Name '2022-05-03' erstellt!
+<--- makeDatumsFoldername()#279 -<0>- 
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03)
+     makeFolder()#344: Verzeichnis '/media/Kamera/Vogel/2022-05-03' existiert!
+<--- makeFolder()#349 -<0>- 
+   FileTransfer()#1119: --> ZielPfad '/media/Kamera/Vogel/2022-05-03' (No.2)
+===> makeFolder()#319: makeFolder(/media/Kamera/Vogel/2022-05-03/Event_14014)
+     makeFolder()#337: Verzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14014' angelegt!
+=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14014/')
+<------- Added()#254 -<1>- 
+<--- makeFolder()#349 -<1>- 
+   FileTransfer()#1134: EventVerzeichnis '/media/Kamera/Vogel/2022-05-03/Event_14014' (No.3)
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14014/43-20220503173022.mkv,
+                       <----- /home/pi/motion/pix/Event_14014/43-20220503173022.mkv) ========
+       copyFile()#590: ...................................................................................................................................=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14014/43-20220503173022.mkv(34332124)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<3>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14014/.,
+                       <----- /home/pi/motion/pix/Event_14014/.) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14014/.' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14014/.', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14014/..,
+                       <----- /home/pi/motion/pix/Event_14014/..) ========
+     copyFile()#560: '/media/Kamera/Vogel/2022-05-03/Event_14014/..' schon vorhanden!
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14014/..', '0')
+<----- remFile()#408 -<0>- 
+
+<--- copyFile()#568 -<0>- 
+===> copyFile()#542: copyFile(/media/Kamera/Vogel/2022-05-03/Event_14014/event_11268.info,
+                       <----- /home/pi/motion/pix/Event_14014/event_11268.info) ========
+       copyFile()#590: .=======> Added()#246: Added('/media/Kamera/Vogel/2022-05-03/Event_14014/event_11268.info(140)')
+<------- Added()#254 -<1>- 
+     copyFile()#637: Datei kopiert!
+<--- copyFile()#658 -<99>- 
+===> remFolder()#421: remFolder('/home/pi/motion/pix/Event_14014', '0')
+     remFolder()#464: '/home/pi/motion/pix/Event_14014':
+                                     Alter   0:11:53 Std - max: 0 Std
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14014/43-20220503173022.mkv', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14014/43-20220503173022.mkv':
+                                              Alter   0:12:08 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+=====> remFile()#361: remFile('/home/pi/motion/pix/Event_14014/event_11268.info', '2208')
+       remFile()#389: '/home/pi/motion/pix/Event_14014/event_11268.info':
+                                              Alter   0:11:53 Std - max: 2208 Std
+<----- remFile()#408 -<0>- 
+
+   -- Fehler -->  remFolder()#516 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14014'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/Event_14014'):              Err 39 - 'Directory not empty' - Err 39-Directory not empty"
+   -- Fehler -->  FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174201-03.jpg'):              Err 2 - 'No such file or directory' - Err 2-No such file or FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174201-03.jpg'):              Err 2 - 'No such file or directory' - Err 2-No "
+   -- Fehler -->  FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174159-02.jpg'):              Err 2 - 'No such file or directory' - Err 2-No such file or FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174159-02.jpg'):              Err 2 - 'No such file or directory' - Err 2-No such file or FileTransfer()#1218 @17:42:52 in fifomotion.c: "rmdir('/home/pi/motion/pix/53-20220503174159-02.jpg'):              Err 2 - 'No such file or directory' - Err 2-No s"
