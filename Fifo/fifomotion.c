@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-04-28 - 10:27:26                                    *//
+//* Last change:   2022-05-08 - 10:46:08                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -20,11 +20,11 @@
 
 #define _MODUL0
 #define __FIFOMOTION_MYLOG__         true
-#define __FIFOMOTION_MYLOG1__        true
-#define __FIFOMOTION_DEBUG__         true
-#define __FIFOMOTION_DEBUG__c__      true     // calcSize
-#define __FIFOMOTION_DEBUG__t__      true     // FileTransfer
-#define __FIFOMOTION_DEBUG__d__      true     // delOldest
+#define __FIFOMOTION_MYLOG1__        false
+#define __FIFOMOTION_DEBUG__         false
+#define __FIFOMOTION_DEBUG__c__      false     // calcSize
+#define __FIFOMOTION_DEBUG__t__      false     // FileTransfer
+#define __FIFOMOTION_DEBUG__d__      false     // delOldest
 
 
 #include "./version.h"
@@ -647,6 +647,8 @@ enum Filetype copyFile(char* destination, const char* source)
     DEBUG_t(MELDUNG, __FUNCTION__, __LINE__, (int)Zwischenzeit(T_COPY), source);
     #undef MELDUNG
   } // --------------------------------------------------------------------------
+  
+  
   char tmpbuf[NOTIZ];
   sprintf(tmpbuf, "%s(%ld)", destination, lng);
   newFiles = Added(tmpbuf);
@@ -1448,35 +1450,35 @@ int main(int argc, char *argv[])
 
 
 
+
+  { // --- Testausgabe ----------------------------------------------------------------
+    errno = 0;
+    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
+    Error_NonFatal( Text, __FUNCTION__, __LINE__);
+  } // ---------------------------------------------------------------------------------
+
+
+
+//  { // Bereitmeldung per Mail ---------------------------------------
+//    // -----------------------
+//    char Betreff[ZEILE] = {'\0'};
+//    char Zeitbuf[NOTIZ];
+//    sprintf( Betreff, "Start >%s< @ %s",  PROGNAME, mkdatum(time(0), Zeitbuf));
+//    DEBUG( "Betreff: %s\n", Betreff);
 //
-//  { // --- Testausgabe ----------------------------------------------------------------
-//    errno = 0;
-//    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
-//    Error_NonFatal( Text, __FUNCTION__, __LINE__);
-//  } // ---------------------------------------------------------------------------------
+//    char MailBody[BODYLEN] = {'\0'};
+//    char Zeile[ZEILE];
+//    char Buf[NOTIZ];
+//    char* Path=NULL;
+//    sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
+//    strcat(MailBody, Zeile);
+//    sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s:%d'\n",
+//               readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)), STREAM_PORT);
+//    strcat(MailBody, Zeile);
+//    DEBUG( "MailBody: %s\n", MailBody);
 //
-
-
-  { // Bereitmeldung per Mail ---------------------------------------
-    // -----------------------
-    char Betreff[ZEILE] = {'\0'};
-    char Zeitbuf[NOTIZ];
-    sprintf( Betreff, "Start >%s< @ %s",  PROGNAME, mkdatum(time(0), Zeitbuf));
-    DEBUG( "Betreff: %s\n", Betreff);
-
-    char MailBody[BODYLEN] = {'\0'};
-    char Zeile[ZEILE];
-    char Buf[NOTIZ];
-    char* Path=NULL;
-    sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
-    strcat(MailBody, Zeile);
-    sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s:%d'\n",
-               readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)), STREAM_PORT);
-    strcat(MailBody, Zeile);
-    DEBUG( "MailBody: %s\n", MailBody);
-
 //    sendmail(Betreff, MailBody);  // vorläufig
-  } // -----  Bereitmeldung per Mail -----------------------------------
+//  } // -----  Bereitmeldung per Mail -----------------------------------
 
 
   DEBUG(">> %s()#%d @ %s\n\n", __FUNCTION__, __LINE__, __NOW__);
@@ -1500,18 +1502,14 @@ int main(int argc, char *argv[])
       showMain_Error(LogText, __FUNCTION__, __LINE__);
       exit (EXIT_FAILURE);
     }
-    char LogText[ZEILE];
-    sprintf(LogText, ">>> %s()#%d: FIFO '%s' open !",  __FUNCTION__, __LINE__ , FIFO);
-    syslog(LOG_NOTICE, "%s", LogText);
-    DEBUG(LogText);
-    DEBUG(">>> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
+    {// --- Log-Ausgabe -----------------------------------------------------------------
+      char LogText[ZEILE];
+      sprintf(LogText, ">>> %s()#%d: FIFO '%s' open !",  __FUNCTION__, __LINE__ , FIFO);
+      syslog(LOG_NOTICE, "%s", LogText);
+      DEBUG(LogText);
+      DEBUG(">>> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
+    } // --------------------------------------------------------------------------------
 
-//    {// --- Log-Ausgabe -----------------------------------------------------------------
-//     	char LogText[ZEILE];        sprintf(LogText, 
-//      ">>>                   --- FIFO '%s' open !", FIFO);
-//      MYLOG(LogText);
-//    } // --------------------------------------------------------------------------------
-//
 
     char Betreff[ZEILE] = {'\0'};
     char Zeitbuf[NOTIZ];
@@ -1519,20 +1517,23 @@ int main(int argc, char *argv[])
     DEBUG( "Betreff: %s\n", Betreff);
     DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
 
-    char MailBody[BODYLEN] = {'\0'};
-    char Zeile[ZEILE];
-    char Buf[NOTIZ];
-    char* Path=NULL;
-    DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
-    sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
-    strcat(MailBody, Zeile);
-    sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s'",
-               readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)));
-    DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
-    strcat(MailBody, Zeile);
-    DEBUG( "MailBody: %s\n", MailBody);
-
-//    sendmail(Betreff, MailBody);
+//		{	// Bereitmeldung per Mail
+//			// -----------------------
+//      char MailBody[BODYLEN] = {'\0'};
+//      char Zeile[ZEILE];
+//      char Buf[NOTIZ];
+//      char* Path=NULL;
+//      DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
+//      sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
+//      strcat(MailBody, Zeile);
+//      sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s'",
+//                 readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)));
+//      DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
+//      strcat(MailBody, Zeile);
+//      DEBUG( "MailBody: %s\n", MailBody);
+//  
+//      sendmail(Betreff, MailBody);
+//  	}
   }
 
   bool ShowReady = true;
@@ -1554,8 +1555,6 @@ int main(int argc, char *argv[])
     {
       ShowReady = true;
       Startzeit(T_GESAMT);                      // Zeitmessung starten
-//      syslog(LOG_NOTICE, ">>> %s()#%d: <###---    neuer Auftrag: '%s'    ---###>",
-//                                                __FUNCTION__, __LINE__, puffer);
       digitalWrite (LED_BLAU, LED_EIN);
       digitalWrite (LED_GRUEN, LED_AUS);
       newFiles   = 0;                           // neue Dateien

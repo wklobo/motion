@@ -32,9 +32,6 @@
 ***
 2022-04-24 - 16:41:15: Startanzeige im Logfile korrigiert
 ***
-
-
-
-
-
+2022-05-08 - 10:47:58: Fifomotion ohne Debug-Ausgaben
+***
 # xxx

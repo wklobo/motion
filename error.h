@@ -3,7 +3,7 @@
 //* File:          error.h                                                                    *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2018-07-14;                                                                *//
-//* Last change:   2022-04-18 - 16:54:51                                                      *//
+//* Last change:   2022-05-04 - 15:39:46                                                      *//
 //* Description:   SolarControl - Überwachung und Messung des Solarmoduls                     *//
 //*                Standard-Fehlerausgänge                                                    *//
 //*                                                                                           *//
@@ -19,10 +19,10 @@
 
 #define FEHLERZEIT      12    /* Brenndauer rote LED nach Fehlern */
 
-//char cNow[ZEITBUFLEN];
-
 void finish_with_Error(char* ErrorMessage);           // Fatale Fehlermeldung
 void report_Error(char* ErrorMessage, bool withMail); // Nicht-Fatale Fehlermeldung
+
+void Fehlerliste(char* Message);
 
 #define MAXERROR  12
 

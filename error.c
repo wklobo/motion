@@ -3,7 +3,7 @@
 //* File:          error.c                                                                    *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2018-07-14;                                                                *//
-//* Last change:   2022-04-23 - 15:52:15                                                     *//
+//* Last change:   2022-05-08 - 10:39:54                                                     *//
 //* Description:   Nistkastenprogramm: Standard-Fehlerausg‰nge                                *//
 //*                                                                                           *//
 //* Copyright (C) 2018-21 by Wolfgang Keuch                                                   *//
@@ -50,20 +50,26 @@ void Fehlerliste(char* Message)
   char buf[256] = {'\0'};
   char lza[256] = {'\0'};
   char lze[256] = {'\0'};
+  char ErrText[ERRBUFLEN];
   
   mode_t mode = S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH;  
   int fd_list = open(FEHLER_LISTE, O_CREAT | O_APPEND | O_RDWR, mode);
   if(fd_list == -1) 
-  { // --- Debug-Ausgaben ---------------------------------------------------
-    perror("open FEHLER_LISTE");
-  } // ----------------------------------------------------------------------
+  { // -- Error --------------------------------------------------------------
+    sprintf(ErrText, "open '%s'", FEHLER_LISTE);
+    finish_with_Error(ErrText);
+//    Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+   	return;
+  } // -----------------------------------------------------------------------
   else
   { // Attribute setzen
     // -----------------
     if(fchmod(fd_list, mode) == -1) 
-    { // --- Debug-Ausgaben ---------------------------------------------------
-      perror("fchmod FEHLER_LISTE");
-    } // ----------------------------------------------------------------------
+    { // -- Error ------------------------------------------------------------
+      sprintf(ErrText, "fchmod '%s'", FEHLER_LISTE);
+      finish_with_Error(ErrText);
+//      Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+    } // ---------------------------------------------------------------------
     else
     { // Inhalte schreiben
       // -----------------
@@ -74,14 +80,17 @@ void Fehlerliste(char* Message)
       sprintf(buf, "%s(%d)-%s%s", lza, strlen(Message), Message, lze);
       
       if(write(fd_list, buf, sizeof(buf)) != sizeof(buf))
-      { // --- Debug-Ausgaben ---------------------------------------------------
-        perror("write FEHLER_LISTE");
-      } // ----------------------------------------------------------------------
-      // Log-Datei schlieﬂen
-      // -------------------
-      close(fd_list);    
+      { // -- Error ----------------------------------------------------------
+        sprintf(ErrText, "write '%s'", FEHLER_LISTE);
+        finish_with_Error(ErrText);
+//        Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
+    	} // -------------------------------------------------------------------
     }
+    // Log-Datei schlieﬂen
+    // -------------------
+    close(fd_list);    
   }
+//  printf("--- Fehlerliste wieder geschlossen ---");
 }
 //*********************************************************************************************//
 

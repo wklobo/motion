@@ -684,6 +684,7 @@ bool MyLog(const char* Program, const char* Function, int Line, const char* pLog
       perror("fcntl");
       exit(1);
   }
+  close(fd);
 
   DEBUG_p("<------- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, status);
   return status;

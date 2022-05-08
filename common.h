@@ -32,7 +32,7 @@
 #define NOTIZ                64       /* Kurzmeldung */ 
 #define ZEILE            KBYTES/4
 #define BLOCK           16*KBYTES
-#define BUFFER         256*KBYTES
+#define BUFFER         512*KBYTES
 
 #define MIN_FILESIZE    65*KBYTES
 #define MIN_FILMSIZE   200*KBYTES

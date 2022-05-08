@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-05-02 - 17:33:22                                    *//
+//* Last change:   2022-05-03 - 11:18:24                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -22,13 +22,13 @@
 #define _DEFAULT_SOURCE
 #define _MODUL0
 #define __SQLMOTION_MYLOG__    true
-#define __SQLMOTION_MYLOG1__   true
-#define __SQLMOTION_MYLOG1a__  true
-#define __SQLMOTION_MYLOG2__   true
-#define __SQLMOTION_DEBUG__    true
+#define __SQLMOTION_MYLOG1__   false
+#define __SQLMOTION_MYLOG1a__  false
+#define __SQLMOTION_MYLOG2__   false
+#define __SQLMOTION_DEBUG__    false
 #define __SQLMOTION_DEBUG__d   false     /* Datenbanken */
-#define __SQLMOTION_DEBUG__1   true
-#define __SQLMOTION_DEBUG__2   true
+#define __SQLMOTION_DEBUG__1   false
+#define __SQLMOTION_DEBUG__2   false
 #define __SQLMOTION_DEBUG__z   false
 
 
