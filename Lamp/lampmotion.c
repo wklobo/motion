@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-05-01 - 16:59:05                                    *//
+//* Last change:   2022-05-09 - 10:14:11                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -1140,7 +1140,7 @@ int main(int argc, char *argv[])
     strcat(MailBody, mySubscriptions);
 
     DEBUG( "MailBody:\n%s\n", MailBody);
-//    sendmail(Betreff, MailBody);
+    sendmail(Betreff, MailBody);
   } // -----  Bereitmeldung per Mail -----------------------------------
 
   syslog(LOG_NOTICE, "--- Init done ---");
@@ -1158,13 +1158,13 @@ int main(int argc, char *argv[])
   } // ------------------------------------------------------------------------
 
 
-//
-//  { // --- Testausgabe --------------------------------------------------------
-//  	errno = 0;
-//    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
-//		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
-//  } // ------------------------------------------------------------------------
-//
+
+  { // --- Testausgabe --------------------------------------------------------
+  	errno = 0;
+    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
+		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
+  } // ------------------------------------------------------------------------
+
 
 
   DEBUG("\n");

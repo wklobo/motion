@@ -1446,10 +1446,6 @@ int main(int argc, char *argv[])
     destroyInt(status);
   }
 
-		Fehlerliste("Hallo Echo");  
-
-
-
 
   { // --- Testausgabe ----------------------------------------------------------------
     errno = 0;
