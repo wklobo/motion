@@ -34,8 +34,7 @@
 ***
 2022-05-08 - 10:47:58: Fifomotion ohne Debug-Ausgaben
 ***
-2022-05-09 - 10:31:54: alles nochmals neu kompiliert
-             die ersten Küken sind geschlüpft, es werden Unmengen von Daten erzeugt.
+2022-05-09 - 10:31:54: alles nochmals neu kompiliert.
+         >    Die ersten Küken sind geschlüpft, es werden Unmengen von Daten erzeugt.
 ***
 
-# xxx
