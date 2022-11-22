@@ -3,23 +3,49 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-05-09 - 10:14:11                                    *//
+//* Last change:   2022-11-20 - 14:26:29                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
 //*                Kommunikation per MQTT                                   *//
 //*                                                                         *//
-//* Copyright (C) 2014-21 by Wolfgang Keuch                                 *//
+//* 12. November 2022 - Umstellung auf Hilfsfunktionen in 'treiber'         *//
 //*                                                                         *//
+//* Copyright (C) 2014-23 by Wolfgang Keuch                                 *//
+//*                                                                         *// 
 //* Aufruf:                                                                 *//
 //*    ./LampMotion &    (Daemon)                                           *//
 //*                                                                         *//
 //***************************************************************************//
 
 #define _MODUL0
-#define __LAMPMOTION_DEBUG__   true
-#define __LAMPMOTION_DEBUG_1__ false
-#define __LAMPMOTION_DEBUG_2__ false
+#define __LAMPMOTION_DEBUG__      true
+#define __LAMPMOTION_DEBUG_INIT__ true
+#define __LAMPMOTION_DEBUG_MQTT__ false
+#define __LAMPMOTION_DEBUG_1__    false
+#define __LAMPMOTION_DEBUG_2__    false
+
+
+// Peripherie aktivieren
+// ----------------------
+#define __LCD_DISPLAY__    false   /* LCD-Display               */
+#define __DS18B20__        true    /* DS18B20-Sensoren          */
+#define __INTERNAL__       true    /* CPU-Temperatur            */
+#define __BME280__         true    /* BME280-Sensor             */
+#define __TSL2561__        true    /* TLS2561-Sensor            */
+#define __GPIO__           true    /* GPIOs über 'gpio.c'       */
+#define __MQTT__           true    /* Mosquitto                 */
+#define __INTERRUPT__      false   /* Interrupt Geigerzähler    */
+#define __DATENBANK__      false   /* Datenbank                 */
+
+
+// Einstellungen für Sensoren
+// --------------------------
+#define CPU_TAKT      45              // Abfragetakt CPU-Temperatur
+#define DS1820_TAKT   60              // Abfragetakt Innen-Temperatur
+
+
+//***************************************************************************//
 
 #include "./version.h"
 #include "./lampmotion.h"
@@ -36,35 +62,63 @@
 #include <dirent.h>
 #include <signal.h>
 #include <stdbool.h>
-#include <wiringPi.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include "./mqtt.h"
-#include "./ds1820.h"
-#include "./bme280.h"
-#include "./tsl2561.h"
-#include "../error.h"
-#include "../datetime.h"
-#include "../../sendmail/sendMail.h"
+// http://wiringpi.com/reference/i2c-library/
+// ------------------------------------------
+// hier: direkter Zugriff auf GPIO
+#include <wiringPi.h>
+#include <wiringPiI2C.h>
+
+#include "/home/pi/treiber/common/gpio.h"
+#include "/home/pi/treiber/common/common.h"
+#include "/home/pi/treiber/common/mqtt.h"
+#include "/home/pi/treiber/common/error.h"
+#include "/home/pi/treiber/common/datetime.h"
+#include "/home/pi/treiber/common/mqtthelp.h"
+#include "/home/pi/treiber/sensor/bme280.h"
+#include "/home/pi/treiber/sensor/ds18b20.h"
+#include "/home/pi/treiber/sensor/tsl2561.h"
+#include "/home/pi/treiber/sendmail/sendMail.h"
 
 // statische Variable
 // --------------------
-static char Hostname[ZEILE];          // der Name dieses Rechners
-static char meineIPAdr[NOTIZ];        // die IP-Adresse dieses Rechners
-static char* IPnmr;                   // letzte Stelle der IP-Adresse
+//static char s_Hostname[ZEILE];          // der Name dieses Rechners
+//static char meineIPAdr[NOTIZ];        // die IP-Adresse dieses Rechners
+//static char* s_IPnmr;                   // letzte Stelle der IP-Adresse
 static time_t ErrorFlag = 0;          // Steuerung rote LED
-static bool Automatic = false;				// Steuerung IR-Lampem
+static bool Automatic = false;        // Steuerung IR-Lampem
 
-// Message-Erwiderung
-// --------------------
-enum RESPONSE { RESP_KEINEANTWORT,
-                RESP_QUITTUNG=200,
-                RESP_NOSUPPORT,
-                RESP_FEHLER};
+//// Message-Erwiderung
+//// --------------------
+//enum RESPONSE { RESP_KEINEANTWORT,
+//                RESP_QUITTUNG=200,
+//                RESP_NOSUPPORT,
+//                RESP_FEHLER};
 
 #define SENDETAKT      60   // für Sensoren [sec]
 #define ABFRAGETAKT   250   // für MQTT [msec]
+
+// *** vorläufig ***
+
+// LED-Steuerung (Ersatz für motLED.c)
+// -------------------------------------
+#define LED_EIN      0
+#define LED_AUS      1
+#define LED_HELL     1                    /* IR-Lampen */
+#define LED_DUNKEL   0
+//
+//// Pin-Nummerierung: WiringPi
+//// --------------------------
+//#define M_LED_ROT      15  /* Pin  8  */
+//#define M_LED_GELB     16  /* Pin 10  */
+//#define M_LED_GRUEN     1  /* Pin 12  */
+//#define M_LED_BLAU      4  /* Pin 16  */
+//#define M_LED_GRUEN1   24  /* Pin 35  */
+//#define M_LED_BLAU1    25  /* Pin 37  */
+//#define M_LAMP_IRRIGHT  2  /* Pin 13 - IR-Lampe rechts */ // /home/pi/motion/Pin/Pin 16 0
+//#define M_LAMP_IRLEFT   0  /* Pin 11 - IR-Lampe links  */
 
 
 //***************************************************************************//
@@ -72,16 +126,25 @@ enum RESPONSE { RESP_KEINEANTWORT,
  * Define debug function.
  * ---------------------
  */
-#if __LAMPMOTION_MYLOG__
-#define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
-#else
-#define MYLOG(...)
-#endif
 
 #if __LAMPMOTION_DEBUG__
-#define DEBUG(...)  printf(__VA_ARGS__)
+  #define DEBUG(...) printf(__VA_ARGS__)
 #else
-#define DEBUG(...)
+  #define DEBUG(...)
+#endif
+
+#if __LAMPMOTION_DEBUG_INIT__
+  // nur die Init-Phase
+  // -------------------
+  #define _DEBUG(...) printf(__VA_ARGS__)
+#else
+  #define _DEBUG(...)
+#endif
+
+#if __LAMPMOTION_DEBUG_MQTT__
+  #define DEBUG_MQTT(...) printf(__VA_ARGS__)
+#else
+  #define DEBUG_MQTT(...)
 #endif
 
 #if __LAMPMOTION_DEBUG_1__
@@ -90,15 +153,69 @@ enum RESPONSE { RESP_KEINEANTWORT,
 #define DEBUG_1(...)
 #endif
 
-
 #if __LAMPMOTION_DEBUG_2__
 #define DEBUG_2(...)  printf(__VA_ARGS__)
 #else
 #define DEBUG_2(...)
 #endif
 
-//***************************************************************************//
-//
+//**************************************************************************************//
+
+// programmweite Variable
+// -----------------------
+char   s_Hostname[ZEILE];                       // der Name dieses Rechners
+char   s_meineIPAdr[NOTIZ];                     // die IP-Adresse dieses Rechners
+uint   s_IPnmr=0;                               // letzte Stelle der IP-Adresse
+long   s_pid=0;                                 // meine Prozess-ID
+
+static bool   s_aborted = false;                // Status Signale SIGTERM und SIGKILL
+
+#if __INTERRUPT__
+  extern int clickCounter;                      // the event counter
+#endif
+
+
+#if __DS18B20__
+  static uint ds18b20anz = 0;                   // Anzahl DS18B20-Sensoren
+  static uint ds18b20takt = 0;                  // Abfragetakt gesamt
+  static uint ds18b20gap = 0;                   // Abfragetakt
+#endif
+
+
+#if __BME280__
+	static int bme280 = 0;               					// Anzahl BME280-Sensoren
+#endif
+
+
+#if __TSL2561__
+  static void* tsl = NULL;              				// das TLS2561-Objekt !
+#endif
+
+
+#if __INTERNAL__
+  float CPUTemp = 0;                            // interne CPU-Temperatur lesen
+#endif
+
+
+static struct MqttInfo* mqtt = NULL;            // das MQTT-Objekt
+#if __MQTT__
+//  #define __DATENBANK__      true               /* Datenbank wird benötigt */
+#endif
+
+
+#if __DATENBANK__
+  static MYSQL* con = NULL;                     // Verbindung zur Datenbank
+  #define __DATENBANK__      true               /* Datenbank wird benötigt */
+#endif
+
+
+#if __LCD_DISPLAY__
+  static int  LCDi2cfd = 0;                     // LCD-Display
+#endif
+
+//**************************************************************************************//
+ 
+ //
 ////#ifndef _MQTTTYPEN
 ////#define _MQTTTYPEN  1
 //
@@ -125,21 +242,21 @@ void sigfunc(int sig)
 {
  if(sig == SIGTERM)
  {
- 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    { // --- Log-Ausgabe ------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGTERM %s -------", PROGNAME);
     MYLOG(LogText);
-  	} // ----------------------------------------------------------------------------
+    } // ----------------------------------------------------------------------------
  }
  else if(sig == SIGKILL)
  {
- 	  { // --- Log-Ausgabe ------------------------------------------------------------
+    { // --- Log-Ausgabe ------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGKILL %s -------", PROGNAME);
     MYLOG(LogText);
-  	} // ----------------------------------------------------------------------------
-  	aborted = true;
+    } // ----------------------------------------------------------------------------
+//***  	aborted = true;
  }
  else
-		return;
+    return;
 }
 //***********************************************************************************************
 
@@ -155,9 +272,9 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   sprintf( ErrText, "%s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
 
   printf("    -- Fehler -->  %s\n", ErrText);   // lokale Fehlerausgabe
-  digitalWrite (LED_GRUEN1,  LED_AUS);
-  digitalWrite (LED_BLAU1,   LED_AUS);
-  digitalWrite (LED_ROT,    LED_EIN);
+  digitalWrite (M_LED_GRUEN1,  LED_AUS);
+  digitalWrite (M_LED_BLAU1,   LED_AUS);
+  digitalWrite (M_LED_ROT,     LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
@@ -166,7 +283,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
 
   // PID-Datei wieder löschen
   // ------------------------
-  killPID(FPID);
+//***  killPID(FPID);
 
   finish_with_Error(ErrText);                   // Fehlermeldung ausgeben
 }
@@ -190,8 +307,8 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 
   DEBUG("   -- Fehler -->  %s\n", ErrText);     // lokale Fehlerausgabe
 
-  digitalWrite (LED_ROT,    LED_EIN);
-  ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
+  digitalWrite (M_LED_ROT,    LED_EIN);
+//***  ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
   {// --- Log-Ausgabe ---------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<*** %s",  ErrText);
@@ -206,230 +323,32 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
   return errsv;
 }
 //***********************************************************************************************
-
-//                       Topic/Payload bearbeiten
-//                      ==========================
-
-// Parameter 1: Quelle-der Topic- oder Payload-String ('/.../.../...')
-// Parameter 2: enthält bei Übergabe Kommentarstring bzw. Defaultwert
-// Parameter 3: pos des '/'-Felds
-
-// Stringwert aus Topic/Payload isolieren ************************
-// --------------------------------------
-char* getStr(char* Quelle, char* Ziel, int pos)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', '%s', %d)\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, Ziel, pos);
-  char Kopie[NOTIZ];
-  strcpy(Kopie, Ziel);                                     // soll Bezeichnung enthalten
-  if (!split(Quelle, Ziel, pos))
-    Ziel = NULL;
-  DEBUG_1(">> %s-----%s()#%d: %s[%d](%s) = \"%s\"\n",
-                   __NOW__, __FUNCTION__, __LINE__, Quelle, pos, Kopie, Ziel);
-  return(Ziel);
-}
-
-// Integer-Wert aus Topic/Payload isolieren ************************
-// ----------------------------------------
-int getInt(char* Quelle, char* Ziel, int pos)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', '%s', %d)\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, Ziel, pos);
-  int ret = NOINT;                    // die ermittelte Integer-Zahl
-  char Kopie[NOTIZ];
-  char Teil[NOTIZ];
-  strcpy(Kopie, Ziel);                // soll Bezeichnung enthalten
-  if (!split(Quelle, Teil, pos))
-    Teil[0] = '\0';
-  if (isnumeric(Teil))
-    ret = atoi(Teil);
-  DEBUG_1(">> %s-----%s()#%d: %s[%d](%s) = '%s' --> %d\n",
-                  __NOW__, __FUNCTION__, __LINE__, Quelle, pos, Kopie, Teil, ret);
-  return(ret);
-}
-
-// Zeit-Wert aus Topic/Payload isolieren ************************
-// ----------------------------------------
-char* getTim(char* Quelle, char* Ziel, int pos)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', '%s', %d)\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, Ziel, pos);
-  char Kopie[NOTIZ];
-  char Teil[NOTIZ];
-  strcpy(Kopie, Ziel);                                     // soll Bezeichnung enthalten
-  if (!split(Quelle, Teil, pos))
-    Ziel = NULL;
-  else
-  {
-    if (isnumeric(Teil))
-    {
-      time_t Zeit = atol(Teil);
-      mkdatum(Zeit, Ziel);
-    }
-    else
-      strcpy(Ziel, "-- invalid --");
-  }
-  DEBUG_1(">> %s-----%s()#%d: %s[%d](%s) = '%s'\n",
-                  __NOW__, __FUNCTION__, __LINE__, Quelle, pos, Kopie, Ziel);
-  return(Ziel);
-}
-
-// Stringwert in Topic/Payload einbauen ************************
-// --------------------------------------
-char* setStr(char* Quelle, int pos, char* Neuwert)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', %d, '%s')\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, pos, Neuwert);
-  char* Ziel = Quelle;                          // Zeiger erhalten
-  char kp[ZEILE];                               // Hilfsbuffer für Kopie
-  char* Kopie = kp;                             // Zeiger drauf
-  if (*Ziel == DELIM) Ziel++;                   // führendes '/' überspringen
-  strcpy(Kopie, Ziel);                          // Arbeitskopie in den Hilfsbuffer
-  for (int ix=0; ix < pos; ix++)
-  {
-    while (*Ziel != DELIM)                      // bis zur gesuchten Stelle gehen
-    {
-      Ziel++;
-      Kopie++;
-    }
-    Ziel++;
-    Kopie++;
-  }
-  DEBUG_1("   %s-----%s()#%d: Ziel='%s', Kopie='%s'\n",
-                  __NOW__, __FUNCTION__, __LINE__, Ziel, Kopie);
-  strcpy(Ziel, Neuwert);                        // den neuen Wert einbauen
-  Ziel += strlen(Neuwert);                      // den Zeiger auf das neue Ende
-  while (*Kopie != DELIM)                       // alten Wert überspringen ...
-  {
-    if (strlen(Kopie) == 0) break;              // ... sofern es ihn gibt
-    Kopie++;
-  }
-  if (strlen(Kopie) > 0)
-  {
-    *Ziel++ = DELIM;                            // Trenner ...
-    strcpy(Ziel, ++Kopie);                      // ... und den Rest anfügen
-  }
-  DEBUG_1(">> %s-----%s()#%d: Quelle = \"%s\"\n",
-                   __NOW__, __FUNCTION__, __LINE__, Quelle);
-  return(Quelle);
-}
-
-
-// Integer in Topic/Payload einbauen ************************
-// --------------------------------------
-char* setInt(char* Quelle, int pos, int iNeuwert)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', %d, '%d')\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, pos, iNeuwert);
-  char* Ziel = Quelle;                          // Zeiger erhalten
-  char kp[ZEILE];                               // Hilfsbuffer für Kopie
-  char* Kopie = kp;                             // Zeiger drauf
-  if (*Ziel == DELIM) Ziel++;                   // führendes '/' überspringen
-  strcpy(Kopie, Ziel);                          // Arbeitskopie in den Hilfsbuffer
-
-  char it[ZEILE];                               // Hilfsbuffer
-  sprintf(it, "%d", iNeuwert);                  // Integer ...
-  char* Neuwert = it;                           // ... als String
-
-  for (int ix=0; ix < pos; ix++)
-  {
-    while (*Ziel != DELIM)                      // bis zur gesuchten Stelle gehen
-    {
-      Ziel++;
-      Kopie++;
-    }
-    Ziel++;
-    Kopie++;
-  }
-  strcpy(Ziel, Neuwert);                        // den neuen Wert einbauen
-  Ziel += strlen(Neuwert);                      // den Zeiger auf das neue Ende
-  while (*Kopie != DELIM)                       // alten Wert überspringen ...
-  {
-    if (strlen(Kopie) == 0) break;              // ... sofern es ihn gibt
-    Kopie++;
-  }
-  if (strlen(Kopie) > 0)
-  {
-    *Ziel++ = DELIM;                            // Trenner ...
-    strcpy(Ziel, ++Kopie);                      // ... und den Rest anfügen
-  }
-  DEBUG_1(">> %s-----%s()#%d: Quelle = \"%s\"\n",
-                   __NOW__, __FUNCTION__, __LINE__, Quelle);
-  return(Quelle);
-}
-
-// aktuelle Zeit in Topic/Payload einbauen ************************
-// --------------------------------------
-char* setTim(char* Quelle, int pos)
-{
-  DEBUG_1(">> %s-----%s()#%d: %s('%s', %d)\n",
-                  __NOW__, __FUNCTION__, __LINE__, __FUNCTION__, Quelle, pos);
-
-  char* Ziel = Quelle;                          // Zeiger erhalten
-  char kp[ZEILE];                               // Hilfsbuffer für Kopie
-  char* Kopie = kp;                             // Zeiger drauf
-  if (*Ziel == DELIM) Ziel++;                   // führendes '/' überspringen
-  strcpy(Kopie, Ziel);                          // Arbeitskopie in den Hilfsbuffer
-
-  char zt[ZEILE];                               // Hilfsbuffer
-  sprintf(zt, "%ld", time(0));                  // aktuelle Zeit ...
-  char* Neuwert = zt;                           // ... als String
-
-  for (int ix=0; ix < pos; ix++)
-  {
-    while (*Ziel != DELIM)                      // bis zur gesuchten Stelle gehen
-    {
-      Ziel++;
-      Kopie++;
-    }
-    Ziel++;
-    Kopie++;
-  }
-  strcpy(Ziel, Neuwert);                        // den neuen Wert einbauen
-  Ziel += strlen(Neuwert);                      // den Zeiger auf das neue Ende
-  while (*Kopie != DELIM)                       // alten Wert überspringen ...
-  {
-    if (strlen(Kopie) == 0) break;              // ... sofern es ihn gibt
-    Kopie++;
-  }
-  if (strlen(Kopie) > 0)
-  {
-    *Ziel++ = DELIM;                            // Trenner ...
-    strcpy(Ziel, ++Kopie);                      // ... und den Rest anfügen
-  }
-  DEBUG_1(">> %s-----%s()#%d: Quelle = \"%s\"\n",
-                   __NOW__, __FUNCTION__, __LINE__, Quelle);
-  return(Quelle);
-}
 //***********************************************************************************************
-//***********************************************************************************************
-
-static int sensoren  = 0;             // Anzahl der ermittelten Sensoren
 
 // alle DS18B20-Sensoren einlesen
 // -------------------------------
 int initds18b20(void)
 {
-  int sensoren = ds1820_Refresh();
+  int sensoren = ds18b20_Refresh();
   if (sensoren > 0)
   {
     DEBUG(">> %s---%s()#%d: Anzahl DS18B20-Sensoren: %d\n",
                                               __NOW__, __FUNCTION__, __LINE__, sensoren);
-//    { // --- Log-Ausgabe ---------------------------------------------------------
-//      char LogText[ZEILE];  sprintf(LogText, "    %d DS18B20-Sensoren:", sensoren);
-//      MYLOG(LogText);
-//    } // ------------------------------------------------------------------------
+    { // --- Log-Ausgabe ---------------------------------------------------------
+      char LogText[ZEILE];  sprintf(LogText, "    %d DS18B20-Sensoren:", sensoren);
+      MYLOG(LogText);
+    } // ------------------------------------------------------------------------
     for (int ix=0; ix < sensoren; ix++)
     {
       char SensorName[NOTIZ];
-      if( ds1820_Name(ix, SensorName))
+      if( ds18b20_Name(ix, SensorName))
       {
         DEBUG(">>  %s---%s()#%d: Sensor(%d) = '%s'\n",
                                               __NOW__, __FUNCTION__, __LINE__, ix, SensorName);
-//        { // --- Log-Ausgabe ---------------------------------------------------------
-//          char LogText[ZEILE];  sprintf(LogText, "      Sensor(%d) = '%s'", ix, SensorName);
-//          MYLOG(LogText);
-//        } // ------------------------------------------------------------------------
+        { // --- Log-Ausgabe ---------------------------------------------------------
+          char LogText[ZEILE];  sprintf(LogText, "      Sensor(%d) = '%s'", ix, SensorName);
+          MYLOG(LogText);
+        } // ------------------------------------------------------------------------
       }
     }
   }
@@ -439,30 +358,35 @@ int initds18b20(void)
 
 // ds18b20-Sensoren lesen
 // ----------------------
+#define NAME "DS1820"   /* eindeutiger Name */
 int readds18b20(int sensoren, void* mqtt)
 {
-  char Name[] = "DS1820";            // eindeutiger Name
-  float Temperatur[MAXDS1820] = {'\0'};
-  char Topic[ZEILE]={'\0'};
-  char Payload[ZEILE]={'\0'};
   for (int ix=0; ix < sensoren; ix++)
   {
-    Temperatur[ix] = ds1820_Value(ix);
-    char myName[NOTIZ];
-    sprintf(myName, "%s(%d)", Name, ix);
-    DEBUG(">> %s---%s()#%d: Temperatur(%d) = '%.1f'\n",
-                                           __NOW__, __FUNCTION__, __LINE__, ix, Temperatur[ix]);
+  	char Topic[ZEILE]={'\0'};
+  	char Payload[ZEILE]={'\0'};
+    float Temperatur = ds18b20_Value(ix);
+    char Ort[NOTIZ];
+    char Name[NOTIZ];
+    sprintf(Name, "%s(%d)", NAME, ix);
     // -- MQTT --
     sprintf (Topic, MQTT_TOPIC,
-               Hostname, atoi(IPnmr), D_DS18B20_00+ix, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Temperatur[ix], "GrdC", "--OK");
+               s_Hostname,  s_IPnmr, D_DS18B20_00+ix, Name, time(0), MSG_VALUE, INF_REGULAR);
+    switch(ix) 
+    {
+			case 0: strcpy(Ort, "hinten"); break;
+			case 1: strcpy(Ort, "Mitte"); break;
+			case 2: strcpy(Ort, "vorn (im Nest)"); break;
+			default: strcpy(Ort, "unbekannt !"); break;
+		}
+    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", Ort);
     DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"\n",
                                                __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
     MQTT_Publish(mqtt, Topic, Payload);
   }
-
   return 0;
 }
+#undef NAME
 //***********************************************************************************************
 
 // auf eine MQTT-Message antworten
@@ -522,8 +446,8 @@ int readCPUtemp(void* mqtt)
                                               __NOW__, __FUNCTION__, __LINE__, Temperatur);
   // -- MQTT --
   sprintf (Topic, MQTT_TOPIC,
-                    Hostname, atoi(IPnmr), D_INTERN, myName, time(0), MSG_VALUE, INF_REGULAR);
-  sprintf (Payload, MQTT_VALUE, Temperatur, "GrdC", "OK");
+                    s_Hostname, s_IPnmr, D_INTERN, myName, time(0), MSG_VALUE, INF_REGULAR);
+  sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "in der CPU");
   DEBUG(">> %s---%s()#%d:  Topic = \"%s  \" --- Payload = \"%s\"\n",
                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
   MQTT_Publish(mqtt, Topic, Payload);
@@ -531,8 +455,6 @@ int readCPUtemp(void* mqtt)
   return 0;
 }
 //***********************************************************************************************
-
-static bool bme280 = false;
 
 // BME280-Sensor (Temperatur, Luftdruck, Feuchtigkeit) lesen und senden
 // ---------------------------------------------------------------------
@@ -556,8 +478,8 @@ int readbme280(void* mqtt)
   {
     char myName[] = "BME280_TEMP";             // eindeutiger Name
     sprintf (Topic, MQTT_TOPIC,
-                    Hostname, atoi(IPnmr), D_BME280_T, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Temperatur, "GrdC", "--OK");
+                    s_Hostname, s_IPnmr, D_BME280_T, myName, time(0), MSG_VALUE, INF_REGULAR);
+    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "oberhalb");
     DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
     MQTT_Publish(mqtt, Topic, Payload);
@@ -565,8 +487,8 @@ int readbme280(void* mqtt)
   {
     char myName[] = "BME280_PRESS";            // eindeutiger Name
     sprintf (Topic, MQTT_TOPIC,
-                    Hostname, atoi(IPnmr), D_BME280_P, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Luftdruck, "hPa", "--OK");
+                    s_Hostname, s_IPnmr, D_BME280_P, myName, time(0), MSG_VALUE, INF_REGULAR);
+    sprintf (Payload, MQTT_VALUE, Luftdruck, "hPa", "oberhalb");
     DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
     MQTT_Publish(mqtt, Topic, Payload);
@@ -574,8 +496,8 @@ int readbme280(void* mqtt)
   {
     char myName[] = "BME280_HUMI";             // eindeutiger Name
     sprintf (Topic, MQTT_TOPIC,
-                    Hostname, atoi(IPnmr), D_BME280_H, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Feuchtigkeit, "%", "--OK");
+                    s_Hostname, s_IPnmr, D_BME280_H, myName, time(0), MSG_VALUE, INF_REGULAR);
+    sprintf (Payload, MQTT_VALUE, Feuchtigkeit, "%", "oberhalb");
     DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
     MQTT_Publish(mqtt, Topic, Payload);
@@ -584,23 +506,6 @@ int readbme280(void* mqtt)
   return 0;
 }
 //***********************************************************************************************
-
-static void* tsl = NULL;              // das TLS2561-Objekt !
-
-// Initialisierung des TLS2561-Sensors
-// -----------------------------------
-void* inittsl2561(void* tsl)
-{
-  tsl = tsl2561_init();
-  tsl2561_set_integration_time(tsl, TSL2561_INTEGRATION_TIME_13MS);
-  DEBUG(">> %s---%s()#%d   - tsl = '%p'\n", __NOW__, __FUNCTION__, __LINE__, tsl);
-  if (tsl != NULL)
-    DEBUG(">> %s---%s()#%d: Initialisierung TLS2561 OK\n", __NOW__, __FUNCTION__, __LINE__);
-
-  return tsl;
-}
-//************************************************************
-
 // tsl2561-Sensor (Helligkeit) lesen und senden
 // --------------------------------------------
 int readtsl2561(void* tsl, void* mqtt)
@@ -612,8 +517,8 @@ int readtsl2561(void* tsl, void* mqtt)
   DEBUG(">> %s---%s()#%d: Helligkeit = '%f'\n", __NOW__, __FUNCTION__, __LINE__, Lux);
   // -- MQTT --
   sprintf (Topic, MQTT_TOPIC,
-                    Hostname, atoi(IPnmr), D_TLS2561, myName, time(0), MSG_VALUE, INF_REGULAR);
-  sprintf (Payload, MQTT_VALUE, Lux, "Lux", "OK");
+                    s_Hostname, s_IPnmr, D_TLS2561, myName, time(0), MSG_VALUE, INF_REGULAR);
+  sprintf (Payload, MQTT_VALUE, Lux, "Lux", "im Nest");
   DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"\n",
                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
   MQTT_Publish(mqtt, Topic, Payload);
@@ -637,8 +542,8 @@ int ReqAcknowledge(char* Topic, char* Payload)
   //  5.Messagetyp (Art der Message)    - alt
   //  6.Messageart (Textteil Message)   - neu
 
-  setStr(Topic, TPOS_RAS, Hostname);            // eigener Name
-  setInt(Topic, TPOS_IPA, atoi(IPnmr));         // eigene IP
+  setStr(Topic, TPOS_RAS, s_Hostname);            // eigener Name
+  setInt(Topic, TPOS_IPA, s_IPnmr);         // eigene IP
   setTim(Topic, TPOS_TIM);                      // aktuelle Zeit
   setInt(Topic, TPOS_TYP, MSG_COMMAND);         // Status
   setInt(Topic, TPOS_INF, INF_ACK);             // Antwort auf Anfrage
@@ -672,8 +577,8 @@ int ReqNotSupported(char* Topic, char* Payload)
   //  5.Messagetyp (Art der Message)    - neu
   //  6.Messageart (Textteil Message)   - neu
 
-  setStr(Topic, TPOS_RAS, Hostname);            // eigener Name
-  setInt(Topic, TPOS_IPA, atoi(IPnmr));         // eigene IP
+  setStr(Topic, TPOS_RAS, s_Hostname);            // eigener Name
+  setInt(Topic, TPOS_IPA, s_IPnmr);         // eigene IP
   setTim(Topic, TPOS_TIM);                      // aktuelle Zeit
   setInt(Topic, TPOS_TYP, MSG_ERROR);           // Status
   setInt(Topic, TPOS_INF, INF_NOSUPPORT);       // Antwort auf Anfrage
@@ -705,8 +610,8 @@ int ReqFehlerhaft(char* Topic, char* Payload, char* Fehlertext)
   //  5.Messagetyp (Art der Message)    - neu
   //  6.Messageart (Textteil Message)   - neu
 
-  setStr(Topic, TPOS_RAS, Hostname);            // eigener Name
-  setInt(Topic, TPOS_IPA, atoi(IPnmr));         // eigene IP
+  setStr(Topic, TPOS_RAS, s_Hostname);          // eigener Name
+  setInt(Topic, TPOS_IPA, s_IPnmr);             // eigene IP
   setTim(Topic, TPOS_TIM);                      // aktuelle Zeit
   setInt(Topic, TPOS_TYP, MSG_ERROR);           // Status
   setInt(Topic, TPOS_INF, INF_FEHLERHAFT);      // war fehlerhaft
@@ -801,12 +706,12 @@ int CommandMessage(char* Topic, char* Payload)
     switch (DeviceID)
     {
       case D_IRLAMPE_RECHTS:
-        digitalWrite (LAMP_IRRIGHT, Schalter);
+        digitalWrite (M_LAMP_IRRIGHT, Schalter);
         Automatic = false;
-        DEBUG(">> %s---%s()#%d: LAMP_IRRIGHT = %s(%d); AckRequest=%d\n",
+        DEBUG(">> %s---%s()#%d: M_LAMP_IRRIGHT = %s(%d); AckRequest=%d\n",
                          __NOW__, __FUNCTION__, __LINE__, Schaltwert, Schalter, (int)AckRequest);
         { // --- Log-Ausgabe ---------------------------------------------------------
-          char LogText[ZEILE];  sprintf(LogText, "    LAMP_IRRIGHT = %s(%d) !", Schaltwert, Schalter );
+          char LogText[ZEILE];  sprintf(LogText, "    M_LAMP_IRRIGHT = %s(%d) !", Schaltwert, Schalter );
           MYLOG(LogText);
         } // ------------------------------------------------------------------------
         if (AckRequest)                       // Bitte um Quittung
@@ -816,12 +721,12 @@ int CommandMessage(char* Topic, char* Payload)
         break;
 
       case D_IRLAMPE_LINKS:
-        digitalWrite (LAMP_IRLEFT, Schalter);
+        digitalWrite (M_LAMP_IRLEFT, Schalter);
         Automatic = false;
-        DEBUG(">> %s---%s()#%d: LAMP_IRLEFT = %s(%d); AckRequest=%d\n",
+        DEBUG(">> %s---%s()#%d: M_LAMP_IRLEFT = %s(%d); AckRequest=%d\n",
                          __NOW__, __FUNCTION__, __LINE__, Schaltwert, Schalter, (int)AckRequest);
         { // --- Log-Ausgabe ---------------------------------------------------------
-          char LogText[ZEILE];  sprintf(LogText, "    LAMP_IRLEFT = %s(%d) !", Schaltwert, Schalter );
+          char LogText[ZEILE];  sprintf(LogText, "    M_LAMP_IRLEFT = %s(%d) !", Schaltwert, Schalter );
           MYLOG(LogText);
         } // ------------------------------------------------------------------------
         if (AckRequest)                       // Bitte um Quittung
@@ -883,293 +788,116 @@ int CommandMessage(char* Topic, char* Payload)
 
 int main(int argc, char *argv[])
 {
-  sprintf (Version, "Vers. %d.%d.%d/%s", MAXVERS, MINVERS, BUILD, __DATE__);
-  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 ); // Verbindung zum Dämon Syslog aufbauen
-  syslog(LOG_NOTICE, ">>>>> %s - %s - PID %d - User %d, Group %d <<<<<<",
-                          		PROGNAME, Version, getpid(), geteuid(), getegid());
+  char MailBody[4*ABSATZ] = {'\0'};
 
+  sprintf (Version, "Vers. %d.%d.%d", MAXVERS, MINVERS, BUILD);
+  printf("   %s %s von %s\n\n", PROGNAME, Version, __DATE__);
 
-  {// --- Log-Ausgabe -----------------------------------------------------------------
-   	char LogText[ZEILE];  
-    sprintf(LogText, 
-    ">>> %s   ************ Start '%s' ************\n"\
-    "                                               "\
-    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
-    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
-    MYLOG(LogText);
-  } // --------------------------------------------------------------------------------
+  // Verbindung zum Dämon Syslog aufbauen
+  // -----------------------------------
+  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 );
+  syslog(LOG_NOTICE, ">>>>> %s - %s/%s - PID %d - User %d, Group %d <<<<<<",
+                  PROGNAME, Version, __DATE__, getpid(), geteuid(), getegid());
+  setMainFolder(MAINFOLDER);                    // Info an 'common'
+  setMainFolder_Err(MAINFOLDER);                // Info an 'error'
 
+  #include "/home/pi/treiber/snippets/get_progname.snip"
 
-	// Signale registrieren
-	// --------------------
-	signal(SIGTERM, sigfunc);
-	signal(SIGKILL, sigfunc);
+ 
+  // Signale registrieren
+  // --------------------
+  signal(SIGTERM, sigfunc);
+  signal(SIGKILL, sigfunc);
 
 
   // schon mal den Watchdog füttern
   // ------------------------------
-  feedWatchdog(PROGNAME);
+  #include "/home/pi/treiber/snippets/set_watchdog.snip"
 
-  { // Host ermitteln
-  	// ---------------
-    int status = gethostname(Hostname, NOTIZ);
-    if (status < 0)
-    { // -- Error
-      char ErrText[ERRBUFLEN];
-      sprintf(ErrText, "gethostname '%s'", Hostname);
-      return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
-    }
-    DEBUG(">> %s-%s()#%d: Hostname: '%s'\n", __NOW__, __FUNCTION__, __LINE__, Hostname);
 
-    char LogText[ZEILE];
-    sprintf(LogText,"    Hostname: '%s'", Hostname);
-    MYLOG(LogText);
-  }
+  // Host ermitteln
+  // ---------------
+  #include "/home/pi/treiber/snippets/get_host.snip"
 
-  {	// Prozess-ID ablegen
-  	// ------------------
-    char LogText[ZEILE];
-    long pid = savePID(FPID);
-    DEBUG(">> %s-%s()#%d: meine PID: '%ld'\n", __NOW__, __FUNCTION__, __LINE__, pid);
-    sprintf(LogText,"    meine PID = '%ld'", pid);
-    MYLOG(LogText);
-  }
 
-  {	// IP-Adresse ermitteln
-  	// ----------------------
-  	// nur das letzte Glied wird gebraucht
-    char LogText[ZEILE];
-    readIP(meineIPAdr, sizeof(meineIPAdr));
-    sprintf(LogText,"    meine IP: '%s'", meineIPAdr);
-    MYLOG(LogText);
-    DEBUG(">> %s-%s()#%d: meine ganze IP: '%s'\n",
-                                     __NOW__, __FUNCTION__, __LINE__,  meineIPAdr);
+  // Prozess-ID ablegen  
+  // ------------------
+  #include "/home/pi/treiber/snippets/get_mypid.snip"
 
-    char* ptr = strtok(meineIPAdr, ".");
-    while (ptr != NULL)
-    {
-      IPnmr = ptr;
-      ptr = strtok(NULL, ".");
-    }
-    DEBUG(">> %s-%s()#%d: meine IP: '%s'\n", __NOW__, __FUNCTION__, __LINE__, IPnmr);
-  }
+
+  // IP-Adresse ermitteln
+  // ----------------------
+  #include "/home/pi/treiber/snippets/get_myip.snip"
+
 
   // Ist GPIO klar?
   // --------------
+  #include "/home/pi/treiber/snippets/gpio_init.snip"
   {
-    wiringPiSetup();
-    pinMode (LED_GRUEN1,   OUTPUT);
-    pinMode (LED_BLAU1,    OUTPUT);
-    pinMode (LAMP_IRRIGHT, OUTPUT);
-    pinMode (LAMP_IRLEFT,  OUTPUT);
+    pinMode (M_LED_GRUEN1,   OUTPUT);
+    pinMode (M_LED_BLAU1,    OUTPUT);
+    pinMode (M_LAMP_IRRIGHT, OUTPUT);
+    pinMode (M_LAMP_IRLEFT,  OUTPUT);
     #define ANZEIT  44 /* msec */
     for (int ix=0; ix < 12; ix++)
     {
-      digitalWrite (LED_GRUEN1,   LED_EIN);
-      digitalWrite (LAMP_IRRIGHT, LED_HELL);
+      digitalWrite (M_LED_GRUEN1,   LED_EIN);
+      digitalWrite (M_LAMP_IRRIGHT, LED_HELL);
       delay(ANZEIT);
-      digitalWrite (LED_GRUEN1,   LED_AUS);
-      digitalWrite (LAMP_IRRIGHT, LED_DUNKEL);
-      digitalWrite (LED_BLAU1,    LED_EIN);
-      digitalWrite (LAMP_IRLEFT,  LED_HELL);
+      digitalWrite (M_LED_GRUEN1,   LED_AUS);
+      digitalWrite (M_LAMP_IRRIGHT, LED_DUNKEL);
+      digitalWrite (M_LED_BLAU1,    LED_EIN);
+      digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
       delay(ANZEIT);
-      digitalWrite (LED_BLAU1,    LED_AUS);
-      digitalWrite (LAMP_IRLEFT,  LED_DUNKEL);
+      digitalWrite (M_LED_BLAU1,    LED_AUS);
+      digitalWrite (M_LAMP_IRLEFT,  LED_DUNKEL);
     }
-    digitalWrite (LAMP_IRRIGHT,   LED_DUNKEL);
-    digitalWrite (LAMP_IRLEFT,    LED_DUNKEL);
-    DEBUG(">> %s()#%d @ %s ----- GPIO OK -------\n", __FUNCTION__, __LINE__, __NOW__);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    GPIO OK !");
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
+    digitalWrite (M_LAMP_IRRIGHT,   LED_DUNKEL);
+    digitalWrite (M_LAMP_IRLEFT,    LED_DUNKEL);
   }
+
+  // LCD-Display aktivieren  
+  // -----------------------
+  #include "/home/pi/treiber/snippets/lcddisplay_init.snip"
+
 
   // alle DS18B20-Sensoren einlesen
   // -------------------------------
-  sensoren = initds18b20();
-  if (sensoren > 0)
-  {
-    DEBUG(">> %s-%s()#%d: Anzahl DS18B20-Sensoren: %d\n",
-                                              __NOW__, __FUNCTION__, __LINE__, sensoren);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    %d DS18B20-Sensoren:", sensoren);
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-    for (int ix=0; ix < sensoren; ix++)
-    {
-      char SensorName[NOTIZ];
-      if( ds1820_Name(ix, SensorName))
-      {
-        { // --- Log-Ausgabe ---------------------------------------------------------
-          char LogText[ZEILE];  sprintf(LogText, "      Sensor(%d) = '%s'", ix, SensorName);
-          MYLOG(LogText);
-        } // ------------------------------------------------------------------------
-      }
-    }
-  }
-
+  #include "/home/pi/treiber/snippets/ds18b20_init.snip"
+  
 
   // Initialisierung des BME280-Sensors
   // -----------------------------------
-  bme280 = bme280_Init();
-  if ( bme280)
-  {
-    DEBUG(">> %s-%s()#%d: Initialisierung BME280 OK\n",
-                                              __NOW__, __FUNCTION__, __LINE__);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    Sensor BME280 OK !");
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-  }
+  #include "/home/pi/treiber/snippets/bme280_init.snip"
 
 
   // Initialisierung des TLS2561-Sensors
   // -----------------------------------
-  tsl = inittsl2561(tsl);
-  if (tsl != NULL)
-  {
-    DEBUG(">> %s-%s()#%d: Initialisierung TLS2561 OK\n",
-                                              __NOW__, __FUNCTION__, __LINE__);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    Sensor TLS2561 OK !");
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-  }
+  #include "/home/pi/treiber/snippets/tls2561_init.snip"
 
 
-  digitalWrite (LED_BLAU1, LED_EIN);
+  digitalWrite (M_LED_BLAU1, LED_EIN);
 
   // MQTT starten
   // --------------
-  char mySubscriptions[3*ZEILE]={'\0'};     // zum Ausdruck per Mail
-  struct MqttInfo* mqtt = NULL;             // das MQTT-Objekt
-  {
-    char Topic[ZEILE]={'\0'};
-    char Payload[ZEILE]={'\0'};
-    time_t kleinePause = time(NULL) + 2;
-    while (kleinePause > time(NULL));
-    mqtt = MQTT_Start();              // MQTT wird initiert und die Callbacks aktiviert
-     DEBUG(">> %s-%s()#%d   - mqtt = '%p'\n", __NOW__, __FUNCTION__, __LINE__, mqtt);
-     DEBUG(">> %s-%s()#%d: Initialisierung MQTT Vers.'%s' OK\n",
-                                              __NOW__, __FUNCTION__, __LINE__, MQTT_Version());
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    MQTT Vers.'%s' OK !", MQTT_Version());
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
+  char mySubscriptions[3*ZEILE]={'\0'};     // für Ausdruck per Mail
+  #include "/home/pi/treiber/snippets/mqtt_init.snip"
+ 
+ 
+  // Initialisierung abgeschlossen  
+  // ------------------------------
+  #include "/home/pi/treiber/snippets/init_mail.snip"
+  #include "/home/pi/treiber/snippets/init_done.snip"
 
-    // Start-Meldung über MQTT ausgeben
-    // ----------------------------------
-    sprintf (Topic, MQTT_TOPIC, Hostname, atoi(IPnmr), D_MQTT, PROGNAME, time(0), MSG_STATE, INF_REGULAR);
-    sprintf (Payload, MQTT_STATE, "START");
-     DEBUG(">> %s-%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-
-    // Subscriptionen anmelden
-    // ------------------------
-    char Zeile[ZEILE];
-    char Subscript[ZEILE];
-    sprintf( Subscript, SUBSCR_TYP, MSG_ADMIN);           // Verwaltungsinfos abonnieren
-    int mStatus = MQTT_Subscribe(mqtt, Subscript);
-     DEBUG(">> %s-%s()#%d: Subscription(\"%s\")=%d \n",
-                                              __NOW__, __FUNCTION__, __LINE__, Subscript, mStatus);
-    sprintf(Zeile, "       -- Subscription MSG_ADMIN   = '%s'\n", Subscript);
-    strcat(mySubscriptions, Zeile);
-
-    sprintf( Subscript, SUBSCR_TYP, MSG_COMMAND);         // Schaltbefehle abonnieren
-    mStatus = MQTT_Subscribe(mqtt, Subscript);
-     DEBUG(">> %s-%s()#%d: Subscription(\"%s\")=%d \n",
-                                              __NOW__, __FUNCTION__, __LINE__, Subscript, mStatus);
-    sprintf(Zeile, "       -- Subscription MSG_COMMAND = '%s'\n", Subscript);
-    strcat(mySubscriptions, Zeile);
-
-    destroyInt(mStatus);
-  }
-
-
-  { // Bereitmeldung per Mail ---------------------------------------
-    // -----------------------
-    char Betreff[ZEILE] = {'\0'};
-    char Zeitbuf[NOTIZ];
-    sprintf( Betreff, "Start >%s< @ %s",  PROGNAME, mkdatum(time(0), Zeitbuf));
-    DEBUG( "Betreff: %s\n", Betreff);
-
-    char MailBody[BODYLEN] = {'\0'};
-    char Zeile[ZEILE];
-    char Buf[NOTIZ];
-    char* Path=NULL;
-    sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
-    strcat(MailBody, Zeile);
-    sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s'\n",
-               readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)));
-    strcat(MailBody, Zeile);
-
-    if (sensoren == 0)
-    {
-      sprintf(Zeile,"      keine DS18B20-Sensoren!\n");
-      strcat(MailBody, Zeile);
-    }
-    else
-    {
-      sprintf(Zeile,"      %d DS18B20-Sensoren:\n", sensoren);
-      strcat(MailBody, Zeile);
-      for (int ix=0; ix < sensoren; ix++)
-      {
-        char SensorName[NOTIZ];
-        ds1820_Name(ix, SensorName);
-        sprintf(Zeile,"       -- Sensor(%d): '%s'\n", ix, SensorName);
-        strcat(MailBody, Zeile);
-      }
-    }
-
-    if (bme280)
-    {
-      sprintf(Zeile,"      BME280-Sensor\n");
-      strcat(MailBody, Zeile);
-    }
-
-    if (tsl != NULL)
-    {
-      sprintf(Zeile,"      TSL2561-Sensor (Helligkeit)\n");
-      strcat(MailBody, Zeile);
-    }
-    sprintf(Zeile,"      MQTT aktiv und Callbacks aktiviert\n");
-    strcat(MailBody, Zeile);
-
-    strcat(MailBody, mySubscriptions);
-
-    DEBUG( "MailBody:\n%s\n", MailBody);
-    sendmail(Betreff, MailBody);
-  } // -----  Bereitmeldung per Mail -----------------------------------
-
-  syslog(LOG_NOTICE, "--- Init done ---");
-
-  digitalWrite (LED_BLAU1, LED_AUS);
-  digitalWrite (LED_GRUEN1, LED_EIN);
-  digitalWrite (LAMP_IRRIGHT, LED_HELL);
-  digitalWrite (LAMP_IRLEFT,  LED_HELL);
+  digitalWrite (M_LED_BLAU1, LED_AUS);
+  digitalWrite (M_LED_GRUEN1, LED_EIN);
+  digitalWrite (M_LAMP_IRRIGHT, LED_HELL);
+  digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
   Automatic = true;
-
-  DEBUG(">> %s()#%d @ %s\n\n", __FUNCTION__, __LINE__, __NOW__);
-  { // --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "<<< ----- Init %s OK -------", PROGNAME);
-    MYLOG(LogText);
-  } // ------------------------------------------------------------------------
-
-
-
-  { // --- Testausgabe --------------------------------------------------------
-  	errno = 0;
-    char TestText[ZEILE];  sprintf(TestText, "************ Start '%s' ************", PROGNAME);
-		Error_NonFatal(  TestText, __FUNCTION__, __LINE__);
-  } // ------------------------------------------------------------------------
-
-
-
-  DEBUG("\n");
+  
+  //exit (false);
+  
   time_t AbfrageStart = time(0);
-//  DO_FOREVER // *********************** Endlosschleife *****************************************
   UNTIL_ABORTED // ********************** Schleife bis externes Signal ***************************
                 // *******************************************************************************
   {
@@ -1190,8 +918,8 @@ int main(int argc, char *argv[])
         break;
 
       case SENDETAKT/5*1:     // ds18b20-Sensoren lesen
-        if ((sensoren > 0) && !done)
-          readds18b20(sensoren, mqtt);
+        if ((ds18b20anz > 0) && !done)
+          readds18b20(ds18b20anz, mqtt);
         done=true;
         break;
 
@@ -1218,7 +946,6 @@ int main(int argc, char *argv[])
         break;
     } // --- end switch ---
 
-
     // *+++++* MQTT bedienen **+++++*
     // ------------------------------
     static bool msg=false;
@@ -1228,21 +955,34 @@ int main(int argc, char *argv[])
       char Payload[ZEILE]={'\0'};
       int antwort = RESP_KEINEANTWORT;
 
+
+//      // auf empfangene Messages testen
+//      // ================================
+//      enum TOPICMODE MQTT_status = MQTT_Loop(mqtt, Topic, Payload);
+//      int mqSenderIP = getInt(Topic, "IP-Nummer", TPOS_IPA);    // letzte Stelle IP des Senders
+//      DEBUG_MQTT("\n>> %s  %s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'?\n",
+//                                   __NOW__, __FUNCTION__, __LINE__, mqSenderIP, s_IPnmr);
+
       // empfangene Messages holen
       // -------------------------
       msg=false;
       enum TOPICMODE Status = MQTT_Loop(mqtt, Topic, Payload);
-
+      
       // Test auf eigene Message
       // -----------------------
-      int CompIP = getInt(Topic, "IP-Nummer", TPOS_IPA);  // letzte Stelle IP des Senders
-      if (CompIP == atoi(IPnmr))
-      { // überspringen
-        // -------------
-        DEBUG("\n>> %s-%s()#%d - neue Message: CompID '%d' == IPnmr '%s'!\n\n",
-                                   __NOW__, __FUNCTION__, __LINE__, CompIP, IPnmr);
-        Status = MODE_NOTHING;
-      }
+//      int CompIP = getInt(Topic, "IP-Nummer", TPOS_IPA);  // letzte Stelle IP des Senders
+// DEBUG("- %d -- '%d' --\n", __LINE__, CompIP);
+// DEBUG("- %d -- '%d' --\n", __LINE__, s_IPnmr);
+//      if (CompIP == s_IPnmr)
+//      { // überspringen
+//        // -------------
+//        DEBUG("\n>> %s-%s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'!\n\n",
+//                                   __NOW__, __FUNCTION__, __LINE__, CompIP, s_IPnmr);
+//        Status = MODE_NOTHING;
+//      }
+// DEBUG("- %d -\n", __LINE__);
+        
+      Status = MODE_NOTHING;
 
       if (Status > MODE_NOTHING)
       { // eine Message ist eingetroffen !!
@@ -1340,8 +1080,9 @@ int main(int argc, char *argv[])
       if ( antwort != RESP_KEINEANTWORT)
         ReplyMessage(mqtt, Topic, Payload);
 
-    }   // -- end MQTT
+    }   // -- end MQTT ----------------------------------------------------------------------
 
+// DEBUG("- %d -\n", __LINE__);
 
     // LED-Steuerung
     // -------------
@@ -1357,32 +1098,32 @@ int main(int argc, char *argv[])
       if (msg)
         lcnt = 3;
     }
-    digitalWrite (LED_BLAU1, (--lcnt > 0) ? LED_EIN : LED_AUS);
+    digitalWrite (M_LED_BLAU1, (--lcnt > 0) ? LED_EIN : LED_AUS);
     static int blink = (STD*4)-20;
     blink++;
     if (blink % 5 == 0)
     {
-      digitalWrite (LED_GRUEN1, LED_AUS);
+      digitalWrite (M_LED_GRUEN1, LED_AUS);
       delay(100);
-      digitalWrite (LED_GRUEN1, LED_EIN);
+      digitalWrite (M_LED_GRUEN1, LED_EIN);
     }
 
     if (!Automatic)
-    {	// Handsteuerung
-    	// -------------
+    { // Handsteuerung
+      // -------------
     }
 
     else if (Zeitfenster(GUTENMORGEN, GUTENACHT))
     { // Normalbetrieb (Automatic!)
       // --------------------------
       DEBUG_2(">> %s-%s()#%d\n",  __NOW__, __FUNCTION__, __LINE__);
-      digitalWrite (LAMP_IRRIGHT, LED_HELL);
-      digitalWrite (LAMP_IRLEFT,  LED_HELL);
+      digitalWrite (M_LAMP_IRRIGHT, LED_HELL);
+      digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
 //      if (((blink % (STD*4)) == 0))     // entspricht ca. 1:07 Stunden
 
-   		time_t tnow;
-  		time(&tnow);
-  		if ((tnow % (2*STD)) == 0)							// alle 2 Stunden zur vollen Stunde
+      time_t tnow;
+      time(&tnow);
+      if ((tnow % (2*STD)) == 0)              // alle 2 Stunden zur vollen Stunde
       { // mit IR-Lampen Photo auslösen
         // ----------------------------
         { // --- Log-Ausgabe ---------------------------------------------------------
@@ -1390,11 +1131,11 @@ int main(int argc, char *argv[])
           MYLOG(LogText);
         } // ------------------------------------------------------------------------
         DEBUG_2(">> %s-%s()#%d\n",  __NOW__, __FUNCTION__, __LINE__);
-        digitalWrite (LAMP_IRRIGHT, LED_DUNKEL);
-        digitalWrite (LAMP_IRLEFT,  LED_DUNKEL);
+        digitalWrite (M_LAMP_IRRIGHT, LED_DUNKEL);
+        digitalWrite (M_LAMP_IRLEFT,  LED_DUNKEL);
         delay(10*SEC);
-        digitalWrite (LAMP_IRRIGHT, LED_HELL);
-        digitalWrite (LAMP_IRLEFT,  LED_HELL);
+        digitalWrite (M_LAMP_IRRIGHT, LED_HELL);
+        digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
         DEBUG_2(">> %s-%s()#%d\n",  __NOW__, __FUNCTION__, __LINE__);
       }
     }
@@ -1402,8 +1143,8 @@ int main(int argc, char *argv[])
     { // Nachts ist Ruhe!
       // -----------------
       DEBUG_2(">> %s-%s()#%d\n",  __NOW__, __FUNCTION__, __LINE__);
-      digitalWrite (LAMP_IRRIGHT, LED_DUNKEL);
-      digitalWrite (LAMP_IRLEFT,  LED_DUNKEL);
+      digitalWrite (M_LAMP_IRRIGHT, LED_DUNKEL);
+      digitalWrite (M_LAMP_IRLEFT,  LED_DUNKEL);
     }
 
     if (ErrorFlag > 0)
@@ -1413,7 +1154,7 @@ int main(int argc, char *argv[])
       { // wenn Zeit abgelaufen
         // --------------------
         ErrorFlag = 0;
-        digitalWrite (LED_ROT, LED_AUS);
+        digitalWrite (M_LED_ROT, LED_AUS);
       }
     }
 
@@ -1425,7 +1166,7 @@ int main(int argc, char *argv[])
 
   // PID-Datei wieder löschen
   // ------------------------
-  killPID(FPID);
+  killPID();
 
   { // --- Log-Ausgabe ------------------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "    <<<----- Programm beendet ----->>>");
@@ -1435,9 +1176,9 @@ int main(int argc, char *argv[])
 
   // Fehler-Mail abschicken
   // ----------------------
-  char MailBody[BODYLEN] = {'\0'};
+//***  char MailBody[BODYLEN] = {'\0'};
   char Logtext[ZEILE];
-  digitalWrite (LED_ROT, LED_EIN);
+  digitalWrite (M_LED_ROT, LED_EIN);
   sprintf(Logtext, ">> %s()#%d: Error %s ---> '%s' OK\n",__FUNCTION__, __LINE__, PROGNAME, "lastItem");
   syslog(LOG_NOTICE, "%s: %s", __LAMP__, Logtext);
 

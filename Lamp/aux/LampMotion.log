@@ -1,0 +1,2284 @@
+20.11.2022 14:25:27- LampMotion.main()#5:  - 
+20.11.2022 14:25:27- LampMotion.main()#14: >>> Vers. 4.3.96/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1598, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:25:27- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:25:27- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:25:27- LampMotion.main()#10:     meine PID = '1598'
+20.11.2022 14:25:27- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:25:27- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:25:27- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:25:28- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:25:28- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:25:28- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:25:28- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:25:28- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:25:30- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:25:30- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:25:30- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:25:30- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:25:30- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:31:23- LampMotion.main()#5:  - 
+20.11.2022 14:31:23- LampMotion.main()#14: >>> Vers. 4.3.99/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1677, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:31:23- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:31:23- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:31:23- LampMotion.main()#10:     meine PID = '1677'
+20.11.2022 14:31:23- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:31:23- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:31:23- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:31:24- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:31:24- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:31:24- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:31:24- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:31:24- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:31:24- LampMotion.main()#30:       Luftdruck BME280 652 hPa
+20.11.2022 14:31:24- LampMotion.main()#32:       Temperatur BME280 21.6 °C
+20.11.2022 14:31:24- LampMotion.main()#34:       Feuchtigkeit BME280 74.5 %
+20.11.2022 14:31:24- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:31:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:31:26- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:45:36- LampMotion.main()#5:  - 
+20.11.2022 14:45:36- LampMotion.main()#14: >>> Vers. 4.3.99/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1748, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:45:36- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:45:36- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:45:36- LampMotion.main()#10:     meine PID = '1748'
+20.11.2022 14:45:36- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:45:36- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:45:36- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:45:37- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:45:37- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:45:37- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:45:37- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:45:37- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:45:37- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:45:37- LampMotion.main()#32:       Temperatur BME280 23.9 °C
+20.11.2022 14:45:37- LampMotion.main()#34:       Feuchtigkeit BME280 39.2 %
+20.11.2022 14:45:37- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:45:39- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:45:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:45:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:45:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:45:39- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:47:24- LampMotion.main()#5:  - 
+20.11.2022 14:47:24- LampMotion.main()#14: >>> Vers. 4.3.100/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1776, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:47:24- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:47:24- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:47:24- LampMotion.main()#10:     meine PID = '1776'
+20.11.2022 14:47:24- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:47:24- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:47:24- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:47:25- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:47:25- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:47:25- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:47:25- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:47:25- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:47:25- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:47:25- LampMotion.main()#32:       Temperatur BME280 24.0 °C
+20.11.2022 14:47:25- LampMotion.main()#34:       Feuchtigkeit BME280 39.1 %
+20.11.2022 14:47:25- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:47:27- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:47:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:47:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:47:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:47:27- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:48:07- LampMotion.main()#5:  - 
+20.11.2022 14:48:07- LampMotion.main()#14: >>> Vers. 4.3.101/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1803, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:48:07- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:48:07- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:48:07- LampMotion.main()#10:     meine PID = '1803'
+20.11.2022 14:48:07- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:48:07- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:48:07- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:48:08- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:48:08- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:48:08- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:48:08- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:48:08- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:48:08- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:48:08- LampMotion.main()#32:       Temperatur BME280 23.9 °C
+20.11.2022 14:48:08- LampMotion.main()#34:       Feuchtigkeit BME280 38.9 %
+20.11.2022 14:48:08- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:48:10- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:48:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:48:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:48:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:48:10- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:49:02- LampMotion.main()#5:  - 
+20.11.2022 14:49:02- LampMotion.main()#14: >>> Vers. 4.3.102/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1834, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:49:02- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:49:02- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:49:02- LampMotion.main()#10:     meine PID = '1834'
+20.11.2022 14:49:02- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:49:02- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:49:02- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:49:03- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:49:03- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:49:03- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:49:03- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:49:03- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:49:03- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:49:03- LampMotion.main()#32:       Temperatur BME280 23.9 °C
+20.11.2022 14:49:03- LampMotion.main()#34:       Feuchtigkeit BME280 39.1 %
+20.11.2022 14:49:03- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:49:05- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:49:05- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:49:05- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:49:05- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:49:05- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:49:52- LampMotion.main()#5:  - 
+20.11.2022 14:49:52- LampMotion.main()#14: >>> Vers. 4.3.103/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1865, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:49:52- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:49:52- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:49:52- LampMotion.main()#10:     meine PID = '1865'
+20.11.2022 14:49:52- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:49:52- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:49:52- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:49:53- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:49:53- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:49:53- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:49:53- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:49:53- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:49:53- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:49:53- LampMotion.main()#32:       Temperatur BME280 23.9 °C
+20.11.2022 14:49:53- LampMotion.main()#34:       Feuchtigkeit BME280 39.2 %
+20.11.2022 14:49:53- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:49:55- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:49:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:49:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:49:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:49:55- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:53:45- LampMotion.main()#5:  - 
+20.11.2022 14:53:45- LampMotion.main()#14: >>> Vers. 4.3.104/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1905, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:53:45- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:53:45- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:53:45- LampMotion.main()#10:     meine PID = '1905'
+20.11.2022 14:53:45- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:53:45- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:53:45- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:53:46- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:53:46- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:53:46- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:53:46- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:53:46- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:53:46- LampMotion.main()#30:       Luftdruck BME280  0 hPa
+20.11.2022 14:53:46- LampMotion.main()#32:       Temperatur BME280 0.0 °C
+20.11.2022 14:53:46- LampMotion.main()#34:       Feuchtigkeit BME280 0.0 %
+20.11.2022 14:53:46- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:53:48- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:53:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:53:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:53:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:53:48- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:54:25- LampMotion.main()#5:  - 
+20.11.2022 14:54:25- LampMotion.main()#14: >>> Vers. 4.3.104/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1911, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:54:25- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:54:25- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:54:25- LampMotion.main()#10:     meine PID = '1911'
+20.11.2022 14:54:25- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:54:25- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:54:25- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:54:26- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:54:26- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:54:26- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:54:26- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:54:26- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:54:26- LampMotion.main()#30:       Luftdruck BME280 705 hPa
+20.11.2022 14:54:26- LampMotion.main()#32:       Temperatur BME280 0.0 °C
+20.11.2022 14:54:26- LampMotion.main()#34:       Feuchtigkeit BME280 0.0 %
+20.11.2022 14:54:26- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:54:28- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:54:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:54:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:54:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:54:28- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 14:58:12- LampMotion.main()#5:  - 
+20.11.2022 14:58:12- LampMotion.main()#14: >>> Vers. 4.3.105/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1938, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 14:58:12- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 14:58:12- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 14:58:12- LampMotion.main()#10:     meine PID = '1938'
+20.11.2022 14:58:12- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 14:58:12- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 14:58:12- LampMotion.main()#13:     GPIO OK !
+20.11.2022 14:58:13- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 14:58:13- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 14:58:13- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 14:58:13- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 14:58:13- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 14:58:13- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 14:58:13- LampMotion.main()#32:       Temperatur BME280 23.8 °C
+20.11.2022 14:58:13- LampMotion.main()#34:       Feuchtigkeit BME280 39.5 %
+20.11.2022 14:58:13- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 14:58:15- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 14:58:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 14:58:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 14:58:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 14:58:15- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:00:00- LampMotion.main()#1140:       IR-Lampen Aus/Ein
+20.11.2022 15:00:13- LampMotion.main()#5:  - 
+20.11.2022 15:00:13- LampMotion.main()#14: >>> Vers. 4.3.106/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1968, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:00:13- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:00:13- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:00:13- LampMotion.main()#10:     meine PID = '1968'
+20.11.2022 15:00:13- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:00:13- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:00:13- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:00:14- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:00:14- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:00:14- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:00:14- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:00:14- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:00:14- LampMotion.main()#30:       Luftdruck BME280 1002 hPa
+20.11.2022 15:00:14- LampMotion.main()#32:       Temperatur BME280 21.6 °C
+20.11.2022 15:00:14- LampMotion.main()#34:       Feuchtigkeit BME280 52.0 %
+20.11.2022 15:00:14- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:00:16- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:00:16- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:00:16- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:00:16- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:00:16- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:04:33- LampMotion.main()#5:  - 
+20.11.2022 15:04:33- LampMotion.main()#14: >>> Vers. 4.3.107/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1999, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:04:33- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:04:33- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:04:33- LampMotion.main()#10:     meine PID = '1999'
+20.11.2022 15:04:33- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:04:33- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:04:33- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:04:34- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:04:34- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:04:34- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:04:34- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:04:34- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:04:34- LampMotion.main()#30:       Luftdruck BME280 1004 hPa
+20.11.2022 15:04:34- LampMotion.main()#32:       Temperatur BME280 22.2 °C
+20.11.2022 15:04:34- LampMotion.main()#34:       Feuchtigkeit BME280 48.4 %
+20.11.2022 15:04:34- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:04:36- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:04:36- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:06:42- LampMotion.main()#5:  - 
+20.11.2022 15:06:42- LampMotion.main()#14: >>> Vers. 4.3.108/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2030, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:06:42- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:06:42- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:06:42- LampMotion.main()#10:     meine PID = '2030'
+20.11.2022 15:06:42- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:06:42- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:06:42- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:06:43- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:06:43- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:06:43- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:06:43- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:06:43- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:06:43- LampMotion.main()#30:       Luftdruck BME280 1005 hPa
+20.11.2022 15:06:43- LampMotion.main()#32:       Temperatur BME280 22.8 °C
+20.11.2022 15:06:43- LampMotion.main()#34:       Feuchtigkeit BME280 46.7 %
+20.11.2022 15:06:43- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:06:45- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:06:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:06:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:06:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:06:45- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:38:34- LampMotion.main()#5:  - 
+20.11.2022 15:38:34- LampMotion.main()#14: >>> Vers. 4.3.111/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2235, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:38:34- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:38:34- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:38:34- LampMotion.main()#10:     meine PID = '2235'
+20.11.2022 15:38:34- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:38:34- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:38:34- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:38:35- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:38:35- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:38:35- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:38:35- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:38:35- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:38:35- LampMotion.main()#30:       Luftdruck BME280 1005 hPa
+20.11.2022 15:38:35- LampMotion.main()#32:       Temperatur BME280 22.9 °C
+20.11.2022 15:38:35- LampMotion.main()#34:       Feuchtigkeit BME280 46.3 %
+20.11.2022 15:38:35- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:38:37- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:38:37- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:38:37- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:38:37- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:38:37- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:47:02- LampMotion.main()#5:  - 
+20.11.2022 15:47:02- LampMotion.main()#14: >>> Vers. 4.3.112/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2332, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:47:02- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:47:02- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:47:02- LampMotion.main()#10:     meine PID = '2332'
+20.11.2022 15:47:02- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:47:02- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:47:02- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:47:03- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:47:03- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:47:03- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:47:03- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:47:03- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:47:03- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 15:47:03- LampMotion.main()#32:       Temperatur BME280 24.7 °C
+20.11.2022 15:47:03- LampMotion.main()#34:       Feuchtigkeit BME280 42.7 %
+20.11.2022 15:47:03- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:47:08- LampMotion.main()#5:  - 
+20.11.2022 15:47:08- LampMotion.main()#14: >>> Vers. 4.3.113/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2360, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:47:08- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:47:08- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:47:08- LampMotion.main()#10:     meine PID = '2360'
+20.11.2022 15:47:08- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:47:08- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:47:08- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:47:09- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:47:09- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:47:09- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:47:09- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:47:09- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:47:09- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 15:47:09- LampMotion.main()#32:       Temperatur BME280 24.4 °C
+20.11.2022 15:47:09- LampMotion.main()#34:       Feuchtigkeit BME280 43.4 %
+20.11.2022 15:47:09- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:47:11- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:47:11- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:47:11- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:47:11- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:47:11- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 15:48:41- LampMotion.main()#5:  - 
+20.11.2022 15:48:41- LampMotion.main()#14: >>> Vers. 4.3.114/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2393, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 15:48:41- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 15:48:41- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 15:48:41- LampMotion.main()#10:     meine PID = '2393'
+20.11.2022 15:48:41- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 15:48:41- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 15:48:41- LampMotion.main()#13:     GPIO OK !
+20.11.2022 15:48:42- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 15:48:42- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 15:48:42- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 15:48:42- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 15:48:42- LampMotion.main()#28:     Sensor BME280 OK !
+20.11.2022 15:48:42- LampMotion.main()#30:       Luftdruck BME280 1006 hPa
+20.11.2022 15:48:42- LampMotion.main()#32:       Temperatur BME280 24.4 °C
+20.11.2022 15:48:42- LampMotion.main()#34:       Feuchtigkeit BME280 43.5 %
+20.11.2022 15:48:42- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 15:48:44- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 15:48:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 15:48:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 15:48:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 15:48:44- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 16:04:26- LampMotion.main()#5:  - 
+20.11.2022 16:04:26- LampMotion.main()#14: >>> Vers. 4.3.115/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2446, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 16:04:26- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 16:04:26- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 16:04:26- LampMotion.main()#10:     meine PID = '2446'
+20.11.2022 16:04:26- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 16:04:26- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 16:04:26- LampMotion.main()#13:     GPIO OK !
+20.11.2022 16:04:27- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 16:04:27- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 16:04:27- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 16:04:27- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 16:04:27- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 16:04:27- LampMotion.main()#29:       Luftdruck BME280 1006 hPa
+20.11.2022 16:04:27- LampMotion.main()#31:       Temperatur BME280 24.4 °C
+20.11.2022 16:04:27- LampMotion.main()#33:       Feuchtigkeit BME280 43.5 %
+20.11.2022 16:04:27- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 16:04:29- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 16:04:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 16:04:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 16:04:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 16:04:29- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 16:07:51- LampMotion.main()#5:  - 
+20.11.2022 16:07:51- LampMotion.main()#14: >>> Vers. 4.3.116/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2474, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 16:07:51- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 16:07:51- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 16:07:51- LampMotion.main()#10:     meine PID = '2474'
+20.11.2022 16:07:51- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 16:07:51- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 16:07:51- LampMotion.main()#13:     GPIO OK !
+20.11.2022 16:07:52- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 16:07:52- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 16:07:52- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 16:07:52- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 16:07:52- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 16:07:52- LampMotion.main()#29:       Luftdruck BME280 1006 hPa
+20.11.2022 16:07:52- LampMotion.main()#31:       Temperatur BME280 24.2 °C
+20.11.2022 16:07:52- LampMotion.main()#33:       Feuchtigkeit BME280 44.1 %
+20.11.2022 16:07:52- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 16:07:54- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 16:07:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 16:07:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 16:07:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 16:07:54- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 16:11:32- LampMotion.main()#5:  - 
+20.11.2022 16:11:32- LampMotion.main()#14: >>> Vers. 4.3.117/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2570, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 16:11:32- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 16:11:32- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 16:11:32- LampMotion.main()#10:     meine PID = '2570'
+20.11.2022 16:11:32- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 16:11:32- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 16:11:32- LampMotion.main()#13:     GPIO OK !
+20.11.2022 16:11:33- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 16:11:33- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 16:11:33- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 16:11:33- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 16:11:33- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 16:11:33- LampMotion.main()#29:       Luftdruck BME280 1006 hPa
+20.11.2022 16:11:33- LampMotion.main()#31:       Temperatur BME280 24.2 °C
+20.11.2022 16:11:33- LampMotion.main()#33:       Feuchtigkeit BME280 44.2 %
+20.11.2022 16:11:33- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 16:11:35- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 16:11:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 16:11:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 16:11:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 16:11:35- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:03:04- LampMotion.main()#5:  - 
+20.11.2022 17:03:04- LampMotion.main()#14: >>> Vers. 4.3.117/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2683, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:03:04- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:03:04- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:03:04- LampMotion.main()#10:     meine PID = '2683'
+20.11.2022 17:03:04- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:03:04- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:03:04- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:03:05- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:03:05- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:03:05- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:03:05- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:03:05- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:03:05- LampMotion.main()#29:       Luftdruck BME280 1006 hPa
+20.11.2022 17:03:05- LampMotion.main()#31:       Temperatur BME280 24.0 °C
+20.11.2022 17:03:05- LampMotion.main()#33:       Feuchtigkeit BME280 44.5 %
+20.11.2022 17:03:05- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:03:07- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:03:07- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:03:07- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:03:07- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:03:07- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:19:06- LampMotion.main()#5:  - 
+20.11.2022 17:19:06- LampMotion.main()#14: >>> Vers. 4.3.118/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2828, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:19:06- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:19:06- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:19:06- LampMotion.main()#10:     meine PID = '2828'
+20.11.2022 17:19:06- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:19:06- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:19:06- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:19:07- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:19:07- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:19:07- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:19:07- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:19:07- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:19:07- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:19:07- LampMotion.main()#31:       Temperatur BME280 22.8 °C
+20.11.2022 17:19:07- LampMotion.main()#33:       Feuchtigkeit BME280 42.5 %
+20.11.2022 17:19:07- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:19:09- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:19:09- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:20:22- LampMotion.main()#5:  - 
+20.11.2022 17:20:22- LampMotion.main()#14: >>> Vers. 4.3.119/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2859, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:20:22- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:20:22- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:20:22- LampMotion.main()#10:     meine PID = '2859'
+20.11.2022 17:20:22- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:20:22- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:20:22- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:20:23- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:20:23- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:20:23- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:20:23- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:20:24- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:20:24- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:20:24- LampMotion.main()#31:       Temperatur BME280 23.1 °C
+20.11.2022 17:20:24- LampMotion.main()#33:       Feuchtigkeit BME280 43.5 %
+20.11.2022 17:20:24- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:20:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:20:26- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:31:22- LampMotion.main()#5:  - 
+20.11.2022 17:31:22- LampMotion.main()#14: >>> Vers. 4.3.120/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2902, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:31:22- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:31:22- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:31:22- LampMotion.main()#10:     meine PID = '2902'
+20.11.2022 17:31:22- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:31:22- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:31:22- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:31:24- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:31:24- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:31:24- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:31:24- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:31:24- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:31:24- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:31:24- LampMotion.main()#31:       Temperatur BME280 23.1 °C
+20.11.2022 17:31:24- LampMotion.main()#33:       Feuchtigkeit BME280 43.3 %
+20.11.2022 17:31:24- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:31:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:31:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:31:26- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:32:40- LampMotion.main()#5:  - 
+20.11.2022 17:32:40- LampMotion.main()#14: >>> Vers. 4.3.120/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 2908, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:32:40- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:32:40- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:32:40- LampMotion.main()#10:     meine PID = '2908'
+20.11.2022 17:32:40- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:32:40- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:32:40- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:32:41- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:32:41- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:32:41- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:32:41- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:32:41- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:32:41- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:32:41- LampMotion.main()#31:       Temperatur BME280 23.5 °C
+20.11.2022 17:32:41- LampMotion.main()#33:       Feuchtigkeit BME280 43.4 %
+20.11.2022 17:32:41- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:32:43- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:32:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:32:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:32:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:32:43- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:45:38- LampMotion.main()#5:  - 
+20.11.2022 17:45:38- LampMotion.main()#14: >>> Vers. 4.3.122/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 3029, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:45:38- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:45:38- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:45:38- LampMotion.main()#10:     meine PID = '3029'
+20.11.2022 17:45:38- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:45:38- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:45:38- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:45:39- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:45:39- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:45:39- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:45:39- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:45:39- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:45:39- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:45:39- LampMotion.main()#31:       Temperatur BME280 23.5 °C
+20.11.2022 17:45:39- LampMotion.main()#33:       Feuchtigkeit BME280 43.4 %
+20.11.2022 17:45:39- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:45:41- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:45:41- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:45:41- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:45:41- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:45:41- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 17:58:16- LampMotion.main()#5:  - 
+20.11.2022 17:58:16- LampMotion.main()#14: >>> Vers. 4.3.123/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 3084, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 17:58:16- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 17:58:16- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 17:58:16- LampMotion.main()#10:     meine PID = '3084'
+20.11.2022 17:58:16- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 17:58:16- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 17:58:16- LampMotion.main()#13:     GPIO OK !
+20.11.2022 17:58:17- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 17:58:17- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 17:58:17- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 17:58:17- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 17:58:17- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 17:58:17- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 17:58:17- LampMotion.main()#31:       Temperatur BME280 23.8 °C
+20.11.2022 17:58:17- LampMotion.main()#33:       Feuchtigkeit BME280 43.2 %
+20.11.2022 17:58:17- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 17:58:19- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 17:58:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 17:58:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 17:58:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 17:58:19- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 18:09:59- LampMotion.main()#5:  - 
+20.11.2022 18:09:59- LampMotion.main()#14: >>> Vers. 4.3.125/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 3201, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 18:09:59- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 18:09:59- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 18:09:59- LampMotion.main()#10:     meine PID = '3201'
+20.11.2022 18:09:59- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 18:09:59- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 18:09:59- LampMotion.main()#13:     GPIO OK !
+20.11.2022 18:10:00- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 18:10:00- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 18:10:00- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 18:10:00- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 18:10:00- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 18:10:00- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 18:10:00- LampMotion.main()#31:       Temperatur BME280 23.8 °C
+20.11.2022 18:10:00- LampMotion.main()#33:       Feuchtigkeit BME280 43.1 %
+20.11.2022 18:10:00- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 18:10:02- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 18:10:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 18:10:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 18:10:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 18:10:02- LampMotion.main()#11: ----------<<< init done >>>----------
+20.11.2022 18:20:52- LampMotion.main()#5:  - 
+20.11.2022 18:20:52- LampMotion.main()#14: >>> Vers. 4.3.127/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 3278, User 1000, Group 1000, Anzahl Argumente: '1' 
+20.11.2022 18:20:52- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+20.11.2022 18:20:52- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+20.11.2022 18:20:52- LampMotion.main()#10:     meine PID = '3278'
+20.11.2022 18:20:52- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+20.11.2022 18:20:52- LampMotion.main()#29:     meine IP-Kennung: '196'
+20.11.2022 18:20:52- LampMotion.main()#13:     GPIO OK !
+20.11.2022 18:20:53- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+20.11.2022 18:20:53- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+20.11.2022 18:20:53- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+20.11.2022 18:20:53- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+20.11.2022 18:20:53- LampMotion.main()#27:     Sensor BME280 OK !
+20.11.2022 18:20:53- LampMotion.main()#29:       Luftdruck BME280 1005 hPa
+20.11.2022 18:20:53- LampMotion.main()#31:       Temperatur BME280 23.7 °C
+20.11.2022 18:20:53- LampMotion.main()#33:       Feuchtigkeit BME280 43.7 %
+20.11.2022 18:20:53- LampMotion.main()#13:     Sensor TLS2561 OK !
+20.11.2022 18:20:55- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+20.11.2022 18:20:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+20.11.2022 18:20:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+20.11.2022 18:20:55- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+20.11.2022 18:20:55- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 09:47:37- LampMotion.main()#5:  - 
+21.11.2022 09:47:37- LampMotion.main()#14: >>> Vers. 4.3.127/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1885, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 09:47:37- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 09:47:37- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 09:47:37- LampMotion.main()#10:     meine PID = '1885'
+21.11.2022 09:47:37- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 09:47:37- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 09:47:37- LampMotion.main()#13:     GPIO OK !
+21.11.2022 09:47:38- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 09:47:38- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 09:47:38- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 09:47:38- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 09:47:38- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 09:47:38- LampMotion.main()#29:       Luftdruck BME280 652 hPa
+21.11.2022 09:47:38- LampMotion.main()#31:       Temperatur BME280 21.6 °C
+21.11.2022 09:47:38- LampMotion.main()#33:       Feuchtigkeit BME280 74.5 %
+21.11.2022 09:47:38- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 09:47:40- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 09:47:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 09:47:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 09:47:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 09:47:40- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 09:48:48- LampMotion.main()#5:  - 
+21.11.2022 09:48:48- LampMotion.main()#14: >>> Vers. 4.3.127/Nov 20 2022   ************ Start 'LampMotion' ************
+                                             - PID 1891, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 09:48:48- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 09:48:48- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 09:48:48- LampMotion.main()#10:     meine PID = '1891'
+21.11.2022 09:48:48- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 09:48:48- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 09:48:48- LampMotion.main()#13:     GPIO OK !
+21.11.2022 09:48:49- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 09:48:49- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 09:48:49- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 09:48:49- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 09:48:49- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 09:48:49- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 09:48:49- LampMotion.main()#31:       Temperatur BME280 22.5 °C
+21.11.2022 09:48:49- LampMotion.main()#33:       Feuchtigkeit BME280 45.1 %
+21.11.2022 09:48:49- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 09:48:51- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 09:48:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 09:48:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 09:48:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 09:48:51- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 09:51:25- LampMotion.main()#5:  - 
+21.11.2022 09:51:25- LampMotion.main()#14: >>> Vers. 4.3.128/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 1925, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 09:51:25- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 09:51:25- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 09:51:25- LampMotion.main()#10:     meine PID = '1925'
+21.11.2022 09:51:25- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 09:51:25- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 09:51:25- LampMotion.main()#13:     GPIO OK !
+21.11.2022 09:51:26- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 09:51:26- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 09:51:26- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 09:51:26- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 09:51:26- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 09:51:26- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 09:51:26- LampMotion.main()#31:       Temperatur BME280 22.6 °C
+21.11.2022 09:51:26- LampMotion.main()#33:       Feuchtigkeit BME280 44.9 %
+21.11.2022 09:51:26- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 09:51:28- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 09:51:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 09:51:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 09:51:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 09:51:28- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 09:53:16- LampMotion.main()#5:  - 
+21.11.2022 09:53:16- LampMotion.main()#14: >>> Vers. 4.3.129/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 1969, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 09:53:16- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 09:53:16- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 09:53:16- LampMotion.main()#10:     meine PID = '1969'
+21.11.2022 09:53:16- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 09:53:16- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 09:53:16- LampMotion.main()#13:     GPIO OK !
+21.11.2022 09:53:17- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 09:53:17- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 09:53:17- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 09:53:17- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 09:53:17- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 09:53:17- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 09:53:17- LampMotion.main()#31:       Temperatur BME280 22.7 °C
+21.11.2022 09:53:17- LampMotion.main()#33:       Feuchtigkeit BME280 44.8 %
+21.11.2022 09:53:17- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 09:53:19- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 09:53:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 09:53:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 09:53:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 09:53:19- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 09:58:20- LampMotion.main()#5:  - 
+21.11.2022 09:58:20- LampMotion.main()#14: >>> Vers. 4.3.130/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2011, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 09:58:20- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 09:58:20- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 09:58:20- LampMotion.main()#10:     meine PID = '2011'
+21.11.2022 09:58:20- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 09:58:20- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 09:58:20- LampMotion.main()#13:     GPIO OK !
+21.11.2022 09:58:21- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 09:58:21- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 09:58:21- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 09:58:21- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 09:58:21- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 09:58:21- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 09:58:21- LampMotion.main()#31:       Temperatur BME280 22.8 °C
+21.11.2022 09:58:21- LampMotion.main()#33:       Feuchtigkeit BME280 44.5 %
+21.11.2022 09:58:21- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 09:58:23- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 09:58:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 09:58:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 09:58:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 09:58:23- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:03:18- LampMotion.main()#5:  - 
+21.11.2022 10:03:18- LampMotion.main()#14: >>> Vers. 4.3.131/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2048, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:03:18- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:03:18- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:03:18- LampMotion.main()#10:     meine PID = '2048'
+21.11.2022 10:03:18- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:03:18- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:03:18- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:03:20- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:03:20- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:03:20- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:03:20- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:03:20- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:03:20- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:03:20- LampMotion.main()#31:       Temperatur BME280 22.9 °C
+21.11.2022 10:03:20- LampMotion.main()#33:       Feuchtigkeit BME280 44.2 %
+21.11.2022 10:03:20- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:03:22- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:03:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:03:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:03:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:03:22- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:07:53- LampMotion.main()#5:  - 
+21.11.2022 10:07:53- LampMotion.main()#14: >>> Vers. 4.3.132/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2078, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:07:53- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:07:53- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:07:53- LampMotion.main()#10:     meine PID = '2078'
+21.11.2022 10:07:53- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:07:53- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:07:53- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:07:54- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:07:54- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:07:54- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:07:54- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:07:54- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:07:54- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:07:54- LampMotion.main()#31:       Temperatur BME280 22.9 °C
+21.11.2022 10:07:54- LampMotion.main()#33:       Feuchtigkeit BME280 44.4 %
+21.11.2022 10:07:54- LampMotion.main()#14:     Sensor TLS2561 OK !
+21.11.2022 10:07:56- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:07:56- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:07:56- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:07:56- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:07:56- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:13:57- LampMotion.main()#5:  - 
+21.11.2022 10:13:57- LampMotion.main()#14: >>> Vers. 4.3.133/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2167, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:13:57- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:13:57- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:13:57- LampMotion.main()#10:     meine PID = '2167'
+21.11.2022 10:13:57- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:13:57- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:13:57- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:13:58- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:13:58- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:13:58- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:13:58- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:13:58- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:13:58- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:13:58- LampMotion.main()#31:       Temperatur BME280 22.9 °C
+21.11.2022 10:13:58- LampMotion.main()#33:       Feuchtigkeit BME280 44.3 %
+21.11.2022 10:13:58- LampMotion.main()#14:     Sensor TLS2561 OK !
+21.11.2022 10:14:00- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:14:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:14:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:14:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:14:00- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:19:30- LampMotion.main()#5:  - 
+21.11.2022 10:19:30- LampMotion.main()#14: >>> Vers. 4.3.134/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2218, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:19:30- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:19:30- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:19:30- LampMotion.main()#10:     meine PID = '2218'
+21.11.2022 10:19:30- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:19:30- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:19:30- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:19:31- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:19:31- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:19:31- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:19:31- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:19:31- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:19:31- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:19:31- LampMotion.main()#31:       Temperatur BME280 23.0 °C
+21.11.2022 10:19:31- LampMotion.main()#33:       Feuchtigkeit BME280 44.1 %
+21.11.2022 10:19:31- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:19:33- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:19:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:19:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:19:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:19:33- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:21:20- LampMotion.main()#5:  - 
+21.11.2022 10:21:20- LampMotion.main()#14: >>> Vers. 4.3.135/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2244, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:21:20- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:21:20- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:21:20- LampMotion.main()#10:     meine PID = '2244'
+21.11.2022 10:21:20- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:21:20- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:21:20- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:21:21- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:21:21- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:21:21- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:21:21- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:21:21- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:21:21- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:21:21- LampMotion.main()#31:       Temperatur BME280 23.1 °C
+21.11.2022 10:21:21- LampMotion.main()#33:       Feuchtigkeit BME280 44.0 %
+21.11.2022 10:21:21- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:21:23- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:21:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:21:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:21:23- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:21:23- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:25:37- LampMotion.main()#5:  - 
+21.11.2022 10:25:37- LampMotion.main()#14: >>> Vers. 4.3.136/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2286, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:25:37- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:25:37- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:25:37- LampMotion.main()#10:     meine PID = '2286'
+21.11.2022 10:25:37- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:25:37- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:25:37- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:25:38- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:25:38- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:25:38- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:25:38- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:25:38- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:25:38- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:25:38- LampMotion.main()#31:       Temperatur BME280 23.0 °C
+21.11.2022 10:25:38- LampMotion.main()#33:       Feuchtigkeit BME280 44.0 %
+21.11.2022 10:25:38- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:27:30- LampMotion.main()#5:  - 
+21.11.2022 10:27:30- LampMotion.main()#14: >>> Vers. 4.3.137/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2318, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:27:30- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:27:30- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:27:30- LampMotion.main()#10:     meine PID = '2318'
+21.11.2022 10:27:30- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:27:30- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:27:30- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:27:31- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:27:31- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:27:31- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:27:31- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:27:31- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:27:31- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:27:31- LampMotion.main()#31:       Temperatur BME280 23.0 °C
+21.11.2022 10:27:31- LampMotion.main()#33:       Feuchtigkeit BME280 44.4 %
+21.11.2022 10:27:31- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:27:33- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:27:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:27:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:27:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:27:33- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 10:36:36- LampMotion.main()#5:  - 
+21.11.2022 10:36:36- LampMotion.main()#14: >>> Vers. 4.3.139/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2380, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 10:36:36- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 10:36:36- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 10:36:36- LampMotion.main()#10:     meine PID = '2380'
+21.11.2022 10:36:36- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 10:36:36- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 10:36:36- LampMotion.main()#13:     GPIO OK !
+21.11.2022 10:36:37- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 10:36:37- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 10:36:37- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 10:36:37- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 10:36:37- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 10:36:37- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 10:36:37- LampMotion.main()#31:       Temperatur BME280 23.0 °C
+21.11.2022 10:36:37- LampMotion.main()#33:       Feuchtigkeit BME280 43.9 %
+21.11.2022 10:36:37- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 10:36:39- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 10:36:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 10:36:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 10:36:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 10:36:39- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 11:08:18- LampMotion.main()#5:  - 
+21.11.2022 11:08:18- LampMotion.main()#14: >>> Vers. 4.3.141/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2516, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 11:08:18- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 11:08:18- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 11:08:18- LampMotion.main()#10:     meine PID = '2516'
+21.11.2022 11:08:18- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 11:08:18- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 11:08:18- LampMotion.main()#13:     GPIO OK !
+21.11.2022 11:08:19- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 11:08:19- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 11:08:19- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 11:08:19- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 11:08:19- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 11:08:19- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 11:08:19- LampMotion.main()#31:       Temperatur BME280 22.9 °C
+21.11.2022 11:08:19- LampMotion.main()#33:       Feuchtigkeit BME280 43.9 %
+21.11.2022 11:08:19- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 11:08:21- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 11:08:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 11:08:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 11:08:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 11:08:21- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 11:25:28- LampMotion.main()#5:  - 
+21.11.2022 11:25:28- LampMotion.main()#14: >>> Vers. 4.3.142/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2685, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 11:25:28- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 11:25:28- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 11:25:28- LampMotion.main()#10:     meine PID = '2685'
+21.11.2022 11:25:28- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 11:25:28- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 11:25:28- LampMotion.main()#13:     GPIO OK !
+21.11.2022 11:25:29- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 11:25:29- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 11:25:29- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 11:25:29- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 11:25:29- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 11:25:29- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 11:25:29- LampMotion.main()#31:       Temperatur BME280 22.9 °C
+21.11.2022 11:25:29- LampMotion.main()#33:       Feuchtigkeit BME280 43.8 %
+21.11.2022 11:25:29- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 11:25:31- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 11:25:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 11:25:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 11:25:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 11:25:31- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 11:27:18- LampMotion.main()#5:  - 
+21.11.2022 11:27:18- LampMotion.main()#14: >>> Vers. 4.3.143/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2716, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 11:27:18- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 11:27:18- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 11:27:18- LampMotion.main()#10:     meine PID = '2716'
+21.11.2022 11:27:18- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 11:27:18- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 11:27:18- LampMotion.main()#13:     GPIO OK !
+21.11.2022 11:27:19- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 11:27:19- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 11:27:19- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 11:27:19- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 11:27:19- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 11:27:19- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 11:27:19- LampMotion.main()#31:       Temperatur BME280 22.6 °C
+21.11.2022 11:27:19- LampMotion.main()#33:       Feuchtigkeit BME280 44.5 %
+21.11.2022 11:27:19- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 11:27:21- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 11:27:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 11:27:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 11:27:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 11:27:21- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 11:28:16- LampMotion.main()#5:  - 
+21.11.2022 11:28:16- LampMotion.main()#14: >>> Vers. 4.3.144/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2748, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 11:28:16- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 11:28:16- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 11:28:16- LampMotion.main()#10:     meine PID = '2748'
+21.11.2022 11:28:16- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 11:28:16- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 11:28:16- LampMotion.main()#13:     GPIO OK !
+21.11.2022 11:28:17- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 11:28:17- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 11:28:17- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 11:28:17- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 11:28:17- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 11:28:17- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 11:28:17- LampMotion.main()#31:       Temperatur BME280 22.6 °C
+21.11.2022 11:28:17- LampMotion.main()#33:       Feuchtigkeit BME280 44.5 %
+21.11.2022 11:28:17- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 11:28:19- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 11:28:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 11:28:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 11:28:19- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 11:28:19- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 11:42:26- LampMotion.main()#5:  - 
+21.11.2022 11:42:26- LampMotion.main()#14: >>> Vers. 4.3.145/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 2853, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 11:42:26- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 11:42:26- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 11:42:26- LampMotion.main()#10:     meine PID = '2853'
+21.11.2022 11:42:26- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 11:42:26- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 11:42:26- LampMotion.main()#13:     GPIO OK !
+21.11.2022 11:42:27- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 11:42:27- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 11:42:27- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 11:42:27- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 11:42:27- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 11:42:27- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 11:42:27- LampMotion.main()#31:       Temperatur BME280 22.7 °C
+21.11.2022 11:42:27- LampMotion.main()#33:       Feuchtigkeit BME280 44.4 %
+21.11.2022 11:42:27- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 11:42:29- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 11:42:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 11:42:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 11:42:29- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 11:42:29- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:24:36- LampMotion.main()#5:  - 
+21.11.2022 14:24:36- LampMotion.main()#14: >>> Vers. 4.3.146/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3299, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:24:36- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:24:36- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:24:36- LampMotion.main()#10:     meine PID = '3299'
+21.11.2022 14:24:36- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:24:36- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:24:36- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:24:37- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:24:37- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:24:37- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:24:37- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:24:37- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:24:37- LampMotion.main()#29:       Luftdruck BME280 1002 hPa
+21.11.2022 14:24:37- LampMotion.main()#31:       Temperatur BME280 22.7 °C
+21.11.2022 14:24:37- LampMotion.main()#33:       Feuchtigkeit BME280 44.1 %
+21.11.2022 14:24:37- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:24:39- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:24:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:24:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:24:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:24:39- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:47:33- LampMotion.main()#5:  - 
+21.11.2022 14:47:33- LampMotion.main()#14: >>> Vers. 4.3.146/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3375, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:47:33- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:47:33- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:47:33- LampMotion.main()#10:     meine PID = '3375'
+21.11.2022 14:47:33- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:47:33- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:47:33- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:47:34- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:47:34- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:47:34- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:47:34- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:47:34- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:47:34- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:47:34- LampMotion.main()#31:       Temperatur BME280 22.6 °C
+21.11.2022 14:47:34- LampMotion.main()#33:       Feuchtigkeit BME280 43.0 %
+21.11.2022 14:47:34- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:47:36- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:47:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:47:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:47:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:47:36- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:47:55- LampMotion.main()#5:  - 
+21.11.2022 14:47:55- LampMotion.main()#14: >>> Vers. 4.3.146/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3382, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:47:55- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:47:55- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:47:55- LampMotion.main()#10:     meine PID = '3382'
+21.11.2022 14:47:55- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:47:55- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:47:55- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:47:56- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:47:56- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:47:56- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:47:56- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:47:56- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:47:56- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:47:56- LampMotion.main()#31:       Temperatur BME280 22.7 °C
+21.11.2022 14:47:56- LampMotion.main()#33:       Feuchtigkeit BME280 42.0 %
+21.11.2022 14:47:56- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:47:58- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:47:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:47:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:47:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:47:58- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:48:13- LampMotion.main()#5:  - 
+21.11.2022 14:48:13- LampMotion.main()#14: >>> Vers. 4.3.146/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3387, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:48:13- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:48:13- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:48:14- LampMotion.main()#10:     meine PID = '3387'
+21.11.2022 14:48:14- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:48:14- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:48:14- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:48:15- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:48:15- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:48:15- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:48:15- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:48:15- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:48:15- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:48:15- LampMotion.main()#31:       Temperatur BME280 22.7 °C
+21.11.2022 14:48:15- LampMotion.main()#33:       Feuchtigkeit BME280 41.8 %
+21.11.2022 14:48:15- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:48:17- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:48:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:48:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:48:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:48:17- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:48:32- LampMotion.main()#5:  - 
+21.11.2022 14:48:32- LampMotion.main()#14: >>> Vers. 4.3.146/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3392, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:48:32- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:48:32- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:48:32- LampMotion.main()#10:     meine PID = '3392'
+21.11.2022 14:48:32- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:48:32- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:48:32- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:48:33- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:48:33- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:48:33- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:48:33- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:48:33- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:48:33- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:48:33- LampMotion.main()#31:       Temperatur BME280 22.8 °C
+21.11.2022 14:48:33- LampMotion.main()#33:       Feuchtigkeit BME280 41.7 %
+21.11.2022 14:48:33- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:48:35- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:48:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:48:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:48:35- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:48:35- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:56:49- LampMotion.main()#5:  - 
+21.11.2022 14:56:49- LampMotion.main()#14: >>> Vers. 4.3.147/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3430, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:56:49- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:56:49- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:56:49- LampMotion.main()#10:     meine PID = '3430'
+21.11.2022 14:56:49- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:56:49- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:56:49- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:56:50- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:56:50- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:56:50- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:56:50- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:56:50- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:56:50- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:56:50- LampMotion.main()#31:       Temperatur BME280 22.8 °C
+21.11.2022 14:56:50- LampMotion.main()#33:       Feuchtigkeit BME280 42.2 %
+21.11.2022 14:56:50- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:56:52- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:56:52- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:56:52- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:56:52- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:56:52- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:57:18- LampMotion.main()#5:  - 
+21.11.2022 14:57:18- LampMotion.main()#14: >>> Vers. 4.3.147/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3436, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:57:18- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:57:18- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:57:18- LampMotion.main()#10:     meine PID = '3436'
+21.11.2022 14:57:18- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:57:18- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:57:18- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:57:19- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:57:19- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:57:19- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:57:19- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:57:19- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:57:19- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:57:19- LampMotion.main()#31:       Temperatur BME280 23.5 °C
+21.11.2022 14:57:19- LampMotion.main()#33:       Feuchtigkeit BME280 41.0 %
+21.11.2022 14:57:19- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:57:21- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:57:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:57:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:57:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:57:21- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 14:58:21- LampMotion.main()#5:  - 
+21.11.2022 14:58:21- LampMotion.main()#14: >>> Vers. 4.3.147/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3442, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 14:58:21- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 14:58:21- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 14:58:21- LampMotion.main()#10:     meine PID = '3442'
+21.11.2022 14:58:21- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 14:58:21- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 14:58:21- LampMotion.main()#13:     GPIO OK !
+21.11.2022 14:58:22- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 14:58:22- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 14:58:22- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 14:58:22- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 14:58:22- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 14:58:22- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 14:58:22- LampMotion.main()#31:       Temperatur BME280 23.5 °C
+21.11.2022 14:58:22- LampMotion.main()#33:       Feuchtigkeit BME280 40.8 %
+21.11.2022 14:58:22- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 14:58:24- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 14:58:24- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 14:58:24- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 14:58:24- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 14:58:24- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 15:27:25- LampMotion.main()#5:  - 
+21.11.2022 15:27:25- LampMotion.main()#14: >>> Vers. 4.3.149/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3594, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 15:27:25- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 15:27:25- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 15:27:25- LampMotion.main()#10:     meine PID = '3594'
+21.11.2022 15:27:25- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 15:27:25- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 15:27:25- LampMotion.main()#13:     GPIO OK !
+21.11.2022 15:27:26- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 15:27:26- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 15:27:26- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 15:27:26- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 15:27:26- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 15:27:26- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 15:27:26- LampMotion.main()#31:       Temperatur BME280 23.7 °C
+21.11.2022 15:27:26- LampMotion.main()#33:       Feuchtigkeit BME280 42.1 %
+21.11.2022 15:27:26- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 15:27:28- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 15:27:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 15:27:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 15:27:28- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 15:27:28- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 15:28:28- LampMotion.main()#5:  - 
+21.11.2022 15:28:28- LampMotion.main()#14: >>> Vers. 4.3.149/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3601, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 15:28:28- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 15:28:28- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 15:28:28- LampMotion.main()#10:     meine PID = '3601'
+21.11.2022 15:28:28- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 15:28:28- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 15:28:28- LampMotion.main()#13:     GPIO OK !
+21.11.2022 15:28:29- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 15:28:29- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 15:28:29- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 15:28:29- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 15:28:29- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 15:28:29- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 15:28:29- LampMotion.main()#31:       Temperatur BME280 23.2 °C
+21.11.2022 15:28:29- LampMotion.main()#33:       Feuchtigkeit BME280 42.2 %
+21.11.2022 15:28:29- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 15:28:31- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 15:28:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 15:28:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 15:28:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 15:28:31- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 15:41:44- LampMotion.main()#5:  - 
+21.11.2022 15:41:44- LampMotion.main()#14: >>> Vers. 4.3.151/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3733, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 15:41:44- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 15:41:44- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 15:41:44- LampMotion.main()#10:     meine PID = '3733'
+21.11.2022 15:41:44- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 15:41:44- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 15:41:44- LampMotion.main()#13:     GPIO OK !
+21.11.2022 15:41:45- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 15:41:45- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 15:41:45- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 15:41:45- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 15:41:45- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 15:41:45- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 15:41:45- LampMotion.main()#31:       Temperatur BME280 23.1 °C
+21.11.2022 15:41:45- LampMotion.main()#33:       Feuchtigkeit BME280 43.8 %
+21.11.2022 15:41:45- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 15:41:47- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 15:41:47- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 15:41:47- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 15:41:47- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 15:41:47- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 15:44:05- LampMotion.main()#5:  - 
+21.11.2022 15:44:05- LampMotion.main()#14: >>> Vers. 4.3.151/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 3744, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 15:44:05- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 15:44:05- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 15:44:05- LampMotion.main()#10:     meine PID = '3744'
+21.11.2022 15:44:05- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 15:44:05- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 15:44:05- LampMotion.main()#13:     GPIO OK !
+21.11.2022 15:44:06- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 15:44:06- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 15:44:06- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 15:44:06- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 15:44:06- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 15:44:06- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 15:44:06- LampMotion.main()#31:       Temperatur BME280 23.5 °C
+21.11.2022 15:44:06- LampMotion.main()#33:       Feuchtigkeit BME280 41.5 %
+21.11.2022 15:44:06- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 15:44:08- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 15:44:08- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 15:44:08- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 15:44:08- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 15:44:08- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 17:57:50- LampMotion.main()#5:  - 
+21.11.2022 17:57:50- LampMotion.main()#14: >>> Vers. 4.3.152/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 4107, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 17:57:50- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 17:57:50- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 17:57:50- LampMotion.main()#10:     meine PID = '4107'
+21.11.2022 17:57:50- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 17:57:50- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 17:57:50- LampMotion.main()#13:     GPIO OK !
+21.11.2022 17:57:51- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 17:57:51- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 17:57:51- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 17:57:51- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 17:57:51- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 17:57:51- LampMotion.main()#29:       Luftdruck BME280 1000 hPa
+21.11.2022 17:57:51- LampMotion.main()#31:       Temperatur BME280 24.0 °C
+21.11.2022 17:57:51- LampMotion.main()#33:       Feuchtigkeit BME280 43.1 %
+21.11.2022 18:00:51- LampMotion.main()#5:  - 
+21.11.2022 18:00:51- LampMotion.main()#14: >>> Vers. 4.3.153/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 4140, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 18:00:51- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 18:00:51- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 18:00:51- LampMotion.main()#10:     meine PID = '4140'
+21.11.2022 18:00:51- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 18:00:51- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 18:00:51- LampMotion.main()#13:     GPIO OK !
+21.11.2022 18:00:52- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 18:00:52- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 18:00:52- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 18:00:52- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 18:00:53- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 18:00:53- LampMotion.main()#29:       Luftdruck BME280 999 hPa
+21.11.2022 18:00:53- LampMotion.main()#31:       Temperatur BME280 24.8 °C
+21.11.2022 18:00:53- LampMotion.main()#33:       Feuchtigkeit BME280 40.0 %
+21.11.2022 18:03:51- LampMotion.main()#5:  - 
+21.11.2022 18:03:51- LampMotion.main()#14: >>> Vers. 4.3.154/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 4173, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 18:03:51- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 18:03:51- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 18:03:51- LampMotion.main()#10:     meine PID = '4173'
+21.11.2022 18:03:51- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 18:03:51- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 18:03:51- LampMotion.main()#13:     GPIO OK !
+21.11.2022 18:03:52- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 18:03:52- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 18:03:52- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 18:03:52- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 18:03:52- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 18:03:52- LampMotion.main()#29:       Luftdruck BME280 999 hPa
+21.11.2022 18:03:52- LampMotion.main()#31:       Temperatur BME280 24.7 °C
+21.11.2022 18:03:52- LampMotion.main()#33:       Feuchtigkeit BME280 39.5 %
+21.11.2022 18:03:54- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 18:03:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 18:03:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 18:03:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 18:03:54- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 18:04:46- LampMotion.main()#5:  - 
+21.11.2022 18:04:46- LampMotion.main()#14: >>> Vers. 4.3.154/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 4180, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 18:04:46- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 18:04:46- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 18:04:46- LampMotion.main()#10:     meine PID = '4180'
+21.11.2022 18:04:46- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 18:04:46- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 18:04:46- LampMotion.main()#13:     GPIO OK !
+21.11.2022 18:04:47- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 18:04:47- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 18:04:47- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 18:04:47- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 18:04:47- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 18:04:47- LampMotion.main()#29:       Luftdruck BME280 999 hPa
+21.11.2022 18:04:47- LampMotion.main()#31:       Temperatur BME280 24.5 °C
+21.11.2022 18:04:47- LampMotion.main()#33:       Feuchtigkeit BME280 40.2 %
+21.11.2022 18:04:47- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 18:04:49- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 18:04:49- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 18:04:49- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 18:04:49- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 18:04:49- LampMotion.main()#11: ----------<<< init done >>>----------
+21.11.2022 18:21:56- LampMotion.main()#5:  - 
+21.11.2022 18:21:56- LampMotion.main()#14: >>> Vers. 4.3.155/Nov 21 2022   ************ Start 'LampMotion' ************
+                                             - PID 4285, User 1000, Group 1000, Anzahl Argumente: '1' 
+21.11.2022 18:21:56- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+21.11.2022 18:21:56- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+21.11.2022 18:21:56- LampMotion.main()#10:     meine PID = '4285'
+21.11.2022 18:21:56- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+21.11.2022 18:21:56- LampMotion.main()#29:     meine IP-Kennung: '196'
+21.11.2022 18:21:56- LampMotion.main()#13:     GPIO OK !
+21.11.2022 18:21:57- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+21.11.2022 18:21:57- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+21.11.2022 18:21:57- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+21.11.2022 18:21:57- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+21.11.2022 18:21:57- LampMotion.main()#27:     Sensor BME280 OK !
+21.11.2022 18:21:57- LampMotion.main()#29:       Luftdruck BME280 999 hPa
+21.11.2022 18:21:57- LampMotion.main()#31:       Temperatur BME280 24.4 °C
+21.11.2022 18:21:57- LampMotion.main()#33:       Feuchtigkeit BME280 40.5 %
+21.11.2022 18:21:57- LampMotion.main()#13:     Sensor TLS2561 OK !
+21.11.2022 18:21:59- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+21.11.2022 18:21:59- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+21.11.2022 18:21:59- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+21.11.2022 18:21:59- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+21.11.2022 18:21:59- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 09:30:47- LampMotion.main()#5:  - 
+22.11.2022 09:30:47- LampMotion.main()#14: >>> Vers. 4.3.156/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1806, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 09:30:47- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 09:30:47- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 09:30:47- LampMotion.main()#10:     meine PID = '1806'
+22.11.2022 09:30:47- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+22.11.2022 09:30:47- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 09:30:47- LampMotion.main()#13:     GPIO OK !
+22.11.2022 09:30:48- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 09:30:48- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 09:30:48- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 09:30:48- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 09:30:48- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 09:30:48- LampMotion.main()#29:       Luftdruck BME280 652 hPa
+22.11.2022 09:30:48- LampMotion.main()#31:       Temperatur BME280 21.6 °C
+22.11.2022 09:30:48- LampMotion.main()#33:       Feuchtigkeit BME280 74.5 %
+22.11.2022 09:30:48- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 09:30:51- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 09:30:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 09:30:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 09:30:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 09:30:51- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 09:31:14- LampMotion.main()#5:  - 
+22.11.2022 09:31:14- LampMotion.main()#14: >>> Vers. 4.3.156/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1811, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 09:31:14- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 09:31:14- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 09:31:14- LampMotion.main()#10:     meine PID = '1811'
+22.11.2022 09:31:14- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+22.11.2022 09:31:14- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 09:31:14- LampMotion.main()#13:     GPIO OK !
+22.11.2022 09:31:15- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 09:31:15- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 09:31:15- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 09:31:15- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 09:31:15- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 09:31:15- LampMotion.main()#29:       Luftdruck BME280 995 hPa
+22.11.2022 09:31:15- LampMotion.main()#31:       Temperatur BME280 21.6 °C
+22.11.2022 09:31:15- LampMotion.main()#33:       Feuchtigkeit BME280 45.9 %
+22.11.2022 09:31:15- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 09:31:18- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 09:31:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 09:31:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 09:31:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 09:31:18- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 09:31:27- LampMotion.main()#5:  - 
+22.11.2022 09:31:27- LampMotion.main()#14: >>> Vers. 4.3.156/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1816, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 09:31:27- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 09:31:27- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 09:31:27- LampMotion.main()#10:     meine PID = '1816'
+22.11.2022 09:31:27- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+22.11.2022 09:31:27- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 09:31:27- LampMotion.main()#13:     GPIO OK !
+22.11.2022 09:31:28- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 09:31:28- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 09:31:28- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 09:31:28- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 09:31:28- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 09:31:28- LampMotion.main()#29:       Luftdruck BME280 995 hPa
+22.11.2022 09:31:28- LampMotion.main()#31:       Temperatur BME280 21.7 °C
+22.11.2022 09:31:28- LampMotion.main()#33:       Feuchtigkeit BME280 46.3 %
+22.11.2022 09:31:28- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 09:31:31- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 09:31:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 09:31:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 09:31:31- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 09:31:31- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 09:59:21- LampMotion.main()#5:  - 
+22.11.2022 09:59:21- LampMotion.main()#14: >>> Vers. 4.3.156/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1551, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 09:59:21- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 09:59:21- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 09:59:21- LampMotion.main()#10:     meine PID = '1551'
+22.11.2022 09:59:21- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 09:59:21- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 09:59:21- LampMotion.main()#13:     GPIO OK !
+22.11.2022 09:59:22- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 09:59:22- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 09:59:22- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 09:59:22- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 09:59:22- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 09:59:22- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 09:59:22- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 09:59:22- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 09:59:22- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 09:59:25- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 09:59:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 09:59:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 09:59:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 09:59:25- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:04:46- LampMotion.main()#5:  - 
+22.11.2022 10:04:46- LampMotion.main()#14: >>> Vers. 4.3.157/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1641, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:04:46- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:04:46- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:04:46- LampMotion.main()#10:     meine PID = '1641'
+22.11.2022 10:04:46- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:04:46- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:04:46- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:04:47- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:04:47- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:04:47- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:04:47- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:04:47- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:04:47- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:04:47- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:04:47- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:04:47- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:04:50- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:04:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:04:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:04:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:04:50- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:25:47- LampMotion.main()#5:  - 
+22.11.2022 10:25:47- LampMotion.main()#14: >>> Vers. 4.3.158/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1768, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:25:47- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:25:47- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:25:47- LampMotion.main()#10:     meine PID = '1768'
+22.11.2022 10:25:47- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:25:47- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:25:47- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:25:48- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:25:48- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:25:48- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:25:48- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:25:48- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:25:48- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:25:48- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:25:48- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:25:48- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:25:51- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:25:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:25:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:25:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:25:51- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:29:57- LampMotion.main()#5:  - 
+22.11.2022 10:29:57- LampMotion.main()#14: >>> Vers. 4.3.159/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1803, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:29:57- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:29:57- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:29:57- LampMotion.main()#10:     meine PID = '1803'
+22.11.2022 10:29:57- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:29:57- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:29:57- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:29:58- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:29:58- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:29:58- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:29:58- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:29:58- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:29:58- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:29:58- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:29:58- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:29:58- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:30:00- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:30:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:30:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:30:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:30:00- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:35:41- LampMotion.main()#5:  - 
+22.11.2022 10:35:41- LampMotion.main()#14: >>> Vers. 4.3.160/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1840, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:35:41- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:35:41- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:35:41- LampMotion.main()#10:     meine PID = '1840'
+22.11.2022 10:35:41- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:35:41- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:35:41- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:35:43- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:35:43- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:35:43- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:35:43- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:35:43- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:35:43- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:35:43- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:35:43- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:35:43- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:35:45- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:35:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:35:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:35:45- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:35:45- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:39:50- LampMotion.main()#5:  - 
+22.11.2022 10:39:50- LampMotion.main()#14: >>> Vers. 4.3.161/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1924, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:39:50- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:39:50- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:39:50- LampMotion.main()#10:     meine PID = '1924'
+22.11.2022 10:39:50- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:39:50- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:39:50- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:39:51- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:39:51- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:39:51- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:39:51- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:39:51- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:39:51- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:39:51- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:39:51- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:39:51- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:39:54- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:39:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:39:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:39:54- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:39:54- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:44:38- LampMotion.main()#5:  - 
+22.11.2022 10:44:38- LampMotion.main()#14: >>> Vers. 4.3.162/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1961, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:44:38- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:44:38- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:44:38- LampMotion.main()#10:     meine PID = '1961'
+22.11.2022 10:44:38- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:44:38- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:44:38- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:44:39- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:44:39- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:44:39- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:44:39- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:44:39- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:44:39- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:44:39- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:44:39- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:44:39- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:44:42- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:44:42- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:44:42- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:44:42- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:44:42- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:47:30- LampMotion.main()#5:  - 
+22.11.2022 10:47:30- LampMotion.main()#14: >>> Vers. 4.3.163/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 1995, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:47:30- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:47:30- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:47:30- LampMotion.main()#10:     meine PID = '1995'
+22.11.2022 10:47:30- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:47:30- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:47:30- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:47:31- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:47:31- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:47:31- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:47:31- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:47:31- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:47:31- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:47:31- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:47:31- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:47:31- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:47:33- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:47:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:47:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:47:33- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:47:33- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:49:36- LampMotion.main()#5:  - 
+22.11.2022 10:49:36- LampMotion.main()#14: >>> Vers. 4.3.164/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2028, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:49:36- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:49:36- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:49:36- LampMotion.main()#10:     meine PID = '2028'
+22.11.2022 10:49:36- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:49:36- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:49:36- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:49:37- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:49:37- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:49:37- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:49:37- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:49:37- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:49:37- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:49:37- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:49:37- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:49:37- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:49:40- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:49:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:49:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:49:40- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:49:40- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:51:23- LampMotion.main()#5:  - 
+22.11.2022 10:51:23- LampMotion.main()#14: >>> Vers. 4.3.165/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2063, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:51:23- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:51:23- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:51:23- LampMotion.main()#10:     meine PID = '2063'
+22.11.2022 10:51:23- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:51:23- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:51:23- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:51:24- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:51:24- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:51:24- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:51:24- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:51:24- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:51:24- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:51:24- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:51:24- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:51:24- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:51:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:51:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:51:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:51:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:51:26- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:52:58- LampMotion.main()#5:  - 
+22.11.2022 10:52:58- LampMotion.main()#14: >>> Vers. 4.3.166/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2095, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:52:58- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:52:58- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:52:58- LampMotion.main()#10:     meine PID = '2095'
+22.11.2022 10:52:58- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:52:58- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:52:58- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:52:59- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:52:59- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:52:59- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:52:59- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:52:59- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:52:59- LampMotion.main()#29:       Luftdruck BME280  0 hPa
+22.11.2022 10:52:59- LampMotion.main()#31:       Temperatur BME280 0.0 °C
+22.11.2022 10:52:59- LampMotion.main()#33:       Feuchtigkeit BME280 0.0 %
+22.11.2022 10:52:59- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:53:02- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:53:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:53:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:53:02- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:53:02- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 10:54:11- LampMotion.main()#5:  - 
+22.11.2022 10:54:11- LampMotion.main()#14: >>> Vers. 4.3.166/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2100, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 10:54:11- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 10:54:11- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 10:54:11- LampMotion.main()#10:     meine PID = '2100'
+22.11.2022 10:54:11- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 10:54:11- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 10:54:11- LampMotion.main()#13:     GPIO OK !
+22.11.2022 10:54:12- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 10:54:12- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 10:54:12- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 10:54:12- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 10:54:12- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 10:54:12- LampMotion.main()#29:       Luftdruck BME280 652 hPa
+22.11.2022 10:54:12- LampMotion.main()#31:       Temperatur BME280 21.6 °C
+22.11.2022 10:54:12- LampMotion.main()#33:       Feuchtigkeit BME280 74.5 %
+22.11.2022 10:54:12- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 10:54:14- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 10:54:14- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 10:54:14- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 10:54:14- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 10:54:14- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 11:12:22- LampMotion.main()#5:  - 
+22.11.2022 11:12:22- LampMotion.main()#14: >>> Vers. 4.3.168/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2270, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 11:12:22- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 11:12:22- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 11:12:22- LampMotion.main()#10:     meine PID = '2270'
+22.11.2022 11:12:22- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 11:12:22- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 11:12:22- LampMotion.main()#13:     GPIO OK !
+22.11.2022 11:12:23- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 11:12:23- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 11:12:23- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 11:12:23- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 11:12:23- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 11:12:23- LampMotion.main()#29:       Luftdruck BME280 996 hPa
+22.11.2022 11:12:23- LampMotion.main()#31:       Temperatur BME280 25.9 °C
+22.11.2022 11:12:23- LampMotion.main()#33:       Feuchtigkeit BME280 39.0 %
+22.11.2022 11:12:23- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 11:12:25- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 11:12:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 11:12:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 11:12:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 11:12:25- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 11:13:40- LampMotion.main()#5:  - 
+22.11.2022 11:13:40- LampMotion.main()#14: >>> Vers. 4.3.168/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2275, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 11:13:40- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 11:13:40- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 11:13:40- LampMotion.main()#10:     meine PID = '2275'
+22.11.2022 11:13:40- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 11:13:40- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 11:13:40- LampMotion.main()#13:     GPIO OK !
+22.11.2022 11:13:41- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 11:13:41- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 11:13:41- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 11:13:41- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 11:13:41- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 11:13:43- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 11:13:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 11:13:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 11:13:43- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 11:13:43- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 11:20:40- LampMotion.main()#5:  - 
+22.11.2022 11:20:40- LampMotion.main()#14: >>> Vers. 4.3.169/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2318, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 11:20:40- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 11:20:40- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 11:20:40- LampMotion.main()#10:     meine PID = '2318'
+22.11.2022 11:20:40- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 11:20:40- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 11:20:40- LampMotion.main()#13:     GPIO OK !
+22.11.2022 11:20:41- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 11:20:41- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 11:20:41- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 11:20:41- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 11:20:41- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 11:20:48- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 11:20:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 11:20:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 11:20:48- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 11:20:48- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 12:59:18- LampMotion.main()#5:  - 
+22.11.2022 12:59:18- LampMotion.main()#14: >>> Vers. 4.3.170/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2588, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 12:59:18- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 12:59:18- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 12:59:18- LampMotion.main()#10:     meine PID = '2588'
+22.11.2022 12:59:18- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 12:59:18- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 12:59:18- LampMotion.main()#13:     GPIO OK !
+22.11.2022 12:59:19- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 12:59:19- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 12:59:19- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 12:59:19- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 12:59:19- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 12:59:19- LampMotion.main()#29:       Luftdruck BME280 652 hPa
+22.11.2022 12:59:19- LampMotion.main()#31:       Temperatur BME280 21.6 °C
+22.11.2022 12:59:19- LampMotion.main()#33:       Feuchtigkeit BME280 74.5 %
+22.11.2022 12:59:19- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 12:59:22- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 12:59:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 12:59:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 12:59:22- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 12:59:22- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:00:15- LampMotion.main()#5:  - 
+22.11.2022 13:00:15- LampMotion.main()#14: >>> Vers. 4.3.171/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2619, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:00:15- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:00:15- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:00:15- LampMotion.main()#10:     meine PID = '2619'
+22.11.2022 13:00:15- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:00:15- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:00:15- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:00:16- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:00:16- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:00:16- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:00:16- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:00:16- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 13:00:16- LampMotion.main()#29:       Luftdruck BME280 996 hPa
+22.11.2022 13:00:16- LampMotion.main()#31:       Temperatur BME280 22.1 °C
+22.11.2022 13:00:16- LampMotion.main()#33:       Feuchtigkeit BME280 42.9 %
+22.11.2022 13:00:16- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 13:00:18- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:00:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:00:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:00:18- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:00:18- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:00:48- LampMotion.main()#5:  - 
+22.11.2022 13:00:48- LampMotion.main()#14: >>> Vers. 4.3.171/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2625, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:00:48- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:00:48- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:00:48- LampMotion.main()#10:     meine PID = '2625'
+22.11.2022 13:00:48- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:00:48- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:00:48- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:00:49- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:00:49- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:00:49- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:00:49- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:00:49- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 13:00:49- LampMotion.main()#29:       Luftdruck BME280 996 hPa
+22.11.2022 13:00:49- LampMotion.main()#31:       Temperatur BME280 22.0 °C
+22.11.2022 13:00:49- LampMotion.main()#33:       Feuchtigkeit BME280 42.8 %
+22.11.2022 13:00:49- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 13:00:51- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:00:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:00:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:00:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:00:51- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:02:57- LampMotion.main()#5:  - 
+22.11.2022 13:02:57- LampMotion.main()#14: >>> Vers. 4.3.172/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2654, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:02:57- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:02:57- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:02:57- LampMotion.main()#10:     meine PID = '2654'
+22.11.2022 13:02:57- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:02:57- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:02:57- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:02:58- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:02:58- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:02:58- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:02:58- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:02:58- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 13:02:58- LampMotion.main()#29:       Luftdruck BME280 996 hPa
+22.11.2022 13:02:58- LampMotion.main()#31:       Temperatur BME280 22.1 °C
+22.11.2022 13:02:58- LampMotion.main()#33:       Feuchtigkeit BME280 43.2 %
+22.11.2022 13:02:58- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 13:03:00- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:03:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:03:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:03:00- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:03:00- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:06:13- LampMotion.main()#5:  - 
+22.11.2022 13:06:13- LampMotion.main()#14: >>> Vers. 4.3.173/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2684, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:06:13- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:06:13- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:06:13- LampMotion.main()#10:     meine PID = '2684'
+22.11.2022 13:06:13- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:06:13- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:06:13- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:06:14- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:06:14- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:06:14- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:06:14- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:06:14- LampMotion.main()#27:     Sensor BME280 OK !
+22.11.2022 13:06:14- LampMotion.main()#29:       Luftdruck BME280 996 hPa
+22.11.2022 13:06:14- LampMotion.main()#31:       Temperatur BME280 22.3 °C
+22.11.2022 13:06:14- LampMotion.main()#33:       Feuchtigkeit BME280 42.3 %
+22.11.2022 13:06:14- LampMotion.main()#22:     Sensor TLS2561 OK !
+22.11.2022 13:06:17- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:06:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:06:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:06:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:06:17- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:20:22- LampMotion.main()#5:  - 
+22.11.2022 13:20:22- LampMotion.main()#14: >>> Vers. 4.3.174/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2789, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:20:22- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:20:22- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:20:22- LampMotion.main()#10:     meine PID = '2789'
+22.11.2022 13:20:22- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:20:22- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:20:22- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:20:23- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:20:23- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:20:23- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:20:23- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:20:23- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 13:20:23- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 13:20:23- LampMotion.main()#34:       Temperatur = 22.5 °C
+22.11.2022 13:20:23- LampMotion.main()#38:       Feuchtigkeit = 42.0 %
+22.11.2022 13:20:23- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 13:20:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:20:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:20:26- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:23:11- LampMotion.main()#5:  - 
+22.11.2022 13:23:11- LampMotion.main()#14: >>> Vers. 4.3.176/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2905, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:23:11- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:23:11- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:23:11- LampMotion.main()#10:     meine PID = '2905'
+22.11.2022 13:23:12- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:23:12- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:23:12- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:23:13- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:23:13- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:23:13- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:23:13- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:23:13- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 13:23:13- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 13:23:13- LampMotion.main()#34:       Temperatur = 23.1 °C
+22.11.2022 13:23:13- LampMotion.main()#38:       Feuchtigkeit = 41.6 %
+22.11.2022 13:23:13- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 13:23:15- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:23:15- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:27:40- LampMotion.main()#5:  - 
+22.11.2022 13:27:40- LampMotion.main()#14: >>> Vers. 4.3.177/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2938, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:27:40- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:27:40- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:27:40- LampMotion.main()#10:     meine PID = '2938'
+22.11.2022 13:27:40- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:27:40- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:27:40- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:27:41- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:27:41- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:27:41- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:27:41- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:27:41- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 13:27:41- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 13:27:41- LampMotion.main()#34:       Temperatur = 23.2 °C
+22.11.2022 13:27:41- LampMotion.main()#38:       Feuchtigkeit = 41.5 %
+22.11.2022 13:27:41- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 13:27:44- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:27:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:27:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:27:44- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:27:44- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:30:14- LampMotion.main()#5:  - 
+22.11.2022 13:30:14- LampMotion.main()#14: >>> Vers. 4.3.178/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 2975, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:30:14- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:30:14- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:30:14- LampMotion.main()#10:     meine PID = '2975'
+22.11.2022 13:30:14- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:30:14- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:30:14- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:30:15- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:30:15- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:30:15- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:30:15- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:30:15- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 13:30:15- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 13:30:15- LampMotion.main()#34:       Temperatur = 23.3 °C
+22.11.2022 13:30:15- LampMotion.main()#38:       Feuchtigkeit = 41.3 %
+22.11.2022 13:30:15- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 13:30:17- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:30:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:30:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:30:17- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:30:17- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 13:31:54- LampMotion.main()#5:  - 
+22.11.2022 13:31:54- LampMotion.main()#14: >>> Vers. 4.3.179/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3002, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 13:31:54- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 13:31:54- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 13:31:54- LampMotion.main()#10:     meine PID = '3002'
+22.11.2022 13:31:54- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 13:31:54- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 13:31:54- LampMotion.main()#13:     GPIO OK !
+22.11.2022 13:31:56- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 13:31:56- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 13:31:56- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 13:31:56- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 13:31:56- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 13:31:56- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 13:31:56- LampMotion.main()#34:       Temperatur = 23.3 °C
+22.11.2022 13:31:56- LampMotion.main()#38:       Feuchtigkeit = 41.4 %
+22.11.2022 13:31:56- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 13:31:58- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 13:31:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 13:31:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 13:31:58- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 13:31:58- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 14:41:47- LampMotion.main()#5:  - 
+22.11.2022 14:41:47- LampMotion.main()#14: >>> Vers. 4.3.180/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3278, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 14:41:47- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 14:41:47- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 14:41:47- LampMotion.main()#10:     meine PID = '3278'
+22.11.2022 14:41:47- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 14:41:47- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 14:41:47- LampMotion.main()#13:     GPIO OK !
+22.11.2022 14:41:48- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 14:41:48- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 14:41:48- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 14:41:48- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 14:41:48- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 14:41:48- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 14:41:48- LampMotion.main()#34:       Temperatur = 23.4 °C
+22.11.2022 14:41:48- LampMotion.main()#38:       Feuchtigkeit = 41.3 %
+22.11.2022 14:41:48- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 14:41:50- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 14:41:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 14:41:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 14:41:50- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 14:41:50- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 14:47:50- LampMotion.main()#5:  - 
+22.11.2022 14:47:50- LampMotion.main()#14: >>> Vers. 4.3.181/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3326, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 14:47:50- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 14:47:50- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 14:47:50- LampMotion.main()#10:     meine PID = '3326'
+22.11.2022 14:47:50- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 14:47:50- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 14:47:50- LampMotion.main()#13:     GPIO OK !
+22.11.2022 14:47:51- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 14:47:51- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 14:47:51- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 14:47:51- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 14:47:51- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 14:47:51- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 14:47:51- LampMotion.main()#34:       Temperatur = 23.2 °C
+22.11.2022 14:47:51- LampMotion.main()#38:       Feuchtigkeit = 43.4 %
+22.11.2022 14:47:51- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 14:53:22- LampMotion.main()#5:  - 
+22.11.2022 14:53:22- LampMotion.main()#14: >>> Vers. 4.3.182/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3365, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 14:53:22- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 14:53:22- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 14:53:22- LampMotion.main()#10:     meine PID = '3365'
+22.11.2022 14:53:22- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 14:53:22- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 14:53:22- LampMotion.main()#13:     GPIO OK !
+22.11.2022 14:53:23- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 14:53:23- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 14:53:23- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 14:53:23- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 14:53:23- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 14:53:23- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 14:53:23- LampMotion.main()#34:       Temperatur = 23.1 °C
+22.11.2022 14:53:23- LampMotion.main()#38:       Feuchtigkeit = 43.9 %
+22.11.2022 14:53:23- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 14:53:25- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 14:53:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 14:53:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 14:53:25- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 14:53:25- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 14:54:36- LampMotion.main()#5:  - 
+22.11.2022 14:54:36- LampMotion.main()#14: >>> Vers. 4.3.183/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3391, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 14:54:36- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 14:54:36- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 14:54:36- LampMotion.main()#10:     meine PID = '3391'
+22.11.2022 14:54:36- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 14:54:36- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 14:54:36- LampMotion.main()#13:     GPIO OK !
+22.11.2022 14:54:37- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 14:54:37- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 14:54:37- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 14:54:37- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 14:54:37- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 14:54:37- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 14:54:37- LampMotion.main()#34:       Temperatur = 23.0 °C
+22.11.2022 14:54:37- LampMotion.main()#38:       Feuchtigkeit = 45.1 %
+22.11.2022 14:54:37- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 14:54:39- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 14:54:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 14:54:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 14:54:39- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 14:54:39- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 14:57:23- LampMotion.main()#5:  - 
+22.11.2022 14:57:23- LampMotion.main()#14: >>> Vers. 4.3.184/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3419, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 14:57:23- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 14:57:23- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 14:57:23- LampMotion.main()#10:     meine PID = '3419'
+22.11.2022 14:57:23- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 14:57:23- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 14:57:23- LampMotion.main()#13:     GPIO OK !
+22.11.2022 14:57:24- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 14:57:24- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 14:57:24- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 14:57:24- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 14:57:24- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 14:57:24- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 14:57:24- LampMotion.main()#34:       Temperatur = 23.0 °C
+22.11.2022 14:57:24- LampMotion.main()#38:       Feuchtigkeit = 45.2 %
+22.11.2022 14:57:24- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 14:57:26- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 14:57:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 14:57:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 14:57:26- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 14:57:26- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 15:04:32- LampMotion.main()#5:  - 
+22.11.2022 15:04:32- LampMotion.main()#14: >>> Vers. 4.3.185/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3477, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 15:04:32- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 15:04:32- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 15:04:32- LampMotion.main()#10:     meine PID = '3477'
+22.11.2022 15:04:32- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 15:04:32- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 15:04:32- LampMotion.main()#13:     GPIO OK !
+22.11.2022 15:04:33- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 15:04:33- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 15:04:33- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 15:04:33- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 15:04:33- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 15:04:33- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 15:04:33- LampMotion.main()#34:       Temperatur = 23.0 °C
+22.11.2022 15:04:33- LampMotion.main()#38:       Feuchtigkeit = 45.2 %
+22.11.2022 15:04:34- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 15:04:36- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 15:04:36- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 15:04:36- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 15:10:23- LampMotion.main()#5:  - 
+22.11.2022 15:10:23- LampMotion.main()#14: >>> Vers. 4.3.186/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3628, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 15:10:23- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 15:10:23- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 15:10:23- LampMotion.main()#10:     meine PID = '3628'
+22.11.2022 15:10:23- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 15:10:23- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 15:10:23- LampMotion.main()#13:     GPIO OK !
+22.11.2022 15:10:24- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 15:10:24- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 15:10:24- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 15:10:24- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 15:10:24- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 15:10:24- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 15:10:24- LampMotion.main()#34:       Temperatur = 22.8 °C
+22.11.2022 15:10:24- LampMotion.main()#38:       Feuchtigkeit = 45.1 %
+22.11.2022 15:10:24- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 15:10:27- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 15:10:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 15:10:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 15:10:27- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 15:10:27- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 15:13:48- LampMotion.main()#5:  - 
+22.11.2022 15:13:48- LampMotion.main()#14: >>> Vers. 4.3.187/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3657, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 15:13:48- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 15:13:48- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 15:13:48- LampMotion.main()#10:     meine PID = '3657'
+22.11.2022 15:13:48- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 15:13:48- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 15:13:48- LampMotion.main()#13:     GPIO OK !
+22.11.2022 15:13:49- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 15:13:49- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 15:13:49- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 15:13:49- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 15:13:49- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 15:13:49- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 15:13:49- LampMotion.main()#34:       Temperatur = 22.9 °C
+22.11.2022 15:13:49- LampMotion.main()#38:       Feuchtigkeit = 46.0 %
+22.11.2022 15:13:49- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 15:13:51- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 15:13:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 15:13:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 15:13:51- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 15:13:51- LampMotion.main()#11: ----------<<< init done >>>----------
+22.11.2022 15:35:17- LampMotion.main()#5:  - 
+22.11.2022 15:35:17- LampMotion.main()#14: >>> Vers. 4.3.189/Nov 22 2022   ************ Start 'LampMotion' ************
+                                             - PID 3810, User 1000, Group 1000, Anzahl Argumente: '1' 
+22.11.2022 15:35:17- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+22.11.2022 15:35:17- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+22.11.2022 15:35:17- LampMotion.main()#10:     meine PID = '3810'
+22.11.2022 15:35:17- LampMotion.main()#11:     meine IPs: '192.168.0.196'
+22.11.2022 15:35:17- LampMotion.main()#29:     meine IP-Kennung: '196'
+22.11.2022 15:35:17- LampMotion.main()#13:     GPIO OK !
+22.11.2022 15:35:19- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+22.11.2022 15:35:19- LampMotion.main()#38:       Sensor(0) = '28-95d62f1864ff'
+22.11.2022 15:35:19- LampMotion.main()#38:       Sensor(1) = '28-00044cb880ff'
+22.11.2022 15:35:19- LampMotion.main()#38:       Sensor(2) = '28-818b891d64ff'
+22.11.2022 15:35:19- LampMotion.main()#26:     Sensor BME280 OK !
+22.11.2022 15:35:19- LampMotion.main()#30:       Luftdruck = 996 hPa
+22.11.2022 15:35:19- LampMotion.main()#34:       Temperatur = 22.9 °C
+22.11.2022 15:35:19- LampMotion.main()#38:       Feuchtigkeit = 45.2 %
+22.11.2022 15:35:19- LampMotion.main()#24:     Sensor TLS2561 OK !
+22.11.2022 15:35:21- LampMotion.main()#20:     MQTT Vers.'2.00.11' OK !
+22.11.2022 15:35:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+22.11.2022 15:35:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+22.11.2022 15:35:21- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+22.11.2022 15:35:21- LampMotion.main()#11: ----------<<< init done >>>----------
