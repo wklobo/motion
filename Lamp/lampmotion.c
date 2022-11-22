@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-11-20 - 14:26:29                                    *//
+//* Last change:   2022-11-22 - 17:47:09                                   *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -19,7 +19,7 @@
 //***************************************************************************//
 
 #define _MODUL0
-#define __LAMPMOTION_DEBUG__      true
+#define __LAMPMOTION_DEBUG__      false
 #define __LAMPMOTION_DEBUG_INIT__ true
 #define __LAMPMOTION_DEBUG_MQTT__ false
 #define __LAMPMOTION_DEBUG_1__    false
@@ -104,10 +104,10 @@ static bool Automatic = false;        // Steuerung IR-Lampem
 
 // LED-Steuerung (Ersatz für motLED.c)
 // -------------------------------------
-#define LED_EIN      0
-#define LED_AUS      1
-#define LED_HELL     1                    /* IR-Lampen */
-#define LED_DUNKEL   0
+//#define LED_EIN      0
+//#define LED_AUS      1
+//#define LED_HELL     1                    /* IR-Lampen */
+//#define LED_DUNKEL   0
 //
 //// Pin-Nummerierung: WiringPi
 //// --------------------------

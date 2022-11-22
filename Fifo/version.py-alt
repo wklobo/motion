@@ -1,6 +1,6 @@
 #!/usr/bin/python
-# -*- coding: cp852 -*-
-# 2022-06-18 - 09:42:07
+# -*- coding: utf-8 -*-
+# 2014-04-01; 
 import os
 
 vers = open("version.h")
@@ -13,7 +13,7 @@ for line in vers:
     vi=int(vs)+1
     newline = myline[0:pos+7] + str(vi)
     temp.write(newline + '\n')
-    print (newline)
+    print(newline)
   else:
     temp.write(myline + '\n')
 vers.close()
