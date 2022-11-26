@@ -3,7 +3,7 @@
 ##* File:          Makefile                                                                   *//
 ##* Author:        Wolfgang Keuch                                                             *//
 ##* Creation date: 2021-04-05;                                                                *//
-##* Last change:   2022-11-20 - 14:05:14                                                      *//
+##* Last change:   2022-11-23 - 11:52:10                                                      *//
 ##* Description:   Makefile für 'LampMotion'                                                  *//
 ##*                                                                                           *//
 ##*********************************************************************************************//
@@ -35,8 +35,7 @@ OBJ_H = $(wildcard  ${DIR_MAIL}/*.h  ${DIR_COMMON}/*.h  ${DIR_SENSOR}/*.h  ${DIR
 OBJ_O = $(patsubst %.c, ${DIR_BIN}/%.o, $(notdir ${OBJ_C}))
 
 
-DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment '-D PROGNAME="${TARGET}"' '-D  ${TARGET}=1'
-#DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment -D PROGNAME="${TARGET}"
+DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment '-D PROGNAME="${TARGET}"' '-D VOGEL=1'
 CFLAGS += $(DEBUG)  -lmysqlclient  -lmosquitto  -li2c
 
 LIBS = -lwiringPi -lmysqlclient  -lmosquitto  -lm  -li2c
@@ -45,14 +44,15 @@ INCLUDE	= -I/usr/include -I/usr/local/include -I/usr/include/mysql
 
 # die OBJs zusammenbinden:
 # ------------------------
+# Listen zum Debuggen!
 $(TARGET) : ${OBJ_O}
 	@echo
-	@echo   ----- C-Liste: ${OBJ_C} -----
-	@echo
-	@echo   ----- H-Liste: ${OBJ_H} -----
-	@echo
-	@echo   ----- Objekt-Liste: ${OBJ_O} -----
-	@echo
+#	@echo   ----- C-Liste: ${OBJ_C} -----
+#	@echo
+#	@echo   ----- H-Liste: ${OBJ_H} -----
+#	@echo
+#	@echo   ----- Objekt-Liste: ${OBJ_O} -----
+#	@echo
 	@echo --- Making ${TARGET} ---
 	$(CC) $(CFLAGS) $(OBJ_O) -o $@ $(LIBS) $(INCLUDE)  
 	./version.py
@@ -100,7 +100,7 @@ ${DIR_BIN}/%.o : $(DIR_COMMON)/%.c	$(DIR_COMMON)/%.h  Makefile
 
 ## DBank:
 ## --------
-${DIR_BIN}/%.o : $(DIR_DBANK)/%.c	$(DIR_DBANK)/%.h	 Makefile
+${DIR_BIN}/%.o : $(DIR_DBANK)/%.c	$(DIR_DBANK)/%.h	$(DIR_DBANK)/sensor_db.h   Makefile
 	@echo
 	@echo -- D -- Compiling ${DIR_DBANK}/$(notdir $<)
 	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS) $(INCLUDE)

@@ -2,7 +2,7 @@
 //* File:          mydatabase.h                                                               *//
 //* Author:        Wolfgang Keuch                                                             *//
 //* Creation date: 2022-07-09                                                                 *//
-//* Last change:   2022-10-20 - 17:19:59                                                      *//
+//* Last change:   2022-11-24 - 15:53:09                                                      *//
 //* Description:   Individuelle Beschreibung der Datenbanken                                  *//
 //*                wird in 'createdb' umgesetzt                                               *//
 //*                                                                                           *//
@@ -45,7 +45,7 @@ void Sitetable(){}    // um in UltraEdit sichtbar zu sein
 
 #define SITEFIELDS   " ( `keyID` int(12) NOT NULL AUTO_INCREMENT  COMMENT 'Primärindex',\
                          `Datum` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, \
-                         `Name` char(32)   NOT NULL               COMMENT 'der Rechner-Name', \
+                         `Name` char(32)   NOT NULL  UNIQUE       COMMENT 'der Rechner-Name', \
                          `Ort` char(64)    DEFAULT NULL           COMMENT 'wo steht dieser Rechner', \
                          `Typ` char(32)    DEFAULT NULL           COMMENT 'der Rechnertyp', \
                          `Adresse` char(16)  NOT NULL  UNIQUE     COMMENT 'die IP-Adresse' , \
@@ -171,7 +171,7 @@ void Sensortable(){}
 
 #define SENSORFIELDS   " ( `keyID` int(12) NOT NULL AUTO_INCREMENT    COMMENT 'Primärindex', \
                            `Datum` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, \
-                           `Name`  char(32)   NOT NULL                COMMENT 'vergebener Name bzw. Name aus MQTT', \
+                           `Name`  char(32)  NOT NULL  UNIQUE         COMMENT 'vergebener Name bzw. Name aus MQTT', \
                            `Serial` char(32)                          COMMENT 'optionale Seriennummer', \
                            `rType` int(12)   NOT NULL                 COMMENT 'Link zur Typ-Tabelle', \
                            `rSite` int(12)   NOT NULL                 COMMENT 'Link zur Standort-Tabelle', \

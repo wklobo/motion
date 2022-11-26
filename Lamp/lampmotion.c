@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-11-22 - 17:47:09                                   *//
+//* Last change:   2022-11-25 - 11:13:39                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -36,7 +36,7 @@
 #define __GPIO__           true    /* GPIOs über 'gpio.c'       */
 #define __MQTT__           true    /* Mosquitto                 */
 #define __INTERRUPT__      false   /* Interrupt Geigerzähler    */
-#define __DATENBANK__      false   /* Datenbank                 */
+#define __DATENBANK__      true    /* Datenbank                 */
 
 
 // Einstellungen für Sensoren
@@ -54,6 +54,7 @@
 #include <stdio.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <mysql.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <syslog.h>
@@ -65,28 +66,23 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-// http://wiringpi.com/reference/i2c-library/
-// ------------------------------------------
-// hier: direkter Zugriff auf GPIO
-#include <wiringPi.h>
-#include <wiringPiI2C.h>
-
 #include "/home/pi/treiber/common/gpio.h"
-#include "/home/pi/treiber/common/common.h"
 #include "/home/pi/treiber/common/mqtt.h"
 #include "/home/pi/treiber/common/error.h"
-#include "/home/pi/treiber/common/datetime.h"
-#include "/home/pi/treiber/common/mqtthelp.h"
+#include "/home/pi/treiber/common/common.h"
 #include "/home/pi/treiber/sensor/bme280.h"
 #include "/home/pi/treiber/sensor/ds18b20.h"
 #include "/home/pi/treiber/sensor/tsl2561.h"
+#include "/home/pi/treiber/common/datetime.h"
+#include "/home/pi/treiber/common/mqtthelp.h"
 #include "/home/pi/treiber/sendmail/sendMail.h"
+
+#include "/home/pi/treiber/dbank/createdb.h"
+#include "/home/pi/treiber/dbank/sensor_db.h"
+
 
 // statische Variable
 // --------------------
-//static char s_Hostname[ZEILE];          // der Name dieses Rechners
-//static char meineIPAdr[NOTIZ];        // die IP-Adresse dieses Rechners
-//static char* s_IPnmr;                   // letzte Stelle der IP-Adresse
 static time_t ErrorFlag = 0;          // Steuerung rote LED
 static bool Automatic = false;        // Steuerung IR-Lampem
 
@@ -99,27 +95,6 @@ static bool Automatic = false;        // Steuerung IR-Lampem
 
 #define SENDETAKT      60   // für Sensoren [sec]
 #define ABFRAGETAKT   250   // für MQTT [msec]
-
-// *** vorläufig ***
-
-// LED-Steuerung (Ersatz für motLED.c)
-// -------------------------------------
-//#define LED_EIN      0
-//#define LED_AUS      1
-//#define LED_HELL     1                    /* IR-Lampen */
-//#define LED_DUNKEL   0
-//
-//// Pin-Nummerierung: WiringPi
-//// --------------------------
-//#define M_LED_ROT      15  /* Pin  8  */
-//#define M_LED_GELB     16  /* Pin 10  */
-//#define M_LED_GRUEN     1  /* Pin 12  */
-//#define M_LED_BLAU      4  /* Pin 16  */
-//#define M_LED_GRUEN1   24  /* Pin 35  */
-//#define M_LED_BLAU1    25  /* Pin 37  */
-//#define M_LAMP_IRRIGHT  2  /* Pin 13 - IR-Lampe rechts */ // /home/pi/motion/Pin/Pin 16 0
-//#define M_LAMP_IRLEFT   0  /* Pin 11 - IR-Lampe links  */
-
 
 //***************************************************************************//
 /*
@@ -199,13 +174,20 @@ static bool   s_aborted = false;                // Status Signale SIGTERM und SI
 
 static struct MqttInfo* mqtt = NULL;            // das MQTT-Objekt
 #if __MQTT__
-//  #define __DATENBANK__      true               /* Datenbank wird benötigt */
+	#undef  __DATENBANK__
+  #define __DATENBANK__      true               /* Datenbank wird benötigt */
 #endif
 
 
 #if __DATENBANK__
   static MYSQL* con = NULL;                     // Verbindung zur Datenbank
-  #define __DATENBANK__      true               /* Datenbank wird benötigt */
+  long ID_Site = -1;														// KeyID dieses Rechners in der Datenbank
+	long ID_ds18B20[MAXDS18B20] = {-1};						// KeyIDs ds18B20-Sensoren
+//	long ID_bme280_Temp = -1;											// KeyID BME280-Sensor Temperatur
+//	long ID_bme280_Press = -1;										// KeyID BME280-Sensor Luftdruck
+//	long ID_bme280_Humi = -1;											// KeyID BME280-Sensor Feuchtigkeit
+	long ID_bme280[DREI] = {-1};									// alle BME28-Sensoren
+	long ID_tsl2561 = -1;                         // KeyID TSL2561
 #endif
 
 
@@ -327,37 +309,6 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 
 // alle DS18B20-Sensoren einlesen
 // -------------------------------
-int initds18b20(void)
-{
-  int sensoren = ds18b20_Refresh();
-  if (sensoren > 0)
-  {
-    DEBUG(">> %s---%s()#%d: Anzahl DS18B20-Sensoren: %d\n",
-                                              __NOW__, __FUNCTION__, __LINE__, sensoren);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    %d DS18B20-Sensoren:", sensoren);
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-    for (int ix=0; ix < sensoren; ix++)
-    {
-      char SensorName[NOTIZ];
-      if( ds18b20_Name(ix, SensorName))
-      {
-        DEBUG(">>  %s---%s()#%d: Sensor(%d) = '%s'\n",
-                                              __NOW__, __FUNCTION__, __LINE__, ix, SensorName);
-        { // --- Log-Ausgabe ---------------------------------------------------------
-          char LogText[ZEILE];  sprintf(LogText, "      Sensor(%d) = '%s'", ix, SensorName);
-          MYLOG(LogText);
-        } // ------------------------------------------------------------------------
-      }
-    }
-  }
-  return sensoren;
-}
-//************************************************************
-
-// ds18b20-Sensoren lesen
-// ----------------------
 #define NAME "DS1820"   /* eindeutiger Name */
 int readds18b20(int sensoren, void* mqtt)
 {
@@ -440,17 +391,21 @@ int readCPUtemp(void* mqtt)
 {
   char myName[] = "INTERN";            // eindeutiger Name
   float Temperatur = InternalTemperatur();
-  char Topic[ZEILE]={'\0'};
-  char Payload[ZEILE]={'\0'};
-  DEBUG(">> %s---%s()#%d: CPU-Temperatur = '%.1f'\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Temperatur);
-  // -- MQTT --
-  sprintf (Topic, MQTT_TOPIC,
-                    s_Hostname, s_IPnmr, D_INTERN, myName, time(0), MSG_VALUE, INF_REGULAR);
-  sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "in der CPU");
-  DEBUG(">> %s---%s()#%d:  Topic = \"%s  \" --- Payload = \"%s\"\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-  MQTT_Publish(mqtt, Topic, Payload);
+  
+  if (mqtt > NULL)
+  {
+    char Topic[ZEILE]={'\0'};
+    char Payload[ZEILE]={'\0'};
+    DEBUG(">> %s---%s()#%d: CPU-Temperatur = '%.1f'\n",
+                                                __NOW__, __FUNCTION__, __LINE__, Temperatur);
+    // -- MQTT --
+    sprintf (Topic, MQTT_TOPIC,
+                      s_Hostname, s_IPnmr, D_INTERN, myName, time(0), MSG_VALUE, INF_REGULAR);
+    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "in der CPU");
+    DEBUG(">> %s---%s()#%d:  Topic = \"%s  \" --- Payload = \"%s\"\n",
+                                                __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
+    MQTT_Publish(mqtt, Topic, Payload);
+  }
 
   return 0;
 }
@@ -830,6 +785,11 @@ int main(int argc, char *argv[])
   #include "/home/pi/treiber/snippets/get_myip.snip"
 
 
+	// Datenbank-Initialisierung  
+	// ---------------------------
+  #include "/home/pi/treiber/snippets/createdb_init.snip"
+
+
   // Ist GPIO klar?
   // --------------
   #include "/home/pi/treiber/snippets/gpio_init.snip"
@@ -856,6 +816,12 @@ int main(int argc, char *argv[])
     digitalWrite (M_LAMP_IRLEFT,    LED_DUNKEL);
   }
 
+
+  // CPU-Temperatur aktivieren
+  // -------------------------------
+  #include "/home/pi/treiber/snippets/init_intern.snip"
+
+
   // LCD-Display aktivieren  
   // -----------------------
   #include "/home/pi/treiber/snippets/lcddisplay_init.snip"
@@ -877,6 +843,7 @@ int main(int argc, char *argv[])
 
 
   digitalWrite (M_LED_BLAU1, LED_EIN);
+
 
   // MQTT starten
   // --------------
