@@ -3,7 +3,7 @@
 //* File:          lampmotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2021-04-05;                                              *//
-//* Last change:   2022-11-25 - 11:13:39                                    *//
+//* Last change:   2022-11-28 - 15:32:03                                    *//
 //* Description:   Nistkastenprogramm - ergänzt 'fifomotion':               *//
 //*                Steuerung der Infrarot-Lampen                            *//
 //*                Verwaltung der Umwelt-Sensoren                           *//
@@ -12,7 +12,7 @@
 //* 12. November 2022 - Umstellung auf Hilfsfunktionen in 'treiber'         *//
 //*                                                                         *//
 //* Copyright (C) 2014-23 by Wolfgang Keuch                                 *//
-//*                                                                         *// 
+//*                                                                         *//
 //* Aufruf:                                                                 *//
 //*    ./LampMotion &    (Daemon)                                           *//
 //*                                                                         *//
@@ -20,7 +20,7 @@
 
 #define _MODUL0
 #define __LAMPMOTION_DEBUG__      false
-#define __LAMPMOTION_DEBUG_INIT__ true
+#define __LAMPMOTION_DEBUG_INIT__ false
 #define __LAMPMOTION_DEBUG_MQTT__ false
 #define __LAMPMOTION_DEBUG_1__    false
 #define __LAMPMOTION_DEBUG_2__    false
@@ -93,7 +93,7 @@ static bool Automatic = false;        // Steuerung IR-Lampem
 //                RESP_NOSUPPORT,
 //                RESP_FEHLER};
 
-#define SENDETAKT      60   // für Sensoren [sec]
+#define SENDETAKT      20   // für Sensoren [sec]
 #define ABFRAGETAKT   250   // für MQTT [msec]
 
 //***************************************************************************//
@@ -143,7 +143,7 @@ char   s_meineIPAdr[NOTIZ];                     // die IP-Adresse dieses Rechner
 uint   s_IPnmr=0;                               // letzte Stelle der IP-Adresse
 long   s_pid=0;                                 // meine Prozess-ID
 
-static bool   s_aborted = false;                // Status Signale SIGTERM und SIGKILL
+//static bool   s_aborted = false;                // Status Signale SIGTERM und SIGKILL
 
 #if __INTERRUPT__
   extern int clickCounter;                      // the event counter
@@ -158,12 +158,12 @@ static bool   s_aborted = false;                // Status Signale SIGTERM und SI
 
 
 #if __BME280__
-	static int bme280 = 0;               					// Anzahl BME280-Sensoren
+  static int bme280 = 0;                        // Anzahl BME280-Sensoren
 #endif
 
 
 #if __TSL2561__
-  static void* tsl = NULL;              				// das TLS2561-Objekt !
+  static void* tsl = NULL;                      // das TLS2561-Objekt !
 #endif
 
 
@@ -174,20 +174,17 @@ static bool   s_aborted = false;                // Status Signale SIGTERM und SI
 
 static struct MqttInfo* mqtt = NULL;            // das MQTT-Objekt
 #if __MQTT__
-	#undef  __DATENBANK__
+  #undef  __DATENBANK__
   #define __DATENBANK__      true               /* Datenbank wird benötigt */
 #endif
 
 
 #if __DATENBANK__
   static MYSQL* con = NULL;                     // Verbindung zur Datenbank
-  long ID_Site = -1;														// KeyID dieses Rechners in der Datenbank
-	long ID_ds18B20[MAXDS18B20] = {-1};						// KeyIDs ds18B20-Sensoren
-//	long ID_bme280_Temp = -1;											// KeyID BME280-Sensor Temperatur
-//	long ID_bme280_Press = -1;										// KeyID BME280-Sensor Luftdruck
-//	long ID_bme280_Humi = -1;											// KeyID BME280-Sensor Feuchtigkeit
-	long ID_bme280[DREI] = {-1};									// alle BME28-Sensoren
-	long ID_tsl2561 = -1;                         // KeyID TSL2561
+  long ID_Site = -1;                            // KeyID dieses Rechners in der Datenbank
+  long ID_ds18B20[MAXDS18B20] = {-1};           // KeyIDs ds18B20-Sensoren
+  long ID_bme280[DREI] = {-1};                  // alle BME28-Sensoren
+  long ID_tsl2561 = -1;                         // KeyID TSL2561
 #endif
 
 
@@ -196,25 +193,6 @@ static struct MqttInfo* mqtt = NULL;            // das MQTT-Objekt
 #endif
 
 //**************************************************************************************//
- 
- //
-////#ifndef _MQTTTYPEN
-////#define _MQTTTYPEN  1
-//
-//char* MessageTyp[] =
-//{ "",
-//  "allmeine Information",
-//  "aktueller Status",
-//  "Messwert",
-//  "Verwaltung",
-//  "Schaltbefehl",
-//  "Fehlermeldung",
-//  NULL
-//};
-////#endif
-
-//
-//***********************************************************************************************
 
 // Signal-Handler
 // --------------
@@ -307,39 +285,6 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 //***********************************************************************************************
 //***********************************************************************************************
 
-// alle DS18B20-Sensoren einlesen
-// -------------------------------
-#define NAME "DS1820"   /* eindeutiger Name */
-int readds18b20(int sensoren, void* mqtt)
-{
-  for (int ix=0; ix < sensoren; ix++)
-  {
-  	char Topic[ZEILE]={'\0'};
-  	char Payload[ZEILE]={'\0'};
-    float Temperatur = ds18b20_Value(ix);
-    char Ort[NOTIZ];
-    char Name[NOTIZ];
-    sprintf(Name, "%s(%d)", NAME, ix);
-    // -- MQTT --
-    sprintf (Topic, MQTT_TOPIC,
-               s_Hostname,  s_IPnmr, D_DS18B20_00+ix, Name, time(0), MSG_VALUE, INF_REGULAR);
-    switch(ix) 
-    {
-			case 0: strcpy(Ort, "hinten"); break;
-			case 1: strcpy(Ort, "Mitte"); break;
-			case 2: strcpy(Ort, "vorn (im Nest)"); break;
-			default: strcpy(Ort, "unbekannt !"); break;
-		}
-    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", Ort);
-    DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"\n",
-                                               __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-  }
-  return 0;
-}
-#undef NAME
-//***********************************************************************************************
-
 // auf eine MQTT-Message antworten
 // -------------------------------
 // mit Log-Möglichkeit
@@ -384,29 +329,30 @@ int ReplyMessage(struct MqttInfo* info, char* topic, char* payload)
 }
 //***********************************************************************************************
 
-
 // interne CPU-Temperatur lesen
 // ---------------------------------------------------------------------
 int readCPUtemp(void* mqtt)
 {
-  char myName[] = "INTERN";            // eindeutiger Name
-  float Temperatur = InternalTemperatur();
-  
-  if (mqtt > NULL)
-  {
-    char Topic[ZEILE]={'\0'};
-    char Payload[ZEILE]={'\0'};
-    DEBUG(">> %s---%s()#%d: CPU-Temperatur = '%.1f'\n",
-                                                __NOW__, __FUNCTION__, __LINE__, Temperatur);
-    // -- MQTT --
-    sprintf (Topic, MQTT_TOPIC,
-                      s_Hostname, s_IPnmr, D_INTERN, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "in der CPU");
-    DEBUG(">> %s---%s()#%d:  Topic = \"%s  \" --- Payload = \"%s\"\n",
-                                                __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-  }
+	long myKeyID = ID_Site;
+  float Messwert = InternalTemperatur();
+  DEBUG(">> %s---%s()#%d: CPU-Temperatur = '%.1f'\n",__S__, Messwert);
 
+	#include "/home/pi/treiber/snippets/send_messwert.snip"
+  return 0;
+}
+//***********************************************************************************************
+
+// alle DS18B20-Sensoren einlesen
+// -------------------------------
+int readds18b20(int sensoren, void* mqtt)
+{
+  for (int ix=0; ix < sensoren; ix++)
+  {
+		long myKeyID = ID_ds18B20[ix];
+  	float Messwert = ds18b20_Value(ix);
+
+		#include "/home/pi/treiber/snippets/send_messwert.snip"
+	}
   return 0;
 }
 //***********************************************************************************************
@@ -418,8 +364,6 @@ int readbme280(void* mqtt)
   float Temperatur  = '\0';
   float Luftdruck   = '\0';
   float Feuchtigkeit = '\0';
-  char Topic[ZEILE]={'\0'};
-  char Payload[ZEILE]={'\0'};
   if (bme280_Read(&Luftdruck, &Temperatur, &Feuchtigkeit))
   {
     DEBUG(">> %s---%s()#%d: BME280-Temperatur = '%.1f'\n",
@@ -430,55 +374,29 @@ int readbme280(void* mqtt)
                                               __NOW__, __FUNCTION__, __LINE__, Feuchtigkeit);
   }
   // -- MQTT --
+  for (int ix=0; ix < DREI; ix++)
   {
-    char myName[] = "BME280_TEMP";             // eindeutiger Name
-    sprintf (Topic, MQTT_TOPIC,
-                    s_Hostname, s_IPnmr, D_BME280_T, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Temperatur, "°C", "oberhalb");
-    DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-  }
-  {
-    char myName[] = "BME280_PRESS";            // eindeutiger Name
-    sprintf (Topic, MQTT_TOPIC,
-                    s_Hostname, s_IPnmr, D_BME280_P, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Luftdruck, "hPa", "oberhalb");
-    DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-  }
-  {
-    char myName[] = "BME280_HUMI";             // eindeutiger Name
-    sprintf (Topic, MQTT_TOPIC,
-                    s_Hostname, s_IPnmr, D_BME280_H, myName, time(0), MSG_VALUE, INF_REGULAR);
-    sprintf (Payload, MQTT_VALUE, Feuchtigkeit, "%", "oberhalb");
-    DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"<\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-    MQTT_Publish(mqtt, Topic, Payload);
-  }
+  	char myName[NOTIZ];  
+  	sprintf(myName, "D_%s_%d", DS18B20TYP, ix);          
+		long myKeyID = ID_bme280[ix];
+  	float Messwert = ds18b20_Value(ix);
 
+		#include "/home/pi/treiber/snippets/send_messwert.snip"	
+	}
   return 0;
 }
 //***********************************************************************************************
+
 // tsl2561-Sensor (Helligkeit) lesen und senden
 // --------------------------------------------
 int readtsl2561(void* tsl, void* mqtt)
 {
-  char myName[] = "TLS2561";             // eindeutiger Name
-  char Topic[ZEILE]={'\0'};
-  char Payload[ZEILE]={'\0'};
-  float Lux = 1.0 * tsl2561_lux(tsl);
-  DEBUG(">> %s---%s()#%d: Helligkeit = '%f'\n", __NOW__, __FUNCTION__, __LINE__, Lux);
-  // -- MQTT --
-  sprintf (Topic, MQTT_TOPIC,
-                    s_Hostname, s_IPnmr, D_TLS2561, myName, time(0), MSG_VALUE, INF_REGULAR);
-  sprintf (Payload, MQTT_VALUE, Lux, "Lux", "im Nest");
-  DEBUG(">> %s---%s()#%d:  Topic = \"%s\" --- Payload = \"%s\"\n",
-                                              __NOW__, __FUNCTION__, __LINE__, Topic, Payload);
-  MQTT_Publish(mqtt, Topic, Payload);
-
-  return true;        // Sendeauftrag zurückgeben
+	long myKeyID = ID_tsl2561;
+  float Messwert = 1.0 * tsl2561_lux(tsl);
+  DEBUG(">> %s---%s()#%d: Helligkeit = '%f'\n", __S__, Messwert);
+ 
+	#include "/home/pi/treiber/snippets/send_messwert.snip"
+  return 0;        
 }
 //***********************************************************************************************
 
@@ -758,7 +676,7 @@ int main(int argc, char *argv[])
 
   #include "/home/pi/treiber/snippets/get_progname.snip"
 
- 
+
   // Signale registrieren
   // --------------------
   signal(SIGTERM, sigfunc);
@@ -775,7 +693,7 @@ int main(int argc, char *argv[])
   #include "/home/pi/treiber/snippets/get_host.snip"
 
 
-  // Prozess-ID ablegen  
+  // Prozess-ID ablegen
   // ------------------
   #include "/home/pi/treiber/snippets/get_mypid.snip"
 
@@ -785,8 +703,8 @@ int main(int argc, char *argv[])
   #include "/home/pi/treiber/snippets/get_myip.snip"
 
 
-	// Datenbank-Initialisierung  
-	// ---------------------------
+  // Datenbank-Initialisierung
+  // ---------------------------
   #include "/home/pi/treiber/snippets/createdb_init.snip"
 
 
@@ -822,7 +740,7 @@ int main(int argc, char *argv[])
   #include "/home/pi/treiber/snippets/init_intern.snip"
 
 
-  // LCD-Display aktivieren  
+  // LCD-Display aktivieren
   // -----------------------
   #include "/home/pi/treiber/snippets/lcddisplay_init.snip"
 
@@ -830,7 +748,7 @@ int main(int argc, char *argv[])
   // alle DS18B20-Sensoren einlesen
   // -------------------------------
   #include "/home/pi/treiber/snippets/ds18b20_init.snip"
-  
+
 
   // Initialisierung des BME280-Sensors
   // -----------------------------------
@@ -849,9 +767,9 @@ int main(int argc, char *argv[])
   // --------------
   char mySubscriptions[3*ZEILE]={'\0'};     // für Ausdruck per Mail
   #include "/home/pi/treiber/snippets/mqtt_init.snip"
- 
- 
-  // Initialisierung abgeschlossen  
+
+
+  // Initialisierung abgeschlossen
   // ------------------------------
   #include "/home/pi/treiber/snippets/init_mail.snip"
   #include "/home/pi/treiber/snippets/init_done.snip"
@@ -861,17 +779,22 @@ int main(int argc, char *argv[])
   digitalWrite (M_LAMP_IRRIGHT, LED_HELL);
   digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
   Automatic = true;
-  
+
   //exit (false);
-  
+
+//  UNTIL_ABORTED // ********************** Schleife bis externes Signal ***************************
+//                // *******************************************************************************
+
   time_t AbfrageStart = time(0);
-  UNTIL_ABORTED // ********************** Schleife bis externes Signal ***************************
-                // *******************************************************************************
+//  time_t wait;
+  DO_FOREVER  // >>>>>>>>>>>>>>>>---- Arbeitsschleife ---->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   {
+//    wait = time(0);                             // die aktuelle Sekunde
+
     feedWatchdog(PROGNAME);
 
-    // *+++++* Sensoren bedienen **+++++*
-    // -----------------------------------
+    // *+++++* Sensoren bedienen **++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    // ------------------------------------------------------------------------------------------
     static bool done=false;
     static bool ldone=false;
     static int lcnt = 5;
@@ -883,16 +806,16 @@ int main(int argc, char *argv[])
           DEBUG("\n");
         done=true;
         break;
-
-      case SENDETAKT/5*1:     // ds18b20-Sensoren lesen
-        if ((ds18b20anz > 0) && !done)
-          readds18b20(ds18b20anz, mqtt);
+        
+      case SENDETAKT/5*1:     // interne CPU-Temperatur lesen
+        if (!done)
+          readCPUtemp(mqtt);
         done=true;
         break;
 
-      case SENDETAKT/5*2:     // interne CPU-Temperatur lesen
-        if (!done)
-          readCPUtemp(mqtt);
+      case SENDETAKT/5*2:     // ds18b20-Sensoren lesen
+        if ((ds18b20anz > 0) && !done)
+          readds18b20(ds18b20anz, mqtt);
         done=true;
         break;
 
@@ -913,8 +836,9 @@ int main(int argc, char *argv[])
         break;
     } // --- end switch ---
 
-    // *+++++* MQTT bedienen **+++++*
-    // ------------------------------
+
+    // *+++++* MQTT bedienen **++++++++++++++++++++++++++++++++++++++++++++++++++++*
+    // -----------------------------------------------------------------------------
     static bool msg=false;
     static bool lmsg=false;
     {
@@ -923,39 +847,37 @@ int main(int argc, char *argv[])
       int antwort = RESP_KEINEANTWORT;
 
 
-//      // auf empfangene Messages testen
-//      // ================================
-//      enum TOPICMODE MQTT_status = MQTT_Loop(mqtt, Topic, Payload);
-//      int mqSenderIP = getInt(Topic, "IP-Nummer", TPOS_IPA);    // letzte Stelle IP des Senders
-//      DEBUG_MQTT("\n>> %s  %s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'?\n",
-//                                   __NOW__, __FUNCTION__, __LINE__, mqSenderIP, s_IPnmr);
+      // auf empfangene Messages testen
+      // ================================
+      enum TOPICMODE Status = MQTT_Loop(mqtt, Topic, Payload);
+      DEBUG_MQTT("\n>> %s  %s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'?\n",
+                                        __S__, getInt(Topic, "IP-Nummer", TPOS_IPA), s_IPnmr);
 
       // empfangene Messages holen
       // -------------------------
       msg=false;
-      enum TOPICMODE Status = MQTT_Loop(mqtt, Topic, Payload);
-      
+
       // Test auf eigene Message
       // -----------------------
-//      int CompIP = getInt(Topic, "IP-Nummer", TPOS_IPA);  // letzte Stelle IP des Senders
-// DEBUG("- %d -- '%d' --\n", __LINE__, CompIP);
-// DEBUG("- %d -- '%d' --\n", __LINE__, s_IPnmr);
-//      if (CompIP == s_IPnmr)
-//      { // überspringen
-//        // -------------
-//        DEBUG("\n>> %s-%s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'!\n\n",
-//                                   __NOW__, __FUNCTION__, __LINE__, CompIP, s_IPnmr);
-//        Status = MODE_NOTHING;
-//      }
-// DEBUG("- %d -\n", __LINE__);
-        
+      int CompIP = getInt(Topic, "IP-Nummer", TPOS_IPA);  // letzte Stelle IP des Senders
+ DEBUG("- %d -- '%d' --\n", __LINE__, CompIP);
+ DEBUG("- %d -- '%d' --\n", __LINE__, s_IPnmr);
+      if (CompIP == s_IPnmr)
+      { // überspringen
+        // -------------
+        DEBUG("\n>> %s-%s()#%d - neue Message: CompID '%d' == s_IPnmr '%d'!\n\n",
+                                                                      __S__, CompIP, s_IPnmr);
+        Status = MODE_NOTHING;
+      }
+ DEBUG("- %d -\n", __LINE__);
+
       Status = MODE_NOTHING;
 
       if (Status > MODE_NOTHING)
       { // eine Message ist eingetroffen !!
         // =======================================================================
         DEBUG("\n>> %s-%s()#%d: Status: %d -- Topic: \"%s\" -- Payload: \"%s\"\n",
-                                   __NOW__, __FUNCTION__, __LINE__, Status, Topic, Payload);
+                                                               __S__, Status, Topic, Payload);
 
 #ifdef __LAMPMOTION_MYLOG__
         { // --- Log-Ausgabe ----------------------------------------------------------------
@@ -1010,8 +932,8 @@ int main(int argc, char *argv[])
         msg=true;
       }
 
-//      DEBUG("\n>> %s-%s()#%d: antwort = %d\n",
-//                                   __NOW__, __FUNCTION__, __LINE__, antwort);
+      DEBUG("\n>> %s-%s()#%d: antwort = %d\n",
+                                   __NOW__, __FUNCTION__, __LINE__, antwort);
 
       switch (antwort)
       { // ggf. die empfangene Message beantworten
@@ -1039,8 +961,8 @@ int main(int argc, char *argv[])
           break;
 
         default:                  // alles andere
-//          DEBUG("\n>> %s-%s()#%d: antwort = default\n",
-//                                   __NOW__, __FUNCTION__, __LINE__);
+          DEBUG("\n>> %s-%s()#%d: antwort = default\n",
+                                   __NOW__, __FUNCTION__, __LINE__);
           break;
       } // --- end switch ---
 
@@ -1049,7 +971,7 @@ int main(int argc, char *argv[])
 
     }   // -- end MQTT ----------------------------------------------------------------------
 
-// DEBUG("- %d -\n", __LINE__);
+ DEBUG("- %d -\n", __LINE__);
 
     // LED-Steuerung
     // -------------
