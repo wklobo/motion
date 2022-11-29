@@ -3,7 +3,7 @@
 //* File:          fifomotion.c                                             *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-08-23                                               *//
-//* Last change:   2022-05-08 - 10:46:08                                    *//
+//* Last change:   2022-11-28 - 16:25:10                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                kopieren auf einen anderen Rechner                       *//
 //*                                                                         *//
@@ -19,12 +19,29 @@
 //***************************************************************************//
 
 #define _MODUL0
-#define __FIFOMOTION_MYLOG__         true
+#define __FIFOMOTION_MYLOG__         false
+#define __FIFOMOTION_DEBUG_INIT__     true
 #define __FIFOMOTION_MYLOG1__        false
 #define __FIFOMOTION_DEBUG__         false
 #define __FIFOMOTION_DEBUG__c__      false     // calcSize
 #define __FIFOMOTION_DEBUG__t__      false     // FileTransfer
 #define __FIFOMOTION_DEBUG__d__      false     // delOldest
+
+// Peripherie aktivieren
+// ----------------------
+#define __LCD_DISPLAY__    false   /* LCD-Display               */
+#define __DS18B20__        false   /* DS18B20-Sensoren          */
+#define __INTERNAL__       true    /* CPU-Temperatur            */
+#define __BME280__         false   /* BME280-Sensor             */
+#define __TSL2561__        false   /* TLS2561-Sensor            */
+#define __GPIO__           true    /* GPIOs über 'gpio.c'       */
+#define __FIFO__           true    /* named pipe(Fifo)          */
+#define __MQTT__           false   /* Mosquitto                 */
+#define __INTERRUPT__      false   /* Interrupt Geigerzähler    */
+#define __DATENBANK__      false   /* Datenbank                 */
+
+
+//***************************************************************************//
 
 
 #include "./version.h"
@@ -41,23 +58,23 @@
 #include <dirent.h>
 #include <signal.h>
 #include <stdbool.h>
-#include <wiringPi.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#include "../error.h"
-#include "../datetime.h"
-#include "../../sendmail/sendMail.h"
+
+#include "/home/pi/treiber/common/gpio.h"
+#include "/home/pi/treiber/common/error.h"
+#include "/home/pi/treiber/common/common.h"
+#include "/home/pi/treiber/common/datetime.h"
+#include "/home/pi/treiber/sendmail/sendMail.h"
 
 #define FLAGS   O_WRONLY|O_CREAT|O_EXCL
 #define MODE    S_IRWXU|S_IRWXG|S_IROTH
 #define MODUS  0774
 
+
 // statische Variable
 // ----------------
-static char Hostname[ZEILE];          // der Name dieses Rechners
-static char meineIPAdr[NOTIZ];        // die IP-Adresse dieses Rechners
-static char* IPnmr;                   // letzte Stelle der IP-Adresse
 static time_t ErrorFlag = 0;          // Steuerung rote LED
 
 static int newFiles   = 0;            // neue Dateien
@@ -65,22 +82,30 @@ static int newFolders = 0;            // neue Verzeichnisse
 static int delFiles   = 0;            // gelöschte Dateien
 static int delFolders = 0;            // gelöschte Verzeichnisse
 
-//***************************************************************************//
-/*
- * Define log functions.
- * ----------------------
- */
-#if __FIFOMOTION_MYLOG__
-#define MYLOG(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
-#else
-#define MYLOG(...)
-#endif
+#define BRENNDAUER     18             /* [sec]...rote Fehler-LED                    */
 
-#if __FIFOMOTION_MYLOG1__
-#define MYLOG1(...)  MyLog(PROGNAME, __FUNCTION__, __LINE__, __VA_ARGS__)
-#else
-#define MYLOG1(...)
-#endif
+// programmweite Variable
+// -----------------------
+char   s_Hostname[ZEILE];                       // der Name dieses Rechners
+char   s_meineIPAdr[NOTIZ];                     // die IP-Adresse dieses Rechners
+uint   s_IPnmr=0;                               // letzte Stelle der IP-Adresse
+long   s_pid=0;                                 // meine Prozess-ID
+
+#define SNAPSHOT         "/%s/lastsnap.jpg"
+char   Snapshot[ZEILE];													// Schnappschuss-Datei
+
+
+// Verzeichnisse
+// --------------
+#define _FOLDER       "event_"                  /* Kennzeichnung Verzeichnis */
+#define _EVENT_       "Event_"                  /* Kennzeichnung Verzeichnis */
+#define FIFO          AUXDIR"/MOTION.FIFO"
+#define SOURCE        PIXDIR/                   /* "/home/pi/motion/pix/" */
+#define TEMP          TOPDIR"/tmp/"
+#define DESTINATION   "/media/Kamera/Vogel/"    /* = 'DISKSTATION/surveillance'/... */
+
+
+//***************************************************************************//
 
 // main()
 // ------
@@ -92,6 +117,15 @@ static int delFolders = 0;            // gelöschte Verzeichnisse
  #define DEBUG(...)
  #define SYSLOG(...)
 #endif
+
+#if __FIFOMOTION_DEBUG_INIT__
+  // nur die Init-Phase
+  // -------------------
+  #define _DEBUG(...) printf(__VA_ARGS__)
+#else
+  #define _DEBUG(...)
+#endif
+
 
 #if __FIFOMOTION_DEBUG__1__
 #define DEBUG_1(...)  printf(__VA_ARGS__)
@@ -125,35 +159,10 @@ static int delFolders = 0;            // gelöschte Verzeichnisse
 #define DEBUG_d(...)
 #endif
 
-//***************************************************************************//
+//***********************************************************************************************//
 
-//***********************************************************************************************
 
-// Signal-Handler
-// --------------
-// Signale SIGTERM und SIGKILL werden meist durch den Watchdog ausgelöst
-
-void sigfunc(int sig)
-{
- if(sig == SIGTERM)
- {
-    { // --- Log-Ausgabe ------------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGTERM %s -------", PROGNAME);
-    MYLOG(LogText);
-    } // ----------------------------------------------------------------------------
- }
- else if(sig == SIGKILL)
- {
-    { // --- Log-Ausgabe ------------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "<<< ----- SIGKILL %s -------", PROGNAME);
-    MYLOG(LogText);
-    } // ----------------------------------------------------------------------------
-    aborted = true;
- }
- else
-    return;
-}
-//***********************************************************************************************
+//***********************************************************************************************//
 
 // fataler Fehler
 // ------------------------
@@ -167,10 +176,10 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
   sprintf( ErrText, "%s()#%d @%s in %s: \"%s\"", Func, Zeile, __NOW__, __FILE__, Fehler);
 
   printf("    -- Fehler -->  %s\n", ErrText);   // lokale Fehlerausgabe
-  digitalWrite (LED_GELB,   LED_AUS);
-  digitalWrite (LED_GRUEN,  LED_AUS);
-  digitalWrite (LED_BLAU,   LED_AUS);
-  digitalWrite (LED_ROT,    LED_EIN);
+  digitalWrite (M_LED_GELB,   LED_AUS);
+  digitalWrite (M_LED_GRUEN,  LED_AUS);
+  digitalWrite (M_LED_BLAU,   LED_AUS);
+  digitalWrite (M_LED_ROT,    LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exit!",  ErrText);
@@ -179,7 +188,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
 
   // PID-Datei wieder löschen
   // ------------------------
-  killPID(FPID);
+  killPID();
 
   finish_with_Error(ErrText);                   // Fehlermeldung ausgeben
 }
@@ -203,7 +212,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 
   DEBUG("   -- Fehler -->  %s\n", ErrText);     // lokale Fehlerausgabe
 
-  digitalWrite (LED_ROT,    LED_EIN);
+  digitalWrite (M_LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
   {// --- Log-Ausgabe ---------------------------------------------------------
@@ -232,7 +241,7 @@ int Deleted(const char* ItemName)
 
   { // --- Log-Ausgabe --------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "    gelöscht: '%s'",  ItemName);
-    MYLOG1(LogText);
+    MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
 	status = (int)Zwischenzeit(T_PRINT);
@@ -251,7 +260,7 @@ int Added(const char* ItemName)
 
   { // --- Log-Ausgabe --------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "           neu: '%s'",  ItemName);
-    MYLOG1(LogText);
+    MYLOG(LogText);
   } // ------------------------------------------------------------------------
 
 	status = (int)Zwischenzeit(T_PRINT);
@@ -1287,208 +1296,146 @@ long FileTransfer(const char* Pfad, const char* Ziel)
 
 int main(int argc, char *argv[])
 {
-  sprintf (Version, "Vers. %d.%d.%d/%s", MAXVERS, MINVERS, BUILD, __DATE__);
-  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 ); // Verbindung zum Dämon Syslog aufbauen
-  syslog(LOG_NOTICE, ">>>>> %s\n - %s - PID %d - User %d, Group %d <<<<<<",
-                              PROGNAME, Version, getpid(), geteuid(), getegid());
-
-  { //--- Monitor-Ausgabe ----------------------------------------------------------
-    char PrintText[ZEILE];
-    sprintf(PrintText, "'%s %s' - User %d, Group %d\n",
-                        argv[0], Version, getuid(), getgid());
-    printf(PrintText);
-  } // -----------------------------------------------------------------------------
-
-
-  {// --- Log-Ausgabe -----------------------------------------------------------------
-   	char LogText[ZEILE];  
-    sprintf(LogText, 
-    ">>> %s   ************ Start '%s' ************\n"\
-    "                                               "\
-    "  - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ", 
-    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
-    MYLOG(LogText);
-  } // --------------------------------------------------------------------------------
-
-
-  // Signale registrieren
-  // --------------------
-  signal(SIGTERM, sigfunc);
-  signal(SIGKILL, sigfunc);
-
+	char MailBody[4*ABSATZ] = {'\0'};
   char puffer[BUFFER];
-  char ErrText[ERRBUFLEN];
   int fd;
-  int status;
+
+  sprintf (Version, "Vers. %d.%d.%d", MAXVERS, MINVERS, BUILD);
+  printf("   %s %s von %s\n\n", PROGNAME, Version, __DATE__);
+
+  // Verbindung zum Dämon Syslog aufbauen
+  // -----------------------------------
+  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 );
+  syslog(LOG_NOTICE, ">>>>> %s - %s/%s - PID %d - User %d, Group %d <<<<<<",
+                  PROGNAME, Version, __DATE__, getpid(), geteuid(), getegid());
+  setAuxFolder(AUXDIR, TOPNAME);         		// Info an 'common'
+  setAuxFolder_Err(AUXDIR);                	// Info an 'error'
+
+  #include "/home/pi/treiber/snippets/get_progname.snip"
+
+
+//  // Signale registrieren
+//  // --------------------
+//  signal(SIGTERM, sigfunc);
+//  signal(SIGKILL, sigfunc);
 
 
   // schon mal den Watchdog füttern ...
-  // ------------------------------
-  feedWatchdog(PROGNAME);
+  // -----------------------------------
+  #include "/home/pi/treiber/snippets/set_watchdog.snip"
+  
 
-  // ... und Snapshot vorsichtshalber erneuern
+  // Host ermitteln
+  // ---------------
+  #include "/home/pi/treiber/snippets/get_host.snip"
+
+
+  // Prozess-ID ablegen
+  // ------------------
+  #include "/home/pi/treiber/snippets/get_mypid.snip"
+
+
+  // IP-Adresse ermitteln
+  // ----------------------
+  #include "/home/pi/treiber/snippets/get_myip.snip"
+
+
+  // Datenbank-Initialisierung
+  // ---------------------------
+  #include "/home/pi/treiber/snippets/createdb_init.snip"
+
+
+  // Ist GPIO klar?
+  // --------------
+  #include "/home/pi/treiber/snippets/gpio_init.snip"
+  {
+    pinMode (M_LED_ROT,    OUTPUT);
+    pinMode (M_LED_GELB,   OUTPUT);
+    pinMode (M_LED_GRUEN,  OUTPUT);
+    pinMode (M_LED_BLAU,   OUTPUT);
+    pullUpDnControl (M_LED_ROT, PUD_UP) ;
+    pullUpDnControl (M_LED_GELB, PUD_UP) ;
+    pullUpDnControl (M_LED_GRUEN, PUD_UP) ;
+    pullUpDnControl (M_LED_BLAU, PUD_UP) ;
+    #define ANZEIT  44 /* msec */
+    digitalWrite (M_LED_ROT,   LED_EIN);
+    delay(3*ANZEIT);
+    digitalWrite (M_LED_ROT,   LED_AUS);
+    for (int ix=0; ix < 12; ix++)
+    {
+      digitalWrite (M_LED_GELB,   LED_EIN);
+      delay(ANZEIT);
+      digitalWrite (M_LED_GELB,   LED_AUS);
+      digitalWrite (M_LED_GRUEN,  LED_EIN);
+      delay(ANZEIT);
+      digitalWrite (M_LED_GRUEN,  LED_AUS);
+      digitalWrite (M_LED_BLAU,   LED_EIN);
+      delay(ANZEIT);
+      digitalWrite (M_LED_BLAU,   LED_AUS);
+    }
+	}
+
+  // named pipe(Fifo) erstellen
+  // --------------------------
+  #include "/home/pi/treiber/snippets/init_fifo.snip"
+
+
+  // CPU-Temperatur aktivieren
+  // -------------------------------
+  #include "/home/pi/treiber/snippets/init_intern.snip"
+
+
+  // LCD-Display aktivieren
+  // -----------------------
+  #include "/home/pi/treiber/snippets/lcddisplay_init.snip"
+
+
+  // alle DS18B20-Sensoren einlesen
+  // -------------------------------
+  #include "/home/pi/treiber/snippets/ds18b20_init.snip"
+
+
+  // Initialisierung des BME280-Sensors
+  // -----------------------------------
+  #include "/home/pi/treiber/snippets/bme280_init.snip"
+
+
+  // Initialisierung des TLS2561-Sensors
+  // -----------------------------------
+  #include "/home/pi/treiber/snippets/tls2561_init.snip"
+
+
+  // MQTT starten
+  // --------------
+  #include "/home/pi/treiber/snippets/mqtt_init.snip"
+
+
+  // Snapshot vorsichtshalber erneuern
   // -----------------------------------------
-  FILE* lastsnap = fopen(SNAPSHOT, "w+");
+//	char Snapshot[ZEILE];													// Schnappschuss-Datei
+	sprintf(Snapshot, SNAPSHOT, AUXDIR);
+  FILE* lastsnap = fopen(Snapshot, "w+");
   if(NULL == lastsnap)
     perror("open SNAPSHOT");
    else
     fclose(lastsnap);
 
-
-  // Host ermitteln
-  // ---------------
-  {
-    int status = gethostname(Hostname, NOTIZ);
-    if (status < 0)
-    { // -- Error
-      char ErrText[ERRBUFLEN];
-      sprintf(ErrText, "gethostname '%s'", Hostname);
-      return (Error_NonFatal(ErrText, __FUNCTION__, __LINE__));
-    }
-    DEBUG(">> %s-%s()#%d: Hostname: '%s'\n", __NOW__, __FUNCTION__, __LINE__, Hostname);
-
-    char LogText[ZEILE];
-    sprintf(LogText,"    Hostname: '%s'", Hostname);
-    MYLOG(LogText);
-  }
-
-
-  { // Prozess-ID ablegen
-    // ------------------
-    char LogText[ZEILE];
-    long pid = savePID(FPID);
-    DEBUG(">> %s-%s()#%d: meine PID: '%ld'\n", __NOW__, __FUNCTION__, __LINE__, pid);
-    sprintf(LogText,"    meine PID = '%ld'", pid);
-    MYLOG(LogText);
-  }
-
-  { // IP-Adresse ermitteln
-    // ----------------------
-    // nur das letzte Glied wird gebraucht
-    char LogText[ZEILE];
-    readIP(meineIPAdr, sizeof(meineIPAdr));
-    sprintf(LogText,"    meine IP: '%s'", meineIPAdr);
-    MYLOG(LogText);
-    DEBUG(">> %s-%s()#%d: meine ganze IP: '%s'\n",
-                                     __NOW__, __FUNCTION__, __LINE__,  meineIPAdr);
-
-    char* ptr = strtok(meineIPAdr, ".");
-    while (ptr != NULL)
-    {
-      IPnmr = ptr;
-      ptr = strtok(NULL, ".");
-    }
-    DEBUG(">> %s-%s()#%d: meine IP: '%s'\n", __NOW__, __FUNCTION__, __LINE__, IPnmr);
-  }
-
-  // Speicherziel
-  // -------------
-  {
-    char LogText[ZEILE];
-    sprintf(LogText,"    Speicherziel: '%s'",  DESTINATION);
-    MYLOG(LogText);
-  }
-
-  // named pipe(Fifo) erstellen
-  // --------------------------
-  {
-    umask(0);
-    status = mkdir(FDIR, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-    if (mkfifo (FIFO, 0666) < 0)
-    {
-      if(errno == EEXIST)                       // FIFO bereits vorhanden - kein fataler Fehler
-        ;
-      else
-      {
-        sprintf(ErrText, "mkfifo(%s)", FIFO);
-        showMain_Error(ErrText, __FUNCTION__, __LINE__);
-        exit (EXIT_FAILURE);
-      }
-    }
-    char LogText[ZEILE];
-    sprintf(LogText,"    Fifo OK: '%s'", FIFO);
-    MYLOG(LogText);
-  }
-
-  // Ist GPIO klar?
-  // --------------
-  {
-    wiringPiSetup();
-    pinMode (LED_ROT,    OUTPUT);
-    pinMode (LED_GELB,   OUTPUT);
-    pinMode (LED_GRUEN,  OUTPUT);
-    pinMode (LED_BLAU,   OUTPUT);
-    pullUpDnControl (LED_ROT, PUD_UP) ;
-    pullUpDnControl (LED_GELB, PUD_UP) ;
-    pullUpDnControl (LED_GRUEN, PUD_UP) ;
-    pullUpDnControl (LED_BLAU, PUD_UP) ;
-    #define ANZEIT  44 /* msec */
-    digitalWrite (LED_ROT,   LED_EIN);
-    delay(3*ANZEIT);
-    digitalWrite (LED_ROT,   LED_AUS);
-    for (int ix=0; ix < 12; ix++)
-    {
-      digitalWrite (LED_GELB,   LED_EIN);
-      delay(ANZEIT);
-      digitalWrite (LED_GELB,   LED_AUS);
-      digitalWrite (LED_GRUEN,  LED_EIN);
-      delay(ANZEIT);
-      digitalWrite (LED_GRUEN,  LED_AUS);
-      digitalWrite (LED_BLAU,   LED_EIN);
-      delay(ANZEIT);
-      digitalWrite (LED_BLAU,   LED_AUS);
-    }
-    DEBUG(">> %s()#%d @ %s ----- GPIO OK -------\n", __FUNCTION__, __LINE__, __NOW__);
-    { // --- Log-Ausgabe ---------------------------------------------------------
-      char LogText[ZEILE];  sprintf(LogText, "    GPIO OK !");
-      MYLOG(LogText);
-    } // ------------------------------------------------------------------------
-    destroyInt(status);
-  }
-
-
-  { // --- Testausgabe ----------------------------------------------------------------
-    errno = 0;
-    char Text[ZEILE];  sprintf(Text, "************ Start '%s' ************", PROGNAME);
-    Error_NonFatal( Text, __FUNCTION__, __LINE__);
-  } // ---------------------------------------------------------------------------------
-
-
-
-//  { // Bereitmeldung per Mail ---------------------------------------
-//    // -----------------------
-//    char Betreff[ZEILE] = {'\0'};
-//    char Zeitbuf[NOTIZ];
-//    sprintf( Betreff, "Start >%s< @ %s",  PROGNAME, mkdatum(time(0), Zeitbuf));
-//    DEBUG( "Betreff: %s\n", Betreff);
+//char   Snapshot[ZEILE];													// Schnappschuss-Datei
 //
-//    char MailBody[BODYLEN] = {'\0'};
-//    char Zeile[ZEILE];
-//    char Buf[NOTIZ];
-//    char* Path=NULL;
-//    sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
-//    strcat(MailBody, Zeile);
-//    sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s:%d'\n",
-//               readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)), STREAM_PORT);
-//    strcat(MailBody, Zeile);
-//    DEBUG( "MailBody: %s\n", MailBody);
-//
-//    sendmail(Betreff, MailBody);  // vorläufig
-//  } // -----  Bereitmeldung per Mail -----------------------------------
+//#define SNAPSHOT         "/%s/lastsnap.jpg"
 
 
-  DEBUG(">> %s()#%d @ %s\n\n", __FUNCTION__, __LINE__, __NOW__);
-  { // --- Log-Ausgabe ---------------------------------------------------------
-    char LogText[ZEILE];  sprintf(LogText, "<<< ----- Init %s OK -------", PROGNAME);
-    MYLOG(LogText);
-  } // ------------------------------------------------------------------------
+  // Initialisierung abgeschlossen
+  // ------------------------------
+  #include "/home/pi/treiber/snippets/init_mail.snip"
+  #include "/home/pi/treiber/snippets/init_done.snip"
 
 
   // Fifo aktivieren und auf ersten Datenblock warten
   // ------------------------------------------------
   {
     DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
-    digitalWrite (LED_GRUEN, LED_EIN);
+    digitalWrite (M_LED_GRUEN, LED_EIN);
     fd = open (FIFO, O_RDONLY);                   // Empfänger liest nur aus dem FIFO
     if (fd == -1)
     {
@@ -1498,6 +1445,7 @@ int main(int argc, char *argv[])
       showMain_Error(LogText, __FUNCTION__, __LINE__);
       exit (EXIT_FAILURE);
     }
+    else
     {// --- Log-Ausgabe -----------------------------------------------------------------
       char LogText[ZEILE];
       sprintf(LogText, ">>> %s()#%d: FIFO '%s' open !",  __FUNCTION__, __LINE__ , FIFO);
@@ -1507,34 +1455,17 @@ int main(int argc, char *argv[])
     } // --------------------------------------------------------------------------------
 
 
-    char Betreff[ZEILE] = {'\0'};
-    char Zeitbuf[NOTIZ];
-    sprintf( Betreff, "FIFO open >%s< @ %s",  FIFO, mkdatum(time(0), Zeitbuf));
-    DEBUG( "Betreff: %s\n", Betreff);
-    DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
+//    char Betreff[ZEILE] = {'\0'};
+//    char Zeitbuf[NOTIZ];
+//    sprintf( Betreff, "FIFO open >%s< @ %s",  FIFO, mkdatum(time(0), Zeitbuf));
+//    DEBUG( "Betreff: %s\n", Betreff);
+//    DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
 
-//		{	// Bereitmeldung per Mail
-//			// -----------------------
-//      char MailBody[BODYLEN] = {'\0'};
-//      char Zeile[ZEILE];
-//      char Buf[NOTIZ];
-//      char* Path=NULL;
-//      DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
-//      sprintf(Zeile,"Programm '%s/%s' %s\n", getcwd(Path, ZEILE), PROGNAME, Version);
-//      strcat(MailBody, Zeile);
-//      sprintf(Zeile,"RaspBerry Pi  No. %s - '%s' -- IP-Adresse '%s'",
-//                 readRaspiID(Buf), Hostname, readIP(meineIPAdr, sizeof(meineIPAdr)));
-//      DEBUG(">> %s()#%d @ %s\n", __FUNCTION__, __LINE__, __NOW__);
-//      strcat(MailBody, Zeile);
-//      DEBUG( "MailBody: %s\n", MailBody);
-//  
-//      sendmail(Betreff, MailBody);
-//  	}
   }
-
+ 
+  
   bool ShowReady = true;
-//  DO_FOREVER // *********************** Endlosschleife ********************************************
-  UNTIL_ABORTED // ********************** Schleife bis externes Signal ********************************************
+  DO_FOREVER // *********************** Endlosschleife ********************************************
   {
     feedWatchdog(PROGNAME);
     if (ShowReady)    // nur einmalig anzeigen
@@ -1544,15 +1475,15 @@ int main(int argc, char *argv[])
       #undef MELDUNG
     } // ------------------------------------------------------------------------------------------
     ShowReady = false;
-    digitalWrite (LED_BLAU, LED_AUS);
-    digitalWrite (LED_GRUEN, LED_EIN);
+    digitalWrite (M_LED_BLAU, LED_AUS);
+    digitalWrite (M_LED_GRUEN, LED_EIN);
 
     if ( read(fd, puffer, BUFFER) )             // == > auf Aufträge von 'motion' warten
     {
       ShowReady = true;
       Startzeit(T_GESAMT);                      // Zeitmessung starten
-      digitalWrite (LED_BLAU, LED_EIN);
-      digitalWrite (LED_GRUEN, LED_AUS);
+      digitalWrite (M_LED_BLAU, LED_EIN);
+      digitalWrite (M_LED_GRUEN, LED_AUS);
       newFiles   = 0;                           // neue Dateien
       newFolders = 0;                           // neue Verzeichnisse
       delFiles   = 0;                           // gelöschte Dateien
@@ -1699,7 +1630,7 @@ int main(int argc, char *argv[])
         MYLOG(LogText);
       } // ----------------------------------------------------------------------------------------
 
-      digitalWrite (LED_GELB, LED_AUS);             // wurde von SqlMotion eingeschaltet!
+      digitalWrite (M_LED_GELB, LED_AUS);             // wurde von SqlMotion eingeschaltet!
     } // ======== Auftrag erledigt =================================================================
 
 
@@ -1713,12 +1644,12 @@ int main(int argc, char *argv[])
       {
         struct stat attribut;
         static bool zualt = true;
-        if(stat(SNAPSHOT, &attribut) == -1)
+        if(stat(Snapshot, &attribut) == -1)
         {
           if (ErrorFlag == 0)
           {
             { // --- Log-Ausgabe ------------------------------------------------------------------------
-              char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' missing! -----", SNAPSHOT);
+              char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' missing! -----", Snapshot);
               MYLOG(LogText);
             } // ----------------------------------------------------------------------------------------
             zualt = true;
@@ -1734,7 +1665,7 @@ int main(int argc, char *argv[])
             if (!zualt)
             {
               char ErrText[ERRBUFLEN];
-              sprintf(ErrText, "'%s' fehlt seit %ld sec!", SNAPSHOT, Alter);
+              sprintf(ErrText, "'%s' fehlt seit %ld sec!", Snapshot, Alter);
               Error_NonFatal(ErrText, __FUNCTION__, __LINE__);
               zualt = true;
             }
@@ -1746,7 +1677,7 @@ int main(int argc, char *argv[])
               if (!ganzneu)
               {
                 { // --- Log-Ausgabe ------------------------------------------------------------------------
-                  char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' wieder da! -----", SNAPSHOT);
+                  char LogText[ZEILE];  sprintf(LogText, "    ----- '%s' wieder da! -----", Snapshot);
                   MYLOG(LogText);
                 } // ----------------------------------------------------------------------------------------
               }
@@ -1768,9 +1699,9 @@ int main(int argc, char *argv[])
       blink++;
       if (blink % 7 == 0)
       {
-        digitalWrite (LED_GRUEN, LED_AUS);
+        digitalWrite (M_LED_GRUEN, LED_AUS);
         delay(100);
-        digitalWrite (LED_GRUEN, LED_EIN);
+        digitalWrite (M_LED_GRUEN, LED_EIN);
       }
     }
 
@@ -1783,7 +1714,7 @@ int main(int argc, char *argv[])
       { // wenn Zeit abgelaufen
         // --------------------
         ErrorFlag = 0;
-        digitalWrite (LED_ROT, LED_AUS);
+        digitalWrite (M_LED_ROT, LED_AUS);
       }
     }
 
@@ -1792,9 +1723,9 @@ int main(int argc, char *argv[])
     delay(100);
 
   } // =================================================================================
-  // PID-Datei wieder löschen
+  // PID-Datei wieder löschen 
   // ------------------------
-  killPID(FPID);
+  killPID();
 
   { // --- Log-Ausgabe ------------------------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "    <<<----- Programm beendet ----->>>");
@@ -1804,10 +1735,10 @@ int main(int argc, char *argv[])
 
   // Fehler-Mail abschicken (hier nutzlos)
   // -------------------------------------
-  digitalWrite (LED_ROT, LED_EIN);
+  digitalWrite (M_LED_ROT, LED_EIN);
   { // --- Log-Ausgabe ------------------------------------------------------------------------
     char Logtext[ZEILE];  sprintf(Logtext, ">> %s()#%d: Error %s ---> '%s' OK\n",__FUNCTION__, __LINE__, PROGNAME, "lastItem");
-    syslog(LOG_NOTICE, "%s: %s", __FIFO__, Logtext);
+//    syslog(LOG_NOTICE, "%s: %s", __FIFO__, Logtext);
 
     char MailBody[BODYLEN] = {'\0'};
     strcat(MailBody, Logtext);

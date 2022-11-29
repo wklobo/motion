@@ -20,7 +20,7 @@
 
 #define _MODUL0
 #define __LAMPMOTION_DEBUG__      false
-#define __LAMPMOTION_DEBUG_INIT__ false
+#define __LAMPMOTION_DEBUG_INIT__ true
 #define __LAMPMOTION_DEBUG_MQTT__ false
 #define __LAMPMOTION_DEBUG_1__    false
 #define __LAMPMOTION_DEBUG_2__    false
@@ -243,7 +243,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
 
   // PID-Datei wieder löschen
   // ------------------------
-//***  killPID(FPID);
+  killPID();
 
   finish_with_Error(ErrText);                   // Fehlermeldung ausgeben
 }
@@ -664,29 +664,32 @@ int main(int argc, char *argv[])
   char MailBody[4*ABSATZ] = {'\0'};
 
   sprintf (Version, "Vers. %d.%d.%d", MAXVERS, MINVERS, BUILD);
-  printf("   %s %s von %s\n\n", PROGNAME, Version, __DATE__);
+  printf("   %s %s vonu %s\n\n", PROGNAME, Version, __DATE__);
 
   // Verbindung zum Dämon Syslog aufbauen
   // -----------------------------------
   openlog(PROGNAME, LOG_PID, LOG_LOCAL7 );
   syslog(LOG_NOTICE, ">>>>> %s - %s/%s - PID %d - User %d, Group %d <<<<<<",
                   PROGNAME, Version, __DATE__, getpid(), geteuid(), getegid());
-  setMainFolder(MAINFOLDER);                    // Info an 'common'
-  setMainFolder_Err(MAINFOLDER);                // Info an 'error'
+                  
+  setAuxFolder(AUXDIR, TOPNAME);         		// Info an 'common'
+  setAuxFolder_Err(AUXDIR);                	// Info an 'error'
 
   #include "/home/pi/treiber/snippets/get_progname.snip"
 
-
+ 
   // Signale registrieren
   // --------------------
   signal(SIGTERM, sigfunc);
   signal(SIGKILL, sigfunc);
 
+  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
 
   // schon mal den Watchdog füttern
   // ------------------------------
   #include "/home/pi/treiber/snippets/set_watchdog.snip"
 
+  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
 
   // Host ermitteln
   // ---------------
@@ -765,7 +768,6 @@ int main(int argc, char *argv[])
 
   // MQTT starten
   // --------------
-  char mySubscriptions[3*ZEILE]={'\0'};     // für Ausdruck per Mail
   #include "/home/pi/treiber/snippets/mqtt_init.snip"
 
 
@@ -780,16 +782,12 @@ int main(int argc, char *argv[])
   digitalWrite (M_LAMP_IRLEFT,  LED_HELL);
   Automatic = true;
 
-  //exit (false);
-
 //  UNTIL_ABORTED // ********************** Schleife bis externes Signal ***************************
 //                // *******************************************************************************
 
   time_t AbfrageStart = time(0);
-//  time_t wait;
   DO_FOREVER  // >>>>>>>>>>>>>>>>---- Arbeitsschleife ---->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   {
-//    wait = time(0);                             // die aktuelle Sekunde
 
     feedWatchdog(PROGNAME);
 

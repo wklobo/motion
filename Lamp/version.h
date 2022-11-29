@@ -8,6 +8,8 @@
 //*                Die 'BUILD'-Nummer wird über ein Python-Programm erhöht *//
 //* Copyright (C) 2014 by Wolfgang Keuch                                   *//
 //*                                                                        *//
+//* nach UTF-8 konvertiert                                                 *//
+//*                                                                        *//
 //**************************************************************************//
 
 #ifndef _VERSION_H
@@ -23,7 +25,7 @@ EXTERN char Version[50];
 
 #define MAXVERS 4
 #define MINVERS 4
-#define BUILD 4
+#define BUILD 26
 
 #endif //_VERSION_H
 

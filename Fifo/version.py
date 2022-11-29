@@ -1,6 +1,6 @@
 #!/usr/bin/python
-# -*- coding: cp852 -*-
-# 2022-06-18 - 09:42:07
+# -*- coding: utf-8 -*-
+# 2022-11-20 - 13:48:23 
 import os
 
 vers = open("version.h")

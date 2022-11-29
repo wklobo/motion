@@ -2,8 +2,8 @@
 ##*                                                                                           *//
 ##* File:          Makefile                                                                   *//
 ##* Author:        Wolfgang Keuch                                                             *//
-##* Creation date: 2021-04-05;                                                                *//
-##* Last change:   2022-11-23 - 11:52:10                                                      *//
+##* Creation date: 2021-04-05                                                                 *//
+##* Last change:   2022-11-29 - 18:25:42                                                      *//
 ##* Description:   Makefile für 'LampMotion'                                                  *//
 ##*                                                                                           *//
 ##*********************************************************************************************//
@@ -13,21 +13,28 @@ SHELL = /bin/sh
 .SUFFIXES: .c .o
 CC = gcc
 
-DIR_BASE =    /home/pi
 
-DIR_HOME =    $(DIR_BASE)/motion/Lamp
+TOPNAME  = motion
+MAINFILE = lampmotion
+TARGET   = LampMotion
+
+DIR_BASE = /home/pi
+DIR_TOP  = $(DIR_BASE)/$(TOPNAME)
+
+
+DIR_AUX =     $(DIR_TOP)/aux
+DIR_PIX =     $(DIR_TOP)/pix
+DIR_HOME =    $(DIR_TOP)/Lamp
 DIR_BIN =     ${DIR_HOME}/obj
 
 DIR_TREIBER = $(DIR_BASE)/treiber
-DIR_MAIL =	  $(DIR_TREIBER)/sendmail
-DIR_COMMON =  $(DIR_TREIBER)/common
-DIR_SENSOR =  $(DIR_TREIBER)/sensor
-DIR_DBANK =   $(DIR_TREIBER)/dbank
+DIR_MAIL    =	$(DIR_TREIBER)/sendmail
+DIR_COMMON  = $(DIR_TREIBER)/common
+DIR_SENSOR  = $(DIR_TREIBER)/sensor
+DIR_DBANK   = $(DIR_TREIBER)/dbank
 DIR_SNIPPET = $(DIR_TREIBER)/snippets
 
-MAINFILE = lampmotion
-TARGET   = LampMotion
-VERSION  = ${DIR_HOME}/version.h
+VERSION     = ${DIR_HOME}/version.h
 
 
 OBJ_C = $(wildcard  ${DIR_HOME}/*.c  ${DIR_MAIL}/*.c    ${DIR_COMMON}/*.c  ${DIR_SENSOR}/*.c  ${DIR_DBANK}/*.c   )
@@ -35,8 +42,11 @@ OBJ_H = $(wildcard  ${DIR_MAIL}/*.h  ${DIR_COMMON}/*.h  ${DIR_SENSOR}/*.h  ${DIR
 OBJ_O = $(patsubst %.c, ${DIR_BIN}/%.o, $(notdir ${OBJ_C}))
 
 
-DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment '-D PROGNAME="${TARGET}"' '-D VOGEL=1'
-CFLAGS += $(DEBUG)  -lmysqlclient  -lmosquitto  -li2c
+DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment
+PARAM1 =  '-D PROGNAME="${TARGET}"' '-D VOGEL=1'  
+PARAM2 =  '-D TOPDIR="${DIR_TOP}"'  '-D AUXDIR="${DIR_AUX}"' '-D PIXDIR="${DIR_PIX}"' '-D TOPNAME="${TOPNAME}"'
+CFLAGS += $(DEBUG) $(PARAM1)  $(PARAM2) -lmysqlclient  -lmosquitto  -li2c
+
 
 LIBS = -lwiringPi -lmysqlclient  -lmosquitto  -lm  -li2c
 INCLUDE	= -I/usr/include -I/usr/local/include -I/usr/include/mysql  
@@ -60,7 +70,7 @@ $(TARGET) : ${OBJ_O}
 
 ### Hauptdatei:
 ### --------------
-${DIR_BIN}/$(MAINFILE).o : $(MAINFILE).c  $(MAINFILE).h  Makefile  mydatabase.h  $(OBJ_C)  $(OBJ_H)     
+${DIR_BIN}/$(MAINFILE).o : $(MAINFILE).c  $(MAINFILE).h  Makefile   $(OBJ_C)  $(OBJ_H) # sensordb.h    
 	@echo
 	@echo -- T -- Compiling ${srcdir}/$(notdir $<)
 	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS) $(INCLUDE)
@@ -68,7 +78,7 @@ ${DIR_BIN}/$(MAINFILE).o : $(MAINFILE).c  $(MAINFILE).h  Makefile  mydatabase.h 
 
 ## Hauptverzeichnis:
 ## ------------------
-${DIR_BIN}/%.o : $(DIR_HOME)/%.c $(DIR_HOME)/%.h  $(DIR_HOME)/Makefile  $(DIR_HOME)/mydatabase.h  
+${DIR_BIN}/%.o : $(DIR_HOME)/%.c $(DIR_HOME)/%.h  $(DIR_HOME)/Makefile # $(DIR_HOME)/sensordb.h  
 	@echo
 	@echo -- H -- Compiling $(DIR_HOME)/$(notdir $<)
 	$(CC) $(CFLAGS) -c $< -o $@ $(LIBS) $(INCLUDE)

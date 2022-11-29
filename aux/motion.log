@@ -1,0 +1,141 @@
+29.11.2022 18:17:07- LampMotion.main()#5:  - 
+29.11.2022 18:17:07- LampMotion.main()#14: >>> Vers. 4.4.23/Nov 29 2022   ************ Start 'LampMotion' ************
+                                             - PID 1755, User 1000, Group 1000, Anzahl Argumente: '1' 
+29.11.2022 18:17:07- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+29.11.2022 18:17:07- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+29.11.2022 18:17:07- LampMotion.main()#10:     meine PID = '1755'
+29.11.2022 18:17:07- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+29.11.2022 18:17:07- LampMotion.main()#29:     meine IP-Kennung: '196'
+29.11.2022 18:17:07- LampMotion.main()#11:     ------<<< db_Messwerte erstellen >>>------
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Type'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Type' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Sensor'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Sensor' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Value'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Value' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Name'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Name' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Event'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Event' open!
+29.11.2022 18:17:07- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Statistik'
+29.11.2022 18:17:07- LampMotion.CreateTable()#248: Tabelle: 'mw_Statistik' open!
+29.11.2022 18:17:07- LampMotion.main()#77:     ------<<< db_Messwerte geöffnet >>>-------
+29.11.2022 18:17:07- LampMotion.main()#13:     GPIO OK !
+29.11.2022 18:17:08- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+29.11.2022 18:17:08- LampMotion.main()#39:       Sensor(0)='28-95d62f1864ff'
+29.11.2022 18:17:08- LampMotion.main()#39:       Sensor(1)='28-00044cb880ff'
+29.11.2022 18:17:08- LampMotion.main()#39:       Sensor(2)='28-818b891d64ff'
+29.11.2022 18:17:08- LampMotion.main()#31:     Sensor BME280 OK !
+29.11.2022 18:17:08- LampMotion.main()#35:       Luftdruck = 1018 hPa
+29.11.2022 18:17:08- LampMotion.main()#39:       Temperatur = 28.6 °C
+29.11.2022 18:17:08- LampMotion.main()#43:       Feuchtigkeit = 36.8 %
+29.11.2022 18:17:08- LampMotion.main()#14:     Sensor TLS2561 Fehler Initialisierung !
+29.11.2022 18:17:10- LampMotion.main()#22:     MQTT Vers.'2.00.11' OK !
+29.11.2022 18:17:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+29.11.2022 18:17:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+29.11.2022 18:17:10- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+29.11.2022 18:17:10- LampMotion.main()#11:     ----------<<< init done >>>----------
+29.11.2022 18:19:06- LampMotion.main()#5:  - 
+29.11.2022 18:19:06- LampMotion.main()#14: >>> Vers. 4.4.24/Nov 29 2022   ************ Start 'LampMotion' ************
+                                             - PID 1796, User 1000, Group 1000, Anzahl Argumente: '1' 
+29.11.2022 18:19:06- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+29.11.2022 18:19:06- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+29.11.2022 18:19:06- LampMotion.main()#10:     meine PID = '1796'
+29.11.2022 18:19:06- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+29.11.2022 18:19:06- LampMotion.main()#29:     meine IP-Kennung: '196'
+29.11.2022 18:19:06- LampMotion.main()#11:     ------<<< db_Messwerte erstellen >>>------
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Type'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Type' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Sensor'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Sensor' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Value'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Value' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Name'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Name' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Event'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Event' open!
+29.11.2022 18:19:06- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Statistik'
+29.11.2022 18:19:06- LampMotion.CreateTable()#248: Tabelle: 'mw_Statistik' open!
+29.11.2022 18:19:06- LampMotion.main()#77:     ------<<< db_Messwerte geöffnet >>>-------
+29.11.2022 18:19:06- LampMotion.main()#13:     GPIO OK !
+29.11.2022 18:19:07- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+29.11.2022 18:19:07- LampMotion.main()#39:       Sensor(0)='28-95d62f1864ff'
+29.11.2022 18:19:07- LampMotion.main()#39:       Sensor(1)='28-00044cb880ff'
+29.11.2022 18:19:07- LampMotion.main()#39:       Sensor(2)='28-818b891d64ff'
+29.11.2022 18:19:07- LampMotion.main()#31:     Sensor BME280 OK !
+29.11.2022 18:19:07- LampMotion.main()#35:       Luftdruck = 1018 hPa
+29.11.2022 18:19:07- LampMotion.main()#39:       Temperatur = 28.5 °C
+29.11.2022 18:19:07- LampMotion.main()#43:       Feuchtigkeit = 36.5 %
+29.11.2022 18:19:07- LampMotion.main()#14:     Sensor TLS2561 Fehler Initialisierung !
+29.11.2022 18:19:09- LampMotion.main()#22:     MQTT Vers.'2.00.11' OK !
+29.11.2022 18:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+29.11.2022 18:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+29.11.2022 18:19:09- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+29.11.2022 18:19:09- LampMotion.main()#11:     ----------<<< init done >>>----------
+29.11.2022 18:20:05- FifoMotion.main()#5:  - 
+29.11.2022 18:20:05- FifoMotion.main()#14: >>> Vers. 4.3.201/Nov 29 2022   ************ Start 'FifoMotion' ************
+                                             - PID 1832, User 1000, Group 1000, Anzahl Argumente: '1' 
+29.11.2022 18:20:05- FifoMotion.main()#14:     Watchdog-Datei: '/tmp/FifoMotion.wdg'
+29.11.2022 18:20:05- FifoMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+29.11.2022 18:20:05- FifoMotion.main()#10:     meine PID = '1832'
+29.11.2022 18:20:05- FifoMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+29.11.2022 18:20:05- FifoMotion.main()#29:     meine IP-Kennung: '196'
+29.11.2022 18:20:05- FifoMotion.main()#13:     GPIO OK !
+29.11.2022 18:20:07- FifoMotion.main()#25:     ------<<< /home/pi/motion/aux/MOTION.FIFO geöffnet >>>-------
+29.11.2022 18:20:07- FifoMotion.main()#37:     Speicherziel: '/media/Kamera/Vogel/'
+29.11.2022 18:20:07- FifoMotion.main()#11:     ----------<<< init done >>>----------
+29.11.2022 18:22:41- FifoMotion.main()#5:  - 
+29.11.2022 18:22:41- FifoMotion.main()#14: >>> Vers. 4.3.202/Nov 29 2022   ************ Start 'FifoMotion' ************
+                                             - PID 1916, User 1000, Group 1000, Anzahl Argumente: '1' 
+29.11.2022 18:22:41- FifoMotion.main()#14:     Watchdog-Datei: '/tmp/FifoMotion.wdg'
+29.11.2022 18:22:41- FifoMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+29.11.2022 18:22:41- FifoMotion.main()#10:     meine PID = '1916'
+29.11.2022 18:22:41- FifoMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+29.11.2022 18:22:41- FifoMotion.main()#29:     meine IP-Kennung: '196'
+29.11.2022 18:22:41- FifoMotion.main()#13:     GPIO OK !
+29.11.2022 18:22:43- FifoMotion.main()#25:     ------<<< /home/pi/motion/aux/MOTION.FIFO geöffnet >>>-------
+29.11.2022 18:22:43- FifoMotion.main()#37:     Speicherziel: '/media/Kamera/Vogel/'
+29.11.2022 18:22:43- FifoMotion.main()#11:     ----------<<< init done >>>----------
+29.11.2022 18:23:12- LampMotion.main()#5:  - 
+29.11.2022 18:23:12- LampMotion.main()#14: >>> Vers. 4.4.25/Nov 29 2022   ************ Start 'LampMotion' ************
+                                             - PID 1993, User 1000, Group 1000, Anzahl Argumente: '1' 
+29.11.2022 18:23:12- LampMotion.main()#14:     Watchdog-Datei: '/tmp/LampMotion.wdg'
+29.11.2022 18:23:12- LampMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+29.11.2022 18:23:12- LampMotion.main()#10:     meine PID = '1993'
+29.11.2022 18:23:12- LampMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+29.11.2022 18:23:12- LampMotion.main()#29:     meine IP-Kennung: '196'
+29.11.2022 18:23:12- LampMotion.main()#11:     ------<<< db_Messwerte erstellen >>>------
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Type'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Type' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Sensor'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Sensor' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Value'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Value' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Name'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Name' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Event'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Event' open!
+29.11.2022 18:23:12- LampMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Statistik'
+29.11.2022 18:23:12- LampMotion.CreateTable()#248: Tabelle: 'mw_Statistik' open!
+29.11.2022 18:23:12- LampMotion.main()#77:     ------<<< db_Messwerte geöffnet >>>-------
+29.11.2022 18:23:12- LampMotion.main()#13:     GPIO OK !
+29.11.2022 18:23:13- LampMotion.main()#25:     Anzahl DS18B20-Sensoren: 3
+29.11.2022 18:23:13- LampMotion.main()#39:       Sensor(0)='28-95d62f1864ff'
+29.11.2022 18:23:13- LampMotion.main()#39:       Sensor(1)='28-00044cb880ff'
+29.11.2022 18:23:13- LampMotion.main()#39:       Sensor(2)='28-818b891d64ff'
+29.11.2022 18:23:13- LampMotion.main()#31:     Sensor BME280 OK !
+29.11.2022 18:23:13- LampMotion.main()#35:       Luftdruck = 1018 hPa
+29.11.2022 18:23:13- LampMotion.main()#39:       Temperatur = 28.5 °C
+29.11.2022 18:23:13- LampMotion.main()#43:       Feuchtigkeit = 36.2 %
+29.11.2022 18:23:13- LampMotion.main()#14:     Sensor TLS2561 Fehler Initialisierung !
+29.11.2022 18:23:15- LampMotion.main()#22:     MQTT Vers.'2.00.11' OK !
+29.11.2022 18:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9996/#'
+29.11.2022 18:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
+29.11.2022 18:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
+29.11.2022 18:23:15- LampMotion.main()#11:     ----------<<< init done >>>----------

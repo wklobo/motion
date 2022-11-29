@@ -17,10 +17,11 @@
 #define _FIFOMOTION_H  1
 
 
-#include "../common.h"
+//#include "../common.h"
 
-#define __FIFO__         FIFO   /* "'./Fifo'" */
-#define SNAPSHOT         "/home/pi/motion/pix/lastsnap.jpg"
+//#define __FIFO__         FIFO   /* "'./Fifo'" */
+//#define SNAPSHOT         "/home/pi/motion/pix/lastsnap.jpg"
+//#define MAINFOLDER      "/home/pi/motion/Fifo/%s"   /* Programm-Basisadresse */
 
 #endif //_FIFOMOTION_H
 
