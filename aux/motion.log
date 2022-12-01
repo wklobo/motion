@@ -139,3 +139,416 @@
 29.11.2022 18:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9995/#'
 29.11.2022 18:23:15- LampMotion.MQTT_Subscribe()#508: - MQTT Subscription: '/+/+/+/+/+/-9997/#'
 29.11.2022 18:23:15- LampMotion.main()#11:     ----------<<< init done >>>----------
+30.11.2022 10:21:57- FifoMotion.main()#5:  - 
+30.11.2022 10:21:57- FifoMotion.main()#14: >>> Vers. 4.3.202/Nov 29 2022   ************ Start 'FifoMotion' ************
+                                             - PID 1858, User 1000, Group 1000, Anzahl Argumente: '1' 
+30.11.2022 10:21:57- FifoMotion.main()#14:     Watchdog-Datei: '/tmp/FifoMotion.wdg'
+30.11.2022 10:21:57- FifoMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 10:21:57- FifoMotion.main()#10:     meine PID = '1858'
+30.11.2022 10:21:57- FifoMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 10:21:57- FifoMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 10:21:57- FifoMotion.main()#13:     GPIO OK !
+30.11.2022 10:21:58- FifoMotion.main()#25:     ------<<< /home/pi/motion/aux/MOTION.FIFO geöffnet >>>-------
+30.11.2022 10:21:58- FifoMotion.main()#37:     Speicherziel: '/media/Kamera/Vogel/'
+30.11.2022 10:21:58- FifoMotion.main()#11:     ----------<<< init done >>>----------
+30.11.2022 14:58:10- SqlMotion.main()#5:  - 
+30.11.2022 14:58:10- SqlMotion.main()#14: >>> Vers. 4.3.236/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3089, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 14:58:10- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 14:58:10- SqlMotion.main()#10:     meine PID = '3089'
+30.11.2022 14:58:10- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 14:58:10- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 14:58:10- SqlMotion.main()#1089: <<< Anzahl Argumente '2': Exitas!
+30.11.2022 15:07:12- SqlMotion.main()#5:  - 
+30.11.2022 15:07:12- SqlMotion.main()#14: >>> Vers. 4.3.236/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3100, User 1000, Group 1000, Anzahl Argumente: '6' 
+30.11.2022 15:07:12- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:07:12- SqlMotion.main()#10:     meine PID = '3100'
+30.11.2022 15:07:12- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:07:12- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:07:12- SqlMotion.showMain_Error()#218: <<< CreateTables()#637 @15:07:12 in sqlmotion.c: "SELECT * FROM tabEvent; -- SQL-Error 1146(Table 'DB_Motion.tabEvent' doesn't exist)": Exitosi!
+30.11.2022 15:11:15- SqlMotion.main()#5:  - 
+30.11.2022 15:11:15- SqlMotion.main()#14: >>> Vers. 4.3.236/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3164, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 15:11:15- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:11:15- SqlMotion.main()#10:     meine PID = '3164'
+30.11.2022 15:11:15- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:11:15- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:11:16- SqlMotion.main()#1089: <<< Anzahl Argumente '2': Exitas!
+30.11.2022 15:13:45- SqlMotion.main()#5:  - 
+30.11.2022 15:13:45- SqlMotion.main()#14: >>> Vers. 4.3.237/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3195, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 15:13:45- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:13:45- SqlMotion.main()#10:     meine PID = '3195'
+30.11.2022 15:13:45- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:13:45- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:13:46- SqlMotion.main()#1091: <<< Anzahl Argumente '2': Exitas!
+30.11.2022 15:15:52- SqlMotion.main()#5:  - 
+30.11.2022 15:15:52- SqlMotion.main()#14: >>> Vers. 4.3.238/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3221, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 15:15:52- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:15:52- SqlMotion.main()#10:     meine PID = '3221'
+30.11.2022 15:15:52- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:15:52- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:15:53- SqlMotion.main()#1092: <<< Anzahl Argumente '2': Exitas!
+30.11.2022 15:18:25- SqlMotion.main()#5:  - 
+30.11.2022 15:18:25- SqlMotion.main()#14: >>> Vers. 4.3.238/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3235, User 1000, Group 1000, Anzahl Argumente: '1' 
+30.11.2022 15:18:25- SqlMotion.main()#920: <<< Anzahl Argumente '1': Exit!
+30.11.2022 15:33:47- SqlMotion.main()#5:  - 
+30.11.2022 15:33:47- SqlMotion.main()#14: >>> Vers. 4.3.239/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3290, User 1000, Group 1000, Anzahl Argumente: '1' 
+30.11.2022 15:33:47- SqlMotion.main()#922: <<< Anzahl Argumente '1': Exit!
+30.11.2022 15:34:01- SqlMotion.main()#5:  - 
+30.11.2022 15:34:01- SqlMotion.main()#14: >>> Vers. 4.3.239/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3292, User 1000, Group 1000, Anzahl Argumente: '6' 
+30.11.2022 15:34:01- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:34:01- SqlMotion.main()#10:     meine PID = '3292'
+30.11.2022 15:34:01- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:34:01- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:34:01- SqlMotion.showMain_Error()#219: <<< CreateTables()#638 @15:34:01 in sqlmotion.c: "SELECT * FROM tabEvent; -- SQL-Error 1146(Table 'DB_Motion.tabEvent' doesn't exist)": Exitosi!
+30.11.2022 15:45:10- SqlMotion.main()#5:  - 
+30.11.2022 15:45:10- SqlMotion.main()#14: >>> Vers. 4.3.240/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3384, User 1000, Group 1000, Anzahl Argumente: '6' 
+30.11.2022 15:45:10- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:45:10- SqlMotion.main()#10:     meine PID = '3384'
+30.11.2022 15:45:10- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:45:10- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:48:34- SqlMotion.main()#5:  - 
+30.11.2022 15:48:34- SqlMotion.main()#14: >>> Vers. 4.3.241/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3411, User 1000, Group 1000, Anzahl Argumente: '6' 
+30.11.2022 15:48:34- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:48:34- SqlMotion.main()#10:     meine PID = '3411'
+30.11.2022 15:48:34- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 fd51:42f8:caae:d92e::ff'
+30.11.2022 15:48:34- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:48:34- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 15:48:35- SqlMotion.showMain_Error()#233: <<< CreateTables()#652 @15:48:35 in sqlmotion.c: "SELECT * FROM tabEvent; -- SQL-Error 1146(Table 'DB_Motion.tabEvent' doesn't exist)": Exitosi!
+30.11.2022 15:55:31- SqlMotion.main()#5:  - 
+30.11.2022 15:55:31- SqlMotion.main()#14: >>> Vers. 4.3.242/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3476, User 1000, Group 1000, Anzahl Argumente: '6' 
+30.11.2022 15:55:31- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:55:31- SqlMotion.main()#10:     meine PID = '3476'
+30.11.2022 15:55:31- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 '
+30.11.2022 15:55:31- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:55:31- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 15:55:31- SqlMotion.showMain_Error()#233: <<< CreateTables()#652 @15:55:31 in sqlmotion.c: "SELECT * FROM tabEvent; -- SQL-Error 1146(Table 'DB_Motion.tabEvent' doesn't exist)": Exitosi!
+30.11.2022 15:58:09- SqlMotion.main()#5:  - 
+30.11.2022 15:58:09- SqlMotion.main()#14: >>> Vers. 4.3.242/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3488, User 1000, Group 1000, Anzahl Argumente: '3' 
+30.11.2022 15:58:09- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:58:09- SqlMotion.main()#10:     meine PID = '3488'
+30.11.2022 15:58:09- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 '
+30.11.2022 15:58:09- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:58:09- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 15:58:09- SqlMotion.showMain_Error()#233: <<< CreateTables()#652 @15:58:09 in sqlmotion.c: "SELECT * FROM tabEvent; -- SQL-Error 1146(Table 'DB_Motion.tabEvent' doesn't exist)": Exitosi!
+30.11.2022 15:58:17- SqlMotion.main()#5:  - 
+30.11.2022 15:58:17- SqlMotion.main()#14: >>> Vers. 4.3.242/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3494, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 15:58:17- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 15:58:17- SqlMotion.main()#10:     meine PID = '3494'
+30.11.2022 15:58:17- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196 '
+30.11.2022 15:58:17- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 15:58:17- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 15:58:17- SqlMotion.main()#1026: <<< Anzahl Argumente '2': Exit!
+30.11.2022 17:31:47- SqlMotion.main()#5:  - 
+30.11.2022 17:31:47- SqlMotion.main()#14: >>> Vers. 4.3.243/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3957, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:31:47- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:31:47- SqlMotion.main()#10:     meine PID = '3957'
+30.11.2022 17:31:47- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:31:47- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:31:47- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:31:47- SqlMotion.CreateTable()#199: neue Tabelle: 'mw_Site'
+30.11.2022 17:31:47- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:31:47- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:31:47- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:31:47- SqlMotion.finish_with_SQL_Error()#63: EnterDataset() in /home/pi/treiber/dbank/createdb.c#380 "INSERT INTO sq_Event (rSensor, Messwert, Steigung, Ereignis, Bemerkung) VALUES ('1', '0', '0', '----------- Start SqlMotion Vers. 4.3.243 -----------', ' ')"
+ Error 1146-<Table 'db_Motion.sq_Event' doesn't exist>
+
+30.11.2022 17:34:29- SqlMotion.main()#5:  - 
+30.11.2022 17:34:29- SqlMotion.main()#14: >>> Vers. 4.3.244/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 3991, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:34:29- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:34:29- SqlMotion.main()#10:     meine PID = '3991'
+30.11.2022 17:34:29- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:34:29- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:34:29- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:34:29- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:34:29- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:35:54- SqlMotion.main()#5:  - 
+30.11.2022 17:35:54- SqlMotion.main()#14: >>> Vers. 4.3.244/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4008, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:35:54- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:35:54- SqlMotion.main()#10:     meine PID = '4008'
+30.11.2022 17:35:54- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:35:54- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:35:54- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:35:54- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:35:54- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:36:25- SqlMotion.main()#5:  - 
+30.11.2022 17:36:25- SqlMotion.main()#14: >>> Vers. 4.3.246/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4178, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:36:25- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:36:25- SqlMotion.main()#10:     meine PID = '4178'
+30.11.2022 17:36:25- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:36:25- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:36:25- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:36:25- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:36:25- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:44:44- SqlMotion.main()#5:  - 
+30.11.2022 17:44:44- SqlMotion.main()#14: >>> Vers. 4.3.248/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4369, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:44:44- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:44:44- SqlMotion.main()#10:     meine PID = '4369'
+30.11.2022 17:44:44- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:44:44- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:44:44- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:44:44- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:44:44- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:44:44- SqlMotion.CreateTable()#199: neue Tabelle: 'sq_Event'
+30.11.2022 17:44:44- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 17:44:44- SqlMotion.finish_with_SQL_Error()#63: EnterDataset() in /home/pi/treiber/dbank/createdb.c#380 "INSERT INTO sq_Event (rSensor, Messwert, Steigung, Ereignis, Bemerkung) VALUES ('1', '0', '0', '----------- Start SqlMotion Vers. 4.3.248 -----------', ' ')"
+ Error 1054-<Unknown column 'rSensor' in 'field list'>
+
+30.11.2022 17:54:10- SqlMotion.main()#5:  - 
+30.11.2022 17:54:10- SqlMotion.main()#14: >>> Vers. 4.3.249/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4410, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:54:10- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:54:10- SqlMotion.main()#10:     meine PID = '4410'
+30.11.2022 17:54:10- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:54:10- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:54:10- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:54:10- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:54:10- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:54:10- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+30.11.2022 17:54:10- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 17:54:10- SqlMotion.finish_with_SQL_Error()#63: EnterDataset() in /home/pi/treiber/dbank/createdb.c#380 "INSERT INTO sq_Event (evEvent, evDate, evTime, evRemark) VALUES ('1', '0', '0', '----------- Start SqlMotion -----------', ' ')"
+ Error 1136-<Column count doesn't match value count at row 1>
+
+30.11.2022 17:59:04- SqlMotion.main()#5:  - 
+30.11.2022 17:59:04- SqlMotion.main()#14: >>> Vers. 4.3.250/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4449, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 17:59:04- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 17:59:04- SqlMotion.main()#10:     meine PID = '4449'
+30.11.2022 17:59:04- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 17:59:04- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 17:59:04- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 17:59:04- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 17:59:04- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 17:59:04- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+30.11.2022 17:59:04- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 17:59:04- SqlMotion.finish_with_SQL_Error()#63: EnterDataset() in /home/pi/treiber/dbank/createdb.c#380 "INSERT INTO sq_Event (evEvent, evDate, evTime, evRemark) VALUES ('1', '0', '0', '----------- Start SqlMotion -----------')"
+ Error 1364-<Field 'evSize' doesn't have a default value>
+
+30.11.2022 18:00:25- SqlMotion.main()#5:  - 
+30.11.2022 18:00:25- SqlMotion.main()#14: >>> Vers. 4.3.251/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4477, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 18:00:25- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 18:00:25- SqlMotion.main()#10:     meine PID = '4477'
+30.11.2022 18:00:25- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 18:00:25- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 18:00:25- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 18:00:25- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 18:00:25- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 18:00:25- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+30.11.2022 18:00:25- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 18:00:25- SqlMotion.finish_with_SQL_Error()#63: EnterDataset() in /home/pi/treiber/dbank/createdb.c#380 "INSERT INTO sq_Event (evEvent, evDate, evTime, evSize, evRemark) VALUES ('1', '0', '0', '0', '----------- Start SqlMotion -----------')"
+ Error 1292-<Incorrect date value: '0' for column `db_Motion`.`sq_Event`.`evDate` at row 1>
+
+30.11.2022 18:01:56- SqlMotion.main()#5:  - 
+30.11.2022 18:01:56- SqlMotion.main()#14: >>> Vers. 4.3.252/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4508, User 1000, Group 1000, Anzahl Argumente: '2' 
+30.11.2022 18:01:56- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 18:01:56- SqlMotion.main()#10:     meine PID = '4508'
+30.11.2022 18:01:56- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 18:01:56- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 18:01:56- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 18:01:56- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 18:01:56- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 18:01:56- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+30.11.2022 18:01:56- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 18:01:56- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+30.11.2022 18:01:56- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 18:01:56- SqlMotion.main()#1040: <<< Anzahl Argumente '2': Exit!
+30.11.2022 18:02:06- SqlMotion.main()#5:  - 
+30.11.2022 18:02:06- SqlMotion.main()#14: >>> Vers. 4.3.252/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 4519, User 1000, Group 1000, Anzahl Argumente: '4' 
+30.11.2022 18:02:06- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+30.11.2022 18:02:06- SqlMotion.main()#10:     meine PID = '4519'
+30.11.2022 18:02:06- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+30.11.2022 18:02:06- SqlMotion.main()#29:     meine IP-Kennung: '196'
+30.11.2022 18:02:06- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+30.11.2022 18:02:06- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+30.11.2022 18:02:06- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+30.11.2022 18:02:06- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+30.11.2022 18:02:06- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+30.11.2022 18:02:06- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+30.11.2022 18:02:06- SqlMotion.main()#13:     GPIO OK !
+30.11.2022 18:02:07- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+30.11.2022 18:02:07- SqlMotion.showMain_Error()#239: <<< main()#1364 @18:02:07 in sqlmotion.c: "Error Verzeichnis '': 2(No such file or directory)": Exitosi!
+01.12.2022 10:24:38- SqlMotion.main()#5:  - 
+01.12.2022 10:24:38- SqlMotion.main()#14: >>> Vers. 4.3.252/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2472, User 1000, Group 1000, Anzahl Argumente: '4' 
+01.12.2022 10:24:38- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:24:38- SqlMotion.main()#10:     meine PID = '2472'
+01.12.2022 10:24:38- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:24:38- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:24:38- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:24:38- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:24:38- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:24:38- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:24:38- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:24:38- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:24:38- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:24:39- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:24:39- SqlMotion.showMain_Error()#239: <<< main()#1364 @10:24:39 in sqlmotion.c: "Error Verzeichnis '': 2(No such file or directory)": Exitosi!
+01.12.2022 10:36:16- SqlMotion.main()#5:  - 
+01.12.2022 10:36:16- SqlMotion.main()#14: >>> Vers. 4.3.252/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2496, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:36:16- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:36:16- SqlMotion.main()#10:     meine PID = '2496'
+01.12.2022 10:36:16- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:36:16- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:36:16- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:36:16- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:36:16- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:36:16- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:36:16- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:36:16- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:36:16- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:36:16- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:36:16- SqlMotion.main()#1691:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:36:16- SqlMotion.main()#1703:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:36:16- SqlMotion.main()#1758: <<< fertig in 1 msec!
+01.12.2022 10:38:07- SqlMotion.main()#5:  - 
+01.12.2022 10:38:07- SqlMotion.main()#14: >>> Vers. 4.3.252/Nov 30 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2510, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:38:07- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:38:07- SqlMotion.main()#10:     meine PID = '2510'
+01.12.2022 10:38:07- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:38:07- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:38:07- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:38:07- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:38:07- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:38:07- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:38:07- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:38:07- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:38:07- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:38:08- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:38:08- SqlMotion.main()#1691:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:38:08- SqlMotion.main()#1703:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:38:08- SqlMotion.main()#1758: <<< fertig in 1 msec!
+01.12.2022 10:41:38- SqlMotion.main()#5:  - 
+01.12.2022 10:41:38- SqlMotion.main()#14: >>> Vers. 4.3.253/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2627, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:41:38- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:41:38- SqlMotion.main()#10:     meine PID = '2627'
+01.12.2022 10:41:38- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:41:38- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:41:38- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:41:38- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:41:38- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:41:38- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:41:38- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:41:38- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:41:38- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:41:39- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 10:41:39- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:41:39- SqlMotion.main()#1691:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:41:39- SqlMotion.main()#1703:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:41:39- SqlMotion.main()#1759: <<< fertig in 1 msec!
+01.12.2022 10:42:19- SqlMotion.main()#5:  - 
+01.12.2022 10:42:19- SqlMotion.main()#14: >>> Vers. 4.3.253/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2637, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:42:19- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:42:19- SqlMotion.main()#10:     meine PID = '2637'
+01.12.2022 10:42:19- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:42:19- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:42:19- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:42:19- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:42:19- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:42:19- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:42:19- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:42:19- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:42:19- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:42:19- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 10:42:19- SqlMotion.main()#1305:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:42:19- SqlMotion.main()#1691:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:42:19- SqlMotion.main()#1703:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:42:19- SqlMotion.main()#1759: <<< fertig in 1 msec!
+01.12.2022 10:46:06- SqlMotion.main()#5:  - 
+01.12.2022 10:46:06- SqlMotion.main()#14: >>> Vers. 4.3.254/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2668, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:46:06- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:46:06- SqlMotion.main()#10:     meine PID = '2668'
+01.12.2022 10:46:06- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:46:06- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:46:06- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:46:06- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:46:06- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:46:06- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:46:06- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:46:06- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:46:06- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:46:07- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 10:46:07- SqlMotion.main()#1282:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:46:07- SqlMotion.main()#1668:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:46:07- SqlMotion.main()#1680:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:46:07- SqlMotion.main()#1736: <<< fertig in 1 msec!
+01.12.2022 10:49:40- SqlMotion.main()#5:  - 
+01.12.2022 10:49:40- SqlMotion.main()#14: >>> Vers. 4.3.255/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2700, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 10:49:40- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 10:49:40- SqlMotion.main()#10:     meine PID = '2700'
+01.12.2022 10:49:40- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 10:49:40- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 10:49:40- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 10:49:40- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 10:49:40- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 10:49:40- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 10:49:40- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 10:49:40- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 10:49:40- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 10:49:41- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 10:49:41- SqlMotion.main()#1282:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 10:49:41- SqlMotion.main()#1668:       --- Phase 2: fertig in 0.000 sec
+01.12.2022 10:49:41- SqlMotion.main()#1680:       --- belegter Speicher: 0.000 GB 
+01.12.2022 10:49:41- SqlMotion.main()#1736: <<< fertig in 1 msec!
+01.12.2022 11:02:12- SqlMotion.main()#5:  - 
+01.12.2022 11:02:12- SqlMotion.main()#14: >>> Vers. 4.3.256/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2744, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 11:02:12- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 11:02:12- SqlMotion.main()#10:     meine PID = '2744'
+01.12.2022 11:02:12- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 11:02:12- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 11:02:12- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 11:02:12- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 11:02:12- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 11:02:12- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 11:02:12- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 11:02:12- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 11:02:12- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 11:02:13- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 11:02:13- SqlMotion.main()#1282:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 11:02:13- SqlMotion.main()#1668:       --- Phase 2: fertig in 0.001 sec
+01.12.2022 11:02:13- SqlMotion.main()#1680:       --- belegter Speicher: 0.000 GB 
+01.12.2022 11:02:13- SqlMotion.main()#1736: <<< fertig in 1 msec!
+01.12.2022 11:03:26- SqlMotion.main()#5:  - 
+01.12.2022 11:03:26- SqlMotion.main()#14: >>> Vers. 4.3.257/Dec  1 2022   ************ Start 'SqlMotion' ************
+                                             - PID 2776, User 1000, Group 1000, Anzahl Argumente: '3' 
+01.12.2022 11:03:26- SqlMotion.main()#18:     RasPi-Hostname: 'Vogel2'
+01.12.2022 11:03:26- SqlMotion.main()#10:     meine PID = '2776'
+01.12.2022 11:03:26- SqlMotion.main()#11:     meine IPs: '192.168.0.197 192.168.0.196'
+01.12.2022 11:03:26- SqlMotion.main()#29:     meine IP-Kennung: '196'
+01.12.2022 11:03:26- SqlMotion.main()#11:     ------<<< db_Motion erstellen >>>------
+01.12.2022 11:03:26- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'mw_Site'
+01.12.2022 11:03:26- SqlMotion.CreateTable()#248: Tabelle: 'mw_Site' open!
+01.12.2022 11:03:26- SqlMotion.CreateTable()#165: Tabelle vorhanden: 'sq_Event'
+01.12.2022 11:03:26- SqlMotion.CreateTable()#248: Tabelle: 'sq_Event' open!
+01.12.2022 11:03:26- SqlMotion.main()#103:     ------<<< db_Motion geöffnet >>>-------
+01.12.2022 11:03:26- SqlMotion.main()#13:     GPIO OK !
+01.12.2022 11:03:26- SqlMotion.main()#11:     ----------<<< init done >>>----------
+01.12.2022 11:03:26- SqlMotion.main()#1282:       --- Phase 1: fertig 0 Dateien -> 0 neue Verzeichnisse in 0 msec
+01.12.2022 11:03:26- SqlMotion.main()#1668:       --- Phase 2: fertig in 0.003 sec
+01.12.2022 11:03:26- SqlMotion.main()#1680:       --- belegter Speicher: 0.000 GB 
+01.12.2022 11:03:26- SqlMotion.main()#1736: <<< fertig in 5 msec!

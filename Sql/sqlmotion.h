@@ -15,7 +15,7 @@
 #ifndef _SQLMOTION_H
 #define _SQLMOTION_H  1
 
-#include "../common.h"
+//#include "../common.h"
 
 #define NO_ERROR 0
 
@@ -23,12 +23,12 @@
 #define FOLDER_EXIST   102
 
 
-// Datenbank neu aufgesetzt
-// ------------------------
-#define THISUSER            "root"
-#define THISPW              "geheim"
-#define THISHOST            "localhost"
-
+//// Datenbank neu aufgesetzt
+//// ------------------------
+//#define THISUSER            "root"
+//#define THISPW              "geheim"
+//#define THISHOST            "localhost"
+//
 //--
 //-- Tabellenstruktur für Tabelle `tabEvent`
 //--
@@ -43,8 +43,8 @@
 //) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-#define MYDATABASE          "DB_Motion"
-#define MYEVENTTABLE        "tabEvent"
+//#define MYDATABASE          "DB_Motion"
+//#define MYEVENTTABLE        "tabEvent"
 
 #define  EVKEYID     "evKeyID"
 #define  EVSAVED     "evSaved"

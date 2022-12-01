@@ -43,7 +43,7 @@ OBJ_O = $(patsubst %.c, ${DIR_BIN}/%.o, $(notdir ${OBJ_C}))
 
 
 DEBUG = -g -O0  -Wall -Wno-format-overflow -Wno-unused-function  -Wno-unused-value -Wno-comment
-PARAM1 =  '-D PROGNAME="${TARGET}"' '-D VOGEL=1'  
+PARAM1 =  '-D PROGNAME="${TARGET}"' '-D VOGEL=1'  '-D SENSOR_DB=1'  
 PARAM2 =  '-D TOPDIR="${DIR_TOP}"'  '-D AUXDIR="${DIR_AUX}"' '-D PIXDIR="${DIR_PIX}"' '-D TOPNAME="${TOPNAME}"'
 CFLAGS += $(DEBUG) $(PARAM1)  $(PARAM2) -lmysqlclient  -lmosquitto  -li2c
 

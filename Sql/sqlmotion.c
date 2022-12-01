@@ -3,7 +3,7 @@
 //* File:          sqlmotion.c                                              *//
 //* Author:        Wolfgang Keuch                                           *//
 //* Creation date: 2014-07-20  --  2016-02-18                               *//
-//* Last change:   2022-05-03 - 11:18:24                                    *//
+//* Last change:   2022-11-30 - 14:19:25                                    *//
 //* Description:   Weiterverarbeitung von 'motion'-Dateien:                 *//
 //*                Event ermitteln, daraus ein Verzeichnis erstellen,       *//
 //*                zugehörige Dateien in dieses Verzeichnis verschieben     *//
@@ -21,15 +21,40 @@
 #define _POSIX_SOURCE
 #define _DEFAULT_SOURCE
 #define _MODUL0
+#define __SQLMOTION_DEBUG__      true
+#define __SQLMOTION_DEBUG_INIT__ true
+
 #define __SQLMOTION_MYLOG__    true
 #define __SQLMOTION_MYLOG1__   false
 #define __SQLMOTION_MYLOG1a__  false
 #define __SQLMOTION_MYLOG2__   false
-#define __SQLMOTION_DEBUG__    false
+//#define __SQLMOTION_DEBUG__    false
 #define __SQLMOTION_DEBUG__d   false     /* Datenbanken */
-#define __SQLMOTION_DEBUG__1   false
-#define __SQLMOTION_DEBUG__2   false
-#define __SQLMOTION_DEBUG__z   false
+#define __SQLMOTION_DEBUG__1   true
+#define __SQLMOTION_DEBUG__2   true
+#define __SQLMOTION_DEBUG__z   true
+
+
+// Breakpoints
+// -----------
+#define BREAK1      0     /* der erste Durchlauf                  */
+#define BREAK21     0     /* Beginn Phase 2                       */
+#define BREAK22     0     /* nächste Datei in diesem Verzeichnis  */
+#define BREAK23     0     /* ein Eventverzeichnis durchlaufen     */
+#define BREAK24     0     /* alle Eventverzeichnisse durchlaufen  */
+
+
+// Peripherie aktivieren
+// ----------------------
+#define __LCD_DISPLAY__    false   /* LCD-Display               */
+#define __DS18B20__        false   /* DS18B20-Sensoren          */
+#define __INTERNAL__       true    /* CPU-Temperatur            */
+#define __BME280__         false   /* BME280-Sensor             */
+#define __TSL2561__        false   /* TLS2561-Sensor            */
+#define __GPIO__           true    /* GPIOs über 'gpio.c'       */
+#define __MQTT__           false   /* Mosquitto                 */
+#define __INTERRUPT__      false   /* Interrupt Geigerzähler    */
+#define __DATENBANK__      true    /* Datenbank                 */
 
 
 #include "./version.h"
@@ -48,32 +73,69 @@
 #include <unistd.h>
 #include <syslog.h>
 #include <stdbool.h>
-#include <wiringPi.h>
-#include <sys/time.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <mysql/mysql.h>
 #include <mysql/mysqld_error.h>
 
 
-#include "../error.h"
-#include "../datetime.h"
-#include "../../sendmail/sendMail.h"
+//#include "../error.h"
+//#include "../datetime.h"
+//#include "../../sendmail/sendMail.h"
+
+#include "/home/pi/treiber/common/gpio.h"
+#include "/home/pi/treiber/common/error.h"
+#include "/home/pi/treiber/common/common.h"
+#include "/home/pi/treiber/common/datetime.h"
+#include "/home/pi/treiber/sendmail/sendMail.h"
+
+#include "/home/pi/treiber/dbank/createdb.h"
+#include "./motion_db.h"
 
 // statische Variable
 // --------------------
 static time_t ErrorFlag = 0;          // Steuerung rote LED
 
-// Breakpoints
-// -----------
-#define BREAK1      0     /* der erste Durchlauf                  */
-#define BREAK21     0     /* Beginn Phase 2                       */
-#define BREAK22     0     /* nächste Datei in diesem Verzeichnis  */
-#define BREAK23     0     /* ein Eventverzeichnis durchlaufen     */
-#define BREAK24     0     /* alle Eventverzeichnisse durchlaufen  */
-
 char MailBody[BODYLEN];
 
+
+// programmweite Variable
+// -----------------------
+char   s_Hostname[ZEILE];                       // der Name dieses Rechners
+char   s_meineIPAdr[NOTIZ];                     // die IP-Adresse dieses Rechners
+uint   s_IPnmr=0;                               // letzte Stelle der IP-Adresse
+long   s_pid=0;                                 // meine Prozess-ID
+
+#if __DATENBANK__
+  static MYSQL* con = NULL;                     // Verbindung zur Datenbank
+  long ID_Site = -1;                            // KeyID dieses Rechners in der Datenbank
+  long ID_Event = -1;                           // KeyID Ereignis-Tabelle
+#endif
+
+// gemeinsame Verzeichnisse
+// ------------------------
+#include "/home/pi/motion/motion.h"
+	
+//// gemeinsame Verzeichnisse
+//// ------------------------
+//#define _FOLDER       "event_"                  /* Kennzeichnung Verzeichnis */
+//#define _EVENT_       "Event_"                  /* Kennzeichnung Verzeichnis */
+//#define AUXDIR          AUXDIR
+//#define FIFO          AUXDIR"/MOTION.FIFO"
+//#define SOURCE        TOPDIR"/pix/"
+//#define TEMP          TOPDIR"/tmp/"
+//#define DESTINATION   "/media/Kamera/Vogel/"    /* = 'DISKSTATION/surveillance'/... */
+//
+//
+//// Verzeichnisse
+//// --------------
+//#define _FOLDER       "event_"                  /* Kennzeichnung Verzeichnis */
+//#define _EVENT_       "Event_"                  /* Kennzeichnung Verzeichnis */
+//#define FIFO          AUXDIR"/MOTION.FIFO"
+//#define SOURCE        PIXDIR/                   /* "/home/pi/motion/pix/" */
+//#define TEMP          TOPDIR"/tmp/"
+//#define DESTINATION   "/media/Kamera/Vogel/"    /* = 'DISKSTATION/surveillance'/... */
+//
 
 //***************************************************************************// bool MyLog(const char* pLogText)
 
@@ -81,6 +143,21 @@ char MailBody[BODYLEN];
  * Define debug function.
  * ---------------------
  */
+
+#if __SQLMOTION_DEBUG__
+  #define DEBUG(...) printf(__VA_ARGS__)
+#else
+  #define DEBUG(...)
+#endif
+
+#if __SQLMOTION_DEBUG_INIT__
+  // nur die Init-Phase
+  // -------------------
+  #define _DEBUG(...) printf(__VA_ARGS__)
+#else
+  #define _DEBUG(...)
+#endif
+
 
 //// Log-Ausgabe
 //// -----------
@@ -163,10 +240,10 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
 
   printf("\n    -- Fehler --> %s\n", ErrText);    // lokale Fehlerausgabe
   syslog(LOG_NOTICE, ErrText);
-  digitalWrite (LED_GELB,   LED_AUS);
-  digitalWrite (LED_GRUEN,  LED_AUS);
-  digitalWrite (LED_BLAU,   LED_AUS);
-  digitalWrite (LED_ROT,    LED_EIN);
+  digitalWrite (M_LED_GELB,   LED_AUS);
+  digitalWrite (M_LED_GRUEN,  LED_AUS);
+  digitalWrite (M_LED_BLAU,   LED_AUS);
+  digitalWrite (M_LED_ROT,    LED_EIN);
 
   {// --- Log-Ausgabe ---------------------------------------------------------
     char LogText[ZEILE];  sprintf(LogText, "<<< %s: Exitosi!",  ErrText);
@@ -175,7 +252,7 @@ void showMain_Error( char* Message, const char* Func, int Zeile)
 
   // PID-Datei wieder löschen
   // ------------------------
-  killPID(FPID);
+  killPID();
 
   finish_with_Error(ErrText);
 }
@@ -213,7 +290,7 @@ int Error_NonFatal( char* Message, const char* Func, int Zeile)
 
   DEBUG("   -- Fehler -->  %s\n", ErrText);     // lokale Fehlerausgabe
 
-  digitalWrite (LED_ROT,    LED_EIN);
+  digitalWrite (M_LED_ROT,    LED_EIN);
   ErrorFlag = time(0) + BRENNDAUER;             // Steuerung rote LED
 
   {// --- Log-Ausgabe ---------------------------------------------------------
@@ -407,27 +484,6 @@ bool MoveFile( const char* File, const char* Verz)
   DEBUG("<- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, status);
   return status;
 }
-//************************************************************************************//
-
-// PID holen
-// -----------
-pid_t getPID(void)
-{
-  DEBUG("====> %s()#%d: %s(void) =======\n",
-             __FUNCTION__, __LINE__, __FUNCTION__);
-  pid_t myPID = 0;
-  FILE *piddatei;
-  piddatei = fopen(FPID, "r");
-  if (piddatei != NULL)
-  {
-    char puffer[ZEILE];
-    fread(&puffer, sizeof(char), ZEILE-1, piddatei);
-    myPID = atoi(puffer);
-    fclose (piddatei);
-  }
-  DEBUG("<---- %s()#%d -<%d>- \n",  __FUNCTION__, __LINE__, myPID);
-  return myPID;
-}
 //***********************************************************************************************
 
 // Verzeichnis löschen
@@ -505,7 +561,7 @@ int deleteFolder(const char* Foldername)
 
 // Datenbank anlegen
 // ==================
-MYSQL* CreateDB(MYSQL* con)
+MYSQL* CreateDBi(MYSQL* con)
 {
   DEBUG_d("===> %s()#%d: %s(%ld) =======\n",
              __FUNCTION__, __LINE__, __FUNCTION__, (long int)con);
@@ -518,7 +574,7 @@ MYSQL* CreateDB(MYSQL* con)
   // User einloggen
   // --------------
 #if __SQLMOTION_DEBUG__d
-  syslog(LOG_NOTICE, "CreateDB(%p) connect - Host:'%s', User:'%s', Passwort:'%s' \n", con, THISHOST, THISUSER, THISPW);
+  syslog(LOG_NOTICE, "CreateDBi(%p) connect - Host:'%s', User:'%s', Passwort:'%s' \n", con, THISHOST, THISUSER, THISPW);
 #endif
   if (mysql_real_connect(con, THISHOST, THISUSER, THISPW, NULL, 0, NULL, 0) == NULL)
     showMain_SQL_Error( "Connect", __FUNCTION__, __LINE__, con);
@@ -575,7 +631,7 @@ void CreateTables(MYSQL* con)
   // Tabelle für Events prüfen
   // -------------------------------
   {
-    sprintf( textQuery, "SELECT * FROM %s;", MYEVENTTABLE);
+    sprintf( textQuery, "SELECT * FROM %s;", EVENTTABLE);
     mysql_query(con, textQuery);
     res = mysql_use_result(con);
 
@@ -628,7 +684,7 @@ int AddEvent(MYSQL* con, char* thisEvent, time_t* FaDatum, long thisSize, char* 
   // Prüfung, ob Datensatz schon vorhanden
   // -------------------------------------
   sprintf( textQuery, "SELECT %s FROM %s WHERE %s='%s' AND %s = '%s' AND %s = '%s' ORDER BY %s",
-                        EVKEYID, MYEVENTTABLE, EVEVENT, thisEvent,
+                        EVKEYID, EVENTTABLE, EVEVENT, thisEvent,
                         EVDATE, thisDatum, EVTIME, thisZeit, EVSAVED);
 
 //#define  EVKEYID     "evKeyID"
@@ -690,7 +746,7 @@ int AddEvent(MYSQL* con, char* thisEvent, time_t* FaDatum, long thisSize, char* 
     // --------------------------------------
     MYSQL_RES *result;
     sprintf( textQuery, "INSERT INTO %s (%s, %s, %s, %s, %s) VALUES ('%s', '%s', '%s', '%ld', '%s')",
-                        MYEVENTTABLE, EVEVENT, EVDATE, EVTIME, EVSIZE, EVREMARK,
+                        EVENTTABLE, EVEVENT, EVDATE, EVTIME, EVSIZE, EVREMARK,
                                     thisEvent, thisDatum, thisZeit, thisSize, Remark);
 
 //#define  EVKEYID     "evKeyID"
@@ -769,9 +825,9 @@ bool toFIFO (char* inhalt)
       #define ANZEIT  333 /* msec */
       for (int ix = 12; ix <=0; ix--)
       {
-        digitalWrite (LED_ROT, LED_EIN);
+        digitalWrite (M_LED_ROT, LED_EIN);
         delay(ANZEIT);
-        digitalWrite (LED_ROT, LED_AUS);
+        digitalWrite (M_LED_ROT, LED_AUS);
         delay(ANZEIT);
       }
       return false;
@@ -843,172 +899,139 @@ int compare(const void *lhs, const void *rhs)
 
 int main(int argc, char* argv[])
 {
-  sprintf (Version, "Vers. %d.%d.%d/%s", MAXVERS, MINVERS, BUILD, __DATE__);
-  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 ); // Verbindung zum Dämon Syslog aufbauen
-  SYSLOG(LOG_NOTICE, ">>>>>> %s - %s - PID %d - User %d - Group %d <<<<<<",
-                              PROGNAME, Version, getpid(), geteuid(), getegid());
+  char MailBody[4*ABSATZ] = {'\0'};
+	char thisPfad[ZEILE] = {'\0'};                  // aktueller Verzeichnispfad
 
-  { //--- Monitor-Ausgabe -------------------------------------------------------------
-    char PrintText[ZEILE];
-    sprintf(PrintText, "\n%s %s - User %d, Group %d\n",
-                        PROGNAME, Version, getuid(), getgid());
-    printf(PrintText);
-  } // --------------------------------------------------------------------------------
+  sprintf (Version, "Vers. %d.%d.%d", MAXVERS, MINVERS, BUILD);
+  printf("   %s %s von %s\n\n", PROGNAME, Version, __DATE__);
 
-
-  {// --- Log-Ausgabe -----------------------------------------------------------------
-    char LogText[ZEILE];
-    sprintf(LogText,
-    " >>> %s    ************ Start '%s' ************\n"\
-    "                                               "\
-    " - PID %d, User %d, Group %d, Anzahl Argumente: '%d' ",
-    Version, PROGNAME, getpid(), geteuid(), getgid(), argc);
-    MYLOG(LogText);
-  } // --------------------------------------------------------------------------------
+  // Verbindung zum Dämon Syslog aufbauen
+  // -----------------------------------
+  openlog(PROGNAME, LOG_PID, LOG_LOCAL7 );
+  syslog(LOG_NOTICE, ">>>>> %s - %s/%s - PID %d - User %d, Group %d <<<<<<",
+                  PROGNAME, Version, __DATE__, getpid(), geteuid(), getegid());
+                  
+  setAuxFolder(AUXDIR, TOPNAME);         		// Info an 'common'
+  setAuxFolder_Err(AUXDIR);                	// Info an 'error'
 
 
+  #include "/home/pi/treiber/snippets/get_progname.snip"
+
+
+	// Aufrufparameter prüfen
+	// -------------------------
   if (argc <= 1)
   {     // -- Error
     printf("   - Anzahl Argumente '%d'\n", argc);
     printf("   - Aufruf: \"%s\": Exit !\n", *argv);
-    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exitis!",
+    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exit!",
                                       __FUNCTION__, __LINE__, argc);
     {// --- Log-Ausgabe ------------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
-         "<<< Anzahl Argumente '%d': Exitti!",  argc);
+         "<<< Anzahl Argumente '%d': Exit!",  argc);
       MYLOG(LogText);
     } // ---------------------------------------------------------------------------
     exit (EXIT_FAILURE);
   }
 
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wunused-value"
-  char thisPfad[ZEILE] = {'\0'};                  // aktueller Verzeichnispfad
-  { // Verzeichnispfad ermitteln
+ 
+ 	{	// Verzeichnispfad ermitteln
     // -------------------------
-    *argv++;
-    char* pfad = thisPfad;
-    char* ptr = (char*) *argv;
-    char* end = strrchr(ptr, '/');
-    if (end != NULL)
-    {
-      while (ptr <= end)
+    #pragma GCC diagnostic push
+    #pragma GCC diagnostic ignored "-Wunused-value"
+    { 
+      *argv++;
+      char* pfad = thisPfad;
+      char* ptr = (char*) *argv;
+      char* end = strrchr(ptr, '/');
+      if (end != NULL)
       {
-        *pfad++ = *ptr++;
+        while (ptr <= end)
+        {
+          *pfad++ = *ptr++;
+        }
       }
+    	_DEBUG(">>> %s  %s()#%d: Daten-Verzeichnis: '%s'\n",  __Si__, thisPfad);
+      *argv--;
     }
-    { // --- Debug-Ausgaben -------------------------------------------
-      #define MELDUNG ">> %s()#%d - Daten-Verzeichnis '%s'%c"
-      DEBUG(MELDUNG, __FUNCTION__, __LINE__, thisPfad, '\n');
-//      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, thisPfad, '\0');
-      #undef MELDUNG
-    } // ---------------------------------------------------------------
-    *argv--;
-  }
-  #pragma GCC diagnostic pop
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+    #pragma GCC diagnostic pop
+		_DEBUG(">>>\n");
+	}
+ 
+	{	// Argumentliste 
+		// --------------
+    for (int ix=0; ix < argc; ix++)
+    {
+      _DEBUG(">>> %s  %s()#%d: Argument %d: %s\n",  __Si__, ix, argv[ix]);
+    }
+    _DEBUG(">>> %s  %s()#%d: ------ Argumentlist done ------\n",  __Si__);
+  	_DEBUG(">>>\n");
+	}
 
-//
-//  report_Error("ich bin eine Felermeldung\n", false);
-//
+  // Host ermitteln
+  // ---------------
+  #include "/home/pi/treiber/snippets/get_host.snip"
 
-  for (int ix=0; ix < argc; ix++)
-  {
-    { // --- Debug-Ausgaben -------------------------------------------
-      #define MELDUNG ">> %s()#%d --- Argument %d: %s%c"
-      DEBUG(MELDUNG, __FUNCTION__, __LINE__, ix, argv[ix], '\n');
-//      SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, ix, argv[ix], '\0');
-      #undef MELDUNG
-    } // ---------------------------------------------------------------
-//    DEBUG(">> %s()#%d   - Argument %d: %s\n",
-//                                      __FUNCTION__, __LINE__, ix, argv[ix]);
-  }
-  { // --- Debug-Ausgaben -------------------------------------------
-    #define MELDUNG ">> %s()#%d   ------ Argumentlist done ------%c"
-    DEBUG(MELDUNG, __FUNCTION__, __LINE__, '\n');
-//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
-    #undef MELDUNG
-  } // ---------------------------------------------------------------
 
   // Prozess-ID ablegen
   // ------------------
-  savePID(FPID);
-  { // --- Debug-Ausgaben -------------------------------------------
-    #define MELDUNG ">> %s()#%d: meine PID: '%ld'%c"
-    DEBUG(MELDUNG, __FUNCTION__, __LINE__, savePID(FPID), '\n');
-//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, savePID(FPID), '\0');
-    #undef MELDUNG
-  } // ---------------------------------------------------------------
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
+  #include "/home/pi/treiber/snippets/get_mypid.snip"
+
+
+  // IP-Adresse ermitteln
+  // ----------------------
+  #include "/home/pi/treiber/snippets/get_myip.snip"
+
+
+  // Datenbank-Initialisierung
+  // ---------------------------
+  #include "/home/pi/treiber/snippets/createdb_init.snip"
+
 
   // Ist GPIO klar?
-  // -------------------------------------------
-  #define ANZEIT  111 /* msec */
-  wiringPiSetup();
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
-  pinMode (LED_ROT,    OUTPUT);
-  pinMode (LED_GELB,   OUTPUT);
-  pinMode (LED_GRUEN,  OUTPUT);
-  pinMode (LED_BLAU,   OUTPUT);
-  pullUpDnControl (LED_ROT,   PUD_UP) ;
-  pullUpDnControl (LED_GELB,  PUD_UP) ;
-  pullUpDnControl (LED_GRUEN, PUD_UP) ;
-  pullUpDnControl (LED_BLAU,  PUD_UP) ;
-  digitalWrite (LED_GRUEN,  LED_EIN);
-  digitalWrite (LED_BLAU,   LED_EIN);
-  for (int ix=3; ix > 0; ix--)
-  {
-    digitalWrite (LED_ROT,  LED_EIN);
-    digitalWrite (LED_GELB, LED_EIN);
-    delay(ANZEIT);
-    digitalWrite (LED_ROT,  LED_AUS);
-    digitalWrite (LED_GELB, LED_AUS);
-    delay(ANZEIT);
-  }
-  digitalWrite (LED_GRUEN,  LED_AUS);
-  digitalWrite (LED_BLAU,   LED_AUS);
-  #undef ANZEIT
-  { // --- Debug-Ausgaben -------------------------------------------
-    #define MELDUNG ">> %s()#%d: GPIO OK%c"
-    DEBUG(MELDUNG, __FUNCTION__, __LINE__, '\n');
-//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__, '\0');
-    #undef MELDUNG
-  } // ---------------------------------------------------------------
-
+  // --------------
+  #include "/home/pi/treiber/snippets/gpio_init.snip"
+  {	// LED-Mäusekino
+    #define ANZEIT  111 /* msec */
+    pinMode (M_LED_ROT,    OUTPUT);
+    pinMode (M_LED_GELB,   OUTPUT);
+    pinMode (M_LED_GRUEN,  OUTPUT);
+    pinMode (M_LED_BLAU,   OUTPUT);
+    pullUpDnControl (M_LED_ROT,   PUD_UP) ;
+    pullUpDnControl (M_LED_GELB,  PUD_UP) ;
+    pullUpDnControl (M_LED_GRUEN, PUD_UP) ;
+    pullUpDnControl (M_LED_BLAU,  PUD_UP) ;
+    digitalWrite (M_LED_GRUEN,  LED_EIN);
+    digitalWrite (M_LED_BLAU,   LED_EIN);
+    for (int ix=3; ix > 0; ix--)
+    {
+      digitalWrite (M_LED_ROT,  LED_EIN);
+      digitalWrite (M_LED_GELB, LED_EIN);
+      delay(ANZEIT);
+      digitalWrite (M_LED_ROT,  LED_AUS);
+      digitalWrite (M_LED_GELB, LED_AUS);
+      delay(ANZEIT);
+    }
+    digitalWrite (M_LED_GRUEN,  LED_AUS);
+    digitalWrite (M_LED_BLAU,   LED_AUS);
+    #undef ANZEIT
+	}
 
   // wenn keine Daten: hier beenden
   // -------------------------------
   if (argc <= 2)
-  {     // -- Error
-    printf("   - Anzahl Argumente '%d': Exitata!\n", argc);
+  { // -- Error
+    printf("   - Anzahl Argumente '%d': Exit!\n", argc);
     printf("   - Aufruf: %s'\n", *argv);
-    syslog(LOG_NOTICE, ">> %s()#%d -- Anzahl Argumente '%d': Exitus!\n",
-                                      __FUNCTION__, __LINE__, argc);
+  	_DEBUG(">>> %s  %s()#%d: Anzahl Argumente '%d': Exit!\n",  __Si__, argc);   
     {// --- Log-Ausgabe ---------------------------------------------------------
       char LogText[ZEILE];  sprintf(LogText,
-         "<<< Anzahl Argumente '%d': Exitas!",  argc);
+         "<<< Anzahl Argumente '%d': Exit!",  argc);
       MYLOG(LogText);
     } // ------------------------------------------------------------------------
     closelog();
     return EXIT_FAILURE;
   }
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
-
-
-  // Datenbank und Tabellen erzeugen, wenn noch nicht vorhanden
-  // ----------------------------------------------------------
-  DEBUG(">> %s()#%d - Datenbank erzeugen\n", __FUNCTION__, __LINE__);
-  MYSQL* con = NULL;
-  con = CreateDB(con);                          // Verbindung zur Datenbank
-  CreateTables(con);
-  { // --- Debug-Ausgaben -------------------------------------------
-    #define MELDUNG ">> %s()#%d: Datenbank OK\n"
-    DEBUG(MELDUNG, __FUNCTION__, __LINE__);
-//    SYSLOG(LOG_NOTICE, MELDUNG, __FUNCTION__, __LINE__);
-    #undef MELDUNG
-  } // ---------------------------------------------------------------
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
 
   // Zugriffsrechte
@@ -1020,16 +1043,13 @@ int main(int argc, char* argv[])
     S_IROTH,S_IWOTH,S_IXOTH    /* Zugriffsrechte der Rest */
   };
   destroyInt(*bits);
-//  SYSLOG(LOG_NOTICE, ">> %s()#%d", __FUNCTION__, __LINE__);
 
-  // Start im Log vermerken
-  // ----------------------
-  char Logtext[2*ZEILE];
-  sprintf(Logtext, ">>> %s()#%d - Init OK ------- %d Elemente", __FUNCTION__, __LINE__, argc);
-//  syslog(LOG_NOTICE, Logtext);
-  DEBUG("%s\n\n", Logtext);
+
+  // Initialisierung abgeschlossen
+  // ------------------------------
+  #include "/home/pi/treiber/snippets/init_mail.snip"
+  #include "/home/pi/treiber/snippets/init_done.snip"
   goto Phase_1;
-
 
 
 
@@ -1046,8 +1066,8 @@ Phase_1:
 //*    alle jpg-Dateien dieses Events in das Verzeichnis
 //*  }
 
-  digitalWrite (LED_GELB, LED_AUS);
-  digitalWrite (LED_GRUEN, LED_EIN);
+  digitalWrite (M_LED_GELB, LED_AUS);
+  digitalWrite (M_LED_GRUEN, LED_EIN);
   int newFolder = 0;                  // Verzeichniszähler
   int newFiles = 0;                   // Dateizähler
 
@@ -1638,7 +1658,7 @@ Phase_2:
     MYLOG(LogText);
   }
   double dbSize = (double)SizeTotal * 1.0;
-  double usedSize = dbSize/(double)((unsigned long)GBYTES);
+  double usedSize = dbSize/(double)((unsigned long)GBYTE);
 
   { // --- Debug-Ausgaben ---------------------------------------------------------------------
     #define MELDUNG   "\n    %s()#%d: -- belegter Speicher: %2.3f MBytes in %2.3f sec --\n"
@@ -1655,7 +1675,8 @@ Phase_2:
 
 
 
-  char sTotal[50] = {'\0'};
+  char Logtext[2*ZEILE];
+	char sTotal[50] = {'\0'};
   sprintf(sTotal, "%3.1f MB", (SizeTotal+((1024*1024)/2))/(1024*1024));
   sprintf(Logtext, ">>> %s()#%d: Speicherbelegung '%s': %s\n", __FUNCTION__,__LINE__, thisPfad, sTotal);
   SYSLOG(LOG_NOTICE, Logtext);
@@ -1691,12 +1712,12 @@ Phase_2:
 
   Startzeit(T_ABSCHNITT);             // Zeitmessung Phase 3 starten
 
-  digitalWrite (LED_GRUEN, LED_AUS);
-  digitalWrite (LED_BLAU, LED_EIN);
+  digitalWrite (M_LED_GRUEN, LED_AUS);
+  digitalWrite (M_LED_BLAU, LED_EIN);
 
   toFIFO(thisPfad);                   // >>>>>>>>> über FIFO (named pipe) senden >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-  digitalWrite (LED_ROT, LED_AUS);
+  digitalWrite (M_LED_ROT, LED_AUS);
   SYSLOG(LOG_NOTICE, ">>>>>> %s()#%d: %s --- fertig in %ld msec   ------------------------ <<<<<<", 
                      __FUNCTION__,__LINE__, PROGNAME, Zwischenzeit(T_GESAMT));
   { // --- Log-Ausgabe ---------------------------------------------------------
@@ -1722,7 +1743,7 @@ Phase_2:
 
   // PID-Datei wieder löschen
   // ------------------------
-  killPID(FPID);
+  killPID();
 
   closelog();
   return EXIT_SUCCESS;

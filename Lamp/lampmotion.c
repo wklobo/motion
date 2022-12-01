@@ -677,19 +677,19 @@ int main(int argc, char *argv[])
 
   #include "/home/pi/treiber/snippets/get_progname.snip"
 
- 
-  // Signale registrieren
-  // --------------------
-  signal(SIGTERM, sigfunc);
-  signal(SIGKILL, sigfunc);
+// 
+//  // Signale registrieren
+//  // --------------------
+//  signal(SIGTERM, sigfunc);
+//  signal(SIGKILL, sigfunc);
 
-  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
+//  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
 
   // schon mal den Watchdog füttern
   // ------------------------------
   #include "/home/pi/treiber/snippets/set_watchdog.snip"
 
-  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
+//  printf(">>> %s  %s()#%d: ----------<<< init done >>>----------\n\n",  __Si__);
 
   // Host ermitteln
   // ---------------

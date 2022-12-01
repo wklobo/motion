@@ -1,0 +1,26 @@
+   SqlMotion Vers. 4.3.252 vonu Nov 30 2022
+
+>>> 10:38:07  get_progname.snip()#6: meine Log-Datei: '/home/pi/motion/aux/motion.log'
+>>>
+>>> 10:38:07  sqlmotion.c()#964: Daten-Verzeichnis: '/home/pi/motion/pix/'
+>>>
+>>> 10:38:07  sqlmotion.c()#975: Argument 0: /home/pi/motion/Sql/SqlMotion
+>>> 10:38:07  sqlmotion.c()#975: Argument 1: /home/pi/motion/pix/lastEvent
+>>> 10:38:07  sqlmotion.c()#975: Argument 2: /home/pi/motion/pix/lastsnap.jpg
+>>> 10:38:07  sqlmotion.c()#977: ------ Argumentlist done ------
+>>>
+>>> 10:38:07  get_host.snip()#15: RasPi-Hostname: 'Vogel2'
+>>>
+>>> 10:38:07  get_mypid.snip()#7: meine PID: '2510' in '/home/pi/motion/aux/SqlMotion.pid'
+>>>
+>>> 10:38:07  get_myip.snip()#8: meine ganze IP: '192.168.0.197 192.168.0.196'
+>>> 10:38:07  get_myip.snip()#26: meine IP-Kennung: '196'
+>>>
+>>> 10:38:07  createdb_init.snip()#19:      CreateDB: 'db_Motion'
+>>> 10:38:07  createdb_init.snip()#76:   CreateTable: 'mw_Site'
+>>> 10:38:07  createdb_init.snip()#80:   CreateTable: 'sq_Event'
+>>> 10:38:07  createdb_init.snip()#94:  EnterDataset: 'sq_Event'
+>>>
+>>> 10:38:07  gpio_init.snip()#9: ----- GPIO OK -------
+>>>
+------ killPID()->'/home/pi/motion/aux/SqlMotion.pid'
